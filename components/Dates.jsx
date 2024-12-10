@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { Button } from "./ui/button"
+import Link from "next/link"
 
 export default function DatesSection() {
   const dates = [
@@ -73,6 +75,11 @@ export default function DatesSection() {
             ))}
           </div>
         </div>
+          <Link className="flex justify-center items-center mt-12" href={'/schedule'}>
+          <Button>
+            View Full Schedule
+          </Button>
+          </Link>
       </div>
     </section>
   )

@@ -39,6 +39,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
+            <img src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png" className="w-1/2" alt="" />
             <motion.div className="space-y-4" variants={itemVariants}>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 International Conference on Engineering, Management and Social Sciences

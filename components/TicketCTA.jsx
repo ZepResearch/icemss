@@ -81,7 +81,7 @@ const tickets = [
     name: "Virtual Pass",
     price: "₹18,543",
     period: "/person",
-    img: "https://illustrations.popsy.co/amber/graphic-design.svg",
+    img: "https://illustrations.popsy.co/yellow/graphic-design.svg",
     features: [
       "Full conference access",
       "Networking sessions",
@@ -94,7 +94,7 @@ const tickets = [
     name: "Phyiscal Pass",
     price: "₹27,010",
     period: "/person",
-    img: "https://illustrations.popsy.co/amber/keynote-presentation.svg",
+    img: "https://illustrations.popsy.co/yellow/keynote-presentation.svg",
 
     features: [
       "All Professional Pass benefits",
