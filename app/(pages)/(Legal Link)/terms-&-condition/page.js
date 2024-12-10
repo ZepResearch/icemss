@@ -37,11 +37,11 @@ export default function TermsAndConditions() {
     },
     {
       title: "9. Force Majeure",
-      content: "In the event that the conference is postponed or cancelled due to circumstances beyond the organizers' control, including but not limited to acts of God, war, disaster, government regulations, or public health emergencies, the organizers will not be held liable for any damages or losses incurred by attendees."
+      content: "In the event that the conference is postponed or cancelled due to circumstances beyond the organizers control, including but not limited to acts of God, war, disaster, government regulations, or public health emergencies, the organizers will not be held liable for any damages or losses incurred by attendees."
     },
     {
       title: "10. Research Ethics and Integrity",
-      content: "All research presented at ICEMSS must adhere to the highest standards of academic integrity and research ethics. Any form of plagiarism, data fabrication, or other academic misconduct will result in immediate disqualification and may be reported to the attendee's institution."
+      content: "All research presented at ICEMSS must adhere to the highest standards of academic integrity and research ethics. Any form of plagiarism, data fabrication, or other academic misconduct will result in immediate disqualification and may be reported to the attendees institution."
     }
   ]
 
