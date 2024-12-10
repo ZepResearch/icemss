@@ -13,35 +13,39 @@ export default function PrivacyPolicy() {
   const policies = [
     {
       title: "Information Collection",
-      content: "We collect information you provide directly to us, such as when you register for the conference, contact us with inquiries, or participate in polls, surveys, or promotional events. This may include your name, email address, postal address, phone number, and other contact or identifying information you choose to provide."
+      content: "We collect information you provide directly to us when you register for the conference, submit research abstracts, contact us with inquiries, or participate in surveys or promotional events. This may include your name, email address, institutional affiliation, academic credentials, research interests, and other professional or identifying information you choose to provide."
     },
     {
       title: "Use of Information",
-      content: "We use the information we collect to provide, maintain, and improve our services, to process your registration, to send you technical notices, updates, security alerts, and support and administrative messages, and to respond to your comments, questions, and customer service requests."
+      content: "We use the collected information to process your registration, review submitted abstracts, organize conference sessions, provide you with relevant updates about the conference, send you technical notices and support messages, and respond to your inquiries. We may also use anonymized data for statistical analysis to improve our services and academic programming."
     },
     {
       title: "Information Sharing",
-      content: "We may share your personal information with third-party vendors, consultants, and other service providers who need access to such information to carry out work on our behalf. We may also release information when its release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property, or safety."
+      content: "We may share your information with third-party service providers who assist us in organizing the conference, such as registration systems, abstract management platforms, and communication tools. We may also share anonymized data with our academic partners for research purposes. We will release information when required to comply with the law or to protect the rights and safety of our conference participants and staff."
     },
     {
       title: "Data Security",
-      content: "We take reasonable measures to help protect information about you from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction. However, no Internet or email transmission is ever fully secure or error-free."
+      content: "We implement reasonable security measures to protect your personal and academic information from unauthorized access, alteration, disclosure, or destruction. However, please note that no method of electronic storage or transmission is 100% secure."
     },
     {
-      title: "Cookies",
-      content: "We use cookies and similar technologies to collect information about your browsing activities over time and across different websites following your use of our services. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent."
+      title: "Cookies and Tracking",
+      content: "Our website uses cookies and similar technologies to enhance user experience and collect information about browsing activities. This helps us improve our website and tailor our communications. You can modify your browser settings to decline cookies, but this may affect some features of our website."
     },
     {
-      title: "Your Rights",
-      content: "You may update, correct, or delete your account information at any time by logging into your online account or by contacting us. You may also request access to the personal data we hold about you and request that we correct, amend, or delete it if it is inaccurate or processed in violation of applicable law."
+      title: "Your Rights and Choices",
+      content: "You have the right to access, correct, or delete your personal information. You may update your account information through our conference management system or by contacting us directly. You can also opt-out of non-essential communications. For EU residents, we comply with GDPR requirements regarding data subject rights."
+    },
+    {
+      title: "International Data Transfers",
+      content: "As an international conference, your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place to protect your information in compliance with applicable data protection laws."
     }
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.h1 
-          className="text-4xl font-bold text-center text-primary mb-12"
+          className="text-4xl font-bold text-center text-yellow-800 mb-12"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
@@ -54,29 +58,29 @@ export default function PrivacyPolicy() {
           variants={fadeIn}
           transition={{ delay: 0.2 }}
         >
-          <Card>
+          <Card className="bg-white border-2 border-yellow-200">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-primary">
-                International Conference on Tourism Management and Hospitality
+              <CardTitle className="text-2xl font-semibold text-yellow-700">
+                International Conference on Engineering, Management and Social Sciences
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-6 text-muted-foreground">
-                Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you participate in our conference or use our website.
+              <p className="mb-6 text-yellow-800">
+                Your privacy and the protection of your personal and academic information are of utmost importance to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you participate in our conference or use our website.
               </p>
               <Accordion type="single" collapsible className="w-full">
                 {policies.map((policy, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-lg font-medium text-primary">
+                    <AccordionTrigger className="text-lg font-medium text-yellow-700">
                       {policy.title}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
+                    <AccordionContent className="text-yellow-800">
                       {policy.content}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
-              <p className="mt-6 text-sm text-muted-foreground">
+              <p className="mt-6 text-sm text-yellow-600">
                 Last updated: {new Date().toLocaleDateString()}
               </p>
             </CardContent>
@@ -86,3 +90,4 @@ export default function PrivacyPolicy() {
     </div>
   )
 }
+
