@@ -15,7 +15,7 @@ export default function Ticket() {
   const tickets = [
     {
       name: "Virtual TICKET",
-      price: 18543,
+      price: 219,
       period: "month",
       features: [
         "General Admission to Events",
@@ -26,7 +26,7 @@ export default function Ticket() {
     },
     {
       name: "Physical TICKET",
-      price: 27010,
+      price: 319,
       period: "month",
       features: [
         "Priority Access to All Events",
@@ -49,7 +49,7 @@ export default function Ticket() {
         merchant_id: process.env.NEXT_PUBLIC_CCAVENUE_MERCHANT_ID,
         order_id: generateOrderId(),
         amount: amount,
-        currency: "INR",
+        currency: "USD",
         redirect_url: `${host}/api/ccavenue/handle`,
         cancel_url: `${host}/api/ccavenue/handle`,
         billing_email: "",
@@ -119,12 +119,12 @@ export default function Ticket() {
         <div className="space-y-8">
           {tickets.map((ticket, index) => (
             <div key={index} className="flex items-center justify-center">
-              <Card className="relative w-full max-w-3xl bg-orange-100 overflow-hidden border-none">
+              <Card className="relative w-full max-w-3xl bg-yellow-100 overflow-hidden border-none">
                 <div className="flex flex-col md:flex-row">
                   <div className="flex-grow p-6 pr-4">
                     <div className="space-y-4">
                       <div className="space-y-2">
-                        <h3 className="text-2xl font-bold tracking-wide underline underline-offset-4 decoration-orange-500">
+                        <h3 className="text-2xl font-bold tracking-wide underline underline-offset-4 decoration-yellow-500">
                           {ticket.name}
                         </h3>
                         <div className="text-xs uppercase tracking-wider opacity-80">
@@ -150,7 +150,7 @@ export default function Ticket() {
                     <div className="text-center space-y-4 p-6">
                       <div className="space-y-1">
                         <div className="text-4xl font-bold">
-                        ₹{ticket.price.toLocaleString()}
+                        ${ticket.price.toLocaleString()}
                         </div>
                       </div>
                       <Button

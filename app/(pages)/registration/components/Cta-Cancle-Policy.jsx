@@ -2,12 +2,13 @@ import { AlertCircle } from "lucide-react";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CTACancle() {
   return (
     <div className="py-12 px-4 bg-background">
       <div className="max-w-3xl mx-auto">
-        <Alert className="bg-orange-50 border-primary">
+        <Alert className="bg-yellow-50 border-primary">
           <AlertCircle className="h-4 w-4 text-primary" />
           <AlertTitle className="text-primary font-semibold text-3xl">
             Cancellation Policy
@@ -27,12 +28,14 @@ export default function CTACancle() {
               another person is allowed up to 7 days before the event.
             </p>
             <div className="flex justify-start">
+              <Link href={'/cancellation-policy'}>
               <Button
                 variant="outline"
                 className="bg-background text-primary hover:bg-primary hover:text-primary-foreground"
-              >
+                >
                 Read Full Policy
               </Button>
+                </Link>
             </div>
           </AlertDescription>
         </Alert>
