@@ -18,19 +18,19 @@
 .Toastify__toast--success {
     background: white;
     color: #1f2937;
-    border-left: 4px solid #f97316;
+    border-left: 4px solid #fcd706;
 }
 
 /* Custom styles for error toast */
 .Toastify__toast--error {
     background: white;
     color: #1f2937;
-    border-left: 4px solid #ef4444;
+    border-left: 4px solid #fcd707;
 }
 
 /* Progress bar styles */
 .Toastify__progress-bar {
-    background: linear-gradient(to right, #f97316, #fb923c);
+    background: linear-gradient(to right, #f0c60b, #f0d909);
 }
 
 /* Close button styles */
@@ -45,5 +45,5 @@
 
 /* Toast icons */
 .Toastify__toast-icon {
-    color: #f97316;
+    color: #e9e513;
 }

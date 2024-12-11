@@ -5,7 +5,7 @@ const ClientConfirmationEmail = (data) => {
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>We've Received Your Message</title>
+      <title>We've Received Your Submission - ICEMSS</title>
       <style>
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
           
@@ -13,7 +13,7 @@ const ClientConfirmationEmail = (data) => {
               font-family: 'Inter', Arial, sans-serif;
               line-height: 1.6;
               color: #333333;
-              background-color: #f4f4f4;
+              background-color: #fffdf0;
               margin: 0;
               padding: 0;
           }
@@ -26,8 +26,8 @@ const ClientConfirmationEmail = (data) => {
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           }
           .header {
-              background-color: #f97316;
-              color: white;
+              background-color: #FFD700;
+              color: #333333;
               padding: 30px 20px;
               text-align: center;
           }
@@ -42,17 +42,17 @@ const ClientConfirmationEmail = (data) => {
           .message {
               font-size: 16px;
               color: #333333;
-              background-color: #f9f9f9;
+              background-color: #fffdf0;
               padding: 20px;
               border-radius: 6px;
-              border-left: 3px solid #f97316;
+              border-left: 3px solid #FFD700;
               margin-bottom: 20px;
           }
           .footer {
               text-align: center;
               padding: 20px;
-              background-color: #f9f9f9;
-              color: #666666;
+              background-color: #FFD700;
+              color: #333333;
               font-size: 12px;
               border-top: 1px solid #e5e5e5;
           }
@@ -67,25 +67,30 @@ const ClientConfirmationEmail = (data) => {
   <body>
       <div class="container">
           <div class="header">
-              <h1>We've Received Your Message</h1>
+              <h1>We've Received Your Submission</h1>
           </div>
           <div class="content">
               <div class="message">
-                  <p>Dear ${data.name},</p>
-                  <p>Thank you for contacting us. We have received your message and our team will get back to you within 24 hours.</p>
+                  <p>Dear ${data.authorName},</p>
+                  <p>Thank you for your submission to the International Conference on Engineering, Management and Social Sciences (ICEMSS). We have received your paper and our team will review it shortly.</p>
                   <p>Here's a summary of the information you provided:</p>
                   <ul>
-                      <li><strong>Name:</strong> ${data.name}</li>
+                      <li><strong>Author Name:</strong> ${data.authorName}</li>
                       <li><strong>Email:</strong> ${data.email}</li>
-                      <li><strong>Phone:</strong> ${data.phone}</li>
+                      <li><strong>Phone:</strong> ${data.number}</li>
                       <li><strong>Country:</strong> ${data.country}</li>
+                      <li><strong>Paper Title:</strong> ${data.paperTitle}</li>
+                      <li><strong>Department:</strong> ${data.department}</li>
+                      <li><strong>University/Organization:</strong> ${data.universityOrganization}</li>
+                      <li><strong>Paper Type:</strong> ${data.paperType}</li>
+                      <li><strong>Presentation Type:</strong> ${data.presentationType}</li>
                   </ul>
-                  <p>If you need to add any information to your request, please don't hesitate to reply to this email.</p>
-                  <p>Best regards,<br>Your Support Team</p>
+                  <p>If you need to make any changes to your submission or have any questions, please don't hesitate to contact us.</p>
+                  <p>Best regards,<br>ICEMSS Organizing Committee</p>
               </div>
           </div>
           <div class="footer">
-              This is an automated response to your contact form submission. Please do not reply to this email.
+              This is an automated response to your paper submission for ICEMSS. Please do not reply to this email.
           </div>
       </div>
   </body>

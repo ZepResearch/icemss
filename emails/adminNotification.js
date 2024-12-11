@@ -4,7 +4,7 @@ export const adminNotificationTemplate = (data) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Paper Submission - International Conference on Tourism Management & Hospitality</title>
+    <title>New Paper Submission - International Conference on Engineering, Management and Social Sciences (ICEMSS)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
@@ -15,7 +15,7 @@ export const adminNotificationTemplate = (data) => `
             max-width: 600px;
             margin: 0 auto;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #fffdf0;
         }
         .container {
             background-color: #ffffff;
@@ -25,10 +25,10 @@ export const adminNotificationTemplate = (data) => `
             margin: 20px;
         }
         .header {
-            background-color: #FF8C00;
+            background-color: #FFD700;
             padding: 30px 20px;
             text-align: center;
-            color: white;
+            color: #333;
         }
         .header h1 {
             margin: 0;
@@ -48,7 +48,7 @@ export const adminNotificationTemplate = (data) => `
         }
         .field-label {
             font-weight: 600;
-            color: #FF8C00;
+            color: #FFD700;
             display: block;
             margin-bottom: 5px;
             font-size: 14px;
@@ -58,13 +58,13 @@ export const adminNotificationTemplate = (data) => `
         .field-value {
             font-size: 16px;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #fffdf0;
             padding: 10px;
             border-radius: 4px;
-            border-left: 3px solid #FF8C00;
+            border-left: 3px solid #FFD700;
         }
         .pdf-link {
-            color: #FF8C00;
+            color: #FFD700;
             text-decoration: none;
             font-weight: 600;
         }
@@ -72,8 +72,8 @@ export const adminNotificationTemplate = (data) => `
             text-decoration: underline;
         }
         .footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #FFD700;
+            color: #333;
             text-align: center;
             padding: 20px;
             font-size: 14px;
@@ -90,7 +90,7 @@ export const adminNotificationTemplate = (data) => `
     <div class="container">
         <div class="header">
             <h1>New Paper Submission</h1>
-            <p>International Conference on Tourism Management & Hospitality</p>
+            <p>International Conference on Engineering, Management and Social Sciences (ICEMSS)</p>
         </div>
         <div class="submission-details">
             <div class="field">
@@ -142,10 +142,9 @@ export const adminNotificationTemplate = (data) => `
         </div>
     </div>
     <div class="footer">
-        <p>Thank you for your submission to the International Conference on Tourism Management & Hospitality!</p>
+        <p>Thank you for your submission to the International Conference on Engineering, Management and Social Sciences (ICEMSS)!</p>
     </div>
 </body>
 </html>
-
-
 `;
+
