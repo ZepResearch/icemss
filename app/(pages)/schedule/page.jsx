@@ -10,7 +10,7 @@ import { addDays } from "date-fns"
 
 const scheduleData = [
   {
-    date: "March - 21 | Registration",
+    date: "February - 19 | Day 1",
     items: [
       { time: "8:00AM - 9:15AM", title: "Registration" },
       { time: "9:15AM - 9:30AM", title: "Inaugural Function" },
@@ -24,7 +24,7 @@ const scheduleData = [
     ]
   },
   {
-    date: "March - 22 | Day 2",
+    date: "February - 20 | Day 2",
     items: [
       { time: "9:00AM - 9:15AM", title: "Registration" },
       { time: "9:15AM - 9:30AM", title: "Day 2 Opening Remarks" },
@@ -34,31 +34,31 @@ const scheduleData = [
       { time: "10:30AM - 01:00PM", title: "3rd Session" },
       { time: "01:00PM - 02:00PM", title: "Lunch Break" },
       { time: "02:00PM - 02:30PM", title: "Keynote Speech (Session 4)" },
-      { time: "2:30PM - 5:00PM", title: "4th Session" },
-    ]
-  },
-  {
-    date: "March - 23 | Closing Day",
-    items: [
-      { time: "9:00AM - 9:30AM", title: "Registration" },
-      { time: "9:30AM - 10:00AM", title: "Closing Ceremony Opening Remarks" },
-      { time: "10:00AM - 11:00AM", title: "Final Keynote Speech" },
-      { time: "11:00AM - 11:15AM", title: "Coffee Break" },
-      { time: "11:15AM - 12:45PM", title: "Panel Discussion: Future of Sustainability" },
-      { time: "12:45PM - 2:00PM", title: "Networking Lunch" },
       { time: "2:00PM - 3:30PM", title: "Workshops and Breakout Sessions" },
       { time: "3:30PM - 4:00PM", title: "Closing Remarks and Next Steps" },
       { time: "4:00PM - 5:00PM", title: "Farewell Reception" },
     ]
-  }
+  },
+  // {
+  //   date: "March - 23 | Closing Day",
+  //   items: [
+  //     { time: "9:00AM - 9:30AM", title: "Registration" },
+  //     { time: "9:30AM - 10:00AM", title: "Closing Ceremony Opening Remarks" },
+  //     { time: "10:00AM - 11:00AM", title: "Final Keynote Speech" },
+  //     { time: "11:00AM - 11:15AM", title: "Coffee Break" },
+  //     { time: "11:15AM - 12:45PM", title: "Panel Discussion: Future of Sustainability" },
+  //     { time: "12:45PM - 2:00PM", title: "Networking Lunch" },
+    
+  //   ]
+  // }
 ]
 
 export default function ConferenceSchedule() {
-  const startDate = new Date(2024, 2, 21) // March 21, 2024
+  const startDate = new Date(2025, 1, 19) // March 21, 2024
   const [selectedDates, setSelectedDates] = useState([
     startDate,
     addDays(startDate, 1),
-    addDays(startDate, 2)
+    // addDays(startDate, 2)
   ])
 
   return (
@@ -69,14 +69,14 @@ export default function ConferenceSchedule() {
             Conference Dates
           </h1>
           <p className="text-muted-foreground">
-            Join us March 21st-23rd for three days of cutting-edge insights and networking. Reserve your spot today!
+            Join us February 19-20 for three days of cutting-edge insights and networking. Reserve your spot today!
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-[300px_1fr]">
           <Card className="border-yellow-200">
             <CardHeader>
-              <CardTitle>March 2024</CardTitle>
+              <CardTitle>February 2025</CardTitle>
             </CardHeader>
             <CardContent>
               <Calendar

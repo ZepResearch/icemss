@@ -1,16 +1,16 @@
 'use client'
 
 import { motion } from "framer-motion"
-import { BookOpen, Globe, LightbulbIcon, Users } from 'lucide-react'
+import { BookOpen, Globe, LightbulbIcon, Users, Share2, TrendingUp } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 
 const imglink=[
-    
     {link:'https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
     {link:'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
     {link:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
     {link:'https://images.unsplash.com/photo-1506863530036-1efeddceb993?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'},
 ]
+
 export default function ObjectivesSection() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -36,24 +36,34 @@ export default function ObjectivesSection() {
 
   const objectives = [
     {
-      icon: LightbulbIcon,
-      title: "Research Excellence",
-      description: "Foster innovative research and facilitate knowledge exchange across engineering, management, and social sciences disciplines.",
+      icon: Users,
+      title: "Foster Interdisciplinary Collaboration",
+      description: "Encourage dialogue between researchers from Engineering, Management, and Social Sciences to promote integrated solutions and innovative thinking that address complex challenges across disciplines.",
+    },
+    {
+      icon: Share2,
+      title: "Promote Knowledge Exchange",
+      description: "Facilitate the sharing of cutting-edge research, ideas, and best practices, ensuring participants stay updated with the latest trends, advancements, and methodologies in their respective fields.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Enhance Professional Development",
+      description: "Offer opportunities for skill development through workshops, discussions, and speaker sessions, empowering participants to advance their careers and excel in research, teaching, or industry.",
     },
     {
       icon: Globe,
-      title: "Global Collaboration",
-      description: "Create a platform for international scholars to network, share insights, and establish research partnerships.",
-    },
-    {
-      icon: Users,
-      title: "Interdisciplinary Integration",
-      description: "Bridge the gap between technical and social sciences, promoting holistic approaches to contemporary challenges.",
+      title: "Encourage Global Networking",
+      description: "Create a platform for global connections, enabling researchers, professionals, and academics to build meaningful collaborations, partnerships, and networks for future research and development.",
     },
     {
       icon: BookOpen,
-      title: "Academic Impact",
-      description: "Publish and disseminate cutting-edge research findings through prestigious academic journals and proceedings.",
+      title: "Facilitate Research Publication",
+      description: "Support researchers in publishing and disseminating their findings through recognized journals and proceedings, helping them gain visibility and credibility in global academic communities.",
+    },
+    {
+      icon: LightbulbIcon,
+      title: "Inspire Innovation and Solutions",
+      description: "Encourage participants to engage in discussions that lead to innovative solutions for real-world challenges, promoting a culture of problem-solving and forward-thinking research.",
     },
   ]
 
@@ -72,16 +82,16 @@ export default function ObjectivesSection() {
             className="space-y-4 text-center"
           >
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-4xl">
-              Conference Objectives
+              Objectives Of the Conference
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Our mission is to create an enriching platform that advances academic excellence and fosters global collaboration
+              Our mission is to create an enriching platform that advances academic excellence, fosters global collaboration, and drives innovation across disciplines.
             </p>
           </motion.div>
 
           <motion.div 
             variants={containerVariants}
-            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
             {objectives.map((objective, index) => (
               <motion.div key={index} variants={itemVariants}>
@@ -108,12 +118,12 @@ export default function ObjectivesSection() {
           >
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
-                {imglink.map((_, i) => (
+                {imglink.map((img, i) => (
                   <img
-                  src={_.link}
                     key={i}
-                    
-                    className="w-8 h-8 rounded-full border-2 border-background bg-primary/10 object-cover "
+                    src={img.link}
+                    alt={`Academic professional ${i + 1}`}
+                    className="w-8 h-8 rounded-full border-2 border-background bg-primary/10 object-cover"
                   />
                 ))}
               </div>

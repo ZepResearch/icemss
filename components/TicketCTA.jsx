@@ -50,6 +50,14 @@ export default function TicketCTA() {
                     {ticket.period}
                   </span>
                 </div>
+                <div className="mt-4 flex items-baseline text-gray-900">
+                  <span className="text-4xl font-bold tracking-tight">
+                    {ticket.dprice}
+                  </span>
+                  <span className="ml-1 text-xl font-semibold">
+                    {ticket.period}
+                  </span>
+                </div>
                 <ul className="mt-6 space-y-3">
                   {ticket.features.map((feature, i) => (
                     <li key={i} className="flex">
@@ -78,10 +86,11 @@ export default function TicketCTA() {
 
 const tickets = [
   {
-    name: "Virtual Pass",
-    price: "₹18,543",
+    name: "Phyical Pass",
+    price: "₹4000-5000",
+    dprice:"$99-150",
     period: "/person",
-    img: "https://illustrations.popsy.co/yellow/graphic-design.svg",
+    img: "https://illustrations.popsy.co/yellow/keynote-presentation.svg",
     features: [
       "Full conference access",
       "Networking sessions",
@@ -91,10 +100,11 @@ const tickets = [
     ],
   },
   {
-    name: "Phyiscal Pass",
-    price: "₹27,010",
+    name: "Virtual  Pass",
+    price: "₹1500-2000",
+    dprice:"$69-99",
     period: "/person",
-    img: "https://illustrations.popsy.co/yellow/keynote-presentation.svg",
+    img: "https://illustrations.popsy.co/yellow/graphic-design.svg",
 
     features: [
       "All Professional Pass benefits",

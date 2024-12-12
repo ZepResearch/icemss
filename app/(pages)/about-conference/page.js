@@ -36,8 +36,8 @@ export default function ConferenceAboutSection() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "3-day multidisciplinary event" },
-    { icon: MapPin, text: "At the heart of Singapore" },
+    { icon: CalendarDays, text: "2-day multidisciplinary event" },
+    { icon: MapPin, text: "At the heart of Delhi" },
     { icon: Users, text: "Network with 1000+ academics and professionals" },
     { icon: Lightbulb, text: "Over 30+ workshops on cutting-edge research" },
     { icon: Globe, text: "Presenters from more than 50 countries" },
@@ -67,10 +67,13 @@ export default function ConferenceAboutSection() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground px-12 text-justify">
-                  The International Conference on Engineering, Management and Social Sciences (ICEMSS) is a premier global event that brings together researchers, academics, industry professionals, and policymakers from diverse fields. Over three days, participants will explore the latest advancements, challenges, and opportunities at the intersection of engineering, management, and social sciences, with a focus on sustainable development, technological innovation, and societal impact. This conference serves as a unique platform to exchange ideas, foster interdisciplinary collaborations, and drive actionable solutions for some of the world&apos;s most pressing issues.
+                The International Conference on Engineering, Management, and Social Sciences (ICEMSS) aims to establish a collaborative platform for exploring new dimensions of research. ICEMSS is dedicated to facilitating discussions on the challenges involved in the practical application of cutting-edge knowledge in the fields of Management, Engineering, and Social Sciences.
                 </p>
                 <p className="text-muted-foreground px-12 text-justify mt-2">
-                  Attendees will have the opportunity to engage in thought-provoking discussions, attend specialized workshops, and network with leading experts shaping the future of these interconnected fields. Whether you are an established researcher, an industry practitioner, or an emerging scholar, this conference will provide valuable insights and connections that can help you navigate and lead in the evolving landscape of engineering, management, and social sciences.
+                The rapid development across the globe has created an increasing need for awareness of the latest trends and knowledge. Continuous advancements in these fields have made it challenging for professionals such as academicians, students, aspiring researchers, and industry experts to keep pace with these changes. This conference is being organized to help participants stay updated and equipped to address these evolving developments.
+                </p>
+                <p className="text-muted-foreground px-12 text-justify mt-2">
+                The conference, taking place on 19-20 February 2025 in New Delhi, India, will offer researchers — both experienced and emerging — the opportunity to present their findings to esteemed members of the global scientific community. Regardless of their specific focus within Management, Education, or Social Sciences, ICEMSS will provide them with the exposure needed to gain recognition for their research. Moreover, the event will open doors for new collaborations and further research opportunities.
                 </p>
               </CardContent>
           </Card>
@@ -115,7 +118,7 @@ export default function ConferenceAboutSection() {
                 Join us in shaping the future of engineering, management, and social sciences.
               </CardDescription>
               <p className="text-muted-foreground">
-                September 15-17, 2024 • Singapore
+              February 19-20 , 2024 • Delhi,India
               </p>
             </CardContent>
           </Card>

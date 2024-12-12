@@ -8,24 +8,24 @@ import Link from "next/link"
 export default function DatesSection() {
   const dates = [
     {
-      date: "Sept 2024",
-      title: "Abstract Submission",
+      date: "11th January  2025  ",
+      title: "Early bird Deadline",
       description: "Submit your research abstracts for initial review. Early submissions receive priority consideration and detailed feedback from our expert panel.",
     },
     {
-      date: "Oct 2024",
-      title: "Paper Submission",
+      date: "19th January 2025",
+      title: "Abstract submission Deadline",
       description: "Full paper submissions open for accepted abstracts. Ensure your research follows our comprehensive submission guidelines.",
     },
     {
-      date: "Nov 2024",
-      title: "Review Process",
+      date: "27th January 2025",
+      title: "Full paper submission deadline",
       description: "Expert panel review period. Authors will receive detailed feedback and acceptance notifications during this phase.",
     },
     {
-      date: "Dec 2024",
-      title: "Conference Days",
-      description: "Three days of keynotes, presentations, workshops, and networking opportunities with leading academics and researchers.",
+      date: "Registration deadline",
+      title: "5th February 2025",
+      description: "2 days of keynotes, presentations, workshops, and networking opportunities with leading academics and researchers.",
     },
   ]
 

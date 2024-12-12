@@ -30,7 +30,7 @@ export default function VenuePage() {
           <div className="w-full md:w-1/2">
             <Image
               src="https://illustrations.popsy.co/yellow/hitchhiking.svg"
-              alt="Conference Vensue"
+              alt="Conference Venue"
               width={500}
               height={400}
               className=""
@@ -41,11 +41,14 @@ export default function VenuePage() {
               Conference Venue
             </h1>
             <p className="text-xl mb-6 leading-relaxed">
-              Welcome to the International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of Singapore provides an inspiring environment for interdisciplinary discussions and collaborations.
+              Welcome to the International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of Delhi provides an inspiring environment for interdisciplinary discussions and collaborations.
             </p>
             <div className="flex items-center text-yellow-700 dark:text-yellow-300 text-lg">
               <MapPin className="mr-2 h-6 w-6" />
-              <span>Singapore Expo, Singapore</span>
+              <span> New Delhi, India</span>
+            </div>
+            <div className="mt-4 text-yellow-700 dark:text-yellow-300 text-lg">
+              <span className="font-bold">Date:</span> 19-20 February 2025
             </div>
           </div>
         </div>
@@ -104,7 +107,7 @@ export default function VenuePage() {
         </h2>
         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7790317519364!2d103.95789661475396!3d1.3352888990297052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da3cd949c2bf4d%3A0xd1e4d5e64babe9c8!2sSingapore%20Expo!5e0!3m2!1sen!2sus!4v1620847808345!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5141287472396!2d77.24333491508271!3d28.61517798242354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce318a027dbb7%3A0xf12a1c6b59580448!2sPragati%20Maidan!5e0!3m2!1sen!2sin!4v1620847808345!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}
@@ -127,28 +130,28 @@ export default function VenuePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              title: "Gardens by the Bay",
-              description: "Explore futuristic gardens and the iconic Supertree Grove",
+              title: "India Gate",
+              description: "Visit the iconic war memorial and enjoy the surrounding gardens",
             },
             {
-              title: "Marina Bay Sands",
-              description: "Visit the luxurious integrated resort with its famous infinity pool",
+              title: "Red Fort",
+              description: "Explore this UNESCO World Heritage site, a symbol of Mughal architecture",
             },
             {
-              title: "Sentosa Island",
-              description: "Enjoy beaches, theme parks, and attractions on this resort island",
+              title: "Qutub Minar",
+              description: "Marvel at this towering minaret, another UNESCO World Heritage site",
             },
             {
-              title: "Singapore Botanic Gardens",
-              description: "Stroll through this UNESCO World Heritage site",
+              title: "Humayun's Tomb",
+              description: "Admire the architectural beauty of this Mughal-era tomb",
             },
             {
-              title: "Merlion Park",
-              description: "See the iconic Merlion statue and enjoy views of Marina Bay",
+              title: "Akshardham Temple",
+              description: "Experience the grandeur of this modern Hindu temple complex",
             },
             {
-              title: "Orchard Road",
-              description: "Experience Singapore's premier shopping and entertainment district",
+              title: "Connaught Place",
+              description: "Enjoy shopping and dining in this bustling commercial center",
             },
           ].map((attraction, index) => (
             <motion.div

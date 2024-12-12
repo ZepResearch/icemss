@@ -39,7 +39,7 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <img src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png" className="w-1/2" alt="" />
+            {/* <img src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png" className="w-1/2" alt="" /> */}
             <motion.div className="space-y-4" variants={itemVariants}>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
                 International Conference on Engineering, Management and Social Sciences
@@ -70,14 +70,14 @@ export default function Hero() {
               className="space-y-4"
               variants={itemVariants}
             >
-              <div className="flex flex-col gap-4 text-sm text-muted-foreground">
+              <div className="flex flex-col gap-4 text-base text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-4 w-4" />
-                  <span>15-17 December 2024</span>
+                  <span>19-20 February 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="h-4 w-4" />
-                  <span>Grand Conference Center, New York</span>
+                  <span> Delhi,India</span>
                 </div>
               </div>
             </motion.div>

@@ -1,4 +1,5 @@
 import AboutSection from "@/components/About";
+import Buttons from "@/components/buttons";
 import CoOrganizationLogos from "@/components/Co-OrganiztionLogo";
 import CTASection from "@/components/Cta-section";
 import DatesSection from "@/components/Dates";
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero/>
       <CoOrganizationLogos/>
       <AboutSection/>
+      <Buttons/>
       <ObjectivesSection/>
       <SDGSection/>
       <CTASection/> 

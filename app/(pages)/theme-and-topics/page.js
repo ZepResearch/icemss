@@ -40,63 +40,36 @@ export default function ThemeAndTopics() {
 
   const topics = [
     {
-      title: "Engineering Innovation",
+      title: "Engineering",
       content: [
-        "Artificial Intelligence and Machine Learning in Engineering",
-        "Sustainable Engineering Practices",
-        "Internet of Things (IoT) and Smart Systems",
-        "Robotics and Automation",
-        "Renewable Energy Technologies"
+        "Mechanical Engineering Innovations",
+        "Electrical and Electronics Engineering Advances",
+        "Civil and Environmental Engineering Progress",
+        "Computer Science and Engineering Trends",
+        "Chemical and Process Engineering Breakthroughs",
+        "Aerospace Engineering Developments"
       ]
     },
     {
-      title: "Management Strategies",
+      title: "Management Tracks",
       content: [
-        "Digital Transformation in Business",
-        "Sustainable Business Models",
-        "Project Management in the Digital Era",
-        "Innovation Management and Entrepreneurship",
-        "Supply Chain Management and Logistics"
+        "Strategic Management and Innovation",
+        "Human Resource Management and Organizational Behavior",
+        "Marketing and Consumer Behavior",
+        "Operations and Supply Chain Management",
+        "Finance and Accounting Innovations",
+        "Public Administration and Policy"
       ]
     },
     {
-      title: "Social Sciences Perspectives",
+      title: "Social Science",
       content: [
-        "Technology's Impact on Society",
-        "Social Media and Digital Communication",
-        "Ethics in Technology and Business",
-        "Cultural Diversity in Global Organizations",
-        "Sustainable Development and Social Responsibility"
-      ]
-    },
-    {
-      title: "Interdisciplinary Research",
-      content: [
-        "Integrating Engineering and Management for Sustainable Solutions",
-        "Social Implications of Technological Advancements",
-        "Data Science in Social Research",
-        "Human-Computer Interaction and User Experience",
-        "Environmental Policy and Engineering Solutions"
-      ]
-    },
-    {
-      title: "Future of Work and Education",
-      content: [
-        "Remote Work Technologies and Management",
-        "E-learning and Educational Technologies",
-        "Skills for the Fourth Industrial Revolution",
-        "Workplace Diversity and Inclusion in Tech Industries",
-        "Lifelong Learning and Professional Development"
-      ]
-    },
-    {
-      title: "Global Challenges and Solutions",
-      content: [
-        "Technology Solutions for Climate Change",
-        "Engineering Approaches to Public Health Crises",
-        "Smart Cities and Urban Planning",
-        "Cybersecurity and Data Privacy",
-        "Cross-cultural Management in Global Projects"
+        "Sociology and Social Change",
+        "Psychology and Behavioral Sciences",
+        "Education and Pedagogy",
+        "Political Science and International Relations",
+        "Economics and Development Studies",
+        "Anthropology and Cultural Studies"
       ]
     }
   ]
@@ -112,7 +85,7 @@ export default function ThemeAndTopics() {
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-yellow-100 text-yellow-800">Conference Themes</Badge>
-          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-yellow-400 mb-4">International Conference on Engineering, Management and Social Sciences</h2>
+          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-yellow-400 mb-4">International Conference on Engineering, Management, and Social Sciences Integration</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Bridging disciplines to address global challenges through innovation and collaboration.
           </p>
@@ -125,10 +98,10 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-gray-700">
-                The International Conference on Engineering, Management and Social Sciences (ICEMSS) brings together researchers, industry leaders, and policymakers to explore the intersections of technology, business, and society. This interdisciplinary conference aims to foster innovative solutions to global challenges by combining insights from engineering, management practices, and social sciences.
+                The International Conference on Engineering, Management, and Social Sciences Integration (ICEMSI) brings together researchers, industry leaders, and policymakers to explore the intersections of engineering innovations, management strategies, and social science perspectives. This interdisciplinary conference aims to foster innovative solutions to global challenges by combining insights from these diverse fields.
               </p>
               <p className="leading-relaxed text-lg text-gray-700 mt-4">
-                Submissions are invited for original research, case studies, and practical applications that demonstrate how integrating these fields can lead to sustainable and impactful solutions for the complex issues of our time.
+                Submissions are invited for original research, case studies, and practical applications that demonstrate how integrating engineering, management, and social sciences can lead to comprehensive and impactful solutions for the complex issues of our time.
               </p>
             </CardContent>
           </Card>
@@ -144,7 +117,7 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="mb-6 text-lg text-gray-800">
-                ICEMSS encourages submissions in the following interdisciplinary areas. We welcome innovative approaches that bridge multiple disciplines:
+                ICEMSI encourages submissions in the following interdisciplinary areas. We welcome innovative approaches that bridge multiple disciplines:
               </p>
               <Accordion type="single" collapsible className="w-full">
                 {topics.map((topic, index) => (
@@ -211,11 +184,10 @@ export default function ThemeAndTopics() {
             <CardContent className="p-6">
               <ul className="space-y-4">
                 {[
-                  { date: "May 15, 2024", event: "Abstract Submission Deadline", icon: <FileText className="h-5 w-5" /> },
-                  { date: "June 1, 2024", event: "Notification of Acceptance", icon: <Zap className="h-5 w-5" /> },
-                  { date: "July 15, 2024", event: "Full Paper Submission", icon: <File className="h-5 w-5" /> },
-                  { date: "August 1, 2024", event: "Early Bird Registration Ends", icon: <UserPlus className="h-5 w-5" /> },
-                  { date: "September 15-17, 2024", event: "Conference Dates", icon: <Calendar className="h-5 w-5" /> }
+                  { date: "January 11, 2025", event: "Early Bird Registration Deadline", icon: <UserPlus className="h-5 w-5" /> },
+                  { date: "January 19, 2025", event: "Abstract Submission Deadline", icon: <FileText className="h-5 w-5" /> },
+                  { date: "January 27, 2025", event: "Full Paper Submission Deadline", icon: <File className="h-5 w-5" /> },
+                  { date: "February 5, 2025", event: "Registration Deadline", icon: <Calendar className="h-5 w-5" /> }
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
                     <div className="mr-2 text-yellow-600">
@@ -240,7 +212,7 @@ export default function ThemeAndTopics() {
             <CardContent className="p-6">
               <ul className="space-y-4">
                 {[
-                  { highlight: "3 days of interdisciplinary knowledge sharing", icon: <Calendar className="h-5 w-5" /> },
+                  { highlight: "2 days of interdisciplinary knowledge sharing", icon: <Calendar className="h-5 w-5" /> },
                   { highlight: "Keynote speeches by world-renowned experts", icon: <Users className="h-5 w-5" /> },
                   { highlight: "Interactive workshops and panel discussions", icon: <Lightbulb className="h-5 w-5" /> },
                   { highlight: "Networking opportunities with global peers", icon: <Globe className="h-5 w-5" /> },

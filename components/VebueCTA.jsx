@@ -33,11 +33,11 @@ export default function VenueCTA() {
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="flex items-center gap-2 bg-gray-100/70 p-3 rounded-lg">
                     <MapPin className="text-primary" />
-                    <span className="font-medium">kuala lumpur, Malaysia</span>
+                    <span className="font-medium"> Delhi,India</span>
                   </div>
                   <div className="flex items-center gap-2 bg-gray-100/70 p-3 rounded-lg">
                     <Calendar className="text-primary" />
-                    <span className="font-medium">May 22-23, 2025</span>
+                    <span className="font-medium">February 19-20, 2025</span>
                   </div>
                   {/* <div className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg">
                     <Users className="text-blue-600" />

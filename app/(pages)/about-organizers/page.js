@@ -36,11 +36,11 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: April 24-25, 2025" },
-    { icon: MapPin, text: "Grand Hotel, Bangkok, Thailand" },
+    { icon: CalendarDays, text: "2-day event: February 19-20 , 2025" },
+    { icon: MapPin, text: "Delhi,India" },
     { icon: Users, text: "500+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
-    { icon: Mail, text: "info@icsthm.com" },
+    { icon: Mail, text: "info@icemss.com" },
     { icon: Phone, text: "+91 7358737843" },
   ]
 
@@ -86,12 +86,7 @@ export default function AboutCompany() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-        Zep Research, in partnership with the International Conference on Tourism Management and Hospitality,
-        is committed to driving innovation and fostering collaboration within the tourism and hospitality industries.
-          The mission is to create a platform for global knowledge exchange, promote sustainable practices, 
-          and highlight emerging trends and solutions. By connecting industry leaders, researchers, and professionals,
-          the goal is to inspire progress, share valuable insights, and contribute to the growth and sustainability of tourism and hospitality.
-            Through impactful conferences and research initiatives, this mission aims to shape a more innovative and resilient future for the global tourism industry.
+                At Zep Research, our mission is to facilitate the exchange of pioneering research, innovative ideas, and best practices across various academic and professional fields. We aim to create a collaborative environment where researchers, educators, and industry leaders come together to learn, inspire, and drive meaningful progress.
                 </p>
               </CardContent>
             </Card>
@@ -123,7 +118,7 @@ export default function AboutCompany() {
                 Join us in shaping the future of tourism and hospitality
               </CardDescription>
               <p className="text-muted-foreground">
-                October 15-17, 2024 • Grand Hotel, New York City, USA
+              19-20 February, 2025 • Delhi,India
               </p>
             </CardContent>
           </Card>

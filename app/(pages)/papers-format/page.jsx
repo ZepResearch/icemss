@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, FileText, Image, FileCode } from "lucide-react";
+import Link from "next/link";
 
 export default function PaperFormat() {
   const controls = useAnimation();
@@ -46,21 +47,21 @@ export default function PaperFormat() {
       icon: <FileText className="w-8 h-8" />,
       content:
         "The abstract should be a concise summary of your research, not exceeding 300 words. It should include the research objectives, methodology, results, and conclusions. Use clear, concise language and avoid jargon or acronyms.",
-      downloadLink: "/path-to-abstract-template.docx",
+      downloadLink: "/paperformat/Abstract_Template.docx",
     },
     {
       title: "Full Paper Format",
       icon: <FileCode className="w-8 h-8" />,
       content:
         "Full papers should be between 3000-5000 words, excluding references and appendices. Use Times New Roman, 12-point font, double-spaced. Include an abstract, keywords, introduction, methodology, results, discussion, conclusion, and references. Follow APA 7th edition for citations and references.",
-      downloadLink: "/path-to-full-paper-template.docx",
+      downloadLink: "/paperformat/Fullpaper_Template.doc",
     },
     {
       title: "Poster Format",
       icon: <Image className="w-8 h-8" />,
       content:
         "Posters should be designed in A0 size (841 x 1189 mm) in portrait orientation. Use a clear, readable font (at least 24-point for body text, larger for headings). Include a title, authors, affiliation, introduction, methods, results, conclusions, and key references. Use graphics, charts, and images to convey your research visually.",
-      downloadLink: "/path-to-poster-template.pptx",
+      downloadLink: "",
     },
   ];
 
@@ -105,13 +106,15 @@ export default function PaperFormat() {
                   <p className="text-lg mb-6 text-muted-foreground">
                     {section.content}
                   </p>
+                  <Link href={section.downloadLink}>
                   <Button
                     className="w-full sm:w-auto border-2 border-primary py-5 font-bold"
                     variant="secondary"
-                  >
+                    >
                     <Download className="mr-2 h-4 w-4 text-primary" />
                     Download {section.title} Template
                   </Button>
+                    </Link>
                 </CardContent>
               </Card>
             </motion.div>
