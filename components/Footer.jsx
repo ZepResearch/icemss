@@ -56,12 +56,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
             <Link href="/" className="inline-block mb-4">
-              {/* <Image
-                src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731574048/riqztbfvpvaqzlqk19mc.png"
+              <Image
+                src="/logo.png"
                 alt="Climate Conference Logo"
                 width={200}
                 height={80}
-              /> */}ICEMSS
+              />
             </Link>
             <div className="flex space-x-4 ml-4 mb-4">
               {socialLinks.map((item) => (

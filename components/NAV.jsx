@@ -166,13 +166,13 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 ">
         <div className="flex items-center">
           <Link href="/" className="text-2xl font-bold">
-            {/* <Image
-              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731574048/riqztbfvpvaqzlqk19mc.png"
+            <Image
+              src="/logo.png"
               alt="Climate Conference Logo"
               width={150}
               height={150}
-            /> */}
-            ICEMSS
+            />
+          
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-4 relative z-20 ">
