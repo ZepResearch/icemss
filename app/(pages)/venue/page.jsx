@@ -132,26 +132,32 @@ export default function VenuePage() {
             {
               title: "India Gate",
               description: "Visit the iconic war memorial and enjoy the surrounding gardens",
+              img:"https://plus.unsplash.com/premium_photo-1697730429201-381b71f61427?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             },
             {
               title: "Red Fort",
               description: "Explore this UNESCO World Heritage site, a symbol of Mughal architecture",
+               img:"https://plus.unsplash.com/premium_photo-1697730373510-51b7fcf2ff52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             },
             {
               title: "Qutub Minar",
               description: "Marvel at this towering minaret, another UNESCO World Heritage site",
+               img:"https://images.unsplash.com/photo-1667849521212-e9843b89f322?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             },
             {
               title: "Humayun's Tomb",
               description: "Admire the architectural beauty of this Mughal-era tomb",
+               img:"https://images.unsplash.com/photo-1620563202699-5661aefec7ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             },
             {
               title: "Akshardham Temple",
               description: "Experience the grandeur of this modern Hindu temple complex",
+               img:"https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734073737/samples/qgogwaunza75ncruxttg.png"
             },
             {
               title: "Connaught Place",
               description: "Enjoy shopping and dining in this bustling commercial center",
+               img:"https://images.unsplash.com/photo-1609338966656-926be552950d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             },
           ].map((attraction, index) => (
             <motion.div
@@ -167,6 +173,8 @@ export default function VenuePage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
+                  <Image src={attraction.img} alt={attraction.title} width={500} height={500} className="rounded-md drop-shadow-md py-2 mb-4 "
+                  />
                   <CardDescription className="text-yellow-800 dark:text-yellow-200">{attraction.description}</CardDescription>
                 </CardContent>
               </Card>

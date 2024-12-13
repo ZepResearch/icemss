@@ -45,9 +45,11 @@ export default function Buttons() {
   return (
     <section  className="py-2  max-w-7xl mx-auto ">
       <div className="container max-w-7xl mx-auto px-4">
-          <h1 className="text-center text-xl pb-3 inline-flex justify-center items-center gap-3 font-medium text-yellow-800">
+         <div className="flex justify-center items-center mx-auto">
+         <h1 className="text-center text-2xl pb-3 inline-flex justify-center items-center gap-3 font-medium text-yellow-800">
             Download Conference Materials <DownloadCloudIcon />
           </h1>
+         </div>
      
       
           <motion.div

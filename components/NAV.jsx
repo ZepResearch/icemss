@@ -118,7 +118,7 @@ const MobileNav = () => (
             href="/program"
             subItems={[
               { href: "/theme-and-topics", title: "Themes and Topics" },
-              { href: "/papers-format", title: "Paper Formats" },
+              // { href: "/papers-format", title: "Paper Formats" },
               { href: "/mode-of-presentation", title: "Mode of Presentation" },
             
             
@@ -233,13 +233,13 @@ export default function Navbar() {
                       Explore our conference themes on climate action and
                       sustainability.
                     </ListItem>
-                    <ListItem
+                    {/* <ListItem
                       href="/papers-format"
                       title="Paper Formats"
                       className="hover:bg-slate-50 hover:drop-shadow-md"
                     >
                       Check out Formats and guidlines for Paper publication
-                    </ListItem>
+                    </ListItem> */}
                     <ListItem
                       href="/mode-of-presentation"
                       title="Mode of Presentation"

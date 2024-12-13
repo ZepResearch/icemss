@@ -38,32 +38,32 @@ export default function ObjectivesSection() {
     {
       icon: Users,
       title: "Foster Interdisciplinary Collaboration",
-      description: "Encourage dialogue between researchers from Engineering, Management, and Social Sciences to promote integrated solutions and innovative thinking that address complex challenges across disciplines.",
+      description: "The conference aims to create a collaborative environment where researchers from engineering, management, and social sciences can engage in productive dialogue. This cross-disciplinary interaction will help develop integrated solutions to address the complex challenges faced by societies worldwide.",
     },
     {
       icon: Share2,
       title: "Promote Knowledge Exchange",
-      description: "Facilitate the sharing of cutting-edge research, ideas, and best practices, ensuring participants stay updated with the latest trends, advancements, and methodologies in their respective fields.",
+      description: "We strive to provide a platform for sharing the latest trends, research, and methodologies. Participants will have the opportunity to learn from each other, discuss emerging ideas, and stay updated on the most recent advancements in their respective fields..",
     },
     {
       icon: TrendingUp,
       title: "Enhance Professional Development",
-      description: "Offer opportunities for skill development through workshops, discussions, and speaker sessions, empowering participants to advance their careers and excel in research, teaching, or industry.",
+      description: "Through a series of expert-led workshops and speaker sessions, the conference will provide opportunities for participants to acquire new skills, gain insights into emerging trends, and empower themselves to advance their careers in research, academia, and industry.",
     },
     {
       icon: Globe,
       title: "Encourage Global Networking",
-      description: "Create a platform for global connections, enabling researchers, professionals, and academics to build meaningful collaborations, partnerships, and networks for future research and development.",
+      description: "– The conference will bring together professionals, researchers, and academics from all over the world, creating an ideal environment for building meaningful connections, establishing global partnerships, and expanding professional networks for future collaborations.",
     },
     {
       icon: BookOpen,
       title: "Facilitate Research Publication",
-      description: "Support researchers in publishing and disseminating their findings through recognized journals and proceedings, helping them gain visibility and credibility in global academic communities.",
+      description: "We support researchers by providing a platform to publish their research in recognized academic journals and conference proceedings. This ensures that their work gains visibility, credibility, and contributes to global academic discussions.",
     },
     {
       icon: LightbulbIcon,
       title: "Inspire Innovation and Solutions",
-      description: "Encourage participants to engage in discussions that lead to innovative solutions for real-world challenges, promoting a culture of problem-solving and forward-thinking research.",
+      description: "By fostering an environment of creative thinking and problem-solving, the conference will inspire participants to generate innovative ideas that address real-world challenges. This focus on practical solutions aims to push the boundaries of research and drive positive change in communities and industries.",
     },
   ]
 

@@ -90,18 +90,18 @@ export default function Hero() {
           >
             <div className="relative h-[600px] overflow-hidden rounded-lg">
               <Image
-                src="https://images.unsplash.com/photo-1581094482523-8555833e6aba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1506462945848-ac8ea6f609cc?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Conference Preview"
                 className="object-cover"
                 fill
                 priority
               />
-              <motion.div 
+              {/* <motion.div 
                 className="absolute inset-0 bg-gradient-to-t from-background/80 to-background/20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-              />
+              /> */}
               <motion.div 
                 className="absolute bottom-6 left-6 right-6 grid gap-4 p-6 bg-background/90 backdrop-blur-sm rounded-lg"
                 initial={{ y: 20, opacity: 0 }}
