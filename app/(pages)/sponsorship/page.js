@@ -12,7 +12,7 @@ export default function SponsorshipContact() {
         <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
           <div className="relative h-[400px] md:h-[600px]">
             <Image
-              src="https://illustrations.popsy.co/amber/work-party.svg"
+              src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734175975/samples/qxwj713rkbhcllw5jcvt.jpg"
               alt="Conference sponsorship"
               layout="fill"
               objectFit="cover"
@@ -22,7 +22,7 @@ export default function SponsorshipContact() {
           <div className="space-y-8">
             <div>
               <h1 className="text-4xl font-bold mb-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-yellow-800">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                   Become a Sponsor
                 </span>
               </h1>
@@ -31,38 +31,38 @@ export default function SponsorshipContact() {
               </p>
             </div>
 
-            <Card className="bg-white shadow-lg border-2 border-yellow-300">
+            <Card className="bg-white shadow-lg border-2 border-blue-300">
               <CardHeader>
-                <CardTitle className="text-2xl font-semibold text-yellow-700">Why Sponsor?</CardTitle>
+                <CardTitle className="text-2xl font-semibold text-blue-700">Why Sponsor?</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Users className="h-5 w-5 flex-shrink-0 text-yellow-600" />
+                  <Users className="h-5 w-5 flex-shrink-0 text-blue-600" />
                   <span>Network with 1000+ professionals and academics</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Lightbulb className="h-5 w-5 flex-shrink-0 text-yellow-600" />
+                  <Lightbulb className="h-5 w-5 flex-shrink-0 text-blue-600" />
                   <span>Showcase your innovative solutions and research</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Award className="h-5 w-5 flex-shrink-0 text-yellow-600" />
+                  <Award className="h-5 w-5 flex-shrink-0 text-blue-600" />
                   <span>Gain recognition as a leader in interdisciplinary innovation</span>
                 </div>
               </CardContent>
             </Card>
 
             <div className="space-y-4">
-              <h2 className="text-2xl font-semibold text-yellow-700">Contact Our Sponsorship Team</h2>
+              <h2 className="text-2xl font-semibold text-blue-700">Contact Our Sponsorship Team</h2>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 flex-shrink-0 text-yellow-600" />
+                <Phone className="h-5 w-5 flex-shrink-0 text-blue-600" />
                 <span>+91 7358737843</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 flex-shrink-0 text-yellow-600" />
+                <Mail className="h-5 w-5 flex-shrink-0 text-blue-600" />
                 <span>info@icemss.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 flex-shrink-0 text-yellow-600" />
+                <MapPin className="h-5 w-5 flex-shrink-0 text-blue-600" />
                 <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
               </div>
             </div>
@@ -71,19 +71,19 @@ export default function SponsorshipContact() {
 
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-8">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-600 to-yellow-800">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
               Sponsorship Packages
             </span>
           </h2>
           <SponsorshipPackages />
         </div>
 
-        <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg shadow-xl p-8 text-center">
+        <div className="bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Drive Innovation?</h2>
           <p className="text-xl text-white mb-6">
             Don&apos;t miss this opportunity to showcase your brand at the International Conference on Engineering, Management and Social Sciences.
           </p>
-          <Button className="bg-white text-yellow-700 hover:bg-yellow-100 text-lg px-8 py-3 rounded-full font-semibold transition-colors duration-300">
+          <Button className="bg-white text-blue-700 hover:bg-blue-100 text-lg px-8 py-3 rounded-full font-semibold transition-colors duration-300">
             <Link href={'/contact'}>Request Sponsorship Information</Link>
           </Button>
         </div>

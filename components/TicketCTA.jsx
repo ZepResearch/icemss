@@ -32,7 +32,7 @@ export default function TicketCTA() {
                 </Badge>
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold -tracking-tighter underline underline-offset-4 decoration-yellow-500">
+                <h3 className="text-2xl font-bold -tracking-tighter underline underline-offset-4 decoration-blue-500">
                   {ticket.name}
                 </h3>
                 <Image
@@ -61,14 +61,14 @@ export default function TicketCTA() {
                 <ul className="mt-6 space-y-3">
                   {ticket.features.map((feature, i) => (
                     <li key={i} className="flex">
-                      <Check className="mr-2 h-5 w-5 text-yellow-500" />
+                      <Check className="mr-2 h-5 w-5 text-blue-500" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Link
                   href="/registration"
-                  className="mt-8 block rounded-lg bg-yellow-400 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-yellow-700"
+                  className="mt-8 block rounded-lg bg-blue-400 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700"
                 >
                   Register Now
                 </Link>
@@ -90,7 +90,7 @@ const tickets = [
     price: "₹4000-5000",
     dprice:"$99-150",
     period: "/person",
-    img: "https://illustrations.popsy.co/yellow/keynote-presentation.svg",
+    img: "https://illustrations.popsy.co/blue/keynote-presentation.svg",
     features: [
       "Full conference access",
       "Networking sessions",
@@ -104,7 +104,7 @@ const tickets = [
     price: "₹1500-2000",
     dprice:"$69-99",
     period: "/person",
-    img: "https://illustrations.popsy.co/yellow/graphic-design.svg",
+    img: "https://illustrations.popsy.co/blue/graphic-design.svg",
 
     features: [
       "All Professional Pass benefits",

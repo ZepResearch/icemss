@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 
 const footerSections = [
   {
@@ -42,17 +42,23 @@ const footerSections = [
 
 const socialLinks = [
   { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61561809783777", icon: Facebook },
+  { name: "Instagram", href: "https://www.instagram.com/zepresearch/", icon: Instagram },
   { name: "Twitter", href: "https://x.com/Zepresearch", icon: Twitter },
   { name: "LinkedIn", href: "https://www.linkedin.com/company/zep-research/", icon: Linkedin },
-  { name: "Instagram", href: "https://www.instagram.com/zepresearch/", icon: Instagram },
   { name: "Youtube", href: "https://youtube.com/@zepresearch", icon: Youtube },
-
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-yellow-900 border-t-2 border-yellow-400">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="relative text-white">
+      <div 
+        className="absolute inset-0 bg-cover bg-center z-0"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80')"
+        }}
+      />
+      <div className="absolute inset-0 bg-blue-900 opacity-80 z-10" />
+      <div className="container mx-auto px-4 py-12 relative z-20">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
             <Link href="/" className="inline-block mb-4">
@@ -68,7 +74,7 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-yellow-600 hover:text-yellow-800 transition-colors"
+                  className="text-blue-200 hover:text-white transition-colors"
                   aria-label={item.name}
                 >
                   <item.icon className="h-6 w-6" />
@@ -79,7 +85,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:w-2/3">
             {footerSections.map((section) => (
               <div key={section.title} className="space-y-4">
-                <h3 className="text-lg font-semibold text-primary dark:text-yellow-300">
+                <h3 className="text-lg font-semibold text-blue-200">
                   {section.title}
                 </h3>
                 <ul className="space-y-2">
@@ -87,7 +93,7 @@ export default function Footer() {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="hover:text-yellow-500 transition-colors"
+                        className="hover:text-blue-200 transition-colors"
                       >
                         {link.name}
                       </Link>
@@ -98,8 +104,8 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t text-center">
-          <p className="text-sm ">
+        <div className="mt-12 pt-8 border-t border-blue-700 text-center">
+          <p className="text-sm text-blue-200">
             &copy; {new Date().getFullYear()} International Conference on
             Climate Change and Sustainability. All rights reserved.
           </p>
@@ -108,3 +114,4 @@ export default function Footer() {
     </footer>
   );
 }
+

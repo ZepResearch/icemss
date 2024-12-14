@@ -15,7 +15,7 @@ export default function Component() {
       description:
         "Present your research through a live speech to the audience. Oral presentations offer a dynamic way to share your findings, engage with your peers, and receive immediate feedback. This format allows for in-depth discussion of your methodology, results, and conclusions, providing a platform to showcase your expertise in tourism management and hospitality.",
       icon: Mic,
-      image: "https://illustrations.popsy.co/yellow/woman-with-a-laptop.svg",
+      image: "https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "The presentation times for oral sessions are as follows: contributed presentations are 15 minutes. Please note: You must provide your presentation for preloading. Please submit your presentation (in English, copy-edited and proofread) via email to info[@]ictmh.org, no longer than 10 business days before the events starts. If for any reason, you are unable to submit your presentation in advance of the Conference, then you can preload your presentation to a laptop via registration desk area when you arrive at the Conference, you must preload this at least two hours before you are due to present.",
     },
@@ -24,7 +24,7 @@ export default function Component() {
       description:
         "Showcase your work visually with an academic poster. Poster presentations offer a unique opportunity to present your research in a concise, visually appealing format. This mode allows for more informal, one-on-one interactions with conference attendees, facilitating in-depth discussions and networking opportunities. It's an excellent way to present preliminary findings or ongoing research in the field of tourism and hospitality management.",
       icon: ImageIcon,
-      image: "https://illustrations.popsy.co/yellow/web-design.svg",
+      image: "https://images.unsplash.com/photo-1493972741200-51d407e0ee33?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "Each Poster will be displayed at the Conference for 03 Minutes. Posters should be one page PDF or Image to be shown in Webinar. All Posters will be uploaded on the Conference Website before the conference for all the participants to download or go through it",
     },
@@ -33,7 +33,7 @@ export default function Component() {
       description:
         "Present remotely through our online conference platform. Virtual presentations offer flexibility and accessibility, allowing you to share your research with a global audience without the need for travel. This mode of presentation leverages technology to facilitate real-time interaction, Q&A sessions, and networking opportunities, ensuring that distance is no barrier to participating in this important tourism and hospitality management conference.",
       icon: Video,
-      image: "https://illustrations.popsy.co/yellow/customer-support.svg",
+      image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
         "Join Live Virtual Sessions. The conference program for Virtual presentations will be emailed to participants one week before the conference. Virtual presentations will be delivered via an online electronic forum (Webinar). Virtual session attendees will receive the Webinar invitation link a few days before the Conference. Joining the webinar session is easy and takes just a few seconds. Simply click the link in the invitation, you will proceed to your session immediately. Just remember to register first if you wish to attend as a Virtual presenter.",
     },
@@ -65,7 +65,7 @@ export default function Component() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl font-bold text-center mb-8 text-orange-600 dark:text-orange-300"
+          className="text-5xl font-bold text-center mb-8 text-prbg-primary/10 dark:text-prbg-primary/10"
         >
          
         </motion.h1>
@@ -94,11 +94,11 @@ export default function Component() {
                 <img
                   src={mode.image}
                   alt={mode.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
               <div className="md:w-1/2 p-6 md:p-8">
-                <h2 className="text-3xl font-bold mb-4 text-yellow-400 dark:text-yellow-400 flex items-center">
+                <h2 className="text-3xl font-bold mb-4 text-blue-400 dark:text-blue-400 flex items-center">
                   <mode.icon className="w-8 h-8 mr-2" />
                   {mode.title}
                 </h2>
@@ -106,7 +106,7 @@ export default function Component() {
                   {mode.description}
                 </p>
                 <Button
-                  className="mb-4 bg-yellow-500 hover:bg-yellow-600 text-white"
+                  className="mb-4 bg-blue-500 hover:bg-blue-600 text-white"
                   onClick={() =>
                     setActiveMode(activeMode === index ? null : index)
                   }
@@ -120,7 +120,7 @@ export default function Component() {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <p className="text-gray-700 dark:text-gray-300 mt-4 p-4 bg-orange-100 dark:bg-orange-900 rounded-lg">
+                    <p className="text-gray-700 dark:text-gray-300 mt-4 p-4 bg-primary/10 dark:bg-primary/30 rounded-lg">
                       {mode.content}
                     </p>
                   </motion.div>

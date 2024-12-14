@@ -74,7 +74,7 @@ export default function ConferenceSchedule() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-[300px_1fr]">
-          <Card className="border-yellow-200">
+          <Card className="border-blue-200">
             <CardHeader>
               <CardTitle>February 2025</CardTitle>
             </CardHeader>
@@ -86,8 +86,8 @@ export default function ConferenceSchedule() {
                 month={startDate}
                 className="w-full"
                 classNames={{
-                  day_selected: "bg-yellow-500 text-primary-foreground hover:bg-yellow-500 mr-0.5",
-                  day_today: "bg-yellow-100 text-yellow-900",
+                  day_selected: "bg-blue-500 text-primary-foreground hover:bg-blue-500 mr-0.5",
+                  day_today: "bg-blue-100 text-blue-900",
                 }}
                 
               />
@@ -97,7 +97,7 @@ export default function ConferenceSchedule() {
           <ScrollArea className="h-[600px]">
             <div className="space-y-8">
               {scheduleData.map((day, index) => (
-                <Card key={index} className="border-yellow-200">
+                <Card key={index} className="border-blue-200">
                   <CardHeader>
                     <CardTitle>{day.date}</CardTitle>
                   </CardHeader>
@@ -108,10 +108,10 @@ export default function ConferenceSchedule() {
                           key={itemIndex}
                           className={cn(
                             "grid grid-cols-[140px_1fr] gap-4 p-3 rounded-lg",
-                            "bg-yellow-50/50 hover:bg-yellow-100/50 transition-colors"
+                            "bg-blue-50/50 hover:bg-blue-100/50 transition-colors"
                           )}
                         >
-                          <div className="text-sm font-medium text-yellow-900">
+                          <div className="text-sm font-medium text-blue-900">
                             {item.time}
                           </div>
                           <div className="text-sm">{item.title}</div>

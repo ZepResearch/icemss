@@ -145,7 +145,7 @@ const MobileNav = () => (
         </Accordion>
         <div className="mt-6">
         <SheetClose asChild>
-          <Button asChild variant='outline' className="w-full mb-2 border-yellow-400 text-yellow-400">
+          <Button asChild variant='outline' className="w-full mb-2 border-blue-400 text-blue-400">
               <Link href="/sponsorship">Exhibit & Sponsor</Link>
             </Button>
             </SheetClose>
@@ -162,13 +162,14 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b border-yellow-200 dark:border-yellow-800 ">
+    <div className="border-b border-primaray dark:border-primaray  py-2 ">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 ">
         <div className="flex items-center">
           <Link href="/" className="text-2xl font-bold">
             <Image
               src="/logo.png"
               alt="Climate Conference Logo"
+              className="drop-shadow-2xl "
               width={150}
               height={150}
             />
@@ -298,7 +299,7 @@ export default function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button asChild variant='outline' className="w-full  border-yellow-400 text-yellow-400 hover:text-yellow-600 font-medium">
+          <Button asChild variant='outline' className="w-full  border-blue-400 text-blue-400 hover:text-blue-600 font-medium">
               <Link href="/sponsorship">Exhibit & Sponsor</Link>
             </Button>
           <Button asChild className="">

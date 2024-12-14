@@ -8,7 +8,7 @@ export default function Testimonial() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex items-center gap-2">
-            <div className="rounded-full bg-yellow-100 p-2">
+            <div className="rounded-full bg-primary/10 p-2">
               <Award className="h-6 w-6 text-primary" />
             </div>
             <h2 className="text-xl font-bold text-gray-900 md:text-2xl">
@@ -22,7 +22,7 @@ export default function Testimonial() {
                 .map((_, i) => (
                   <Star
                     key={i}
-                    className="h-5 w-5 fill-primary text-primary"
+                    className="h-5 w-5 fill-yellow-400 text-yellow-400 "
                   />
                 ))}
             </div>

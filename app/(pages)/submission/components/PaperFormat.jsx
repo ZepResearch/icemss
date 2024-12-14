@@ -39,7 +39,7 @@ export default function FormatCards() {
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {formats.map((format, index) => (
           <Card key={index} className="flex flex-col h-full">
-            <CardHeader className="bg-[#FFD700] space-y-1 flex flex-row items-center gap-2">
+            <CardHeader className="bg-blue-500 space-y-1 flex flex-row items-center gap-2">
               {format.icon}
               <CardTitle className="text-lg font-bold">{format.title}</CardTitle>
             </CardHeader>

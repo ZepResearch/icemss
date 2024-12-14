@@ -102,7 +102,7 @@ export default function ContactUs() {
             transition={{ delay: 0.2 }}
           >
             <Image
-              src="https://illustrations.popsy.co/yellow/telephone-call.svg"
+              src="https://illustrations.popsy.co/blue/telephone-call.svg"
               alt="Contact Us"
               width={400}
               height={300}

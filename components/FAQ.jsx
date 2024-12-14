@@ -45,22 +45,22 @@ export default function FAQ() {
       <div className="mx-auto max-w-7xl px-6 py-24 sm:pt-32 lg:px-8 lg:py-40">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight underline underline-offset-4 decoration-primary dark:text-yellow-300">
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight underline underline-offset-4 decoration-primary dark:text-blue-300">
               Frequently Asked Questions
             </h2>
-            <p className="mt-4 text-lg leading-7  dark:text-yellow-200">
+            <p className="mt-4 text-lg leading-7  dark:text-blue-200">
               Can&apos;t find the answer you&apos;re looking for? Reach out to
               our{" "}
               <a
                 href="#contact"
-                className="font-semibold text-yellow-800 hover:text-yellow-700 underline"
+                className="font-semibold text-blue-800 hover:text-blue-700 underline"
               >
                 conference support team
               </a>
               .
             </p>
             <Image
-              src="https://illustrations.popsy.co/yellow/question-mark.svg"
+              src="https://illustrations.popsy.co/blue/question-mark.svg"
               alt="Climate Conference Illustration"
               width={300}
               height={300}
@@ -111,20 +111,20 @@ export default function FAQ() {
               <div className="flex flex-col justify-start p-4  items-start mt-10 border-l-2 border-t-2 max-w-2xl  ">
               <div className="space-y-4 text-sm font-semibold">
                 <div className="flex items-end">
-                  <Mail className="mr-2 text-yellow-700" />
+                  <Mail className="mr-2 text-blue-700" />
                   <span>info@icemss.com</span>
                 </div>
                 <div className="flex items-end">
-                  <Phone className="mr-2 text-yellow-700" />
+                  <Phone className="mr-2 text-blue-700" />
                   <span>+91 7358737843</span>
                 </div>
                 <div className="flex items-end ">
-                  <MapPin className="mr-2  text-yellow-700" />
+                  <MapPin className="mr-2  text-blue-700" />
                   <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
                 </div>
               </div>
               < Link href={'/contact'}>
-              <Button variant='outline' className='border-yellow-300 mt-7'>
+              <Button variant='outline' className='border-blue-300 mt-7'>
                 Contact us
               </Button>
               </Link>

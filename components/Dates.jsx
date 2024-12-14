@@ -35,7 +35,7 @@ export default function DatesSection() {
         <div className="space-y-8">
           <div className="text-center space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Important <span className="underline underline-offset-4 decoration-yellow-400">Dates</span>
+              Important <span className="underline underline-offset-4 decoration-primary">Dates</span>
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-lg">
               Mark your calendar for these key conference milestones
@@ -55,10 +55,10 @@ export default function DatesSection() {
                 <div className="space-y-2 ">
                   <span className={cn(
                     "text-sm font-medium drop-shadow-sm ",
-                    index === 0 && "text-yellow-600",
-                    index === 1 && "text-yellow-600",
-                    index === 2 && "text-yellow-600",
-                    index === 3 && "text-yellow-600",
+                    index === 0 && "text-prdecoration-primary",
+                    index === 1 && "text-prdecoration-primary",
+                    index === 2 && "text-prdecoration-primary",
+                    index === 3 && "text-prdecoration-primary",
                   )}>
                     {item.date}
                   

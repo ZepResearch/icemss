@@ -43,10 +43,10 @@ export default function Buttons() {
  
 
   return (
-    <section  className="py-2  max-w-7xl mx-auto ">
+    <section  className="py-4  max-w-7xl mx-auto  ">
       <div className="container max-w-7xl mx-auto px-4">
          <div className="flex justify-center items-center mx-auto">
-         <h1 className="text-center text-2xl pb-3 inline-flex justify-center items-center gap-3 font-medium text-yellow-800">
+         <h1 className="text-center text-2xl pb-6 inline-flex justify-center items-center gap-3 font-medium text-blue-800">
             Download Conference Materials <DownloadCloudIcon />
           </h1>
          </div>
@@ -62,7 +62,7 @@ export default function Buttons() {
               <motion.a
               href={button.href}
                 key={button.text}
-                className="bg-yellow-400 hover:bg-yellow-500/80 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 text-sm sm:text-sm text-center drop-shadow-sm"
+                className="bg-blue-400 hover:bg-blue-500/80 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 text-sm sm:text-sm text-center drop-shadow-sm"
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

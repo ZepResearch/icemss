@@ -84,17 +84,17 @@ export default function ThemeAndTopics() {
     >
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
-          <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-yellow-100 text-yellow-800">Conference Themes</Badge>
-          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-yellow-400 mb-4">International Conference on Engineering, Management, and Social Sciences Integration</h2>
+          <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-primary text-white">Conference Themes</Badge>
+          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-primary mb-4">International Conference on Engineering, Management, and Social Sciences Integration</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Bridging disciplines to address global challenges through innovation and collaboration.
           </p>
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-yellow-200">
-            <CardHeader className="bg-yellow-400 text-white p-6">
-              <CardTitle className="text-3xl">Conference Overview</CardTitle>
+          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary">
+            <CardHeader className="bg-primary/50 text-white p-6">
+              <CardTitle className="text-3xl drop-shadow-lg">Conference Overview</CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-gray-700">
@@ -108,8 +108,8 @@ export default function ThemeAndTopics() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12">
-          <Card className="overflow-hidden shadow-2xl bg-gradient-to-br from-yellow-50 to-indigo-50 border-2 border-yellow-200">
-            <CardHeader className="bg-yellow-100 text-inyellowdigo-900 p-6">
+          <Card className="overflow-hidden shadow-2xl  border-2 border-primary">
+            <CardHeader className="bg-primary text-white p-6">
               <CardTitle className="text-3xl flex items-center">
                 <Lightbulb className="mr-2 h-8 w-8" />
                 Conference Tracks
@@ -122,7 +122,7 @@ export default function ThemeAndTopics() {
               <Accordion type="single" collapsible className="w-full">
                 {topics.map((topic, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-lg font-semibold text-yellow-950">{topic.title}</AccordionTrigger>
+                    <AccordionTrigger className="text-lg font-semibold text-primary">{topic.title}</AccordionTrigger>
                     <AccordionContent>
                       <ul className="list-disc pl-6">
                         {topic.content.map((item, itemIndex) => (
@@ -138,8 +138,8 @@ export default function ThemeAndTopics() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12">
-          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-yellow-200">
-            <CardHeader className="bg-yellow-400 text-white p-6">
+          <Card className="overflow-hidden shadow-2xl bg-white border-2 ">
+            <CardHeader className="bg-primary/70 text-white p-6">
               <CardTitle className="text-3xl flex items-center">
                 <FileText className="mr-2 h-8 w-8" />
                 Submission Guidelines
@@ -160,13 +160,13 @@ export default function ThemeAndTopics() {
 
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 mt-12 justify-center items-center mx-auto">
           <Link href={'/submission'}>
-            <Button className="flex-1 text-xl py-8 px-12 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 bg-yellow-400 hover:bg-yellow-500 text-white">
+            <Button className="flex-1 text-xl py-8 px-12 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 bg-primary/90 hover:bg-primary text-white">
               <FileText className="mr-2 h-6 w-6" />
               Submit Your Paper
             </Button>
           </Link>
           <Link href={'/registration'}>
-            <Button className="flex-1 text-xl py-8 px-12 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 bg-yellow-400 hover:bg-yellow-500 text-white">
+            <Button className="flex-1 text-xl py-8 px-12 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 bg-primary/80 hover:bg-primary text-white">
               <UserPlus className="mr-2 h-6 w-6" />
               Register Now
             </Button>
@@ -174,10 +174,10 @@ export default function ThemeAndTopics() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-yellow-200">
-            <CardHeader className="bg-yellow-200  p-6">
+          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary/40">
+            <CardHeader className="bg-primary/40 text-white  p-6">
               <CardTitle className="text-2xl flex items-center">
-                <Calendar className="mr-2 h-6 w-6 " />
+                <Calendar className="mr-2 h-6 w-6 drop-shadow-2xl " />
                 Key Dates
               </CardTitle>
             </CardHeader>
@@ -190,7 +190,7 @@ export default function ThemeAndTopics() {
                   { date: "February 5, 2025", event: "Registration Deadline", icon: <Calendar className="h-5 w-5" /> }
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <div className="mr-2 text-yellow-600">
+                    <div className="mr-2 text-primary">
                       {item.icon}
                     </div>
                     <span className="text-base text-gray-700">
@@ -202,8 +202,8 @@ export default function ThemeAndTopics() {
             </CardContent>
           </Card>
 
-          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-yellow-200">
-            <CardHeader className="bg-yellow-300 text-white p-6">
+          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary">
+            <CardHeader className="bg-primary text-white p-6">
               <CardTitle className="text-2xl flex items-center">
                 <Globe className="mr-2 h-6 w-6" />
                 Conference Highlights
@@ -219,7 +219,7 @@ export default function ThemeAndTopics() {
                   { highlight: "Exhibition of cutting-edge technologies", icon: <Zap className="h-5 w-5" /> }
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <div className="mr-2 text-yellow-600">
+                    <div className="mr-2 text-primary">
                       {item.icon}
                     </div>
                     <span className="text-base text-gray-700">

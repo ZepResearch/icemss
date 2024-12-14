@@ -8,7 +8,7 @@ export default function CTACancle() {
   return (
     <div className="py-12 px-4 bg-background">
       <div className="max-w-3xl mx-auto">
-        <Alert className="bg-yellow-50 border-primary">
+        <Alert className="bg-blue-50 border-primary">
           <AlertCircle className="h-4 w-4 text-primary" />
           <AlertTitle className="text-primary font-semibold text-3xl">
             Cancellation Policy

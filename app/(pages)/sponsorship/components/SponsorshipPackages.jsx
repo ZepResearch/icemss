@@ -10,7 +10,7 @@ const packages = [
   {
     name: "Platinum",
     price: 15000,
-    color: "bg-gradient-to-br from-yellow-400 to-yellow-600",
+    color: "bg-gradient-to-br from-blue-400 to-blue-600",
     icon: Star,
     benefits: [
       "5 VIP passes for the conference",
@@ -27,7 +27,7 @@ const packages = [
   {
     name: "Gold",
     price: 12000 ,
-    color: "bg-gradient-to-br from-yellow-300 to-yellow-500",
+    color: "bg-gradient-to-br from-blue-300 to-blue-500",
     icon: Diamond,
     benefits: [
       "3 VIP passes for the conference",
@@ -44,7 +44,7 @@ const packages = [
   {
     name: "Silver",
     price: 10000 ,
-    color: "bg-gradient-to-br from-yellow-200 to-yellow-400",
+    color: "bg-gradient-to-br from-blue-200 to-blue-400",
     icon: Award,
     benefits: [
       "2 VIP passes for the conference",
@@ -59,7 +59,7 @@ const packages = [
   {
     name: "Bronze",
     price: 7500 ,
-    color: "bg-gradient-to-br from-yellow-100 to-yellow-300",
+    color: "bg-gradient-to-br from-blue-100 to-blue-300",
     icon: Medal,
     benefits: [
       "1 VIP pass for the conference",
@@ -148,8 +148,8 @@ export function SponsorshipPackages() {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
       {packages.map((pkg, index) => (
-        <Card key={index} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl border-2 border-yellow-400">
-          <CardHeader className={`${pkg.color} text-yellow-900 p-6`}>
+        <Card key={index} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl border-2 border-blue-400">
+          <CardHeader className={`${pkg.color} text-blue-900 p-6`}>
             <div className="flex items-center justify-between">
               <CardTitle className="text-2xl font-bold">{pkg.name}</CardTitle>
               <pkg.icon className="h-8 w-8" />
@@ -160,7 +160,7 @@ export function SponsorshipPackages() {
             <ul className="space-y-2">
               {pkg.benefits.map((benefit, i) => (
                 <li key={i} className="flex items-start">
-                  <Check className="h-5 w-5 text-yellow-600 mr-2 flex-shrink-0 mt-0.5" />
+                  <Check className="h-5 w-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
                   <span className="text-sm">{benefit}</span>
                 </li>
               ))}
@@ -168,7 +168,7 @@ export function SponsorshipPackages() {
           </CardContent>
           <CardFooter className="p-6">
             <Button 
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-yellow-900"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-blue-900"
               onClick={() => paymentCCAvenue(pkg.name, pkg.price)}
               disabled={isLoading === pkg.name}
             >

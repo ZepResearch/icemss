@@ -158,7 +158,7 @@ export default function SubmitForm() {
       <div className="container mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <h2 className="text-3xl font-bold text-yellow-500 mb-4">
+            <h2 className="text-3xl font-bold text-blue-500 mb-4">
               Paper Submission
             </h2>
             <p className="text-gray-600 mb-6">
@@ -166,7 +166,7 @@ export default function SubmitForm() {
               guidance.
             </p>
             <img
-              src="https://illustrations.popsy.co/yellow/paper-plane.svg"
+              src="https://illustrations.popsy.co/blue/paper-plane.svg"
               alt="Product screenshot"
               className=""
               width={400}
@@ -175,7 +175,7 @@ export default function SubmitForm() {
           </div>
           <Card className="lg:col-span-2">
             <CardHeader>
-              <CardTitle className="text-2xl underline underline-offset-2 decoration-yellow-500">
+              <CardTitle className="text-2xl underline underline-offset-2 decoration-blue-500">
                 Submit Your Paper
               </CardTitle>
             </CardHeader>

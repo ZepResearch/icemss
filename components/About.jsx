@@ -46,7 +46,7 @@ export default function AboutSection() {
   ]
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-background to-primary/5">
+    <section className="w-full py-12 md:py-24 lg:py-32 ">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <motion.div
@@ -64,7 +64,7 @@ export default function AboutSection() {
                 Join us for an enriching experience that brings together the brightest minds in engineering, management, and social sciences for groundbreaking discussions and collaborations.
               </p>
               <Link href={'/about-conference'}>
-              <Button className='border-2 border-yellow-200 mt-4' variant='outline'>Learn more</Button>
+              <Button className='border-2 border-blue-200 mt-4' variant='outline'>Learn more</Button>
               </Link>
             </motion.div>
             <motion.div
@@ -93,9 +93,10 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
             className="relative lg:mt-0"
           >
-            <Image src={'https://illustrations.popsy.co/yellow/work-party.svg'}
-                    width={500}
-                    height={500}
+            <Image src={'https://images.unsplash.com/photo-1560439514-e960a3ef5019?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
+                    width={700}
+                    height={700}
+                    className="rounded-xl"
                     alt="aboutimg"
                     />
             {/* <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-primary/20 to-background/20 backdrop-blur-[2px]" />
