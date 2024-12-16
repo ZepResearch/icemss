@@ -12,14 +12,16 @@ const footerSections = [
       { name: "Sponsorship", href: "/sponsorship" },
     ],
   },
-  {
-    title: "Call for Papers",
-    links: [
-      { name: "Themes and Topics", href: "/theme-and-topics" },
-      { name: "Submission Guidelines", href: "/submission-guidelines" },
-      { name: "Presentation Formats", href: "/presentation-formats" },
-    ],
-  },
+    {
+      title: "Call for Papers",
+      links: [
+        { name: "Themes and Topics", href: "/theme-and-topics" },
+    
+        { name: "Mode of Presentation", href: "/mode-of-presentation" },
+        { name: "Conference Dates", href: "/schedule" },
+
+      ],
+    },
   {
     title: "Quick Links",
     links: [

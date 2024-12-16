@@ -7,12 +7,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DownloadCloudIcon } from "lucide-react";
 
 const buttons = [
-  { text: "Conference Poster", href: "/poster.pdf" },
+  { text: "Conference Poster", href: "/" },
   { text: "Registration Form", href: "/paperformat/Registration_Form.pdf" },
   { text: "Manuscript Template", href: "/paperformat/Fullpaper_Template.doc" },
   { text: "Abstract Template", href: "/paperformat/Abstract_Template.docx" },
   { text: "Copyright Form", href: "/paperformat/Copyright_Form.pdf" },
-  { text: "Conference Brochure", href: "/brochure.pdf" },
+  { text: "Conference Brochure", href: "/" },
 ];
 
 const containerVariants = {
