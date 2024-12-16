@@ -23,6 +23,7 @@ export const metadata = {
 function page() {
   return (
     <div>
+      <h1></h1>
       <AboutCompany/>
     </div>
   )

@@ -20,6 +20,7 @@ export const metadata = {
 function page() {
   return (
     <div>
+      <h1></h1>
       <ThemeAndTopics/> 
     </div>
   )

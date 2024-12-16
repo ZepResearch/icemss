@@ -18,7 +18,7 @@ export const metadata = {
 }
 function page() {
   return (
-    <div>
+    <div><h1></h1>
         <OrganizingCommittee/>
         <ScientificCommittee/>  
         <IACommitte/>

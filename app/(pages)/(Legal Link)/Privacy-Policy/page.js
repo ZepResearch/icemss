@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
           animate="visible"
           variants={fadeIn}
         >
-          Privacy Policy
+          Privacy policy
         </motion.h1>
         <motion.div
           initial="hidden"

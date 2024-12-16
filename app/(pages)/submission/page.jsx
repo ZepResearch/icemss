@@ -21,6 +21,7 @@ export const metadata = {
 function page() {
   return (
     <div>
+      <h1></h1>
       <SubmitForm />
    <FormatCards/>
     </div>
