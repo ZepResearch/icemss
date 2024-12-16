@@ -48,17 +48,17 @@ export default function TermsAndConditions() {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold underline underline-offset-4 decoration-yellow-500 mb-8 text-center">Terms and Conditions</h1>
+        <h1 className="text-4xl font-bold underline underline-offset-4 decoration-blue-500 mb-8 text-center">Terms and Conditions</h1>
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <p className="text-yellow-900 mb-4">
+          <p className="text-blue-900 mb-4">
             Welcome to the Terms and Conditions for the International Conference on Engineering, Management and Social Sciences (ICEMSS). 
             Please read these terms carefully before registering for the conference.
           </p>
-          <ScrollArea className="h-[60vh] rounded-md border border-yellow-200 p-4">
+          <ScrollArea className="h-[60vh] rounded-md border border-blue-200 p-4">
             <Accordion type="single" collapsible className="w-full">
               {sections.map((section, index) => (
                 <AccordionItem value={`item-${index}`} key={index}>
-                  <AccordionTrigger className="text-yellow-600">
+                  <AccordionTrigger className="text-blue-600">
                     {section.title}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-700">
@@ -70,8 +70,8 @@ export default function TermsAndConditions() {
           </ScrollArea>
         </div>
         <div className="text-center">
-          <p>Last updated: <span className="font-semibold text-yellow-600">{new Date().toLocaleDateString()}</span></p>
-          <p>For any questions regarding these Terms and Conditions, please contact us at <a className="font-semibold text-yellow-600 hover:underline" href="mailto:info@icemss.com">info@icemss.com</a></p>
+          <p>Last updated: <span className="font-semibold text-blue-600">{new Date().toLocaleDateString()}</span></p>
+          <p>For any questions regarding these Terms and Conditions, please contact us at <a className="font-semibold text-blue-600 hover:underline" href="mailto:info@icemss.com">info@icemss.com</a></p>
         </div>
       </div>
     </div>

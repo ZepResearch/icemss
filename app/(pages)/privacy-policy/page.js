@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
     <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.h1 
-          className="text-4xl font-bold text-center text-yellow-800 mb-12"
+          className="text-4xl font-bold text-center text-blue-800 mb-12"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
@@ -58,29 +58,29 @@ export default function PrivacyPolicy() {
           variants={fadeIn}
           transition={{ delay: 0.2 }}
         >
-          <Card className="bg-white border-2 border-yellow-200">
+          <Card className="bg-white border-2 border-blue-200">
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-yellow-700">
+              <CardTitle className="text-2xl font-semibold text-blue-700">
                 International Conference on Engineering, Management and Social Sciences
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-6 text-yellow-800">
+              <p className="mb-6 text-blue-800">
                 Your privacy and the protection of your personal and academic information are of utmost importance to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you participate in our conference or use our website.
               </p>
               <Accordion type="single" collapsible className="w-full">
                 {policies.map((policy, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-lg font-medium text-yellow-700">
+                    <AccordionTrigger className="text-lg font-medium text-blue-700">
                       {policy.title}
                     </AccordionTrigger>
-                    <AccordionContent className="text-yellow-800">
+                    <AccordionContent className="text-blue-800">
                       {policy.content}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
-              <p className="mt-6 text-sm text-yellow-600">
+              <p className="mt-6 text-sm text-blue-600">
                 Last updated: {new Date().toLocaleDateString()}
               </p>
             </CardContent>
