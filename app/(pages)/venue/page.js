@@ -1,4 +1,5 @@
 import React from 'react'
+import VenuePage from './Content'
 
 export const metadata = {
   title: 'Venue | ICEMSS 2025',
