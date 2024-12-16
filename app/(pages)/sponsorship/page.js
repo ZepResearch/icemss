@@ -4,7 +4,21 @@ import { Button } from "@/components/ui/button"
 import { Phone, Mail, MapPin, Users, Lightbulb, Award } from 'lucide-react'
 import { SponsorshipPackages } from "./components/SponsorshipPackages"
 import Link from "next/link"
-
+export const metadata = {
+  title: 'Sponsorship | ICEMSS 2025',
+  description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+  openGraph: {
+    title: 'Sponsorship | ICEMSS 2025',
+    description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+    url: 'https://www.icemss.in/sponsorship',
+    siteName: 'ICEMSS 2025',
+   
+    locale: 'en_US',
+    type: 'website',
+  },
+ 
+  keywords: ['ICEMSS', 'sponsorship', 'engineering', 'management', 'social sciences', 'conference', 'New Delhi', 'India'],
+}
 export default function SponsorshipContact() {
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 ">

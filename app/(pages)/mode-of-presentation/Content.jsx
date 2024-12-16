@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Mic, Image as ImageIcon, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-export default function Component() {
+export default function ModeOfPresent() {
   const [activeMode, setActiveMode] = useState(null);
 
   const presentationModes = [

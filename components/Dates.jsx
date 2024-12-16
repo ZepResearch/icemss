@@ -23,8 +23,8 @@ export default function DatesSection() {
       description: "Expert panel review period. Authors will receive detailed feedback and acceptance notifications during this phase.",
     },
     {
-      date: "Registration deadline",
-      title: "5th February 2025",
+      date: "5th February 2025",
+      title: "Registration deadline",
       description: "2 days of keynotes, presentations, workshops, and networking opportunities with leading academics and researchers.",
     },
   ]

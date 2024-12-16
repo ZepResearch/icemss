@@ -1,12 +1,15 @@
+import React from 'react'
+import ModeOfPresent from './Content'
+
 export const metadata = {
-  title: 'Payment | ICEMSS 2025',
-  description: 'Thank you to Choose the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025.',
+  title: 'Mode of Presentation | ICEMSS 2025',
+  description: 'Choose your preferred method of presenting at the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025.',
   openGraph: {
-    title: 'Payment | ICEMSS 2025',
+    title: 'Mode of Presentation | ICEMSS 2025',
     description: 'Choose your preferred method of presenting at the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025.',
-   
+    url: 'https://www.icemss.in/mode-of-presentation',
     siteName: 'ICEMSS 2025',
-   
+  
     locale: 'en_US',
     type: 'website',
   },
@@ -14,11 +17,12 @@ export const metadata = {
   keywords: ['ICEMSS', 'presentation modes', 'oral presentation', 'poster presentation', 'virtual presentation', 'engineering', 'management', 'social sciences', 'conference'],
 }
 
-
-export default function PaymentLayout({ children }) {
+function page() {
   return (
-    <div className="min-h-screen bg-gray-100">
-      {children}
+    <div>
+      <ModeOfPresent/>
     </div>
-  );
+  )
 }
+
+export default page
