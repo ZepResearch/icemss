@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Users } from 'lucide-react'
+import { Calendar, DockIcon, Headphones, MapPin, Users } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -96,6 +96,25 @@ export default function Hero() {
             className="space-y-4"
             variants={itemVariants}
           >
+            {/* images */}
+            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-start gap-3 px-4">
+          <img
+            src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1728043047/yqhbu4xrrwcab48qtpfw.png"
+            alt=""
+            className="h-12 drop-shadow-lg"
+          />
+          <img
+            src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1728043732/dpwtq9cenauyctsvd9vg.png"
+            alt=""
+            className="h-12 drop-shadow-lg"
+          />
+
+          <img
+            src=" https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png"
+            alt=""
+            className="h-12 drop-shadow-lg"
+          />
+        </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Link href={'/registration'}>
                 <Button size="lg" className="inline-flex gap-2 hover:text-primary   hover:bg-white/90">
@@ -108,13 +127,18 @@ export default function Hero() {
                   Submit Your Paper
                 </Button>
               </Link>
+              <Link href={'/'}>
+                <Button variant="outline" size="lg" className="inline-flex gap-2 text-blue-400 hover:text--blue-400 border-blue-400 hover:bg-white/20 bg-transparent">
+                Download Brochure
+                </Button>
+              </Link>
             </div>
           </motion.div>
           <motion.div 
             className="space-y-4"
             variants={itemVariants}
           >
-            <div className="flex flex-col gap-4 text-base text-white/80">
+            {/* <div className="flex flex-col gap-4 text-base text-white/80">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 <span>19th - 20th February 2025</span>
@@ -123,31 +147,49 @@ export default function Hero() {
                 <MapPin className="h-4 w-4" />
                 <span>Delhi, India</span>
               </div>
-            </div>
+            </div> */}
           </motion.div>
           <motion.div 
             className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-lg"
             variants={itemVariants}
           >
-            <h3 className="font-bold text-xl mb-4">Conference Highlights</h3>
-            <ul className="grid grid-cols-2 gap-4 text-sm text-white/90">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                50+ International Speakers
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                Interactive Workshops
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                Networking Events
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-white rounded-full"></span>
-                Research Presentations
-              </li>
-            </ul>
+              <div className="container mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
+          {/* Conference Date */}
+          <div className="flex items-center gap-4 p-4 ">
+            <Calendar className="w-8 h-8 text-white shrink-0" />
+            <div>
+              <h2 className="font-bold text-lg">Conference Date</h2>
+              <p className="text-sm">
+                <span className="text-base">19</span>
+                <sup>th</sup>
+                <span className="text-base">-20</span>
+                <sup>th</sup>
+                {" "}February, 2025
+              </p>
+            </div>
+          </div>
+
+          {/* Conference Venue */}
+          <div className="flex items-center gap-4 p-4 bg-[#21BDCA]/30 rounded-lg">
+            <MapPin className="w-8 h-8 text-white shrink-0" />
+            <div>
+              <h2 className="font-bold text-lg">Conference Venue</h2>
+              <p>Delhi, India</p>
+            </div>
+          </div>
+
+          {/* Contact Information */}
+          {/* <div className="flex items-center gap-4 p-4 ">
+          <Link href={'/'}>
+            <div className="inline-flex justify-center items-center gap-3 border-2 p-2 rounded-lg" >
+            <DockIcon className="w-8 h-8 text-white shrink-0" />
+              <h2 className="font-bold text-sm">Download Brochure</h2>               
+            </div>
+          </Link>
+          </div> */}
+        </div>
+      </div>
           </motion.div>
         </motion.div>
       </div>

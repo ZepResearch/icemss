@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/NAV";
 import Footer from "@/components/Footer";
 import { ToastProvider } from "@/components/ui/ToastProvider";
+import TawkToChat from "@/components/TawkToChat";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -30,6 +32,8 @@ export default function RootLayout({ children }) {
         {children}
         <Footer/>
         <ToastProvider/>
+        <TawkToChat/>
+
       </body>
     </html>
   );
