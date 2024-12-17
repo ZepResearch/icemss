@@ -49,7 +49,7 @@ export default function VenuePage() {
               <span> New Delhi, India</span>
             </div>
             <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg">
-              <span className="font-bold">Date:</span> 19-20 February 2025
+              <span className="font-bold">Date:</span> 19th - 20th February 2025
             </div>
           </div>
         </div>
@@ -131,36 +131,36 @@ export default function VenuePage() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            {
-              title: "India Gate",
-              description: "Visit the iconic war memorial and enjoy the surrounding gardens",
-              img:"https://plus.unsplash.com/premium_photo-1697730429201-381b71f61427?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            },
-            {
-              title: "Red Fort",
-              description: "Explore this UNESCO World Heritage site, a symbol of Mughal architecture",
-               img:"https://plus.unsplash.com/premium_photo-1697730373510-51b7fcf2ff52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            },
-            {
-              title: "Qutub Minar",
-              description: "Marvel at this towering minaret, another UNESCO World Heritage site",
-               img:"https://images.unsplash.com/photo-1667849521212-e9843b89f322?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            },
-            {
-              title: "Humayun's Tomb",
-              description: "Admire the architectural beauty of this Mughal-era tomb",
-               img:"https://images.unsplash.com/photo-1620563202699-5661aefec7ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            },
-            {
-              title: "Akshardham Temple",
-              description: "Experience the grandeur of this modern Hindu temple complex",
-               img:"https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734073737/samples/qgogwaunza75ncruxttg.png"
-            },
-            {
-              title: "Connaught Place",
-              description: "Enjoy shopping and dining in this bustling commercial center",
-               img:"https://images.unsplash.com/photo-1609338966656-926be552950d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            },
+           {
+            title: "India Gate",
+            description: "Visit the iconic war memorial, a 42-meter high arch built to honor Indian soldiers who died in World War I. Enjoy the surrounding lush gardens, perfect for picnics and evening strolls. At night, the illuminated monument creates a breathtaking spectacle against the Delhi skyline.",
+            img: "https://plus.unsplash.com/premium_photo-1697730429201-381b71f61427?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          },
+          {
+            title: "Red Fort",
+            description: "Explore this UNESCO World Heritage site, a magnificent symbol of Mughal architecture. Built in the 17th century, the Red Fort's massive red sandstone walls house palaces, audience halls, and ornate gardens. Don't miss the Sound and Light show in the evenings, which brings the fort's rich history to life.",
+            img: "https://plus.unsplash.com/premium_photo-1697730373510-51b7fcf2ff52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          },
+          {
+            title: "Qutub Minar",
+            description: "Marvel at this towering minaret, another UNESCO World Heritage site. Standing at 73 meters, it's the tallest brick minaret in the world. Explore the surrounding complex, which includes ancient mosques, tombs, and an iron pillar famous for its rust-resistant composition. The intricate carvings and Islamic calligraphy are a testament to medieval Indian craftsmanship.",
+            img: "https://images.unsplash.com/photo-1667849521212-e9843b89f322?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          },
+          {
+            title: "Humayun's Tomb",
+            description: "Admire the architectural beauty of this Mughal-era tomb, often considered a precursor to the Taj Mahal. Built in the 16th century, this garden-tomb combines Persian and Indian architectural styles. The symmetrical gardens, water channels, and the red sandstone and marble structure create a serene and majestic atmosphere.",
+            img: "https://images.unsplash.com/photo-1620563202699-5661aefec7ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          },
+          {
+            title: "Akshardham Temple",
+            description: "Experience the grandeur of this modern Hindu temple complex, a masterpiece of Indian architecture and spirituality. Opened in 2005, it showcases 10,000 years of Indian culture with intricate carvings, a musical fountain, and a breathtaking main monument built entirely of Rajasthani pink sandstone and Italian Carrara marble. The evening water show is a must-see spectacle.",
+            img: "https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734073737/samples/qgogwaunza75ncruxttg.png"
+          },
+          {
+            title: "Connaught Place",
+            description: "Enjoy shopping and dining in this bustling commercial center, known for its iconic circular design and Georgian-style architecture. This colonial-era market is home to flagship stores, boutiques, art galleries, and some of Delhi's best restaurants and cafes. The central park is perfect for people-watching and hosts various cultural events throughout the year.",
+            img: "https://images.unsplash.com/photo-1609338966656-926be552950d?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          }
           ].map((attraction, index) => (
             <motion.div
               key={index}

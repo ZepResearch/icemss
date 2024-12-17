@@ -110,7 +110,7 @@ export default function ContactUs() {
               className=""
             />
             <div>
-              <h2 className="text-3xl font-semibold  mb-4 underline underline-offset-4 decoration-yellow-500">
+              <h2 className="text-3xl font-semibold  mb-4 underline underline-offset-4 decoration-blue-500">
                 Get in Touch
               </h2>
               <p className="text-muted-foreground mb-4">
@@ -141,11 +141,11 @@ export default function ContactUs() {
                 <a href="https://www.facebook.com/people/Zep-Research/61561809783777/" className="text-primary hover:text-primary/80">
                   <Facebook size={24} />
                 </a>
-                <a href="https://x.com/i/flow/login?redirect_after_login=%2FZepresearch#" className="text-primary hover:text-primary/80">
-                  <Twitter size={24} />
-                </a>
                 <a href="" className="text-primary hover:text-primary/80">
                   <Instagram size={24} />
+                </a>
+                <a href="https://x.com/i/flow/login?redirect_after_login=%2FZepresearch#" className="text-primary hover:text-primary/80">
+                  <Twitter size={24} />
                 </a>
                 <a href="https://www.linkedin.com/company/zep-research/" className="text-primary hover:text-primary/80">
                   < Linkedin size={24} />

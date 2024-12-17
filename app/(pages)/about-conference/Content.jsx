@@ -117,7 +117,7 @@ export default function ConferenceAboutSection() {
                   Join us in shaping the future of engineering, management, and social sciences.
                 </CardDescription>
                 <p className="text-muted-foreground">
-                February 19-20 , 2024 • Delhi,India
+                February 19th - 20th , 2025 • Delhi,India
                 </p>
               </CardContent>
             </Card>

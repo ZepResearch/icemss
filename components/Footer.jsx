@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, Calendar, MapIcon, Phone, MailIcon } from 'lucide-react';
 
 const footerSections = [
   {
@@ -67,7 +67,7 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Climate Conference Logo"
-                width={200}
+                width={170}
                 height={80}
               />
             </Link>
@@ -83,6 +83,46 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+              <div className="text-lg">
+
+              <div className="flex items-center space-x-2 ">
+                <MailIcon className="h-4 w-4 " />
+                <a
+                  href="mailto:info@icemss.com"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  info@icemss.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 " />
+                <a
+                  href="tel:+918260080050"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  +91 82600 80050
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MapIcon className="h-4 w-4 " />
+                <a
+                  href="/venue"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  Conference Venue
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Calendar className="h-4 w-4 " />
+                <a
+                  href="/schedule"
+                  className="text-blue-200 hover:text-white transition-colors"
+                >
+                  Event Calendar
+                </a>
+              </div>
+           
+              </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:w-2/3">
             {footerSections.map((section) => (
@@ -108,8 +148,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-blue-700 text-center">
           <p className="text-sm text-blue-200">
-            &copy; {new Date().getFullYear()} International Conference on
-            Climate Change and Sustainability. All rights reserved.
+            &copy; {new Date().getFullYear()} International Conference on Engineering, Management and Social Sciences. All rights reserved.
           </p>
         </div>
       </div>

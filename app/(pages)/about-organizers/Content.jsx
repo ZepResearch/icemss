@@ -118,7 +118,7 @@ export default function AboutCompany() {
                 Join us in shaping the future of tourism and hospitality
               </CardDescription>
               <p className="text-muted-foreground">
-              19-20 February, 2025 • Delhi,India
+              19th - 20th February, 2025 • Delhi,India
               </p>
             </CardContent>
           </Card>
