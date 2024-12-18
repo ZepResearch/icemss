@@ -73,22 +73,22 @@ export default function Testimonial() {
 const testimonials = [
   {
     quote:
-      "The International Conference on Engineering, Management and Social Sciences was truly enlightening. The interdisciplinary approach provided unique insights that will shape my research for years to come.",
-    name: "Dr. Emily Chen",
+      "Attending ICEMSS 2024 was a transformative experience. The interdisciplinary approach and quality of discussions were outstanding. I left with new ideas and valuable professional connections",
+    name: "Dr. Michael ",
     title: "Professor of Engineering, Stanford University",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     quote:
-      "An exceptional gathering of brilliant minds. The conference fostered collaborations that are crucial for addressing complex global challenges at the intersection of technology and society.",
-    name: "Prof. Michael Rodriguez",
+      "The 2024 ICEMSS conference was incredibly well-organized, featuring diverse presentations from experts across disciplines. The keynote sessions were especially inspiring and provided insights into emerging trends",
+    name: "Prof.  Rodriguez",
     title: "Head of Management Studies, MIT",
     avatar: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     quote:
-      "The conference seamlessly integrated cutting-edge research from diverse fields. It was inspiring to see how engineering solutions can be applied to social and management issues.",
-    name: "Dr. Emma Thompson",
+      "Presenting my research at ICEMSS 2024 was a major milestone in my academic journey. The feedback I received was constructive, and the networking opportunities were excellent.",
+    name: "Thompson",
     title: "Research Director, Social Innovation Institute",
     avatar: "https://plus.unsplash.com/premium_photo-1693258698597-1b2b1bf943cc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },

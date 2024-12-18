@@ -9,31 +9,32 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question:
-      "What is the focus of this Climate Change and Sustainability Conference?",
-    answer:
-      "Our conference brings together experts, policymakers, and innovators to discuss the latest research, strategies, and technologies in climate change mitigation and sustainable development. We cover a wide range of topics including renewable energy, carbon neutrality, climate resilience, and sustainable urban planning.",
+    question: "What topics will the conference cover?",
+    answer: "The conference covers a wide range of topics, including advancements in engineering, strategic management practices, social impact research, interdisciplinary solutions, and sustainable development strategies.",
   },
   {
-    question: "Who should attend this conference?",
-    answer:
-      "This conference is designed for a diverse audience including climate scientists, environmental policymakers, sustainability professionals, business leaders, academics, students, and anyone passionate about addressing climate change. We welcome participants from various backgrounds to foster interdisciplinary discussions and collaborations.",
+    question: "How can I register for ICEMSS?",
+    answer: "You can register via the official conference website. Early-bird discounts are available for registrations made before the deadline, and group registrations receive special rates.",
   },
   {
-    question: "Are there opportunities for networking and collaboration?",
-    answer:
-      "We offer numerous networking sessions, panel discussions, and interactive workshops. Our conference app facilitates connections between attendees, and we host a dedicated networking event on the second evening of the conference.",
+    question: "Will there be virtual participation options?",
+    answer: "Yes, ICEMSS offers a hybrid format. You can attend in person or participate virtually through live-streamed sessions and interactive online platforms.",
   },
   {
-    question: "How can I present my research or project at the conference?",
-    answer:
-      "We welcome submissions for oral and poster presentations. Please visit our Call for Papers page for detailed information on submission guidelines, deadlines, and the review process. We particularly encourage presentations on innovative solutions and case studies in climate action and sustainability.",
+    question: "Are there awards for outstanding presentations or research papers?",
+    answer: "Yes, ICEMSS recognizes outstanding contributions through categories like Best Paper Award, Best Presenter Award, and Young Researcher Award to celebrate excellence in research.",
   },
   {
-    question:
-      "What measures are in place to ensure the conference itself is sustainable?",
-    answer:
-      "We're committed to practicing what we preach. Our conference uses 100% renewable energy, implements a zero-waste policy, offers plant-based catering options, and encourages virtual attendance to reduce travel emissions. We also offset the carbon footprint of the event through verified carbon credit programs.",
+    question: "What types of sessions and events can I expect?",
+    answer: "The conference will feature keynote speeches, research paper presentations, panel discussions, workshops, poster sessions, and dedicated networking opportunities with experts.",
+  },
+  {
+    question: "Is there an opportunity to publish my research?",
+    answer: "Absolutely! Selected papers will be published in reputable conference proceedings and indexed journals, providing global visibility for your research.",
+  },
+  {
+    question: "How do I prepare for my presentation?",
+    answer: "Detailed presentation guidelines will be provided upon paper acceptance. You'll receive support and tips on structuring and delivering an impactful presentation.",
   },
 ];
 
@@ -108,7 +109,7 @@ export default function FAQ() {
                 </motion.div>
               ))}
             </dl>
-              <div className="flex flex-col justify-start p-4  items-start mt-10 border-l-2 border-t-2 max-w-2xl  ">
+            <div className="flex flex-col justify-start p-4  items-start mt-10 border-l-2 border-t-2 max-w-2xl  ">
               <div className="space-y-4 text-sm font-semibold">
                 <div className="flex items-end">
                   <Mail className="mr-2 text-blue-700" />
@@ -116,19 +117,19 @@ export default function FAQ() {
                 </div>
                 <div className="flex items-end">
                   <Phone className="mr-2 text-blue-700" />
-                  <span>+91 7358737843</span>
+                  <span>+91 8260080050</span>
                 </div>
                 <div className="flex items-end ">
                   <MapPin className="mr-2  text-blue-700" />
                   <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
                 </div>
               </div>
-              < Link href={'/contact'}>
-              <Button variant='outline' className='border-blue-300 mt-7'>
-                Contact us
-              </Button>
+              <Link href={'/contact'}>
+                <Button variant='outline' className='border-blue-300 mt-7'>
+                  Contact us
+                </Button>
               </Link>
-              </div>
+            </div>
           </div>
         </div>
       </div>
