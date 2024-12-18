@@ -49,7 +49,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden">
+    <section className="relative w-full min-h-full py-28 overflow-hidden">
       <div className="absolute inset-0 bg-black" />
       <AnimatePresence mode="wait">
         <motion.div
@@ -59,25 +59,25 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-        >
+          >
           <Image
             src={backgroundImages[currentImageIndex]}
             alt="Conference Background"
             layout="fill"
             objectFit="cover"
             priority
-          />
+            />
           <motion.div 
             className="absolute inset-0 bg-black/50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-          />
+            />
         </motion.div>
       </AnimatePresence>
-
-      <div className="relative z-10 container mx-auto px-4 md:px-6 pt-16 md:pt-24 min-h-screen flex items-center">
+    
+      <div className="relative z-10 container mx-auto px-4 md:px-6 pt-16 md:pt-12 min-h-full py-24 flex items-center">
         <motion.div 
           className="max-w-3xl space-y-8 text-white"
           variants={containerVariants}
@@ -97,7 +97,7 @@ export default function Hero() {
             variants={itemVariants}
           >
             {/* images */}
-            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-start gap-3 px-4">
+            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4 max-w-2xl  backdrop-blur-sm bg-gray-50/30 py-4 rounded-3xl">
           <img
             src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1728043047/yqhbu4xrrwcab48qtpfw.png"
             alt=""
@@ -149,21 +149,23 @@ export default function Hero() {
               </div>
             </div> */}
           </motion.div>
+        </motion.div>
+      </div>
           <motion.div 
-            className="mt-8 p-6 bg-white/10 backdrop-blur-sm rounded-lg"
+            className=" p-6 bg-white/70 backdrop-blur-sm max-w-4xl mx-auto rounded-lg"
             variants={itemVariants}
           >
-              <div className="container mx-auto ">
+              <div className="container  mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
           {/* Conference Date */}
-          <div className="flex items-center gap-4 p-4 ">
+          <div className="flex items-center  gap-4 p-4 ">
             <Calendar className="w-8 h-8 text-white shrink-0" />
             <div>
-              <h2 className="font-bold text-lg">Conference Date</h2>
-              <p className="text-sm">
-                <span className="text-base">19</span>
+              <h2 className="font-bold text-2xl">Conference Date</h2>
+              <p className="text-lg">
+                <span className="text-lg">19</span>
                 <sup>th</sup>
-                <span className="text-base">-20</span>
+                <span className="text-lg">-20</span>
                 <sup>th</sup>
                 {" "}February, 2025
               </p>
@@ -174,8 +176,8 @@ export default function Hero() {
           <div className="flex items-center gap-4 p-4 bg-[#21BDCA]/30 rounded-lg">
             <MapPin className="w-8 h-8 text-white shrink-0" />
             <div>
-              <h2 className="font-bold text-lg">Conference Venue</h2>
-              <p>Delhi, India</p>
+              <h2 className="font-bold text-2xl">Conference Venue</h2>
+              <p className="text-lg">Delhi, India</p>
             </div>
           </div>
 
@@ -191,8 +193,6 @@ export default function Hero() {
         </div>
       </div>
           </motion.div>
-        </motion.div>
-      </div>
     </section>
   )
 }

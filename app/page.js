@@ -1,4 +1,5 @@
 import AboutSection from "@/components/About";
+import Banner from "@/components/Banner";
 import Buttons from "@/components/buttons";
 import CoOrganizationLogos from "@/components/Co-OrganiztionLogo";
 import CTASection from "@/components/Cta-section";
@@ -17,7 +18,7 @@ import VenueCTA from "@/components/VebueCTA";
 export default function Home() {
   return (
     <main>
-      
+      {/* <Banner/> */}
       <Hero/>
       <CoOrganizationLogos/>
       <AboutSection/>
