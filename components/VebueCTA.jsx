@@ -23,7 +23,7 @@ export default function VenueCTA() {
         <div className="relative z-20 text-white p-8 lg:p-12">
           <CardHeader className="p-0 mb-6">
             <CardTitle className="text-4xl font-bold mb-2">
-              ICEMSS Conference Venue
+            2<sup>nd</sup> ICEMSS Conference Venue
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0 space-y-6">

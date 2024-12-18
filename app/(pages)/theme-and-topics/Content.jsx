@@ -85,7 +85,7 @@ export default function ThemeAndTopics() {
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-primary text-white">Conference Themes</Badge>
-          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-primary mb-4">International Conference on Engineering, Management, and Social Sciences Integration</h2>
+          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-primary mb-4">2<sup>nd</sup> International Conference on Engineering, Management, and Social Sciences Integration</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Bridging disciplines to address global challenges through innovation and collaboration.
           </p>
@@ -98,7 +98,7 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-gray-700">
-                The International Conference on Engineering, Management, and Social Sciences Integration (ICEMSI) brings together researchers, industry leaders, and policymakers to explore the intersections of engineering innovations, management strategies, and social science perspectives. This interdisciplinary conference aims to foster innovative solutions to global challenges by combining insights from these diverse fields.
+                The 2<sup>nd</sup> International Conference on Engineering, Management, and Social Sciences Integration (ICEMSI) brings together researchers, industry leaders, and policymakers to explore the intersections of engineering innovations, management strategies, and social science perspectives. This interdisciplinary conference aims to foster innovative solutions to global challenges by combining insights from these diverse fields.
               </p>
               <p className="leading-relaxed text-lg text-gray-700 mt-4">
                 Submissions are invited for original research, case studies, and practical applications that demonstrate how integrating engineering, management, and social sciences can lead to comprehensive and impactful solutions for the complex issues of our time.
@@ -117,7 +117,7 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="mb-6 text-lg text-gray-800">
-                ICEMSI encourages submissions in the following interdisciplinary areas. We welcome innovative approaches that bridge multiple disciplines:
+              2<sup>nd</sup> ICEMSS encourages submissions in the following interdisciplinary areas. We welcome innovative approaches that bridge multiple disciplines:
               </p>
               <Accordion type="single" collapsible className="w-full">
                 {topics.map((topic, index) => (

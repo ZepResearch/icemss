@@ -55,7 +55,7 @@ export default function AboutCompany() {
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1">About Zep Research</Badge>
-          <h2 className="text-4xl font-bold text-primary mb-4">International Conference on Engineering, Management and Social Sciences</h2>
+          <h2 className="text-4xl font-bold text-primary mb-4">2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A premier event bringing together industry professionals, researchers, and academics from around the world.
           </p>

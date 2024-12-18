@@ -86,7 +86,7 @@ export default function Hero() {
         >
           <motion.div className="space-y-4" variants={itemVariants}>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              International Conference on Engineering, Management and Social Sciences
+              2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences
             </h1>
             <p className="max-w-[600px] text-white/80 md:text-xl">
               Join leading experts and researchers from around the world in this prestigious conference bridging engineering innovation with management excellence and social impact.

@@ -109,7 +109,7 @@ export default function ConferenceAboutSection() {
         <div className="max-w-6xl mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
             <Badge variant="outline" className="mb-4 text-lg px-4 py-1">About the Conference</Badge>
-            <h2 className="text-4xl font-bold text-primary mb-4">International Conference on Engineering, Management and Social Sciences</h2>
+            <h2 className="text-4xl font-bold text-primary mb-4">2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration.
             </p>
@@ -119,11 +119,11 @@ export default function ConferenceAboutSection() {
           <motion.div variants={itemVariants} className="mt-12 text-center pb-12">
             <Card className="bg-white/50 backdrop-blur-sm border-2 border-primary/20">
               <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-primary">About ICEMSS</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-primary">About 2<sup>nd</sup>   ICEMSS</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground px-12 text-justify">
-                  The International Conference on Engineering, Management, and Social Sciences (ICEMSS) aims to establish a collaborative platform for exploring new dimensions of research. ICEMSS is dedicated to facilitating discussions on the challenges involved in the practical application of cutting-edge knowledge in the fields of Management, Engineering, and Social Sciences.
+                  The 2<sup>nd</sup> International Conference on Engineering, Management, and Social Sciences (ICEMSS) aims to establish a collaborative platform for exploring new dimensions of research. ICEMSS is dedicated to facilitating discussions on the challenges involved in the practical application of cutting-edge knowledge in the fields of Management, Engineering, and Social Sciences.
                   </p>
                   <p className="text-muted-foreground px-12 text-justify mt-2">
                   The rapid development across the globe has created an increasing need for awareness of the latest trends and knowledge. Continuous advancements in these fields have made it challenging for professionals such as academicians, students, aspiring researchers, and industry experts to keep pace with these changes. This conference is being organized to help participants stay updated and equipped to address these evolving developments.
@@ -173,9 +173,9 @@ export default function ConferenceAboutSection() {
           <motion.div variants={itemVariants} className="mt-12">
             <Card className="bg-white/50 backdrop-blur-sm border-2 border-primary/20">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-primary">Why Attend ICEMSS 2025</CardTitle>
+                <CardTitle className="text-2xl font-bold text-primary">Why Attend 2<sup>nd</sup>  ICEMSS 2025</CardTitle>
                 <CardDescription className="text-lg">
-                  The International Conference on Engineering, Management, and Social Sciences (ICEMSS) offers a unique platform for knowledge exchange, collaboration, and innovation.
+                  The 2<sup>nd</sup>  International Conference on Engineering, Management, and Social Sciences (ICEMSS) offers a unique platform for knowledge exchange, collaboration, and innovation.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -200,7 +200,7 @@ export default function ConferenceAboutSection() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-primary">Who Can Attend</CardTitle>
                 <CardDescription className="text-lg">
-                  ICEMSS welcomes a diverse range of participants committed to solving global challenges through interdisciplinary collaboration.
+                2<sup>nd</sup>  ICEMSS welcomes a diverse range of participants committed to solving global challenges through interdisciplinary collaboration.
                 </CardDescription>
               </CardHeader>
               <CardContent>

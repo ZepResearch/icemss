@@ -42,7 +42,7 @@ export default function VenuePage() {
               Conference Venue
             </h1>
             <p className="text-xl mb-6 leading-relaxed">
-              Welcome to the International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of Delhi provides an inspiring environment for interdisciplinary discussions and collaborations.
+              Welcome to the 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of Delhi provides an inspiring environment for interdisciplinary discussions and collaborations.
             </p>
             <div className="flex items-center text-blue-700 dark:text-blue-300 text-lg">
               <MapPin className="mr-2 h-6 w-6" />

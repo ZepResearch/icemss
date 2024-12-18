@@ -49,7 +49,7 @@ export default function AwardsPage() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-extrabold underline underline-offset-4 decoration-blue-500 mb-4">Conference Awards</h1>
           <p className="text-xl  max-w-2xl mx-auto">
-            Recognizing excellence in Tourism Management and Hospitality research and presentation
+            Recognizing excellence in 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences research and presentation
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function AwardsPage() {
         <div className="bg-blue-500 rounded-lg shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Dont Miss Your Chance to Win!</h2>
           <p className="text-xl text-blue-100 mb-6">
-            Register now for the International Conference on Tourism Management and Hospitality and showcase your research.
+            Register now for the 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences and showcase your research.
           </p>
           <Link href={'/registration'}>
           <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg px-8 py-3 rounded-full font-semibold transition-colors duration-300">
