@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import ObjectivesSection from "@/components/Objectives-section";
 import SDGSection from "@/components/SDGS";
+import SpeakerSection from "@/components/Speakers";
 import Testimonial from "@/components/Testomonial";
 import TicketCTA from "@/components/TicketCTA";
 import VenueCTA from "@/components/VebueCTA";
@@ -24,6 +25,7 @@ export default function Home() {
       <AboutSection/>
       <Buttons/>
       <ObjectivesSection/>
+      <SpeakerSection/>
       <SDGSection/>
       <CTASection/> 
       <DatesSection/>

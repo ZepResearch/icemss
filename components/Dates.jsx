@@ -53,13 +53,7 @@ export default function DatesSection() {
                 className="relative"
               >
                 <div className="space-y-2 ">
-                  <span className={cn(
-                    "text-sm font-medium drop-shadow-sm ",
-                    index === 0 && "text-prdecoration-primary",
-                    index === 1 && "text-prdecoration-primary",
-                    index === 2 && "text-prdecoration-primary",
-                    index === 3 && "text-prdecoration-primary",
-                  )}>
+                  <span >
                     {item.date}
                   
                   </span>
