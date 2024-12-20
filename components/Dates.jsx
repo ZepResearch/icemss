@@ -4,30 +4,64 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import Link from "next/link"
+import { useEffect, useState } from "react"
+import { pb } from "@/lib/pocketbase"
+
 
 export default function DatesSection() {
-  const dates = [
-    {
-      date: "11th January  2025  ",
-      title: "Early bird Deadline",
-      description: "Submit your research abstracts for initial review. Early submissions receive priority consideration and detailed feedback from our expert panel.",
-    },
-    {
-      date: "19th January 2025",
-      title: "Abstract submission Deadline",
-      description: "Full paper submissions open for accepted abstracts. Ensure your research follows our comprehensive submission guidelines.",
-    },
-    {
-      date: "27th January 2025",
-      title: "Full paper submission deadline",
-      description: "Expert panel review period. Authors will receive detailed feedback and acceptance notifications during this phase.",
-    },
-    {
-      date: "5th February 2025",
-      title: "Registration deadline",
-      description: "2 days of keynotes, presentations, workshops, and networking opportunities with leading academics and researchers.",
-    },
-  ]
+  const [dates, setDates] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchDates = async () => {
+      try {
+      
+        
+        // Fetch all records sorted by date
+        const records = await pb.collection('dates').getFullList({
+          sort: 'date',
+          requestKey: null
+        })
+
+        // Transform the records to match your component's data structure
+        const formattedDates = records.map(record => ({   
+          date: record.date,
+          title: record.title,
+          description: record.description,
+        }))
+
+        setDates(formattedDates)
+        setLoading(false)
+      } catch (err) {
+        console.error('Error fetching dates:', err)
+        setError('Failed to load important dates')
+        setLoading(false)
+      }
+    }
+
+    fetchDates()
+  }, [])
+
+  if (loading) {
+    return (
+      <section className="py-12 md:py-24 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center">Loading important dates...</div>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="py-12 md:py-24 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center text-red-500">{error}</div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="py-12 md:py-24 bg-background">
@@ -52,11 +86,8 @@ export default function DatesSection() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="space-y-2 ">
-                  <span >
-                    {item.date}
-                  
-                  </span>
+                <div className="space-y-2">
+                  <span>{item.date}</span>
                   <h3 className="font-bold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {item.description}
@@ -69,13 +100,12 @@ export default function DatesSection() {
             ))}
           </div>
         </div>
-          <Link className="flex justify-center items-center mt-12" href={'/schedule'}>
+        <Link className="flex justify-center items-center mt-12" href={'/schedule'}>
           <Button>
             View Full Schedule
           </Button>
-          </Link>
+        </Link>
       </div>
     </section>
   )
 }
-

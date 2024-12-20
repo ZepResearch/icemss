@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -8,8 +8,43 @@ import { Badge } from '@/components/ui/badge'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Calendar, FileText, UserPlus, Zap, File, Lightbulb, Users, Globe } from 'lucide-react'
 import Link from 'next/link'
+import { pb } from '@/lib/pocketbase'
 
 export default function ThemeAndTopics() {
+   const [dates, setDates] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
+  
+    useEffect(() => {
+      const fetchDates = async () => {
+        try {
+        
+          
+          // Fetch all records sorted by date
+          const records = await pb.collection('dates').getFullList({
+            sort: 'date',
+            requestKey: null
+          })
+  
+          // Transform the records to match your component's data structure
+          const formattedDates = records.map(record => ({   
+            date: record.date,
+            title: record.title,
+            description: record.description,
+          }))
+  
+          setDates(formattedDates)
+          setLoading(false)
+        } catch (err) {
+          console.error('Error fetching dates:', err)
+          setError('Failed to load important dates')
+          setLoading(false)
+        }
+      }
+  
+      fetchDates()
+    }, [])
+  
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -183,18 +218,11 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <ul className="space-y-4">
-                {[
-                  { date: "January 11, 2025", event: "Early Bird Registration Deadline", icon: <UserPlus className="h-5 w-5" /> },
-                  { date: "January 19, 2025", event: "Abstract Submission Deadline", icon: <FileText className="h-5 w-5" /> },
-                  { date: "January 27, 2025", event: "Full Paper Submission Deadline", icon: <File className="h-5 w-5" /> },
-                  { date: "February 5, 2025", event: "Registration Deadline", icon: <Calendar className="h-5 w-5" /> }
-                ].map((item, index) => (
+                {dates.map((item, index) => (
                   <li key={index} className="flex items-center">
-                    <div className="mr-2 text-primary">
-                      {item.icon}
-                    </div>
+                    
                     <span className="text-base text-gray-700">
-                      <strong>{item.date}:</strong> {item.event}
+                      <strong>{item.date}:</strong> {item.title}
                     </span>
                   </li>
                 ))}
