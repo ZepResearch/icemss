@@ -13,8 +13,7 @@ export default function TicketCTA() {
             Conference Tickets
           </h2>
           <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed">
-            Join us for the International Conference on Tourism Management &
-            Hospitality
+            Join us for the International Conference on on Engineering, Management and Social Sciences
           </p>
         </div>
         <div className="mx-auto mt-8 grid max-w-5xl gap-6 md:grid-cols-2">
