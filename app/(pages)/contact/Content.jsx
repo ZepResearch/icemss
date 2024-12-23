@@ -121,7 +121,7 @@ export default function ContactUs() {
               <div className="space-y-2">
                 <div className="flex items-center">
                   <Mail className="mr-2 text-primary" />
-                  <span>info@icsthm.com</span>
+                  <span>info@icemss.in</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="mr-2 text-primary" />

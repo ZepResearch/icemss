@@ -40,7 +40,7 @@ export default function AboutCompany() {
     { icon: MapPin, text: "Delhi,India" },
     { icon: Users, text: "500+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
-    { icon: Mail, text: "info@icemss.com" },
+    { icon: Mail, text: "info@icemss.in" },
     { icon: Phone, text: "+91 7358737843" },
   ]
 

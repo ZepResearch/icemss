@@ -88,10 +88,10 @@ export default function Footer() {
               <div className="flex items-center space-x-2 ">
                 <MailIcon className="h-4 w-4 " />
                 <a
-                  href="mailto:info@icemss.com"
+                  href="mailto:info@icemss.in"
                   className="text-blue-200 hover:text-white transition-colors"
                 >
-                  info@icemss.com
+                  info@icemss.in
                 </a>
               </div>
               <div className="flex items-center space-x-2">
