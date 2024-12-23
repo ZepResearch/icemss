@@ -13,7 +13,7 @@ export default function SpeakersView() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   
-  const categories = ["guest", "keynote", "chair", "co-chair", "session"]
+  const categories = ["Guest Speaker", "Keynote Speaker", "Conference Chair", "Conference Co-Chair", "Session Chair"]
   
   useEffect(() => {
     const fetchSpeakers = async () => {
@@ -39,7 +39,7 @@ export default function SpeakersView() {
 
   return (
     <div className="container mx-auto p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 min-h-full my-8">
-      <h1 className="text-4xl font-bold mb-8 text-blue-800 text-center">Conference Speakers</h1>
+      <h1 className="text-4xl font-bold mb-8 text-blue-800 text-center">Conference Delegates</h1>
       
       <Tabs defaultValue="guest" className="w-full">
         <TabsList className="flex justify-center space-x-2 mb-8 overflow-x-auto">
@@ -75,10 +75,11 @@ export default function SpeakersView() {
                     </CardHeader>
                     <CardContent className="pt-4">
                       {speaker.image ? (
+                        
                         <img
                           src={`https://icemss.pockethost.io/api/files/speakers/${speaker.id}/${speaker.image}`}
                           alt={speaker.name}
-                          className="w-full h-48 object-cover rounded-md mb-4"
+                          className="w-full h-[300px] object-cover rounded-md mb-4"
                         />
                       ) : (
                         <div className="w-full h-48 bg-blue-200 rounded-md mb-4 flex items-center justify-center">
