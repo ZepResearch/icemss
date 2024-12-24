@@ -6,6 +6,7 @@ import { Calendar, DockIcon, Headphones, MapPin, Users } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import Banner from "./Banner"
 
 const backgroundImages = [
   "https://images.unsplash.com/photo-1506462945848-ac8ea6f609cc?q=80&w=2072&auto=format&fit=crop",
@@ -50,6 +51,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-full py-28 overflow-hidden">
+      <Banner/>
       <div className="absolute inset-0 bg-black" />
       <AnimatePresence mode="wait">
         <motion.div

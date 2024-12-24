@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DownloadCloudIcon } from "lucide-react";
 
 const buttons = [
-  { text: "Conference Poster", href: "/" },
+  { text: "Conference Poster", href: "/paperformat/ICEMSS_Poster.png" },
   { text: "Registration Form", href: "/paperformat/Registration_Form.pdf" },
   { text: "Manuscript Template", href: "/paperformat/Fullpaper_Template.doc" },
   { text: "Abstract Template", href: "/paperformat/Abstract_Template.docx" },
