@@ -91,8 +91,7 @@ export default function Hero() {
               2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences
             </h1>
             <p className="max-w-[600px] text-white/80 md:text-xl">
-              Join leading experts and researchers from around the world in this prestigious conference bridging engineering innovation with management excellence and social impact.
-            </p>
+            Conference Theme: Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration            </p>
           </motion.div>
           <motion.div 
             className="space-y-4"
