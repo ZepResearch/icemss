@@ -91,7 +91,7 @@ export default function Hero() {
               2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences
             </h1>
             <p className="max-w-[600px] text-white/80 md:text-xl">
-            Conference Theme: Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration            </p>
+            &apos; Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration &apos;</p>
           </motion.div>
           <motion.div 
             className="space-y-4"
