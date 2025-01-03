@@ -3,6 +3,21 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { InfoIcon } from 'lucide-react'
 
+export const metadata = {
+  title: 'Cancellation Policy - International Conference on Engineering, Management and Social Sciences',
+  description: 'Join ICEMSS 2025 in Delhi, India. A 2-day multidisciplinary conference bringing together 1000+ academics and professionals from 50+ countries for cutting-edge research in engineering, management, and social sciences.',
+  keywords: ['ICEMSS', 'engineering conference', 'management conference', 'social sciences conference', 'academic conference Delhi', 'research conference 2025'],
+  openGraph: {
+    title: 'ICEMSS 2025 - International Conference on Engineering, Management and Social Sciences',
+    description: 'Join ICEMSS 2025 in Delhi, India. A premier academic conference featuring 30+ workshops and global researchers.',
+   
+    type: 'website',
+    locale: 'en_US',
+    site_name: 'ICEMSS 2025',
+  },
+ 
+}
+
 export default function CancellationPolicy() {
   const cancellationFees = [
     { period: "60+ days before the conference", refund: "100% refund" },
