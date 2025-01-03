@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect } from 'react'
 import PocketBase from 'pocketbase'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { SpeakerSkeleton } from './ui/speaker-skeleton'
+import { SpeakerDrawer } from './ui/SpeakerDrawer'
 
 const pb = new PocketBase('https://icemss.pockethost.io')
 
@@ -12,6 +15,8 @@ export default function SpeakersView() {
   const [speakers, setSpeakers] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [selectedSpeaker, setSelectedSpeaker] = useState(null)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   
   const categories = ["Guest Speaker", "Keynote Speaker", "Conference Chair", "Conference Co-Chair", "Session Chair"]
   
@@ -37,74 +42,114 @@ export default function SpeakersView() {
     return speakers.filter(speaker => speaker.category === category)
   }
 
-  return (
-    <div className="container mx-auto p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 min-h-full my-8">
-      <h1 className="text-4xl font-bold mb-8 text-blue-800 text-center">Conference Delegates</h1>
-      
-      <Tabs defaultValue="guest" className="w-full">
-        <TabsList className="flex justify-center space-x-2 mb-8 overflow-x-auto">
-          {categories.map((category) => (
-            <TabsTrigger
-              key={category}
-              value={category}
-              className="capitalize text-blue-600 data-[state=active]:bg-blue-100"
-            >
-              {category}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+  const openDrawer = (speaker) => {
+    setSelectedSpeaker(speaker)
+    setIsDrawerOpen(true)
+  }
 
-        {categories.map((category) => (
-          <TabsContent key={category} value={category}>
-            {loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[...Array(6)].map((_, index) => (
-                  <SpeakerSkeleton key={index} />
-                ))}
-              </div>
-            ) : error ? (
-              <div className="flex items-center justify-center min-h-[50vh]">
-                <p className="text-red-500 text-xl">Error: {error}</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {getSpeakersByCategory(category).map((speaker) => (
-                  <Card key={speaker.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <CardHeader className="bg-blue-700 text-white">
-                      <CardTitle>{speaker.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-4">
-                      {speaker.image ? (
-                        
-                        <img
-                          src={`https://icemss.pockethost.io/api/files/speakers/${speaker.id}/${speaker.image}`}
-                          alt={speaker.name}
-                          className="w-full h-[300px] object-cover rounded-md mb-4"
-                        />
-                      ) : (
-                        <div className="w-full h-48 bg-blue-200 rounded-md mb-4 flex items-center justify-center">
-                          <span className="text-blue-600">No image available</span>
-                        </div>
-                      )}
-                      <p className="text-blue-600 font-semibold">{speaker.role}</p>
-                      {speaker.bio && (
-                        <p className="mt-2 text-sm text-gray-600 line-clamp-3">{speaker.bio}</p>
-                      )}
-                    </CardContent>
-                  </Card>
-                ))}
-                {getSpeakersByCategory(category).length === 0 && (
-                  <div className="col-span-full flex items-center justify-center min-h-[50vh]">
-                    <p className="text-xl text-blue-600">
-                      Speakers for this category will be announced soon. Stay tuned!
-                    </p>
-                  </div>
-                )}
-              </div>
-            )}
-          </TabsContent>
-        ))}
-      </Tabs>
+  return (
+    <div className="min-h-screen ">
+      <div className="container mx-auto px-4 py-12">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold mb-12  text-center"
+        >
+          Conference Delegates
+        </motion.h1>
+        
+        <Tabs defaultValue="guest" className="w-full">
+          <TabsList className="flex justify-center space-x-2 mb-12 py-8 md:overflow-hidden overflow-auto">
+            {categories.map((category) => (
+              <TabsTrigger
+                key={category}
+                value={category}
+                className="px-6   text-lg capitalize text-blue-600 data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 transition-all duration-200 ease-in-out"
+              >
+                {category}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          {categories.map((category) => (
+            <TabsContent key={category} value={category}>
+              {loading ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {[...Array(6)].map((_, index) => (
+                    <SpeakerSkeleton key={index} />
+                  ))}
+                </div>
+              ) : error ? (
+                <div className="flex items-center justify-center min-h-[50vh]">
+                  <p className="text-red-500 text-xl">Error: {error}</p>
+                </div>
+              ) : (
+                <AnimatePresence>
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                  >
+                    {getSpeakersByCategory(category).map((speaker, index) => (
+                      <motion.div
+                        key={speaker.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                      >
+                        <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white/80 backdrop-blur-sm max-w-md">
+                          <CardHeader className="bg-blue-700 text-white p-6">
+                            <CardTitle className="text-2xl font-semibold">{speaker.name}</CardTitle>
+                          </CardHeader>
+                          <CardContent className="p-6">
+                            {speaker.image ? (
+                              <img
+                                src={`https://icemss.pockethost.io/api/files/speakers/${speaker.id}/${speaker.image}`}
+                                alt={speaker.name}
+                                className="w-full h-[300px] object-cover rounded-md mb-6 shadow-md"
+                              />
+                            ) : (
+                              <div className="w-full h-[300px] bg-blue-200 rounded-md mb-6 flex items-center justify-center shadow-md">
+                                <span className="text-blue-600 text-xl font-semibold">No image available</span>
+                              </div>
+                            )}
+                            <p className="text-blue-600 font-semibold text-xl mb-3">{speaker.role}</p>
+                            {speaker.bio && (
+                              <p className="text-gray-600 line-clamp-3 mb-4">{speaker.bio}</p>
+                            )}
+                            <Button 
+                              onClick={() => openDrawer(speaker)} 
+                              className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
+                            >
+                              More Info
+                            </Button>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
+              )}
+              {getSpeakersByCategory(category).length === 0 && (
+                <div className="flex items-center justify-center min-h-[50vh]">
+                  <p className="text-2xl text-blue-600 font-semibold">
+                    Speakers for this category will be announced soon. Stay tuned!
+                  </p>
+                </div>
+              )}
+            </TabsContent>
+          ))}
+        </Tabs>
+
+        <SpeakerDrawer 
+          isOpen={isDrawerOpen} 
+          onClose={() => setIsDrawerOpen(false)} 
+          speaker={selectedSpeaker}
+        />
+      </div>
     </div>
   )
 }

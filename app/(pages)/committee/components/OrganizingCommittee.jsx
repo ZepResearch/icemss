@@ -81,7 +81,7 @@ export default function OrganizingCommittee() {
               <Card className="bg-card">
                 <CardContent className="pt-6">
                   <Avatar className="mx-auto h-56 w-56">
-                    <AvatarImage src={`http://${process.env.NEXT_PUBLIC_POCKETBASE_URL}/api/files/${speaker.collectionId}/${speaker.id}/${speaker.img}`} alt={speaker.name} />
+                    <AvatarImage src={`http://${process.env.NEXT_PUBLIC_POCKETBASE_URL}/api/files/${speaker.collectionId}/${speaker.id}/${speaker.img}`} alt={speaker.name} className='object-contain bg-blue-50'/>
                     <AvatarFallback>
                       {speaker.name
                         .split(" ")
