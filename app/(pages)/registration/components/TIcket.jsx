@@ -127,12 +127,16 @@ export default function Ticket() {
   const handlePaymentSubmit = async (formData) => {
     try {
       setIsLoading(selectedTicket.name);
-
+      const taxRate = 0.05;
+      const baseAmount = selectedTicket.price;
+      const taxAmount = baseAmount * taxRate;
+      const totalAmount = baseAmount + taxAmount;
+  
       const paymentData = {
         merchant_id: process.env.NEXT_PUBLIC_CCAVENUE_MERCHANT_ID,
         order_id: generateOrderId(),
         name: selectedTicket.name,
-        amount: selectedTicket.price.toString(),
+        amount: totalAmount.toString(), // Using total amount including tax
         currency: selectedTicket.currency,
         redirect_url: `${host}/api/ccavenue/handle`,
         cancel_url: `${host}/api/ccavenue/handle`,
