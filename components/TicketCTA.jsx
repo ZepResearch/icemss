@@ -85,7 +85,7 @@ export default function TicketCTA() {
 
 const tickets = [
   {
-    name: "Phyical Pass",
+    name: "Physical Pass",
     price: "₹4000-5000",
     dprice:"$99-150",
     period: "/person",
