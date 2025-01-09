@@ -16,7 +16,7 @@ export function CCavenuePaymentForm({ isOpen, onClose, ticketName, amount, curre
     billing_tel: '',
   });
 
-  const taxRate = 0.05; // 5% tax rate
+  const taxRate = 0.06; // 6% tax rate
   const taxAmount = amount * taxRate;
   const totalAmount = amount + taxAmount;
 
@@ -84,7 +84,7 @@ export function CCavenuePaymentForm({ isOpen, onClose, ticketName, amount, curre
               <span className="font-semibold">{formatCurrency(amount)}</span>
             </div>
             <div className="flex justify-between text-gray-600">
-              <Label>Tax (5%):</Label>
+              <Label>Tax (6%):</Label>
               <span>{formatCurrency(taxAmount)}</span>
             </div>
             <div className="flex justify-between text-lg font-bold pt-2 border-t border-gray-200">
