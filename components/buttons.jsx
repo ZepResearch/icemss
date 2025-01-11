@@ -11,7 +11,7 @@ const buttons = [
   { text: "Registration Form", href: "/paperformat/Registration_Form.pdf" },
   { text: "Manuscript Template", href: "/paperformat/Fullpaper_Template.doc" },
   { text: "Abstract Template", href: "/paperformat/Abstract_Template.docx" },
-  { text: "Copyright Form", href: "/paperformat/Copyright_Form.pdf" },
+  { text: "Copyright Form", href: "/paperformat/Copyright_Form2025.docx" },
   { text: "Conference Brochure", href: "/" },
 ];
 
