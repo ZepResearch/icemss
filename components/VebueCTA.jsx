@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, Home, MapPin } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -30,7 +30,12 @@ export default function VenueCTA() {
             <div className="grid gap-4 md:grid-cols-1 max-w-md">
               <div className="flex items-center gap-2 bg-black bg-opacity-30 p-3 rounded-lg">
                 <MapPin className="text-primary" />
-                <span className="font-medium">Delhi, India</span>
+                <span className="font-medium">Indraprastha College For Women–Delhi University (ICW–DU),Delhi, India</span>
+              </div>
+              
+              <div className="flex items-center gap-2 bg-black bg-opacity-30 p-3 rounded-lg">
+                <Home className="text-primary" />
+                <span className="font-medium">31, Sham Nath Marg, Civil Lines, New Delhi, Delhi, 110054, India</span>
               </div>
               <div className="flex items-center gap-2 bg-black bg-opacity-30 p-3 rounded-lg">
                 <Calendar className="text-primary" />

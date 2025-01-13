@@ -121,7 +121,8 @@ export default function FAQ() {
                 </div>
                 <div className="flex items-end ">
                   <MapPin className="mr-2  text-blue-700" />
-                  <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
+                  <span>Indraprastha College For Women–Delhi University (ICW–DU),31, Sham Nath Marg, Civil Lines, New Delhi, Delhi, 110054, India
+                  </span>
                 </div>
               </div>
               <Link href={'/contact'}>

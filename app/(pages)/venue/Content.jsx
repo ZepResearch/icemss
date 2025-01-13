@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { MapPin, Zap, Users, Globe, Coffee, Book } from 'lucide-react';
+import { MapPin, Zap, Users, Globe, Coffee, Book, Calendar } from 'lucide-react';
 
 export default function VenuePage() {
   const fadeIn = {
@@ -44,12 +44,12 @@ export default function VenuePage() {
             <p className="text-xl mb-6 leading-relaxed">
               Welcome to the 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of Delhi provides an inspiring environment for interdisciplinary discussions and collaborations.
             </p>
-            <div className="flex items-center text-blue-700 dark:text-blue-300 text-lg">
-              <MapPin className="mr-2 h-6 w-6" />
-              <span> New Delhi, India</span>
+            <div className="flex items-center text-blue-700 dark:text-blue-300 text-lg gap-2">
+            <span className="font-bold"><MapPin/></span> Indraprastha College For Women–Delhi University (ICW–DU),31, Sham Nath Marg, Civil Lines, New Delhi, Delhi, 110054, India
+
             </div>
-            <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg">
-              <span className="font-bold">Date:</span> 19th - 20th February 2025
+            <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg inline-flex gap-2">
+              <span className="font-bold"><Calendar/></span> 19th - 20th February 2025
             </div>
           </div>
         </div>

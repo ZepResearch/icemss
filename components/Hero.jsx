@@ -178,7 +178,8 @@ export default function Hero() {
             <MapPin className="w-8 h-8 text-white shrink-0" />
             <div>
               <h2 className="font-bold text-2xl">Conference Venue</h2>
-              <p className="text-lg">Delhi, India</p>
+              <p className="text-lg">Indraprastha College For Women–Delhi University (ICW–DU),<br />
+              Delhi, India</p>
             </div>
           </div>
 

@@ -111,7 +111,7 @@ export default function CTASection() {
                       </div>
                       <div className="flex items-center gap-2">
                         <MapPin className="w-5 h-5 text-primary" />
-                        <span>Delhi,India</span>
+                         <span>Indraprastha College For Women–Delhi University (ICW–DU),Delhi,India</span>
                       </div>
                     </div>
                     <div className="space-y-4">
