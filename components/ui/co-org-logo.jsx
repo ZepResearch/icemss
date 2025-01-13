@@ -42,29 +42,52 @@ export function CoOrganizationLogosClient({ logos }) {
 
   return (
     <motion.div
-      ref={ref}
-      variants={containerVariants}
-      initial="hidden"
-      animate={controls}
-      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-center"
-    >
-      {logos.map((logo, index) => (
-        <motion.div
-          key={index}
-          variants={itemVariants}
-          className="flex items-center justify-center"
-        >
-          <div className="relative w-24 h-24 overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src={logo.src}
-              alt={logo.name}
-              layout="fill"
-              objectFit="contain"
-              className="p-4"
-            />
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
+    ref={ref}
+    variants={containerVariants}
+    initial="hidden"
+    animate={controls}
+    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center"
+  >
+    {logos.slice(0, 8).map((logo, index) => (
+      <motion.div
+        key={index}
+        variants={itemVariants}
+        className="flex items-center justify-center"
+      >
+        <div className="relative w-24 h-24 overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+          <Image
+            src={logo.src}
+            alt={logo.name}
+            layout="fill"
+            objectFit="contain"
+            className="p-4"
+          />
+        </div>
+      </motion.div>
+    ))}
+    
+    {/* Separate container for last 2 logos */}
+    {logos.length > 8 && (
+      <div className="col-span-full lg:col-span-8 flex justify-center gap-24">
+        {logos.slice(8).map((logo, index) => (
+          <motion.div
+            key={index + 8}
+            variants={itemVariants}
+            className="flex items-center justify-center"
+          >
+            <div className="relative w-24 h-24 overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+              <Image
+                src={logo.src}
+                alt={logo.name}
+                layout="fill"
+                objectFit="contain"
+                className="p-4"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    )}
+  </motion.div>
   );
 }
