@@ -92,6 +92,9 @@ export default function Hero() {
             </h1>
             <p className="max-w-[600px] text-white/80 md:text-xl">
             &apos; Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration &apos;</p>
+            <p className="max-w-[600px] text-white/80 md:text-xl">
+            Co-organized by- Indraprastha College For Women–Delhi University (IPCW–DU) and Swami Vivekanand Subharti University
+            </p>
           </motion.div>
           <motion.div 
             className="space-y-4"
@@ -128,7 +131,7 @@ export default function Hero() {
                   Submit Your Paper
                 </Button>
               </Link>
-              <Link href={'/'}>
+              <Link href={'/paperformat/ICEMSS_2025_Broucher.pdf'}>
                 <Button variant="outline" size="lg" className="inline-flex gap-2 text-blue-400 hover:text--blue-400 border-blue-400 hover:bg-white/20 bg-transparent">
                 Download Brochure
                 </Button>

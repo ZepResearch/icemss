@@ -12,7 +12,7 @@ const buttons = [
   { text: "Manuscript Template", href: "/paperformat/Fullpaper_Template.doc" },
   { text: "Abstract Template", href: "/paperformat/Abstract_Template.docx" },
   { text: "Copyright Form", href: "/paperformat/Copyright_Form2025.docx" },
-  { text: "Conference Brochure", href: "/" },
+  { text: "Conference Brochure", href: "/paperformat/ICEMSS_2025_Broucher.pdf" },
 ];
 
 const containerVariants = {

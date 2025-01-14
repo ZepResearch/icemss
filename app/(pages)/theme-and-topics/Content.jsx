@@ -11,40 +11,36 @@ import Link from 'next/link'
 import { pb } from '@/lib/pocketbase'
 
 export default function ThemeAndTopics() {
-   const [dates, setDates] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-  
-    useEffect(() => {
-      const fetchDates = async () => {
-        try {
-        
-          
-          // Fetch all records sorted by date
-          const records = await pb.collection('dates').getFullList({
-            sort: 'date',
-            requestKey: null
-          })
-  
-          // Transform the records to match your component's data structure
-          const formattedDates = records.map(record => ({   
-            date: record.date,
-            title: record.title,
-            description: record.description,
-          }))
-  
-          setDates(formattedDates)
-          setLoading(false)
-        } catch (err) {
-          console.error('Error fetching dates:', err)
-          setError('Failed to load important dates')
-          setLoading(false)
-        }
+  const [dates, setDates] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchDates = async () => {
+      try {
+        const records = await pb.collection('dates').getFullList({
+          sort: 'date',
+          requestKey: null
+        })
+
+        const formattedDates = records.map(record => ({   
+          date: record.date,
+          title: record.title,
+          description: record.description,
+        }))
+
+        setDates(formattedDates)
+        setLoading(false)
+      } catch (err) {
+        console.error('Error fetching dates:', err)
+        setError('Failed to load important dates')
+        setLoading(false)
       }
-  
-      fetchDates()
-    }, [])
-  
+    }
+
+    fetchDates()
+  }, [])
+
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
@@ -77,34 +73,34 @@ export default function ThemeAndTopics() {
     {
       title: "Engineering",
       content: [
-        "Mechanical Engineering Innovations",
-        "Electrical and Electronics Engineering Advances",
-        "Civil and Environmental Engineering Progress",
-        "Computer Science and Engineering Trends",
-        "Chemical and Process Engineering Breakthroughs",
-        "Aerospace Engineering Developments"
+        "Mechanical and Industrial Engineering",
+        "Electrical and Electronics Engineering",
+        "Civil and Structural Engineering",
+        "Computer Science and IT",
+        "Environmental Engineering",
+        "Materials Science and Engineering"
       ]
     },
     {
-      title: "Management Tracks",
+      title: "Management",
       content: [
-        "Strategic Management and Innovation",
-        "Human Resource Management and Organizational Behavior",
-        "Marketing and Consumer Behavior",
-        "Operations and Supply Chain Management",
-        "Finance and Accounting Innovations",
-        "Public Administration and Policy"
+        "Strategic Management",
+        "Human Resource Management",
+        "Marketing Management",
+        "Operations Management",
+        "Financial Management",
+        "Project Management"
       ]
     },
     {
-      title: "Social Science",
+      title: "Social Sciences",
       content: [
-        "Sociology and Social Change",
-        "Psychology and Behavioral Sciences",
-        "Education and Pedagogy",
-        "Political Science and International Relations",
         "Economics and Development Studies",
-        "Anthropology and Cultural Studies"
+        "Psychology and Behavioral Sciences",
+        "Education and Learning Sciences",
+        "Sociology and Social Work",
+        "Communication Studies",
+        "Political Science and Public Policy"
       ]
     }
   ]
@@ -115,14 +111,14 @@ export default function ThemeAndTopics() {
       initial="hidden"
       animate={controls}
       variants={containerVariants}
-      className="py-16 px-4 "
+      className="py-16 px-4"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-primary text-white">Conference Themes</Badge>
-          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-primary mb-4">2<sup>nd</sup> International Conference on Engineering, Management, and Social Sciences Integration</h2>
+          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-primary mb-4">2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences (ICEMSS)</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Bridging disciplines to address global challenges through innovation and collaboration.
+            Advancing Knowledge Through Interdisciplinary Research and Innovation
           </p>
         </motion.div>
 
@@ -133,17 +129,17 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-gray-700">
-                The 2<sup>nd</sup> International Conference on Engineering, Management, and Social Sciences Integration (ICEMSI) brings together researchers, industry leaders, and policymakers to explore the intersections of engineering innovations, management strategies, and social science perspectives. This interdisciplinary conference aims to foster innovative solutions to global challenges by combining insights from these diverse fields.
+                The 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences (ICEMSS) serves as a premier forum for researchers, practitioners, and academics to share their latest findings and innovations across these diverse yet interconnected fields. This conference aims to foster collaboration and knowledge exchange between different disciplines.
               </p>
               <p className="leading-relaxed text-lg text-gray-700 mt-4">
-                Submissions are invited for original research, case studies, and practical applications that demonstrate how integrating engineering, management, and social sciences can lead to comprehensive and impactful solutions for the complex issues of our time.
+                We welcome original research papers, case studies, and theoretical frameworks that demonstrate excellence in engineering, management practices, and social sciences, with particular emphasis on work that bridges multiple disciplines or addresses contemporary global challenges.
               </p>
             </CardContent>
           </Card>
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12">
-          <Card className="overflow-hidden shadow-2xl  border-2 border-primary">
+          <Card className="overflow-hidden shadow-2xl border-2 border-primary">
             <CardHeader className="bg-primary text-white p-6">
               <CardTitle className="text-3xl flex items-center">
                 <Lightbulb className="mr-2 h-8 w-8" />
@@ -152,7 +148,7 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="mb-6 text-lg text-gray-800">
-              2<sup>nd</sup> ICEMSS encourages submissions in the following interdisciplinary areas. We welcome innovative approaches that bridge multiple disciplines:
+                ICEMSS 2025 features the following main tracks, each encompassing various sub-themes. We encourage submissions that demonstrate innovation and cross-disciplinary approaches:
               </p>
               <Accordion type="single" collapsible className="w-full">
                 {topics.map((topic, index) => (
@@ -173,7 +169,7 @@ export default function ThemeAndTopics() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12">
-          <Card className="overflow-hidden shadow-2xl bg-white border-2 ">
+          <Card className="overflow-hidden shadow-2xl bg-white border-2">
             <CardHeader className="bg-primary/70 text-white p-6">
               <CardTitle className="text-3xl flex items-center">
                 <FileText className="mr-2 h-8 w-8" />
@@ -182,12 +178,12 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-gray-700">
-                All submissions will undergo a double-blind peer review process. Accepted papers will be published in the conference proceedings, with selected papers considered for publication in partner journals. Submissions should highlight the interdisciplinary nature of the work and its potential impact on addressing real-world challenges.
+                All submissions will undergo a rigorous double-blind peer review process. Accepted papers will be published in the conference proceedings, and selected papers may be recommended for publication in indexed journals.
               </p>
               <ul className="mt-4 space-y-2 text-gray-700">
-                <li>• Abstract length: 300-500 words</li>
-                <li>• Full paper length: 6-8 pages (including references)</li>
-                <li>• Format: IEEE conference template</li>
+                <li>• Abstract length: 250-300 words</li>
+                <li>• Full paper length: 5000-6000 words</li>
+                <li>• Format: APA Style, 7th Edition</li>
               </ul>
             </CardContent>
           </Card>
@@ -210,17 +206,16 @@ export default function ThemeAndTopics() {
 
         <motion.div variants={itemVariants} className="mt-12 grid md:grid-cols-2 gap-6">
           <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary/40">
-            <CardHeader className="bg-primary/40 text-white  p-6">
+            <CardHeader className="bg-primary/40 text-white p-6">
               <CardTitle className="text-2xl flex items-center">
-                <Calendar className="mr-2 h-6 w-6 drop-shadow-2xl " />
-                Key Dates
+                <Calendar className="mr-2 h-6 w-6 drop-shadow-2xl" />
+                Important Dates
               </CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <ul className="space-y-4">
                 {dates.map((item, index) => (
                   <li key={index} className="flex items-center">
-                    
                     <span className="text-base text-gray-700">
                       <strong>{item.date}:</strong> {item.title}
                     </span>
@@ -240,11 +235,11 @@ export default function ThemeAndTopics() {
             <CardContent className="p-6">
               <ul className="space-y-4">
                 {[
-                  { highlight: "2 days of interdisciplinary knowledge sharing", icon: <Calendar className="h-5 w-5" /> },
-                  { highlight: "Keynote speeches by world-renowned experts", icon: <Users className="h-5 w-5" /> },
-                  { highlight: "Interactive workshops and panel discussions", icon: <Lightbulb className="h-5 w-5" /> },
-                  { highlight: "Networking opportunities with global peers", icon: <Globe className="h-5 w-5" /> },
-                  { highlight: "Exhibition of cutting-edge technologies", icon: <Zap className="h-5 w-5" /> }
+                  { highlight: "Distinguished keynote speakers", icon: <Users className="h-5 w-5" /> },
+                  { highlight: "Parallel technical sessions", icon: <Calendar className="h-5 w-5" /> },
+                  { highlight: "Interactive poster presentations", icon: <FileText className="h-5 w-5" /> },
+                  { highlight: "Networking opportunities", icon: <Globe className="h-5 w-5" /> },
+                  { highlight: "Best paper awards", icon: <Zap className="h-5 w-5" /> }
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
                     <div className="mr-2 text-primary">
@@ -263,4 +258,3 @@ export default function ThemeAndTopics() {
     </motion.section>
   )
 }
-
