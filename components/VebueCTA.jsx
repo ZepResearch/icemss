@@ -33,10 +33,7 @@ export default function VenueCTA() {
                 <span className="font-medium">Indraprastha College For Women–Delhi University (IPCW–DU),Delhi, India</span>
               </div>
               
-              <div className="flex items-center gap-2 bg-black bg-opacity-30 p-3 rounded-lg">
-                <Home className="text-primary" />
-                <span className="font-medium">31, Sham Nath Marg, Civil Lines, New Delhi, Delhi, 110054, India</span>
-              </div>
+              
               <div className="flex items-center gap-2 bg-black bg-opacity-30 p-3 rounded-lg">
                 <Calendar className="text-primary" />
                 <span className="font-medium">February 19th - 20th, 2025</span>
