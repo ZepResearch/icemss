@@ -45,7 +45,7 @@ export default function VenuePage() {
               Welcome to the 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of Delhi provides an inspiring environment for interdisciplinary discussions and collaborations.
             </p>
             <div className="flex items-center text-blue-700 dark:text-blue-300 text-lg gap-2">
-            <span className="font-bold"><MapPin/></span> Indraprastha College For Women–Delhi University (ICW–DU),31, Sham Nath Marg, Civil Lines, New Delhi, Delhi, 110054, India
+            <span className="font-bold"><MapPin/></span> Indraprastha College For Women–Delhi University (IPCW–DU),31, Sham Nath Marg, Civil Lines, New Delhi, Delhi, 110054, India
 
             </div>
             <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg inline-flex gap-2">
@@ -106,10 +106,9 @@ export default function VenuePage() {
         <h2 className="text-4xl font-bold mb-8 text-center text-blue-600 dark:text-blue-400">
           Location
         </h2>
-
         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.32835516133!2d77.20898509999999!3d28.5273522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1734174723901!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.301549333858!2d77.22215584648458!3d28.68062486557159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfda4c70001f9%3A0x175edb40f8978e19!2sIndraprastha%20College%20For%20Women%E2%80%93Delhi%20University%20(ICW%E2%80%93DU)!5e0!3m2!1sen!2sin!4v1736836945107!5m2!1sen!2sin"
             width="100%"
             height="450"
             style={{ border: 0 }}

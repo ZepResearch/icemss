@@ -30,7 +30,7 @@ export default function VenueCTA() {
             <div className="grid gap-4 md:grid-cols-1 max-w-md">
               <div className="flex items-center gap-2 bg-black bg-opacity-30 p-3 rounded-lg">
                 <MapPin className="text-primary" />
-                <span className="font-medium">Indraprastha College For Women–Delhi University (ICW–DU),Delhi, India</span>
+                <span className="font-medium">Indraprastha College For Women–Delhi University (IPCW–DU),Delhi, India</span>
               </div>
               
               <div className="flex items-center gap-2 bg-black bg-opacity-30 p-3 rounded-lg">

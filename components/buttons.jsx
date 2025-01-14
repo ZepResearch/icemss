@@ -1,19 +1,10 @@
 "use client"
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { DownloadCloudIcon } from "lucide-react";
+import PocketBase from 'pocketbase';
 
-const buttons = [
-  { text: "Conference Poster", href: "/paperformat/ICEMSS_Poster.png" },
-  { text: "Registration Form", href: "/paperformat/Registration_Form.pdf" },
-  { text: "Manuscript Template", href: "/paperformat/Fullpaper_Template.doc" },
-  { text: "Abstract Template", href: "/paperformat/Abstract_Template.docx" },
-  { text: "Copyright Form", href: "/paperformat/Copyright_Form2025.docx" },
-  { text: "Conference Brochure", href: "/paperformat/ICEMSS_2025_Broucher.pdf" },
-];
+const pb = new PocketBase('https://icemss.pockethost.io');
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -37,43 +28,85 @@ const itemVariants = {
   },
 };
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function Buttons() {
- 
+  const [materials, setMaterials] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchMaterials = async () => {
+      try {
+        const records = await pb.collection('downloadMaterials').getFullList({
+          sort: 'created',
+          requestKey: null
+        });
+        setMaterials(records);
+      } catch (err) {
+        setError("Failed to load materials");
+        console.error("Error fetching materials:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchMaterials();
+  }, []);
+
+  const handleDownload = async (record) => {
+    try {
+      // Construct the file URL using PocketBase's getFileUrl method
+      const fileUrl = pb.getFileUrl(record, record.content);
+      // Open the file URL in a new tab
+      window.open(fileUrl, '_blank');
+    } catch (err) {
+      console.error("Error downloading file:", err);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center min-h-[200px]">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-800"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center text-red-600 py-4">
+        {error}
+      </div>
+    );
+  }
 
   return (
-    <section  className="py-4  max-w-7xl mx-auto  ">
+    <section className="py-4 max-w-7xl mx-auto">
       <div className="container max-w-7xl mx-auto px-4">
-         <div className="flex justify-center items-center mx-auto">
-         <h1 className="text-center text-2xl pb-6 inline-flex justify-center items-center gap-3 font-medium text-blue-800">
+        <div className="flex justify-center items-center mx-auto">
+          <h1 className="text-center text-2xl pb-6 inline-flex justify-center items-center gap-3 font-medium text-blue-800">
             Download Conference Materials <DownloadCloudIcon />
           </h1>
-         </div>
-     
-      
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 "
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {buttons?.map((button) => (
-              <motion.a
-              href={button.href}
-                key={button.text}
-                className="bg-blue-400 hover:bg-blue-500/80 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 text-sm sm:text-sm text-center drop-shadow-sm"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {button.text} {/* Added trim() to remove any whitespace */}
-              </motion.a>
-            ))}
-          </motion.div>
-       
-      
-      
+        </div>
+        
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {materials.map((material) => (
+            <motion.a
+              key={material.id}
+              href={`https://icemss.pockethost.io/api/files/downloadMaterials/${material.id}/${material.content}`}
+              className="bg-blue-400 hover:bg-blue-500/80 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 text-sm sm:text-sm text-center drop-shadow-sm"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {material.title}
+            </motion.a>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
