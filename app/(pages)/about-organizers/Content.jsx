@@ -115,7 +115,7 @@ export default function AboutCompany() {
           <Card className="bg-white/50 backdrop-blur-sm border-2 border-primary/20 inline-block">
             <CardContent className="p-6">
               <CardDescription className="text-lg font-medium text-primary mb-2">
-                Join us in shaping the future of tourism and hospitality
+                Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
               <p className="text-muted-foreground">
               19th - 20th February, 2025 • Delhi,India
