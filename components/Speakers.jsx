@@ -109,7 +109,7 @@ export default function SpeakersView() {
                               <img
                                 src={`https://icemss.pockethost.io/api/files/speakers/${speaker.id}/${speaker.image}`}
                                 alt={speaker.name}
-                                className="w-full h-[300px] object-cover rounded-md mb-6 shadow-md"
+                                className="w-full h-[300px] object-contain rounded-md mb-6 shadow-md"
                               />
                             ) : (
                               <div className="w-full h-[300px] bg-blue-200 rounded-md mb-6 flex items-center justify-center shadow-md">
