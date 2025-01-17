@@ -129,7 +129,7 @@ export default function ConferenceAboutSection() {
                   The rapid development across the globe has created an increasing need for awareness of the latest trends and knowledge. Continuous advancements in these fields have made it challenging for professionals such as academicians, students, aspiring researchers, and industry experts to keep pace with these changes. This conference is being organized to help participants stay updated and equipped to address these evolving developments.
                   </p>
                   <p className="text-muted-foreground px-12 text-justify mt-2">
-                  The conference, taking place on 19-20 February 2025 in New Delhi, India, will offer researchers — both experienced and emerging — the opportunity to present their findings to esteemed members of the global scientific community. Regardless of their specific focus within Management, Education, or Social Sciences, ICEMSS will provide them with the exposure needed to gain recognition for their research. Moreover, the event will open doors for new collaborations and further research opportunities.
+                  The conference, taking place on 19<sup>th</sup> - 20<sup>th</sup> February 2025 in New Delhi, India, will offer researchers — both experienced and emerging — the opportunity to present their findings to esteemed members of the global scientific community. Regardless of their specific focus within Management, Education, or Social Sciences, ICEMSS will provide them with the exposure needed to gain recognition for their research. Moreover, the event will open doors for new collaborations and further research opportunities.
                   </p>
                 </CardContent>
             </Card>
