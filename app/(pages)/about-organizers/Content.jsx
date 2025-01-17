@@ -36,7 +36,7 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: February 19-20 , 2025" },
+    { icon: CalendarDays, text: "2-day event: February 19th-20th , 2025" },
     { icon: MapPin, text: "Delhi,India" },
     { icon: Users, text: "500+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
