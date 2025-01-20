@@ -2,6 +2,9 @@ import React from 'react'
 export const metadata = {
   title: 'Speakers | ICEMSS 2025 - International Conference on Engineering, Management and Social Sciences',
   description: 'Meet our distinguished speakers at ICEMSS 2025. World-renowned experts and thought leaders in engineering, management, and social sciences sharing cutting-edge research and insights in Delhi.',
+  alternates: {
+    canonical: 'https://www.icemss.in/about-speaker',
+  },
   keywords: [
     'ICEMSS speakers',
     'engineering conference speakers',

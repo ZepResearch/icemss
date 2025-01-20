@@ -4,6 +4,10 @@ export const metadata = {
   title: 'Terms & Conditions - International Conference on Engineering, Management and Social Sciences',
   description: 'Join ICEMSS 2025 in Delhi, India. A 2-day multidisciplinary conference bringing together 1000+ academics and professionals from 50+ countries for cutting-edge research in engineering, management, and social sciences.',
   keywords: ['ICEMSS', 'engineering conference', 'management conference', 'social sciences conference', 'academic conference Delhi', 'research conference 2025'],
+   // Adding canonical URL
+   alternates: {
+    canonical: 'https://www.icemss.in/terms-&-condition',
+  },
   openGraph: {
     title: 'ICEMSS 2025 - International Conference on Engineering, Management and Social Sciences',
     description: 'Join ICEMSS 2025 in Delhi, India. A premier academic conference featuring 30+ workshops and global researchers.',
@@ -63,10 +67,10 @@ export default function TermsAndConditions() {
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold underline underline-offset-4 decoration-blue-500 mb-8 text-center">Terms and Conditions</h1>
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <p className="text-blue-900 mb-4">
+          <h2 className="text-blue-900 mb-4">
             Welcome to the Terms and Conditions for the International Conference on Engineering, Management and Social Sciences (ICEMSS). 
             Please read these terms carefully before registering for the conference.
-          </p>
+          </h2>
           <ScrollArea className="h-[60vh] rounded-md border border-blue-200 p-4">
             <Accordion type="single" collapsible className="w-full">
               {sections.map((section, index) => (

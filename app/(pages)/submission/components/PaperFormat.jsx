@@ -39,9 +39,9 @@ export default function FormatCards() {
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {formats.map((format, index) => (
           <Card key={index} className="flex flex-col h-full">
-            <CardHeader className="bg-blue-500 space-y-1 flex flex-row items-center gap-2">
+            <CardHeader className="bg-blue-500 text-gray-100 space-y-1 flex flex-row items-center gap-2">
               {format.icon}
-              <CardTitle className="text-lg font-bold">{format.title}</CardTitle>
+              <CardTitle className="text-lg font-bold text-gray-100">{format.title}</CardTitle>
             </CardHeader>
             <CardContent className="p-6 flex flex-col flex-grow">
               <p className="text-gray-600 mb-4 flex-grow">{format.description}</p>

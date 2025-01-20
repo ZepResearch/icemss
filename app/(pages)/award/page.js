@@ -16,6 +16,9 @@ export const metadata = {
     'tourism research recognition',
     'ICTMH 2025 awards'
   ],
+  alternates: {
+    canonical: 'https://www.icemss.in/award',
+  },
   openGraph: {
     title: 'Conference Awards - ICTMH 2025',
     description: 'Win prestigious awards for excellence in tourism and hospitality research at ICTMH 2025. Best Paper and Presentation awards available.',

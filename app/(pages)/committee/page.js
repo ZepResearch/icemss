@@ -5,6 +5,9 @@ import OrganizingCommittee from './components/OrganizingCommittee'
 export const metadata = {
   title: 'Committee | ICEMSS 2025',
   description: 'Meet the organizing committee of the International Conference on Engineering, Management, and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+  alternates: {
+    canonical: 'https://www.icemss.in/committee',
+  },
   openGraph: {
     title: 'Committee | ICEMSS 2025',
     description: 'Meet the organizing committee of the International Conference on Engineering, Management, and Social Sciences (ICEMSS) 2025 in New Delhi, India.',

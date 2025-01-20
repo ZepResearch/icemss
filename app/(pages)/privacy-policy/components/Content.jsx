@@ -66,9 +66,9 @@ export default function PrivacyPolicy() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-6 text-blue-800">
+              <h2 className="mb-6 text-blue-800">
                 Your privacy and the protection of your personal and academic information are of utmost importance to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you participate in our conference or use our website.
-              </p>
+              </h2>
               <Accordion type="single" collapsible className="w-full">
                 {policies.map((policy, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>

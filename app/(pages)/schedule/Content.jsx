@@ -68,9 +68,9 @@ export default function ConferenceSchedule() {
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Conference Dates
           </h1>
-          <p className="text-muted-foreground">
+          <h2 className="text-muted-foreground">
             Join us February 19-20 for three days of cutting-edge insights and networking. Reserve your spot today!
-          </p>
+          </h2>
         </div>
 
         <div className="grid gap-8 md:grid-cols-[300px_1fr]">

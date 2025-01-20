@@ -62,9 +62,9 @@ export default function VenuePage() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="container mx-auto px-4 py-16"
       >
-        <h2 className="text-4xl font-bold mb-8 text-center text-blue-600 dark:text-blue-400">
+        <h1 className="text-4xl font-bold mb-8 text-center text-blue-600 dark:text-blue-400">
           Venue Highlights
-        </h2>
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             { icon: Zap, title: "Cutting-edge Technology", description: "Experience the latest in conference tech" },
@@ -125,9 +125,9 @@ export default function VenuePage() {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="container mx-auto px-4 py-16"
       >
-        <h2 className="text-4xl font-bold mb-8 text-center text-blue-600 dark:text-blue-400">
+        <h3 className="text-4xl font-bold mb-8 text-center text-blue-600 dark:text-blue-400">
           Nearby Attractions
-        </h2>
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
            {

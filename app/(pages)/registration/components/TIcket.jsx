@@ -248,7 +248,7 @@ export default function Ticket() {
           ))}
         </div>
 
-        <h1 className="text-4xl font-bold text-center mb-8">Virtual Tickets</h1>
+        <h2 className="text-4xl font-bold text-center mb-8">Virtual Tickets</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {tickets.virtual.map((ticket, index) => (
             <div key={index} className="flex items-center justify-center">

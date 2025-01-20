@@ -72,10 +72,10 @@ export default function SDGSection() {
   return (
     <section className="w-full 16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-center text-3xl md:text-5xl font-bold mb-12">
+        <h2 className="text-center text-3xl md:text-5xl font-bold mb-12">
           2<sup>nd</sup> <span className="text-primary">ICEMSS 2025</span> IS DEDICATED TO ADVANCING THE
            NATIONS SUSTAINABLE DEVELOPMENT GOALS (SDGS)
-        </h1>
+        </h2>
         
         <div 
           ref={scrollRef}

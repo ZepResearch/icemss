@@ -7,6 +7,9 @@ export const metadata = {
   title: 'Cancellation Policy - International Conference on Engineering, Management and Social Sciences',
   description: 'Join ICEMSS 2025 in Delhi, India. A 2-day multidisciplinary conference bringing together 1000+ academics and professionals from 50+ countries for cutting-edge research in engineering, management, and social sciences.',
   keywords: ['ICEMSS', 'engineering conference', 'management conference', 'social sciences conference', 'academic conference Delhi', 'research conference 2025'],
+  alternates: {
+    canonical: 'https://www.icemss.in/cancellation-policy',
+  },
   openGraph: {
     title: 'ICEMSS 2025 - International Conference on Engineering, Management and Social Sciences',
     description: 'Join ICEMSS 2025 in Delhi, India. A premier academic conference featuring 30+ workshops and global researchers.',
@@ -31,14 +34,14 @@ export default function CancellationPolicy() {
         <h1 className="text-4xl font-bold underline underline-offset-4 decoration-blue-500 mb-8 text-center">Cancellation Policy</h1>
         
         <Card className="mb-8 border-2 border-blue-200">
-          <CardHeader>
+          <CardHeader> 
             <CardTitle className="text-2xl text-blue-700">Overview</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-blue-900">
+            <h2 className="text-blue-900">
               We understand that circumstances can change. Our cancellation policy is designed to be fair to all participants. 
               Please read this policy carefully before registering for the International Conference on Engineering, Management and Social Sciences (ICEMSS).
-            </p>
+            </h2>
           </CardContent>
         </Card>
 

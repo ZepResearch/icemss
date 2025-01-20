@@ -4,6 +4,10 @@ import ThemeAndTopics from './Content'
 export const metadata = {
   title: 'Theme and Topics | ICEMSS 2025',
   description: 'Explore the theme and topics for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+   // Adding canonical URL
+   alternates: {
+    canonical: 'https://www.icemss.in/theme-and-topics',
+  },
   openGraph: {
     title: 'Theme and Topics | ICEMSS 2025',
     description: 'Explore the theme and topics for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',

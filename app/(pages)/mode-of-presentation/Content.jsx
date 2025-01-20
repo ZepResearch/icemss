@@ -53,9 +53,9 @@ export default function ModeOfPresent() {
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1">
             Mode of Presentation
           </Badge>
-          <h2 className="text-4xl font-bold text-primary mb-4">
+          <h1 className="text-4xl font-bold text-primary mb-4">
           2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences
-          </h2>
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Choose your preferred method of presenting at the International
             Conference on  Engineering, Management and Social Sciences

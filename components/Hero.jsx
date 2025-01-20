@@ -180,7 +180,7 @@ export default function Hero() {
           <div className="flex items-center gap-4 p-4 bg-[#21BDCA]/30 rounded-lg">
             <MapPin className="w-8 h-8 text-white shrink-0" />
             <div>
-              <h2 className="font-bold text-2xl">Conference Venue</h2>
+              <h3 className="font-bold text-2xl">Conference Venue</h3>
               <p className="text-lg">Indraprastha College For Women–Delhi University (IPCW–DU),<br />
               Delhi, India</p>
             </div>

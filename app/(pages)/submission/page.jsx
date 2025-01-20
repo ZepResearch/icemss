@@ -1,11 +1,15 @@
 import React from "react";
 import SubmitForm from "./components/Form";
-import PaperFormat from "../papers-format/page";
+
 import FormatCards from "./components/PaperFormat";
 
 export const metadata = {
   title: 'Paper Submission | ICEMSS 2025',
   description: 'Submit your paper for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+   // Adding canonical URL
+   alternates: {
+    canonical: 'https://www.icemss.in/submission',
+  },
   openGraph: {
     title: 'Paper Submission | ICEMSS 2025',
     description: 'Submit your paper for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',

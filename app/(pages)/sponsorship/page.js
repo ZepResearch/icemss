@@ -7,6 +7,10 @@ import Link from "next/link"
 export const metadata = {
   title: 'Sponsorship | ICEMSS 2025',
   description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+   // Adding canonical URL
+   alternates: {
+    canonical: 'https://www.icemss.in/sponsorship',
+  },
   openGraph: {
     title: 'Sponsorship | ICEMSS 2025',
     description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
@@ -84,16 +88,16 @@ export default function SponsorshipContact() {
         </div>
 
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">
+          <h3 className="text-3xl font-bold text-center mb-8">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
               Sponsorship Packages
             </span>
-          </h2>
+          </h3>
           <SponsorshipPackages />
         </div>
 
         <div className="bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Drive Innovation?</h2>
+          <h4 className="text-3xl font-bold text-white mb-4">Ready to Drive Innovation?</h4>
           <p className="text-xl text-white mb-6">
             Don&apos;t miss this opportunity to showcase your brand at the International Conference on Engineering, Management and Social Sciences.
           </p>

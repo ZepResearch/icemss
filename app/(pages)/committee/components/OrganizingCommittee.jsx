@@ -36,9 +36,9 @@ export default function OrganizingCommittee() {
     return (
       <div className="bg-secondary py-12 pt-32">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Loading...
-          </h2>
+          </h1>
         </div>
       </div>
     );
@@ -63,9 +63,9 @@ export default function OrganizingCommittee() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          <h3 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Organizing Committees
-          </h2>
+          </h3>
         </motion.div>
         <ul
           role="list"
@@ -89,9 +89,9 @@ export default function OrganizingCommittee() {
                         .join("")}
                     </AvatarFallback>
                   </Avatar>
-                  <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-primary">
+                  <h4 className="mt-6 text-base font-semibold leading-7 tracking-tight text-primary">
                     {speaker.name}
-                  </h3>
+                  </h4>
                   <p className="text-sm leading-6 text-muted-foreground">
                     {speaker.designation}
                   </p>

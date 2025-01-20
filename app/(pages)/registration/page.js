@@ -6,6 +6,10 @@ import CTACancle from './components/Cta-Cancle-Policy'
 export const metadata = {
   title: 'Registration | ICEMSS 2025',
   description: 'Register for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+   // Adding canonical URL
+   alternates: {
+    canonical: 'https://www.icemss.in/registration',
+  },
   openGraph: {
     title: 'Registration | ICEMSS 2025',
     description: 'Register for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
