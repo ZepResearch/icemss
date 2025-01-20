@@ -21,7 +21,9 @@ const geistMono = localFont({
 export const metadata = {
   title: "ICEMSS 2025 - International Conference on Engineering, Management and Social Sciences",
   description: "Join ICEMSS 2025 in Delhi, India. A 2-day multidisciplinary conference bringing together 1000+ academics and professionals from 50+ countries for cutting-edge research in engineering, management, and social sciences.",
-  canonical: "https://www.icemss.in/",
+  alternates: {
+    canonical: 'https://www.icemss.in/',
+  },
   
   // Adding security headers in metadata
   other: {

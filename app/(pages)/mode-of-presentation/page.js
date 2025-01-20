@@ -4,14 +4,14 @@ import ModeOfPresent from './Content'
 export const metadata = {
   title: 'Mode of Presentation | ICEMSS 2025',
   description: 'Choose your preferred method of presenting at the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025.',
-  
+  alternates: {
+    canonical: 'https://www.icemss.in/mode-of-presentation',
+  },
   openGraph: {
     title: 'Mode of Presentation | ICEMSS 2025',
     description: 'Choose your preferred method of presenting at the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025.',
      // Adding canonical URL
-  alternates: {
-    canonical: 'https://www.icemss.in/mode-of-presentation',
-  },
+  
     url: 'https://www.icemss.in/mode-of-presentation',
     siteName: 'ICEMSS 2025',
   
