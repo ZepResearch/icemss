@@ -191,7 +191,7 @@ export default function Hero() {
           <Link href={'/'}>
             <div className="inline-flex justify-center items-center gap-3 border-2 p-2 rounded-lg" >
             <DockIcon className="w-8 h-8 text-white shrink-0" />
-              <h2 className="font-bold text-sm">Download Brochure</h2>               
+                        
             </div>
           </Link>
           </div> */}
