@@ -18,7 +18,7 @@ export default function SpeakersView() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   
-  const categories = ["Panelist", "Keynote Speaker","Organizing Secretary", "Conference Chair", "Conference Co-Chair", "Session Chair"]
+  const categories = [ "Keynote Speaker","Panelist","Organizing Secretary", "Conference Chair", "Conference Co-Chair", "Session Chair"]
   
   useEffect(() => {
     const fetchSpeakers = async () => {
@@ -59,7 +59,7 @@ export default function SpeakersView() {
           Conference Delegates
         </motion.h1>
         
-        <Tabs defaultValue="guest" className="w-full">
+        <Tabs defaultValue="Keynote Speaker" className="w-full">
           <TabsList className="flex justify-center space-x-2 mb-12 py-8 md:overflow-hidden overflow-auto">
             {categories.map((category) => (
               <TabsTrigger
