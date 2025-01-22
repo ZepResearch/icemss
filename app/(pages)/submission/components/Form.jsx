@@ -23,6 +23,34 @@ import { useCustomToast } from "@/hooks/useCustomToast";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
+
+const SelectField = ({ label, name, value, onValueChange, options, error }) => (
+  <div className="space-y-2">
+    <Label htmlFor={name}>
+      {label} <span className="text-red-500">*</span>
+    </Label>
+    <Select
+      name={name}
+      value={value}
+      onValueChange={onValueChange}
+    >
+      <SelectTrigger className={!value ? "border-red-500" : ""}>
+        <SelectValue placeholder={`Select ${label.toLowerCase()}`} />
+      </SelectTrigger>
+      <SelectContent>
+        {options.map((option) => (
+          <SelectItem key={option.value} value={option.value}>
+            {option.label}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+    {!value && error && (
+      <p className="text-sm text-red-500">{error}</p>
+    )}
+  </div>
+);
+
 const cld = new Cloudinary({
   cloud: {
     cloudName: "dwlhesiyi",
@@ -34,6 +62,10 @@ const CLOUDINARY_CLOUD_NAME = "dwlhesiyi";
 
 export default function SubmitForm() {
   const { showSuccessToast, showErrorToast } = useCustomToast();
+  const [formErrors, setFormErrors] = useState({
+    presentationType: '',
+    conferenceSource: ''
+  });
   const [formData, setFormData] = useState({
     authorName: "",
     number: "",
@@ -90,9 +122,21 @@ export default function SubmitForm() {
       throw error;
     }
   };
-
+  const validateForm = () => {
+    const errors = {
+      presentationType: !formData.presentationType ? 'Please select a presentation type' : '',
+      conferenceSource: !formData.conferenceSource ? 'Please select how you learned about the conference' : ''
+    };
+    
+    setFormErrors(errors);
+    return !Object.values(errors).some(error => error);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      showErrorToast("Please fill in all required fields");
+      return;
+    }
     try {
       let pdfUrl = "";
       if (pdfFile) {
@@ -152,7 +196,23 @@ export default function SubmitForm() {
       );
     }
   };
+  const presentationTypeOptions = [
+    { value: "Poster", label: "Poster" },
+    { value: "Oral", label: "Oral" },
+    { value: "Virtual", label: "Virtual" },
+  ];
 
+  const conferenceSourceOptions = [
+    { value: "conference-alerts", label: "Conference Alerts" },
+    { value: "email", label: "Email" },
+    { value: "friend-colleague-supervisor", label: "Friend, Colleague or Supervisor" },
+    { value: "conference-alarm", label: "Conference Alarm" },
+    { value: "facebook", label: "Facebook" },
+    { value: "google-search", label: "Google Search" },
+    { value: "eventbrite", label: "Eventbrite" },
+    { value: "linkedin", label: "LinkedIn" },
+    { value: "others", label: "Others" }
+  ];
   return (
     <section className="py-12 ">
       <div className="container mx-auto px-4">
@@ -316,27 +376,19 @@ export default function SubmitForm() {
                     </div>
                   </RadioGroup>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="presentationType">Presentation Type</Label>
-                  <Select
-                    name="presentationType"
-                    value={formData.presentationType}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        presentationType: value,
-                      }))
-                    }
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select presentation type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Poster">Poster</SelectItem>
-                      <SelectItem value="Oral">Oral</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                <SelectField
+        label="Presentation Type"
+        name="presentationType"
+        value={formData.presentationType}
+        onValueChange={(value) =>
+          setFormData((prev) => ({
+            ...prev,
+            presentationType: value,
+          }))
+        }
+        options={presentationTypeOptions}
+        error={formErrors.presentationType}
+      />
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
@@ -347,44 +399,19 @@ export default function SubmitForm() {
                     rows={4}
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="conferenceSource">
-                    How this conference came to be known to you
-                  </Label>
-                  <Select
-                    name="conferenceSource"
-                    value={formData.conferenceSource}
-                    onValueChange={(value) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        conferenceSource: value,
-                      }))
-                    }
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select an option" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="conference-alerts">
-                        Conference Alerts
-                      </SelectItem>
-                      <SelectItem value="email">Email</SelectItem>
-                      <SelectItem value="friend-colleague-supervisor">
-                        Friend, Colleague or Supervisor
-                      </SelectItem>
-                      <SelectItem value="conference-alarm">
-                        Conference Alarm
-                      </SelectItem>
-                      <SelectItem value="facebook">Facebook</SelectItem>
-                      <SelectItem value="google-search">
-                        Google Search
-                      </SelectItem>
-                      <SelectItem value="eventbrite">Eventbrite</SelectItem>
-                      <SelectItem value="linkedin">LinkedIn</SelectItem>
-                      <SelectItem value="others">Others</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+                <SelectField
+        label="How this conference came to be known to you"
+        name="conferenceSource"
+        value={formData.conferenceSource}
+        onValueChange={(value) =>
+          setFormData((prev) => ({
+            ...prev,
+            conferenceSource: value,
+          }))
+        }
+        options={conferenceSourceOptions}
+        error={formErrors.conferenceSource}
+      />
                 <Button type="submit" className="w-full">
                   Submit Paper
                 </Button>
