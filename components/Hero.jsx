@@ -79,7 +79,7 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
     
-      <div className="relative z-10 container mx-auto px-4 md:px-6 pt-16 md:pt-12 min-h-full py-24 flex items-center">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 pt-16 md:pt-12 min-h-full py-8 flex items-center">
         <motion.div 
           className="max-w-3xl space-y-8 text-white"
           variants={containerVariants}

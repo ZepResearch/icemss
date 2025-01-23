@@ -71,6 +71,10 @@ export default function Footer() {
                 height={80}
               />
             </Link>
+            <div className="inline-flex justify-start items-center text-white text-xl sm:text-xl font-semibold ">
+          <Image src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1726731577/il2wr5yxd2w1sarnj3it.svg" width={100} height={40} alt="ICASEM" className=" " />
+          <span className="-ml-3">Zep Research</span> 
+          </div>
             <div className="flex space-x-4 ml-4 mb-4">
               {socialLinks.map((item) => (
                 <a
