@@ -16,8 +16,6 @@ export default function DatesSection() {
   useEffect(() => {
     const fetchDates = async () => {
       try {
-      
-        
         // Fetch all records sorted by date
         const records = await pb.collection('dates').getFullList({
           sort: 'date',
@@ -86,10 +84,10 @@ export default function DatesSection() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="space-y-2">
-                  <span>{item.date}</span>
-                  <h3 className="font-bold">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                <div className="space-y-2">  {/* {index <= 2 ? (if want in 1 and 2 index) */}
+                  <span className={index === 0 ? "line-through" : ""}>{item.date}</span>
+                  <h3 className={`font-bold ${index === 0 ? "line-through" : ""}`}>{item.title}</h3>
+                  <p className={`text-sm text-muted-foreground leading-relaxed ${index === 0 ? "line-through" : ""}`}>
                     {item.description}
                   </p>
                 </div>
