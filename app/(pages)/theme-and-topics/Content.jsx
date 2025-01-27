@@ -116,7 +116,7 @@ export default function ThemeAndTopics() {
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-primary text-white">Conference Themes</Badge>
-          <h2 className="text-4xl font-bold underline underline-offset-2 decoration-primary mb-4">2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences (ICEMSS)</h2>
+          <h2 className="text-4xl font-bold  mb-4">2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences (ICEMSS)</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Advancing Knowledge Through Interdisciplinary Research and Innovation
           </p>
@@ -207,8 +207,8 @@ export default function ThemeAndTopics() {
         <motion.div variants={itemVariants} className="mt-12 grid md:grid-cols-2 gap-6">
           <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary/40">
             <CardHeader className="bg-primary/40 text-white p-6">
-              <CardTitle className="text-2xl flex items-center">
-                <Calendar className="mr-2 h-6 w-6 drop-shadow-2xl" />
+              <CardTitle className="text-2xl flex items-center text-blue-700">
+                <Calendar className="mr-2 h-6 w-6 drop-shadow-2xl  text-blue-700" />
                 Important Dates
               </CardTitle>
             </CardHeader>
@@ -228,7 +228,7 @@ export default function ThemeAndTopics() {
           <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary">
             <CardHeader className="bg-primary text-white p-6">
               <CardTitle className="text-2xl flex items-center">
-                <Globe className="mr-2 h-6 w-6" />
+                <Globe className="mr-2 h-6 w-6 " />
                 Conference Highlights
               </CardTitle>
             </CardHeader>
