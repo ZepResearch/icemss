@@ -18,7 +18,7 @@ export default function DatesSection() {
       try {
         // Fetch all records sorted by date
         const records = await pb.collection('dates').getFullList({
-          sort: 'date',
+          sort: 'created',
           requestKey: null
         })
 
@@ -74,7 +74,7 @@ export default function DatesSection() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 grid-flow-dense gap-8 pt-8">
             {dates.map((item, index) => (
               <motion.div
                 key={index}
