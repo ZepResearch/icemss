@@ -68,7 +68,7 @@ export function CoOrganizationLogosClient({ logos }) {
     
     {/* Separate container for last 2 logos */}
     {logos.length > 8 && (
-      <div className="col-span-full lg:col-span-8 flex justify-center gap-24">
+      <div className="col-span-full lg:col-span-8 flex sm:flex-row flex-col justify-center sm:gap-24 gap-8">
         {logos.slice(8).map((logo, index) => (
           <motion.div
             key={index + 8}
