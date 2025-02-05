@@ -46,12 +46,12 @@ const people = [
     imageUrl:
       "https://res.cloudinary.com/dwlhesiyi/image/upload/v1727851537/pather%20logo/an4uoqfpuhitlpzc1myq.png",
   },
-  {
-    name: "Prof. Michasel Rivers",
-    role: "Panel Moderator",
-    imageUrl:
-      "https://res.cloudinary.com/dwlhesiyi/image/upload/v1727851536/pather%20logo/itr0sezg2mkyt0noyfvl.png",
-  },
+  // {
+  //   name: "Prof. Michasel Rivers",
+  //   role: "Panel Moderator",
+  //   imageUrl:
+  //     "https://res.cloudinary.com/dwlhesiyi/image/upload/v1727851536/pather%20logo/itr0sezg2mkyt0noyfvl.png",
+  // },
 ];
 
 export default function IACommittee() {
