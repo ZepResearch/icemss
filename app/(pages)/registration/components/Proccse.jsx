@@ -63,6 +63,7 @@ export default function Process() {
             </Card>
           ))}
         </div>
+          <h1 className=" text-center text-red-600 font-semibold pt-4">N.B: For journal publication separate fee would be charged.</h1>
       </div>
     </div>
   );
