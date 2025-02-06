@@ -102,8 +102,8 @@ export default function CancellationPolicy() {
               If you have any questions about our cancellation policy or need assistance, please dont hesitate to contact our support team:
             </p>
             <p className="mt-2 text-blue-900">
-              <strong>Email:</strong> support@icemss.com<br />
-              <strong>Phone:</strong> +65 6123 4567
+              <strong>Email:</strong> info@icemss.in<br />
+              <strong>Phone:</strong> +91 82600 80050
             </p>
           </CardContent>
         </Card>
