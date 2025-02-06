@@ -40,6 +40,7 @@ export default function Process() {
 
   return (
     <div className="py-12 px-4 bg-white ">
+        
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8 underline underline-offset-4 decoration-blue-400">
           Registration Process
@@ -63,7 +64,7 @@ export default function Process() {
             </Card>
           ))}
         </div>
-          <h1 className=" text-center text-red-600 font-semibold pt-4">N.B: For journal publication separate fee would be charged.</h1>
+        
       </div>
     </div>
   );

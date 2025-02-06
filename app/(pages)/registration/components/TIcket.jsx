@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check } from 'lucide-react';
+import { Check, Info } from 'lucide-react';
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -292,6 +292,9 @@ export default function Ticket() {
               </Card>
             </div>
           ))}
+        </div>
+        <div className="p-4 bg-red-200 max-w-3xl mx-auto mt-8 rounded-lg flex justify-center items-center ">
+        <h1 className=" text-center text-red-600 font-semibold inline-flex gap-2 text-xl"><Info/>N.B: For journal publication separate fee would be charged.</h1>
         </div>
       </div>
       {selectedTicket && (
