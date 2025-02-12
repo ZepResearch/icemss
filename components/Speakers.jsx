@@ -18,7 +18,7 @@ export default function SpeakersView() {
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   
-  const categories = [ "Keynote Speaker","Panelist","Organizing Secretary",  "Session Chair"]
+  const categories = [ "Keynote Speaker","Panelist","Organizing Secretary",  "Session Chair","Conference Chair"]
   
   useEffect(() => {
     const fetchSpeakers = async () => {
