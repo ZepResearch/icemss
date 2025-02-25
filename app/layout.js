@@ -6,6 +6,7 @@ import { ToastProvider } from "@/components/ui/ToastProvider";
 import TawkToChat from "@/components/TawkToChat";
 import { FloatingWhatsAppButton } from "@/components/whatsapp";
 import Script from 'next/script';
+import DownloadPopup from "@/components/download-popup";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased mt-12`}
       >
+        <DownloadPopup/>
         <Navbar/>
         {children}
         <Footer/>
