@@ -28,7 +28,7 @@ export default function DownloadPopup() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed bottom-4 left-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg shadow-lg p-6 max-w-sm z-50 border border-purple-300 animate-fade-in-up">
+    <div className="fixed bottom-20 left-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg shadow-lg p-6 max-w-sm z-50 border border-purple-300 animate-fade-in-up">
       <button
         onClick={handleClose}
         className="absolute top-2 right-2 text-white hover:text-purple-200 transition-colors"
