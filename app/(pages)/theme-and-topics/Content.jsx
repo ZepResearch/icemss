@@ -204,8 +204,8 @@ export default function ThemeAndTopics() {
           </Link>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="mt-12 grid md:grid-cols-2 gap-6">
-          <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary/40">
+        <motion.div variants={itemVariants} className="mt-12 grid md:grid-cols-1 gap-6">
+          {/* <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary/40">
             <CardHeader className="bg-primary/40 text-white p-6">
               <CardTitle className="text-2xl flex items-center text-blue-700">
                 <Calendar className="mr-2 h-6 w-6 drop-shadow-2xl  text-blue-700" />
@@ -223,7 +223,7 @@ export default function ThemeAndTopics() {
                 ))}
               </ul>
             </CardContent>
-          </Card>
+          </Card> */}
 
           <Card className="overflow-hidden shadow-2xl bg-white border-2 border-primary">
             <CardHeader className="bg-primary text-white p-6">

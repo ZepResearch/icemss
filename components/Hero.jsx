@@ -9,11 +9,11 @@ import { useState, useEffect } from "react"
 
 
 const backgroundImages = [
-  "https://images.unsplash.com/photo-1506462945848-ac8ea6f609cc?q=80&w=2072&auto=format&fit=crop",
-  "https://plus.unsplash.com/premium_photo-1697730429201-381b71f61427?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1679301429776-08887a5e26d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1667849521402-efb9b61ddf73?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1622811895369-6d4fe79731c6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1614082242765-7c98ca0f3df3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1697730390320-8412ee5eae82?q=80&w=2045&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1569034797434-b168fbcf7fcc?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1666286956135-0fb603dad5cf?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ]
 
 export default function Hero() {
@@ -116,33 +116,34 @@ export default function Hero() {
         >
           <motion.div className="space-y-4" variants={itemVariants}>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences
+              3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
             </h1>
             <p className="max-w-[600px] text-white/80 md:text-xl">
               &apos; Bridging disciplines, fostering innovation, and addressing global challenges through
               interdisciplinary research and collaboration &apos;
             </p>
             <p className="max-w-[600px] text-white/80 md:text-xl">
-              Co-organized by- Indraprastha College For Women–Delhi University (IPCW–DU) and Swami Vivekanand Subharti
-              University
+              Co-organized by [declared soon]
+              {/* by- Indraprastha College For Women–Delhi University (IPCW–DU) and Swami Vivekanand Subharti */}
+              {/* University */}
             </p>
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>
             {/* images */}
             <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4 max-w-2xl  backdrop-blur-sm bg-gray-50/30 py-4 rounded-3xl">
               <img
-                src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1728043047/yqhbu4xrrwcab48qtpfw.png"
+                src="/assets/scopus.png"
                 alt=""
                 className="h-12 drop-shadow-lg"
               />
               <img
-                src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1728043732/dpwtq9cenauyctsvd9vg.png"
+                src="/assets/clarivate.png"
                 alt=""
                 className="h-12 drop-shadow-lg"
               />
 
               <img
-                src=" https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png"
+                src="assets/zepresearch.png"
                 alt=""
                 className="h-12 drop-shadow-lg"
               />
@@ -197,10 +198,10 @@ export default function Hero() {
               <div>
                 <h2 className="font-bold text-2xl">Conference Date</h2>
                 <p className="text-lg">
-                  <span className="text-lg">19</span>
-                  <sup>th</sup>
-                  <span className="text-lg">-20</span>
-                  <sup>th</sup> February, 2025
+                  <span className="text-lg">22</span>
+                  <sup>nd</sup>
+                  <span className="text-lg">-23</span>
+                  <sup>rd</sup> DECEMBER , 2025
                 </p>
               </div>
             </div>
@@ -211,9 +212,9 @@ export default function Hero() {
               <div>
                 <h3 className="font-bold text-2xl">Conference Venue</h3>
                 <p className="text-lg">
-                  Indraprastha College For Women–Delhi University (IPCW–DU),
+                 [detail location declared soon] <br />
                   <br />
-                  Delhi, India
+                  Goa	
                 </p>
               </div>
             </div>

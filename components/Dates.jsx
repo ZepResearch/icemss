@@ -85,9 +85,9 @@ export default function DatesSection() {
                 className="relative"
               >
                 <div className="space-y-2">  {/* {index <= 2 ? (if want in 1 and 2 index) */}
-                  <span className={index === 0 ? "line-through" : ""}>{item.date}</span>
-                  <h3 className={`font-bold ${index === 0 ? "line-through" : ""}`}>{item.title}</h3>
-                  <p className={`text-sm text-muted-foreground leading-relaxed ${index === 0 ? "line-through" : ""}`}>
+                  <span className={index === -1 ? "line-through" : ""}>{item.date}</span>
+                  <h3 className={`font-bold ${index === -1 ? "line-through" : ""}`}>{item.title}</h3>
+                  <p className={`text-sm text-muted-foreground leading-relaxed ${index === -1 ? "line-through" : ""}`}>
                     {item.description}
                   </p>
                 </div>

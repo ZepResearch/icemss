@@ -25,7 +25,7 @@ export default function Home() {
       <AboutSection/>
       <Buttons/>
       <ObjectivesSection/>
-      <SpeakerSection/>
+      {/* <SpeakerSection/> */}
       <SDGSection/>
       <CTASection/> 
       <DatesSection/>

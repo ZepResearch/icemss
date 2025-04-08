@@ -10,7 +10,7 @@ import { addDays } from "date-fns"
 
 const scheduleData = [
   {
-    date: "February - 19 | Day 1",
+    date: "December - 22 | Day 1",
     items: [
       { time: "8:00AM - 9:15AM", title: "Registration" },
       { time: "9:15AM - 9:30AM", title: "Inaugural Function" },
@@ -24,7 +24,7 @@ const scheduleData = [
     ]
   },
   {
-    date: "February - 20 | Day 2",
+    date: "December - 23 | Day 2",
     items: [
       { time: "9:00AM - 9:15AM", title: "Registration" },
       { time: "9:15AM - 9:30AM", title: "Day 2 Opening Remarks" },
@@ -54,7 +54,7 @@ const scheduleData = [
 ]
 
 export default function ConferenceSchedule() {
-  const startDate = new Date(2025, 1, 19) // March 21, 2024
+  const startDate = new Date(2025, 11, 22) // March 21, 2024
   const [selectedDates, setSelectedDates] = useState([
     startDate,
     addDays(startDate, 1),
@@ -69,7 +69,7 @@ export default function ConferenceSchedule() {
             Conference Dates
           </h1>
           <h2 className="text-muted-foreground">
-            Join us February 19-20 for three days of cutting-edge insights and networking. Reserve your spot today!
+            Join us December 22nd-23rd for three days of cutting-edge insights and networking. Reserve your spot today!
           </h2>
         </div>
 
