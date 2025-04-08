@@ -128,12 +128,12 @@ export default function CTASection() {
                   </div>
                   <div className="relative aspect-square md:aspect-auto">
                     <Image
-                      src="https://plus.unsplash.com/premium_photo-1720798652442-bfa6296d30ec?q=80&w=2121&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1642922835816-e2ac68db5c42?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Conference Hall"
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-primary/20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-700/50 to-primary/20" />
                     <div className="absolute bottom-4 left-4 right-4 p-4 bg-background/90 backdrop-blur-sm rounded-lg">
                       <p className="font-semibold text-lg">Join 1000+ Academic Professionals</p>
                       <p className="text-sm text-muted-foreground">Network with peers from 40+ countries</p>

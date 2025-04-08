@@ -1,14 +1,17 @@
 "use client"
 
-
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import { Toaster, toast } from "react-hot-toast"
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 export default function PaperSubmissionForm() {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState(null)
   const [selectedFile, setSelectedFile] = useState(null)
+  const [phoneNumber, setPhoneNumber] = useState()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -17,6 +20,11 @@ export default function PaperSubmissionForm() {
 
     try {
       const formData = new FormData(e.currentTarget)
+      
+      // Add phone number to form data
+      if (phoneNumber) {
+        formData.set("phone_number", phoneNumber)
+      }
 
       // Add file if selected
       if (selectedFile) {
@@ -34,10 +42,14 @@ export default function PaperSubmissionForm() {
         throw new Error(data.message || "Failed to submit paper")
       }
 
+      // Show success toast
+      toast.success("Paper submitted successfully!")
+      
       // Redirect to success page
       router.push("/submission/success")
     } catch (err) {
       setError(err.message || "An error occurred while submitting your paper")
+      toast.error(err.message || "An error occurred while submitting your paper")
       setIsSubmitting(false)
     }
   }
@@ -50,7 +62,8 @@ export default function PaperSubmissionForm() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md py-24">
-      <h1 className="text-4xl font-bold text-center mb-6 text-blue-400">Paper Submission Form</h1>
+      <Toaster position="top-right" />
+      <h1 className="text-4xl font-bold text-center mb-6 text-blue-600">Paper Submission Form</h1>
 
       {error && <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">{error}</div>}
 
@@ -75,10 +88,11 @@ export default function PaperSubmissionForm() {
             <label htmlFor="phone_number" className="block text-sm font-medium text-gray-700 mb-1">
               Phone Number *
             </label>
-            <input
-              type="tel"
-              id="phone_number"
-              name="phone_number"
+            <PhoneInput
+              international
+              defaultCountry="US"
+              value={phoneNumber}
+              onChange={setPhoneNumber}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
             />
@@ -263,7 +277,7 @@ export default function PaperSubmissionForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-6 py-3 bg-blue-400 text-white font-medium rounded-md hover:bg-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-6 py-3 bg-blue-500 text-white font-medium rounded-md hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Submitting..." : "Submit Paper"}
           </button>
@@ -272,4 +286,3 @@ export default function PaperSubmissionForm() {
     </div>
   )
 }
-

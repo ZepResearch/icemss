@@ -77,7 +77,7 @@ export default function SDGSection() {
            NATIONS SUSTAINABLE DEVELOPMENT GOALS (SDGS)
         </h2>
         
-        <div 
+        {/* <div 
           ref={scrollRef}
           className="flex overflow-x-auto gap-6 pb-6 cursor-grab active:cursor-grabbing"
           onMouseDown={handleMouseDown}
@@ -98,7 +98,7 @@ export default function SDGSection() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`
