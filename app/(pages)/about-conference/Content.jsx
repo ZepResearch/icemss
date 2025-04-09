@@ -37,7 +37,7 @@ export default function ConferenceAboutSection() {
   
     const conferenceFeatures = [
       { icon: CalendarDays, text: "2-day multidisciplinary event" },
-      { icon: MapPin, text: "At the heart of Delhi" },
+      { icon: MapPin, text: "At the heart of Goa" },
       { icon: Users, text: "Network with 1000+ academics and professionals" },
       { icon: Lightbulb, text: "Over 30+ workshops on cutting-edge research" },
       { icon: Globe, text: "Presenters from more than 50 countries" },
@@ -109,7 +109,7 @@ export default function ConferenceAboutSection() {
         <div className="max-w-6xl mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
             <Badge variant="outline" className="mb-4 text-lg px-4 py-1">About the Conference</Badge>
-            <h2 className="text-4xl font-bold text-primary mb-4">2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences</h2>
+            <h2 className="text-4xl font-bold text-primary mb-4">3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration.
             </p>
@@ -119,17 +119,17 @@ export default function ConferenceAboutSection() {
           <motion.div variants={itemVariants} className="mt-12 text-center pb-12">
             <Card className="bg-white/50 backdrop-blur-sm border-2 border-primary/20">
               <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-primary">About 2<sup>nd</sup>   ICEMSS</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-primary">About 3<sup>rd</sup>   ICEMSS</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground px-12 text-justify">
-                  The 2<sup>nd</sup> International Conference on Engineering, Management, and Social Sciences (ICEMSS) aims to establish a collaborative platform for exploring new dimensions of research. ICEMSS is dedicated to facilitating discussions on the challenges involved in the practical application of cutting-edge knowledge in the fields of Management, Engineering, and Social Sciences.
+                  The 3<sup>rd</sup> International Conference on Engineering, Management, and Social Sciences (ICEMSS) aims to establish a collaborative platform for exploring new dimensions of research. ICEMSS is dedicated to facilitating discussions on the challenges involved in the practical application of cutting-edge knowledge in the fields of Management, Engineering, and Social Sciences.
                   </p>
                   <p className="text-muted-foreground px-12 text-justify mt-2">
                   The rapid development across the globe has created an increasing need for awareness of the latest trends and knowledge. Continuous advancements in these fields have made it challenging for professionals such as academicians, students, aspiring researchers, and industry experts to keep pace with these changes. This conference is being organized to help participants stay updated and equipped to address these evolving developments.
                   </p>
                   <p className="text-muted-foreground px-12 text-justify mt-2">
-                  The conference, taking place on 19<sup>th</sup> - 20<sup>th</sup> February 2025 in New Delhi, India, will offer researchers — both experienced and emerging — the opportunity to present their findings to esteemed members of the global scientific community. Regardless of their specific focus within Management, Education, or Social Sciences, ICEMSS will provide them with the exposure needed to gain recognition for their research. Moreover, the event will open doors for new collaborations and further research opportunities.
+                  The conference, taking place on 22<sup>nd</sup> - 23<sup>rd</sup> December 2025 in  GOA, India, will offer researchers — both experienced and emerging — the opportunity to present their findings to esteemed members of the global scientific community. Regardless of their specific focus within Management, Education, or Social Sciences, ICEMSS will provide them with the exposure needed to gain recognition for their research. Moreover, the event will open doors for new collaborations and further research opportunities.
                   </p>
                 </CardContent>
             </Card>
@@ -173,9 +173,9 @@ export default function ConferenceAboutSection() {
           <motion.div variants={itemVariants} className="mt-12">
             <Card className="bg-white/50 backdrop-blur-sm border-2 border-primary/20">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-primary">Why Attend 2<sup>nd</sup>  ICEMSS 2025</CardTitle>
+                <CardTitle className="text-2xl font-bold text-primary">Why Attend 3<sup>rd</sup>  ICEMSS 2025</CardTitle>
                 <CardDescription className="text-lg">
-                  The 2<sup>nd</sup>  International Conference on Engineering, Management, and Social Sciences (ICEMSS) offers a unique platform for knowledge exchange, collaboration, and innovation.
+                  The 3<sup>rd</sup>  International Conference on Engineering, Management, and Social Sciences (ICEMSS) offers a unique platform for knowledge exchange, collaboration, and innovation.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -200,7 +200,7 @@ export default function ConferenceAboutSection() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-primary">Who Can Attend</CardTitle>
                 <CardDescription className="text-lg">
-                2<sup>nd</sup>  ICEMSS welcomes a diverse range of participants committed to solving global challenges through interdisciplinary collaboration.
+                3<sup>rd</sup>  ICEMSS welcomes a diverse range of participants committed to solving global challenges through interdisciplinary collaboration.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -233,7 +233,7 @@ export default function ConferenceAboutSection() {
                   Join us in shaping the future of engineering, management, and social sciences.
                 </CardDescription>
                 <p className="text-muted-foreground">
-                February 19th - 20th, 2025 • Delhi, India
+                December 22nd - 23rd, 2025 • GOA, India
                 </p>
               </CardContent>
             </Card>

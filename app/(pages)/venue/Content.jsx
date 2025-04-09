@@ -49,7 +49,7 @@ export default function VenuePage() {
 
             </div>
             <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg inline-flex gap-2">
-              <span className="font-bold"><Calendar/></span> 19th - 20th February 2025
+              <span className="font-bold"><Calendar/></span> 22nd - 23rd December 2025
             </div>
           </div>
         </div>
