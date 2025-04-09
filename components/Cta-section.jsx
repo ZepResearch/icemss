@@ -122,9 +122,9 @@ export default function CTASection() {
                       </Button>
                     </Link>
                     </div>
-                    <p className="text-xs text-muted-foreground">
+                    {/* <p className="text-xs text-muted-foreground">
                       Early bird registration closes on 11th January 2025. By registering, you agree to our terms and conditions.
-                    </p>
+                    </p> */}
                   </div>
                   <div className="relative aspect-square md:aspect-auto">
                     <Image
