@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import * as React from "react"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,48 +12,33 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetClose,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import Image from "next/image";
-import { Menu, Info, FileText, Globe, Users, Award, Phone, Mic, PersonStanding } from "lucide-react";
+} from "@/components/ui/navigation-menu"
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Image from "next/image"
+import { Menu, Info, FileText, Globe, Users, Award, PersonStanding, MessageSquare } from "lucide-react"
+import { ChatBubbleIcon } from "@radix-ui/react-icons"
 
-const ListItem = React.forwardRef(
-  ({ className, title, children, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className={cn(
-              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";
+const ListItem = React.forwardRef(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className,
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
 
 const MobileNavItem = ({ href, children, subItems, icon: Icon }) => (
   <AccordionItem value={href}>
@@ -86,7 +71,7 @@ const MobileNavItem = ({ href, children, subItems, icon: Icon }) => (
       </SheetClose>
     )}
   </AccordionItem>
-);
+)
 
 const MobileNav = () => (
   <Sheet>
@@ -120,10 +105,9 @@ const MobileNav = () => (
               { href: "/theme-and-topics", title: "Themes and Topics" },
               // { href: "/papers-format", title: "Paper Formats" },
               { href: "/mode-of-presentation", title: "Mode of Presentation" },
-            
-            
-              // { href: "/awards", title: "Awards" },  
-               { href: "/schedule", title: "Conference Schedule" },
+
+              // { href: "/awards", title: "Awards" },
+              { href: "/schedule", title: "Conference Schedule" },
             ]}
             icon={FileText}
           >
@@ -144,21 +128,29 @@ const MobileNav = () => (
           <MobileNavItem href="/contact">CONTACT</MobileNavItem>
         </Accordion>
         <div className="mt-6">
-        <SheetClose asChild>
-          <Button asChild variant='outline' className="w-full mb-2 border-blue-400 text-blue-400">
+          <SheetClose asChild>
+            <Button asChild variant="outline" className="w-full mb-2 border-blue-400 text-blue-400">
               <Link href="/sponsorship">Exhibit & Sponsor</Link>
             </Button>
-            </SheetClose>
+          </SheetClose>
           <SheetClose asChild>
             <Button asChild className="w-full">
               <Link href="/registration">REGISTER NOW</Link>
             </Button>
           </SheetClose>
         </div>
+        <div className="mt-4 flex justify-center flex-col items-center">
+          <Button size="icon" className="rounded-full bg-green-500 hover:bg-green-600 h-12 w-12">
+            <Link href="https://wa.me/8260080050" target="_blank" rel="noopener noreferrer">
+              <img src="/whatsapp.png" className="h-10 w-10 text-white" />
+            </Link>
+          </Button>
+              <span className="text-sm">chat with us</span>
+        </div>  
       </nav>
     </SheetContent>
   </Sheet>
-);
+)
 
 export default function Navbar() {
   return (
@@ -173,7 +165,6 @@ export default function Navbar() {
               width={150}
               height={150}
             />
-          
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-4 relative z-20 ">
@@ -198,8 +189,7 @@ export default function Navbar() {
                       title="About Conference"
                       className="hover:bg-slate-50 hover:drop-shadow-md"
                     >
-                      Learn about our climate change and sustainability
-                      conference.
+                      Learn about our climate change and sustainability conference.
                     </ListItem>
                     <ListItem
                       href="/about-organizers"
@@ -215,7 +205,6 @@ export default function Navbar() {
                     >
                       Discover the organizations behind this important event.
                     </ListItem> */}
-                    
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -231,8 +220,7 @@ export default function Navbar() {
                       title="Themes and Topics"
                       className="hover:bg-slate-50 hover:drop-shadow-md"
                     >
-                      Explore our conference themes on climate action and
-                      sustainability.
+                      Explore our conference themes on climate action and sustainability.
                     </ListItem>
                     {/* <ListItem
                       href="/papers-format"
@@ -292,22 +280,34 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    CONTACT
-                  </NavigationMenuLink>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>CONTACT</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button asChild variant='outline' className="w-full  border-blue-400 text-blue-400 hover:text-blue-600 font-medium">
-              <Link href="/sponsorship">Exhibit & Sponsor</Link>
-            </Button>
+          <Button
+            asChild
+            variant="outline"
+            className="w-full  border-blue-400 text-blue-400 hover:text-blue-600 font-medium"
+          >
+            <Link href="/sponsorship">Exhibit & Sponsor</Link>
+          </Button>
           <Button asChild className="">
             <Link href="/registration">REGISTER NOW</Link>
           </Button>
         </div>
         <MobileNav />
+        {/* WhatsApp Floating Button - Desktop */}
+        <div className="fixed right-4 top-2 z-50 hidden md:flex flex-col items-center">
+          <Button size="icon" className="rounded-full bg-green-500 hover:bg-green-600 h-12 w-12 shadow-lg">
+            <Link href="https://wa.me/8260080050" target="_blank" rel="noopener noreferrer">
+              <img src="/whatsapp.png" className="h-10 w-10 text-white" />
+              <span className="sr-only">Contact via WhatsApp</span>
+            </Link>
+          </Button>
+          <span className="text-xs font-medium mt-1 text-green-600">Chat with us</span>
+        </div>
       </div>
     </div>
-  );
+  )
 }
