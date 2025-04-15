@@ -86,8 +86,8 @@ export default function TicketCTA() {
 const tickets = [
   {
     name: "Physical Pass",
-    price: "₹4000-5000",
-    dprice:"$99-150",
+    price: "₹17,059",
+    dprice:"$199",
     period: "/person",
     img: "https://illustrations.popsy.co/blue/keynote-presentation.svg",
     features: [
@@ -100,8 +100,8 @@ const tickets = [
   },
   {
     name: "Virtual  Pass",
-    price: "₹1500-2000",
-    dprice:"$69-99",
+    price: "₹8,486",
+    dprice:"$ 99",
     period: "/person",
     img: "https://illustrations.popsy.co/blue/graphic-design.svg",
 

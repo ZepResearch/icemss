@@ -18,9 +18,9 @@ export default function Ticket() {
   const tickets = {
     physical: [
       {
-        name: "Indian Students",
-        price: 4000,
-        currency: "INR",
+        name: " Students",
+        price: 199,
+        currency: "USD",
         features: [
           "Access to all physical conference sessions",
           "Conference kit and materials",
@@ -29,9 +29,9 @@ export default function Ticket() {
         ],
       },
       {
-        name: "Indian Academicians",
-        price: 5000,
-        currency: "INR",
+        name: " Academicians",
+        price: 259,
+        currency: "USD",
         features: [
           "Access to all physical conference sessions",
           "Conference kit and materials",
@@ -39,34 +39,34 @@ export default function Ticket() {
           "Priority networking sessions",
         ],
       },
-      {
-        name: "Foreign Students",
-        price: 99,
-        currency: "USD",
-        features: [
-          "Access to all physical conference sessions",
-          "Conference kit and materials",
-          "Lunch and refreshments",
-          "International networking events",
-        ],
-      },
-      {
-        name: "Foreign Academicians",
-        price: 150,
-        currency: "USD",
-        features: [
-          "Access to all physical conference sessions",
-          "Conference kit and materials",
-          "Lunch and refreshments",
-          "VIP networking opportunities",
-        ],
-      },
+      // {
+      //   name: "Foreign Students",
+      //   price: 99,
+      //   currency: "USD",
+      //   features: [
+      //     "Access to all physical conference sessions",
+      //     "Conference kit and materials",
+      //     "Lunch and refreshments",
+      //     "International networking events",
+      //   ],
+      // },
+      // {
+      //   name: "Foreign Academicians",
+      //   price: 150,
+      //   currency: "USD",
+      //   features: [
+      //     "Access to all physical conference sessions",
+      //     "Conference kit and materials",
+      //     "Lunch and refreshments",
+      //     "VIP networking opportunities",
+      //   ],
+      // },
     ],
     virtual: [
-      {
-        name: "Indian Students",
-        price: 1500,
-        currency: "INR",
+      { 
+        name: "Students",
+        price: 99,
+        currency: "USD",
         features: [
           "Access to virtual conference platform",
           "Digital conference materials",
@@ -75,9 +75,9 @@ export default function Ticket() {
         ],
       },
       {
-        name: "Indian Academicians",
-        price: 2000,
-        currency: "INR",
+        name: "Academicians",
+        price: 159,
+        currency: "USD",
         features: [
           "Access to virtual conference platform",
           "Digital conference materials",
@@ -85,28 +85,28 @@ export default function Ticket() {
           "Extended recordings access",
         ],
       },
-      {
-        name: "Foreign Students",
-        price: 69,
-        currency: "USD",
-        features: [
-          "Access to virtual conference platform",
-          "Digital conference materials",
-          "Global networking sessions",
-          "Session recordings access",
-        ],
-      },
-      {
-        name: "Foreign Academicians",
-        price: 99,
-        currency: "USD",
-        features: [
-          "Access to virtual conference platform",
-          "Digital conference materials",
-          "Premium global networking",
-          "Extended recordings access",
-        ],
-      },
+      // {
+      //   name: "Foreign Students",
+      //   price: 69,
+      //   currency: "USD",
+      //   features: [
+      //     "Access to virtual conference platform",
+      //     "Digital conference materials",
+      //     "Global networking sessions",
+      //     "Session recordings access",
+      //   ],
+      // },
+      // {
+      //   name: "Foreign Academicians",
+      //   price: 99,
+      //   currency: "USD",
+      //   features: [
+      //     "Access to virtual conference platform",
+      //     "Digital conference materials",
+      //     "Premium global networking",
+      //     "Extended recordings access",
+      //   ],
+      // },
     ],
   };
 
