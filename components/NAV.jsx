@@ -16,7 +16,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
-import { Menu, Info, FileText, Globe, Users, Award, PersonStanding, MessageSquare } from "lucide-react"
+import { Menu, Info, FileText, Globe, Users, Award, PersonStanding, MessageSquare, GalleryHorizontal } from "lucide-react"
 import { ChatBubbleIcon } from "@radix-ui/react-icons"
 
 const ListItem = React.forwardRef(({ className, title, children, ...props }, ref) => {
@@ -277,6 +277,15 @@ export default function Navbar() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/gallery" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <GalleryHorizontal className="mr-2 h-4 w-4 inline" />
+                    Gallery
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
 
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
