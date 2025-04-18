@@ -6,62 +6,62 @@ import VideoSection from "./video-section"
 const firstConferenceImages = [
   {
     src: "/gallery/ICEMSS_06.png?height=600&width=800",
-    alt: "1st Conference - Opening Ceremony",
+    alt: "2nd Conference - Opening Ceremony",
   },
   {
     src: "/gallery/ICEMSS_02.png?height=600&width=800",
-    alt: "1st Conference - Keynote Speaker",
+    alt: "2nd Conference - Keynote Speaker",
   },
   {
     src: "/gallery/ICEMSS_03.png?height=600&width=800",
-    alt: "1st Conference - Panel Discussion",
+    alt: "2nd Conference - Panel Discussion",
   },
   {
     src: "/gallery/ICEMSS_04.png?height=600&width=800",
-    alt: "1st Conference - Award Ceremony",
+    alt: "2nd Conference - Award Ceremony",
   },
   {
     src: "/gallery/ICEMSS_01.png?height=600&width=800",
-    alt: "1st Conference - Award Ceremony",
+    alt: "2nd Conference - Award Ceremony",
   },
   {
     src: "/gallery/ICEMSS_05.png?height=600&width=800",
-    alt: "1st Conference - Award Ceremony",
+    alt: "2nd Conference - Award Ceremony",
   },
   {
     src: "/gallery/ICEMSS_07.png?height=600&width=800",
-    alt: "1st Conference - Award Ceremony",
+    alt: "2nd Conference - Award Ceremony",
   },
 ]
 
 const secondConferenceImages = [
   {
     src: "/gallery/2nd_ICEMSS_05.png?height=600&width=800",
-    alt: "2nd Conference - Opening Ceremony",
+    alt: "1st Conference - Opening Ceremony",
   },
   {
     src: "/gallery/2nd_ICEMSS_02.png?height=600&width=800",
-    alt: "2nd Conference - Keynote Speaker",
+    alt: "1st Conference - Keynote Speaker",
   },
   {
     src: "/gallery/2nd_ICEMSS_03.png?height=600&width=800",
-    alt: "2nd Conference - Workshop Session",
+    alt: "1st Conference - Workshop Session",
   },
   {
     src: "/gallery/2nd_ICEMSS_04.png?height=600&width=800",
-    alt: "2nd Conference - Networking Event",
+    alt: "1st Conference - Networking Event",
   },
   {
     src: "/gallery/2nd_ICEMSS_01.png?height=600&width=800",
-    alt: "2nd Conference - Networking Event",
+    alt: "1st Conference - Networking Event",
   },
   {
     src: "/gallery/2nd_ICEMSS_06.png?height=600&width=800",
-    alt: "2nd Conference - Networking Event",
+    alt: "1st Conference - Networking Event",
   },
   {
     src: "/gallery/2nd_ICEMSS_07.png?height=600&width=800",
-    alt: "2nd Conference - Networking Event",
+    alt: "1st Conference - Networking Event",
   },
 ]
 
