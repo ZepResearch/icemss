@@ -114,7 +114,7 @@ export default function Gallery() {
               </p>
             </div>
 
-            <ImageCarousel images={firstConferenceImages} />
+            <ImageCarousel images={ secondConferenceImages} />
           </section>
 
           {/* Second Conference Section */}
@@ -132,7 +132,7 @@ export default function Gallery() {
               </p>
             </div>
 
-            <ImageCarousel images={secondConferenceImages} />
+            <ImageCarousel images={firstConferenceImages} />
           </section>
 
           {/* Video Section */}
