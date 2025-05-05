@@ -6,6 +6,7 @@ import { Calendar, Headphones, MapPin, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { ReserveButton } from "./reserve-button"
 
 
 const backgroundImages = [
@@ -173,6 +174,7 @@ export default function Hero() {
                   Download Brochure
                 </Button>
               </Link>
+              <ReserveButton/>
             </div>
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>
