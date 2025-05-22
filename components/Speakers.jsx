@@ -140,9 +140,14 @@ export default function SpeakersView() {
                                   </div>
                                 )}
                                 <p className="text-blue-600 font-semibold text-xl mb-3">{speaker.role}</p>
-                                {speaker.bio && (
+                                <p className="text-blue-600 font-medium text-base mb-1">{speaker.college}</p>
+                                <p className="text-blue-600 font-medium text-base mb-1">{speaker.field}</p>
+                                <p className="text-blue-600 font-medium text-base mb-3">{speaker.country}</p>
+
+
+                                {/* {speaker.bio && (
                                   <p className="text-gray-600 line-clamp-3 mb-4">{speaker.bio}</p>
-                                )}
+                                )} */}
                                 <Button 
                                   onClick={() => openDrawer(speaker)} 
                                   className="w-full bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-200"
