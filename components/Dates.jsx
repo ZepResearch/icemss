@@ -84,12 +84,11 @@ export default function DatesSection() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="space-y-2">  {/* {index <= 2 ? (if want in 1 and 2 index) */}
-                  <span className={index === -1 ? "line-through" : ""}>{item.date}</span>
-                  <h3 className={`font-bold ${index === -1 ? "line-through" : ""}`}>{item.title}</h3>
-                  <p className={`text-sm text-muted-foreground leading-relaxed ${index === -1 ? "line-through" : ""}`}>
-                    {item.description}
-                  </p>
+                <div className="space-y-2 rounded-xl shadow-lg bg-primary/10 p-6 border border-primary/20">
+                  <span className={`block text-2xl font-extrabold text-primary ${index === -1 ? "line-through" : ""}`}>{item.date}</span>
+                  <hr className="border-2 border-black/80"/>
+                  <h3 className={`font-extrabold text-xl text-blue-700 ${index === -1 ? "line-through" : ""}`}>{item.title}</h3>
+                  <p className={`text-base text-blue-500 leading-relaxed font-semibold ${index === -1 ? "line-through" : ""}`}>{item.description}</p>
                 </div>
                 {index < dates.length - 1 && (
                   <div className="hidden md:block absolute top-4 right-0 w-full h-[1px] bg-border -z-10 translate-x-1/2" />
@@ -99,7 +98,7 @@ export default function DatesSection() {
           </div>
         </div>
         <Link className="flex justify-center items-center mt-12" href={'/schedule'}>
-          <Button>
+          <Button size={'lg'} >
             View Full Schedule
           </Button>
         </Link>

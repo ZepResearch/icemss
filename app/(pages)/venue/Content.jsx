@@ -45,11 +45,11 @@ export default function VenuePage() {
               Welcome to the 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of GOA provides an inspiring environment for interdisciplinary discussions and collaborations.
             </p>
             <div className="flex items-center text-blue-700 dark:text-blue-300 text-lg gap-2">
-            <span className="font-bold"><MapPin/></span> GOA, [detail Venue declared Soon]
+            <span className="font-bold"><MapPin/></span> GOA( Hotel/ University), [detail Venue declared Soon]
 
             </div>
             <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg inline-flex gap-2">
-              <span className="font-bold"><Calendar/></span> 22nd - 23rd December 2025
+              <span className="font-bold"><Calendar/></span> 11th - 12h December 2025
             </div>
           </div>
         </div>

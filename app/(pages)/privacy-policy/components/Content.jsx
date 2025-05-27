@@ -81,9 +81,9 @@ export default function PrivacyPolicy() {
                   </AccordionItem>
                 ))}
               </Accordion>
-              <p className="mt-6 text-sm text-blue-600">
+              {/* <p className="mt-6 text-sm text-blue-600">
                 Last updated: {new Date().toLocaleDateString()}
-              </p>
+              </p> */}
             </CardContent>
           </Card>
         </motion.div>

@@ -21,14 +21,14 @@ export default function Home() {
     <main>
       {/* <Banner/> */}
       <Hero/>
-      <CoOrganizationLogos/>
+      {/* <CoOrganizationLogos/> */}
       <AboutSection/>
       <Buttons/>
       <ObjectivesSection/>
+      <DatesSection/>
       <SpeakerSection/>
       <SDGSection/>
       <CTASection/> 
-      <DatesSection/>
       <TicketCTA/>
       <Testimonial/>
       <VenueCTA/>

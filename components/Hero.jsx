@@ -200,10 +200,10 @@ export default function Hero() {
               <div>
                 <h2 className="font-bold text-2xl">Conference Date</h2>
                 <p className="text-lg">
-                  <span className="text-lg">22</span>
-                  <sup>nd</sup>
-                  <span className="text-lg">-23</span>
-                  <sup>rd</sup> DECEMBER , 2025
+                  <span className="text-lg">11</span>
+                  <sup>th</sup>
+                  <span className="text-lg">-12</span>
+                  <sup>th</sup> DECEMBER , 2025
                 </p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function Hero() {
                 <p className="text-lg">
                  [detail location declared soon] <br />
                   <br />
-                  Goa	
+                  Goa	( Hotel/ University)
                 </p>
               </div>
             </div>

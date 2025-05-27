@@ -31,7 +31,7 @@ export default function CTASection() {
   const ctaItems = [
     {
       title: "Awards & Recognition",
-      description: "Best Paper Awards across multiple categories with prizes worth $5000",
+      description: "Best Paper Awards across multiple categories with certificates and medals",
       icon: Trophy,
       action: "View Awards",
       link:'/award'
@@ -107,11 +107,12 @@ export default function CTASection() {
                     <div className="space-y-4">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-5 h-5 text-primary" />
-                        <span>22nd - 23rd DECEMBER  2025</span>
+                        <span>11th - 12th DECEMBER  2025</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <MapPin className="w-5 h-5 text-primary" />
-                         <span>GOA</span>
+                         <span>GOA( Hotel/ University)
+                         </span>
                       </div>
                     </div>
                     <div className="space-y-4">

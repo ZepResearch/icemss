@@ -36,7 +36,7 @@ export default function AboutSection() {
       description: "Leading experts from academia and industry",
     },
     {
-      text: "1000+ Expected Attendees",
+      text: "300+ Expected Attendees",
       description: "Global participation from 40+ countries",
     },
     {

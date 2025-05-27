@@ -7,9 +7,9 @@ const footerSections = [
     title: "About",
     links: [
       { name: "Conference", href: "/about-conference" },
-      { name: "Organizers", href: "/about-organizers" },
+      // { name: "Organizers", href: "/about-organizers" },
       { name: "Committee", href: "/committee" },
-      { name: "Sponsorship", href: "/sponsorship" },
+      { name: "Sponsorship - 7848854815    ", href: "/sponsorship" },
     ],
   },
     {

@@ -29,14 +29,15 @@ export default function VenueCTA() {
           <CardContent className="p-0 space-y-6">
             <div className="grid gap-4 md:grid-cols-1 max-w-md">
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
-                <MapPin className="text-primary" />
-                <span className="font-medium">GOA</span>
+                <MapPin className="text-blue-300" />
+                <span className="font-medium">GOA( Hotel/ University)
+                </span>
               </div>
               
               
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
-                <Calendar className="text-primary" />
-                <span className="font-medium">December 22nd - 23rd, 2025</span>
+                <Calendar className="text-blue-300" />
+                <span className="font-medium">December 11th - 12th, 2025</span>
               </div>
             </div>
             <p className="text-base leading-relaxed">

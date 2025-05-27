@@ -36,12 +36,12 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: December 22nd-23rd , 2025" },
-    { icon: MapPin, text: "Goa,India" },
+    { icon: CalendarDays, text: "2-day event: 11th - 12th December, 2025" },
+    { icon: MapPin, text: "GOA (Hotel/ University), India" },
     { icon: Users, text: "500+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@icemss.in" },
-    { icon: Phone, text: "+91 82600 80050" },
+    { icon: Phone, text: "+91 82600 80050" },
   ]
 
   return (
@@ -118,7 +118,7 @@ export default function AboutCompany() {
                 Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
               <p className="text-muted-foreground">
-              22nd - 23rd December, 2025 • Goa,India
+              11th - 12th December, 2025 • GOA (Hotel/ University), India
               </p>
             </CardContent>
           </Card>

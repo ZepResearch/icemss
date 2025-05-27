@@ -13,29 +13,29 @@ export default function ModeOfPresent() {
     {
       title: "Oral Presentation",
       description:
-        "Present your research through a live speech to the audience. Oral presentations offer a dynamic way to share your findings, engage with your peers, and receive immediate feedback. This format allows for in-depth discussion of your methodology, results, and conclusions, providing a platform to showcase your expertise in tourism management and hospitality.",
+        "Present your research through a live speech to the audience. Oral presentations offer a dynamic way to share your findings, engage with your peers, and receive immediate feedback.",
       icon: Mic,
       image: "https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
-        "The presentation times for oral sessions are as follows: contributed presentations are 15 minutes. Please note: You must provide your presentation for preloading. Please submit your presentation (in English, copy-edited and proofread) via email to info[@]ictmh.org, no longer than 10 business days before the events starts. If for any reason, you are unable to submit your presentation in advance of the Conference, then you can preload your presentation to a laptop via registration desk area when you arrive at the Conference, you must preload this at least two hours before you are due to present.",
+        "10 min. presentation. Submit your presentation at info@icemss.in.",
     },
     {
       title: "Poster Presentation",
       description:
-        "Showcase your work visually with an academic poster. Poster presentations offer a unique opportunity to present your research in a concise, visually appealing format. This mode allows for more informal, one-on-one interactions with conference attendees, facilitating in-depth discussions and networking opportunities. It's an excellent way to present preliminary findings or ongoing research in the field of tourism and hospitality management.",
+        "Showcase your work visually with an academic poster. Poster presentations offer a unique opportunity to present your research in a concise, visually appealing format.",
       icon: ImageIcon,
       image: "https://images.unsplash.com/photo-1493972741200-51d407e0ee33?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
-        "Each Poster will be displayed at the Conference for 03 Minutes. Posters should be one page PDF or Image to be shown in Webinar. All Posters will be uploaded on the Conference Website before the conference for all the participants to download or go through it",
+        "Poster presentation.",
     },
     {
       title: "Virtual Presentation",
       description:
-        "Present remotely through our online conference platform. Virtual presentations offer flexibility and accessibility, allowing you to share your research with a global audience without the need for travel. This mode of presentation leverages technology to facilitate real-time interaction, Q&A sessions, and networking opportunities, ensuring that distance is no barrier to participating in this important tourism and hospitality management conference.",
+        "Present remotely through our online conference platform. Virtual presentations offer flexibility and accessibility, allowing you to share your research with a global audience without the need for travel.",
       icon: Video,
       image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content:
-        "Join Live Virtual Sessions. The conference program for Virtual presentations will be emailed to participants one week before the conference. Virtual presentations will be delivered via an online electronic forum (Webinar). Virtual session attendees will receive the Webinar invitation link a few days before the Conference. Joining the webinar session is easy and takes just a few seconds. Simply click the link in the invitation, you will proceed to your session immediately. Just remember to register first if you wish to attend as a Virtual presenter.",
+        "Virtual presentation (Via Zoom Platform).",
     },
   ];
   const itemVariants = {
@@ -105,26 +105,34 @@ export default function ModeOfPresent() {
                 <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
                   {mode.description}
                 </p>
-                <Button
-                  className="mb-4 bg-blue-500 hover:bg-blue-600 text-white"
-                  onClick={() =>
-                    setActiveMode(activeMode === index ? null : index)
-                  }
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {activeMode === index ? "Hide Details" : "Show Details"}
-                </Button>
-                {activeMode === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <p className="text-gray-700 dark:text-gray-300 mt-4 p-4 bg-primary/10 dark:bg-primary/30 rounded-lg">
-                      {mode.content}
-                    </p>
-                  </motion.div>
-                )}
+                  <p className="text-gray-700 dark:text-gray-300 mt-4 p-4 bg-primary/10 dark:bg-primary/30 rounded-lg">
+                    {mode.title === "Oral Presentation" && (
+                      <>
+                        <strong>10 min. presentation</strong><br />
+                        Submit your presentation at <a href="mailto:info@icemss.in" className="underline text-blue-600">info@icemss.in</a>.<br />
+                        Present your research live and engage with the audience. Receive immediate feedback and participate in Q&A sessions.
+                      </>
+                    )}
+                    {mode.title === "Poster Presentation" && (
+                      <>
+                        <strong>Poster presentation</strong><br />
+                        Display your research visually and interact with attendees during the poster session. Posters will be showcased at the conference venue and available for download online.
+                      </>
+                    )}
+                    {mode.title === "Virtual Presentation" && (
+                      <>
+                        <strong>Virtual presentation (Via Zoom Platform)</strong><br />
+                        Present your work remotely using the Zoom platform. Join live sessions, interact with participants, and be part of the conference from anywhere in the world.
+                      </>
+                    )}
+                  </p>
+                </motion.div>
               </div>
             </div>
           </motion.div>

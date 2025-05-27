@@ -87,7 +87,7 @@ export default function TermsAndConditions() {
           </ScrollArea>
         </div>
         <div className="text-center">
-          <p>Last updated: <span className="font-semibold text-blue-600">{new Date().toLocaleDateString()}</span></p>
+          {/* <p>Last updated: <span className="font-semibold text-blue-600">{new Date().toLocaleDateString()}</span></p> */}
           <p>For any questions regarding these Terms and Conditions, please contact us at <a className="font-semibold text-blue-600 hover:underline" href="mailto:info@icemss.com">info@icemss.com</a></p>
         </div>
       </div>
