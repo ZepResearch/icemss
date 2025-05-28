@@ -107,11 +107,11 @@ export default function CTASection() {
                     <div className="space-y-4">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-5 h-5 text-primary" />
-                        <span>11th - 12th DECEMBER  2025</span>
+                        <span>12th - 13th DECEMBER  2025</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <MapPin className="w-5 h-5 text-primary" />
-                         <span>GOA( Hotel/ University)
+                        <MapPin className="w-8 h-8 text-primary" />
+                         <span>Radisson Suites Bangkok Sukhumvit. Address- 23/2 Soi Sukhumvit 13, Khwaeng Khlong Toei Nuea, Khlong Toei, Bangkok 10110, Thailand
                          </span>
                       </div>
                     </div>
@@ -129,7 +129,7 @@ export default function CTASection() {
                   </div>
                   <div className="relative aspect-square md:aspect-auto">
                     <Image
-                      src="https://images.unsplash.com/photo-1642922835816-e2ac68db5c42?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1513568720563-6a5b8c6caab3?q=80&w=2044&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Conference Hall"
                       fill
                       className="object-cover"

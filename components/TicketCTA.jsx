@@ -9,80 +9,87 @@ export default function TicketCTA() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Conference Tickets
+            Registration Fees
           </h2>
           <p className="mx-auto max-w-2xl text-gray-500 md:text-xl">
             Join us for the International Conference on Engineering, Management and Social Sciences
           </p>
         </div>
         
-        <div className="mx-auto mt-12 max-w-6xl">
+        <div className="mx-auto mt-12 max-w-7xl space-y-12">
           {tickets.map((ticketType, index) => (
             <div key={index} className="mb-12">
               <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">
-                {ticketType.type} Attendance
+                {ticketType.type}
               </h3>
               
-              <div className={`grid gap-6 ${ticketType.type === 'Virtual' ? 'md:grid-cols-2 max-w-2xl mx-auto' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
-                {ticketType.categories.map((category, i) => (
-                  <Card key={i} className="relative overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    {category.badge && ticketType.type !== 'Virtual' && (
-                      <div className="absolute right-0 top-0">
-                        {/* <Badge variant="outline" className="m-4 bg-orange-50 text-orange-600 border-orange-200">
-                          {category.badge}
-                        </Badge> */}
-                      </div>
-                    )}
-                    
-                    <div className="p-6">
-                      <div className="text-center mb-6">
-                        <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                          {category.location}
-                        </h4>
-                        <p className="text-sm text-gray-600 mb-4">
-                          {category.participant}
-                        </p>
-                        
-                        <div className="space-y-4 bg-gray-50 p-4 rounded-lg">
-                          <div className="text-center border-b pb-2">
-                            <span className="text-sm font-medium text-gray-700 block mb-1">Presenter</span>
-                            <div className="text-2xl font-bold text-blue-600">
-                              {category.presenterPrice}
-                            </div>
-                          </div>
-                          <div className="text-center">
-                            <span className="text-sm font-medium text-gray-700 block mb-1">Listener</span>
-                            <div className="text-2xl font-bold text-blue-600">
-                              {category.listenerPrice}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <ul className="space-y-2 mb-6">
-                        {category.features.map((feature, j) => (
-                          <li key={j} className="flex items-start">
-                            <Check className="mr-2 h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-700">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Link href="/registration">
-                      <button className="w-full rounded-lg bg-blue-500 px-4 py-3 text-sm font-semibold text-white hover:bg-blue-600 transition-colors">
-                        Register Now
-                      </button>
-                      </Link>
-                      
-                      <p className="mt-2 text-center text-xs text-gray-500">
-                        Limited seats available
-                      </p>
-                    </div>
-                  </Card>
-                ))}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300 bg-white shadow-lg">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Category</th>
+                      <th className="border border-gray-300 px-4 py-3 text-center font-semibold">Early Bird Fee</th>
+                      <th className="border border-gray-300 px-4 py-3 text-center font-semibold">
+                        {ticketType.type.includes('Virtual') ? 'Presentation Fee' : 'Fee'}
+                      </th>
+                      <th className="border border-gray-300 px-4 py-3 text-center font-semibold">
+                        With Scopus Q3/Q4 Publication
+                      </th>
+                      <th className="border border-gray-300 px-4 py-3 text-center font-semibold">
+                        With Scopus Q1/Q2 Publication
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {ticketType.categories.map((category, i) => (
+                      <tr key={i} className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-4 py-3 font-medium">{category.name}</td>
+                        <td className="border border-gray-300 px-4 py-3 text-center font-semibold text-blue-600">
+                          {category.earlyBird}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-3 text-center font-semibold text-blue-600">
+                          {category.regular}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-3 text-center font-semibold text-blue-600">
+                          {category.scopusQ3Q4 || '-'}
+                        </td>
+                        <td className="border border-gray-300 px-4 py-3 text-center font-semibold text-blue-600">
+                          {category.scopusQ1Q2 || '-'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="mt-6 text-center">
+                <Link href="/registration">
+                <button className="rounded-lg bg-blue-500 px-8 py-3 text-sm font-semibold text-white hover:bg-blue-600 transition-colors">
+                  Register Now
+                </button>
+                </Link>
+                <p className="mt-2 text-xs text-gray-500">
+                  Limited seats available
+                </p>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Features Section */}
+        {/* <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
+            <Card key={index} className="p-6">
+              <div className="flex items-start space-x-3">
+                <Check className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-2">{feature.title}</h4>
+                  <p className="text-sm text-gray-600">{feature.description}</p>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div> */}
       </div>
     </section>
   );
@@ -90,101 +97,108 @@ export default function TicketCTA() {
 
 const tickets = [
   {
-    type: "Physical",
+    type: "Physical Presentation (Foreign participants):",
     categories: [
       {
-        location: "Indian",
-        participant: "Student",
-        presenterPrice: "₹3,000",
-        listenerPrice: "₹2,000",
-        badge: "Early Bird",
-        features: [
-          "Full conference access",
-          "Networking sessions",
-          "Workshop materials",
-          "Lunch and refreshments",
-          "Certificate of attendance",
-          "Conference kit"
-        ]
+        name: "Academicians",
+        earlyBird: "319 USD",
+        regular: "359 USD", 
+        scopusQ3Q4: "859 USD",
+        scopusQ1Q2: "1399 USD"
       },
       {
-        location: "Indian",
-        participant: "Academician",
-        presenterPrice: "₹5,000",
-        listenerPrice: "₹2,000",
-        badge: "Early Bird",
-        features: [
-          "Full conference access",
-          "Networking sessions",
-          "Workshop materials",
-          "Lunch and refreshments",
-          "Certificate of attendance",
-          "Conference kit"
-        ]
+        name: "Students",
+        earlyBird: "219 USD",
+        regular: "259 USD",
+        scopusQ3Q4: "759 USD", 
+        scopusQ1Q2: "1299 USD"
       },
       {
-        location: "Foreign",
-        participant: "Student",
-        presenterPrice: "$199",
-        listenerPrice: "$99",
-        badge: "Popular",
-        features: [
-          "Full conference access",
-          "International networking",
-          "Workshop materials",
-          "Meals included",
-          "Certificate of attendance",
-          "Welcome kit"
-        ]
-      },
-      {
-        location: "Foreign",
-        participant: "Academician",
-        presenterPrice: "$249",
-        listenerPrice: "$99",
-        badge: "Premium",
-        features: [
-          "Full conference access",
-          "VIP networking sessions",
-          "Workshop materials",
-          "All meals included",
-          "Certificate of attendance",
-          "Premium welcome kit"
-        ]
+        name: "Listeners",
+        earlyBird: "169 USD",
+        regular: "199 USD",
+        scopusQ3Q4: "-",
+        scopusQ1Q2: "-"
       }
     ]
   },
   {
-    type: "Virtual",
+    type: "Virtual presentation (Foreign participants):",
     categories: [
       {
-        location: "",
-        participant: "Student",
-        presenterPrice: "$99",
-        listenerPrice: "$99",
-        features: [
-          "Live streaming access",
-          "Digital materials",
-          "Virtual networking",
-          "Recorded sessions",
-          "Digital certificate",
-          "Online Q&A sessions"
-        ]
+        name: "Academicians", 
+        earlyBird: "149 USD",
+        regular: "169 USD",
+        scopusQ3Q4: "669 USD",
+        scopusQ1Q2: "1199 USD"
       },
       {
-        location: "",
-        participant: "Academician",
-        presenterPrice: "$99",
-        listenerPrice: "$99",
-        features: [
-          "Live streaming access",
-          "Digital materials",
-          "Virtual networking",
-          "Recorded sessions",
-          "Digital certificate",
-          "Priority virtual support"
-        ]
+        name: "Students",
+        earlyBird: "199 USD", 
+        regular: "219 USD",
+        scopusQ3Q4: "719 USD",
+        scopusQ1Q2: "1099 USD"
+      },
+      {
+        name: "Listeners",
+        earlyBird: "99 USD",
+        regular: "119 USD", 
+        scopusQ3Q4: "-",
+        scopusQ1Q2: "-"
       }
     ]
+  },
+  {
+    type: "Indian Participants (Physical Presentation):",
+    categories: [
+      {
+        name: "Academicians",
+        earlyBird: "9500 INR",
+        regular: "10000 INR",
+        scopusQ3Q4: "40000 INR", 
+        scopusQ1Q2: "100000 INR"
+      },
+      {
+        name: "Students", 
+        earlyBird: "8500 INR",
+        regular: "9000 INR",
+        scopusQ3Q4: "38000 INR",
+        scopusQ1Q2: "98000 INR"
+      },
+      {
+        name: "Listeners",
+        earlyBird: "3000 INR",
+        regular: "4000 INR",
+        scopusQ3Q4: "-", 
+        scopusQ1Q2: "-"
+      }
+    ]
+  }
+];
+
+const features = [
+  {
+    title: "Full Conference Access",
+    description: "Access to all sessions, workshops, and networking events"
+  },
+  {
+    title: "Publication Opportunities", 
+    description: "Option to publish in Scopus indexed journals"
+  },
+  {
+    title: "Networking Sessions",
+    description: "Connect with professionals and academics worldwide"
+  },
+  {
+    title: "Digital Materials",
+    description: "Access to all conference materials and recordings"
+  },
+  {
+    title: "Certificates",
+    description: "Certificate of participation and presentation"
+  },
+  {
+    title: "Technical Support",
+    description: "24/7 support for virtual and physical attendees"
   }
 ];

@@ -42,14 +42,15 @@ export default function VenuePage() {
               Conference Venue
             </h1>
             <p className="text-xl mb-6 leading-relaxed">
-              Welcome to the 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of GOA provides an inspiring environment for interdisciplinary discussions and collaborations.
+              Welcome to the 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences. Our luxurious venue in the heart of Bangkok provides an inspiring environment for interdisciplinary discussions and collaborations.
             </p>
             <div className="flex items-center text-blue-700 dark:text-blue-300 text-lg gap-2">
-            <span className="font-bold"><MapPin/></span> GOA( Hotel/ University), [detail Venue declared Soon]
+            <span className="font-bold"><MapPin/></span> Radisson Suites Bangkok Sukhumvit<br/>
+            23/2 Soi Sukhumvit 13, Khwaeng Khlong Toei Nuea, Khlong Toei, Bangkok 10110, Thailand
 
             </div>
             <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg inline-flex gap-2">
-              <span className="font-bold"><Calendar/></span> 11th - 12h December 2025
+              <span className="font-bold"><Calendar/></span> 12th - 13th December 2025
             </div>
           </div>
         </div>
@@ -108,8 +109,8 @@ export default function VenuePage() {
         </h2>
         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492479.18763210607!2d74.0066944!3d15.349728450000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfba106336b741%3A0xeaf887ff62f34092!2sGoa!5e0!3m2!1sen!2sin!4v1744106887763!5m2!1sen!2sin"
-            width="100%"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5766798013456!2d100.5551144758267!3d13.74405999747115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee677aa7f5b%3A0x297e4d6053920063!2sRadisson%20Suites%20Bangkok%20Sukhumvit!5e0!3m2!1sen!2sin!4v1748458760006!5m2!1sen!2sin"
+        width="100%"
             height="450"
             style={{ border: 0 }}
             allowFullScreen
@@ -131,40 +132,40 @@ export default function VenuePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   {[
     {
-      title: "Baga Beach",
+      title: "Grand Palace",
       description:
-        "Relax on one of Goa’s most famous beaches, known for its vibrant nightlife, water sports, and beachside shacks. Whether you're looking to sunbathe, try jet skiing, or dance the night away, Baga Beach has something for everyone.",
-      img: "http://images.unsplash.com/photo-1560179406-1c6c60e0dc76?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "Explore Thailand's most famous landmark, a complex of buildings that served as the official residence of Thai kings. Marvel at the intricate architecture, golden spires, and the sacred Emerald Buddha temple within its grounds.",
+      img: "https://images.unsplash.com/photo-1558655822-54f2380fadbb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      title: "Fort Aguada",
+      title: "Wat Pho Temple",
       description:
-        "Visit this well-preserved 17th-century Portuguese fort that offers panoramic views of the Arabian Sea. Explore its historic lighthouse and stroll through the ramparts that once protected Goa from invasions.",
-      img: "https://images.unsplash.com/photo-1727786473130-61a6f9d685b3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "Visit Bangkok's oldest temple, home to the famous 46-meter-long reclining Buddha covered in gold leaf. The temple is also renowned as Thailand's first public university and the birthplace of traditional Thai massage.",
+      img: "https://images.unsplash.com/photo-1670152251115-d3f969ddc1e1?q=80&w=2101&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      title: "Basilica of Bom Jesus",
+      title: "Chatuchak Weekend Market",
       description:
-        "Discover this UNESCO World Heritage Site that houses the mortal remains of St. Francis Xavier. The baroque architecture and richly decorated interiors make it a significant landmark of Goa’s colonial heritage.",
-      img: "https://images.unsplash.com/photo-1706940119676-957a79a61248?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "Experience one of the world's largest weekend markets with over 15,000 stalls. Shop for everything from vintage clothing and antiques to exotic pets and delicious street food in this bustling marketplace.",
+      img: "https://images.unsplash.com/photo-1625504461811-163b6e30f97d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      title: "Anjuna Flea Market",
+      title: "Khao San Road",
       description:
-        "Shop at this iconic Wednesday market known for its bohemian vibe. You’ll find everything from handmade jewelry and clothes to souvenirs and delicious street food, all while enjoying live music.",
-      img: "https://images.unsplash.com/photo-1721786839848-d9f9fd9e1e28?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "Immerse yourself in Bangkok's backpacker hub, famous for its vibrant nightlife, street food, and eclectic mix of travelers. Browse through bars, restaurants, massage parlors, and shops selling everything imaginable.",
+      img: "https://images.unsplash.com/photo-1660404435871-e3f27e901659?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      title: "Dudhsagar Waterfalls",
+      title: "Chao Phraya River",
       description:
-        "Marvel at one of India's tallest waterfalls, cascading down in a milky white torrent amidst lush greenery. Accessible via jeep safari through the Bhagwan Mahavir Wildlife Sanctuary, it's a must-visit for nature lovers.",
-      img: "https://images.unsplash.com/photo-1692889587543-f09684047399?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "Take a scenic boat ride along Bangkok's main river artery. Enjoy stunning views of temples, palaces, and modern skyscrapers while experiencing the city from a unique perspective on traditional longtail boats or modern express boats.",
+      img: "https://images.unsplash.com/photo-1652024109236-30cb6e70bc8d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      title: "Chapora Fort",
+      title: "Jim Thompson House",
       description:
-        "Enjoy a short trek up to this historic fort made famous by Bollywood. From the top, take in sweeping views of Vagator Beach and the Arabian Sea, especially stunning at sunset.",
-      img: "https://images.unsplash.com/photo-1725989782740-e0ead330866e?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "Discover the beautiful traditional Thai architecture and art collection of the American entrepreneur who revitalized the Thai silk industry. The museum showcases Southeast Asian art in a stunning teak house surrounded by lush gardens.",
+      img: "https://images.unsplash.com/photo-1707789350609-66ab1b3b1a93?q=80&w=1958&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ].map((attraction, index) => (
     <motion.div
@@ -200,4 +201,3 @@ export default function VenuePage() {
     </div>
   );
 }
-

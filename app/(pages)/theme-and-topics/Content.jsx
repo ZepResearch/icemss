@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from '@/components/ui/badge'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Calendar, FileText, UserPlus, Zap, File, Lightbulb, Users, Globe } from 'lucide-react'
+import { Calendar, FileText, UserPlus, Zap, File, Lightbulb, Users, Globe, PanelBottom, Group, User2Icon } from 'lucide-react'
 import Link from 'next/link'
 import { pb } from '@/lib/pocketbase'
 
@@ -78,7 +78,13 @@ export default function ThemeAndTopics() {
         "Civil and Structural Engineering",
         "Computer Science and IT",
         "Environmental Engineering",
-        "Materials Science and Engineering"
+        "Materials Science and Engineering",
+        "Life Science and Marine Engineering",
+        "Internet and World Wide Web",
+        "Biomedical Engineering",
+        "Aeronautical Engineering",
+        "Software Engineering",
+        "Mining Engineering"
       ]
     },
     {
@@ -89,7 +95,13 @@ export default function ThemeAndTopics() {
         "Marketing Management",
         "Operations Management",
         "Financial Management",
-        "Project Management"
+        "Project Management",
+        "Tourism Management",
+        "Risk Management",
+        "Supply Chain Management",
+        "Information Technology Management",
+        "Change Management",
+        "Business Management"
       ]
     },
     {
@@ -100,7 +112,12 @@ export default function ThemeAndTopics() {
         "Education and Learning Sciences",
         "Sociology and Social Work",
         "Communication Studies",
-        "Political Science and Public Policy"
+        "Political Science and Public Policy",
+        "Urban and Rural Sociology",
+        "Labor Market",
+        "Education and Technology Integration",
+        "Public Health System",
+        "Poverty and Prevailing Economic Inequality"
       ]
     }
   ]
@@ -239,7 +256,8 @@ export default function ThemeAndTopics() {
                   { highlight: "Parallel technical sessions", icon: <Calendar className="h-5 w-5" /> },
                   { highlight: "Interactive poster presentations", icon: <FileText className="h-5 w-5" /> },
                   { highlight: "Networking opportunities", icon: <Globe className="h-5 w-5" /> },
-                  { highlight: "Best paper awards", icon: <Zap className="h-5 w-5" /> }
+                  { highlight: "Best paper awards", icon: <Zap className="h-5 w-5" /> },
+                  { highlight: "Panel Discussion", icon: <User2Icon className="h-5 w-5" /> }
                 ].map((item, index) => (
                   <li key={index} className="flex items-center">
                     <div className="mr-2 text-primary">

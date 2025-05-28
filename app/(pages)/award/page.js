@@ -40,7 +40,7 @@ export default function AwardsPage() {
       icon: <Star className="h-8 w-8 text-blue-500" />,
     },
     {
-      title: "BEST INTERPRETATION STUDENT PRESENTATION AWARD",
+      title: "Best International student presentation Award",
       description: "Celebrating exceptional presentations by student researchers",
       icon: <Users className="h-8 w-8 text-blue-500" />,
     },
@@ -52,7 +52,7 @@ export default function AwardsPage() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-extrabold underline underline-offset-4 decoration-blue-500 mb-4">Conference Awards</h1>
           <p className="text-xl  max-w-2xl mx-auto">
-            Recognizing excellence in 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences research and presentation
+            Recognizing excellence in 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences research and presentation
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export default function AwardsPage() {
                 <div className="rounded-full bg-blue-100 p-3 mb-4">
                   {award.icon}
                 </div>
-                <CardTitle className="text-xl font-bold text-blue-500 text-center drop-shadow-sm">{award.title}</CardTitle>
+                <CardTitle className="text-xl font-bold text-blue-500 text-center drop-shadow-sm uppercase">{award.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className=" text-center">{award.description}</CardDescription>
@@ -78,7 +78,7 @@ export default function AwardsPage() {
         <div className="bg-blue-500 rounded-lg shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Dont Miss Your Chance to Win!</h2>
           <p className="text-xl text-blue-100 mb-6">
-            Register now for the 2<sup>nd</sup> International Conference on Engineering, Management and Social Sciences and showcase your research.
+            Register now for the 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences and showcase your research.
           </p>
           <Link href={'/registration'}>
           <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg px-8 py-3 rounded-full font-semibold transition-colors duration-300">

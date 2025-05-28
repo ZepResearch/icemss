@@ -31,17 +31,25 @@ export default function AboutSection() {
   }
 
   const stats = [
-    {
-      text: "50+ International Speakers",
-      description: "Leading experts from academia and industry",
-    },
+    // {
+    //   text: "50+ International Speakers",
+    //   description: "Leading experts from academia and industry",
+    // },
     {
       text: "300+ Expected Attendees",
       description: "Global participation from 40+ countries",
     },
+    // {
+    //   text: "100+ Research Presentations",
+    //   description: "Cutting-edge research across disciplines",
+    // },
     {
-      text: "100+ Research Presentations",
-      description: "Cutting-edge research across disciplines",
+      text: "500+ Networking Opportunities",
+      description: "Connect with professionals and researchers worldwide",
+    },
+    {
+      text: "15+ Interactive Workshops",
+      description: "Hands-on learning and skill development sessions",
     },
   ]
 

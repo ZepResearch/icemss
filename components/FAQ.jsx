@@ -121,7 +121,7 @@ export default function FAQ() {
                 </div>
                 <div className="flex items-end ">
                   <MapPin className="mr-2  text-blue-700" />
-                  <span>GOA
+                  <span>Bangkok ,Thailand
                   </span>
                 </div>
               </div>

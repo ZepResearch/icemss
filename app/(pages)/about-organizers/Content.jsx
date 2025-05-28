@@ -36,12 +36,12 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: 11th - 12th December, 2025" },
-    { icon: MapPin, text: "GOA (Hotel/ University), India" },
-    { icon: Users, text: "500+ Expected Attendees" },
+    { icon: CalendarDays, text: "2-day event: December 12th-13th" },
+    { icon: MapPin, text: "Bangkok, Thailand" },
+    { icon: Users, text: "300+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@icemss.in" },
-    { icon: Phone, text: "+91 82600 80050" },
+    { icon: Phone, text: "+91 78488 54815" },
   ]
 
   return (
@@ -118,7 +118,7 @@ export default function AboutCompany() {
                 Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
               <p className="text-muted-foreground">
-              11th - 12th December, 2025 • GOA (Hotel/ University), India
+               December 12th-13th • Bangkok, Thailand
               </p>
             </CardContent>
           </Card>
