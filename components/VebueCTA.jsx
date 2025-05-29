@@ -17,7 +17,7 @@ export default function VenueCTA() {
       <Card className="w-full max-w-7xl overflow-hidden p-0 shadow-2xl rounded-3xl border-none relative drop-shadow-2xl">
         <div 
           className="absolute inset-0 bg-cover bg-center z-0" 
-          style={{backgroundImage: "url('https://images.unsplash.com/photo-1578167635648-df79e1565908?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"}}
+          style={{backgroundImage: "url('https://images.unsplash.com/photo-1625505826533-5c80aca7d157?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"}}
         />
         <div className="absolute inset-0 bg-black opacity-70 z-10" />
         <div className="relative z-20 text-white p-8 lg:p-12">
@@ -30,7 +30,7 @@ export default function VenueCTA() {
             <div className="grid gap-4 md:grid-cols-1 max-w-md">
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
                 <MapPin className="text-blue-300" />
-                <span className="font-medium">Bangkok ,Thailand
+                <span className="font-medium">GOA( Hotel/ University)
 
                 </span>
               </div>

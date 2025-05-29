@@ -126,10 +126,11 @@ export default function Ticket() {
       foreign: [
         {
           name: "Academician",
-          earlyBird: 149,
-          regular: 169,
-          scopusQ3Q4: 669,
-          scopusQ1Q2: 1199,
+         earlyBird: 199,
+          regular: 219,
+          scopusQ3Q4: 719,
+                    scopusQ1Q2: 1199,
+
           currency: "USD",
           category: "academician",
           type: "presenter",
@@ -144,10 +145,12 @@ export default function Ticket() {
         },
         {
           name: "Student",
-          earlyBird: 199,
-          regular: 219,
-          scopusQ3Q4: 719,
+            earlyBird: 149,
+          regular: 169,
+          scopusQ3Q4: 669,
           scopusQ1Q2: 1099,
+
+         
           currency: "USD",
           category: "student",
           type: "presenter",

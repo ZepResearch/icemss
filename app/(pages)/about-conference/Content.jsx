@@ -37,7 +37,7 @@ export default function ConferenceAboutSection() {
   
     const conferenceFeatures = [
       { icon: CalendarDays, text: "2-day multidisciplinary event" },
-      { icon: MapPin, text: "At the heart of Bangkok" },
+      { icon: MapPin, text: "At the heart of Goa" },
       { icon: Users, text: "Network with 1000+ academics and professionals" },
       { icon: Lightbulb, text: "Over 30+ workshops on cutting-edge research" },
       { icon: Globe, text: "Presenters from more than 50 countries" },
@@ -129,7 +129,7 @@ export default function ConferenceAboutSection() {
                   The rapid development across the globe has created an increasing need for awareness of the latest trends and knowledge. Continuous advancements in these fields have made it challenging for professionals such as academicians, students, aspiring researchers, and industry experts to keep pace with these changes. This conference is being organized to help participants stay updated and equipped to address these evolving developments.
                   </p>
                   <p className="text-muted-foreground px-12 text-justify mt-2">
-                  The conference, taking place on December 12th-13th in Bangkok, Thailand, will offer researchers — both experienced and emerging — the opportunity to present their findings to esteemed members of the global scientific community. Regardless of their specific focus within Management, Education, or Social Sciences, ICEMSS will provide them with the exposure needed to gain recognition for their research. Moreover, the event will open doors for new collaborations and further research opportunities.
+                  The conference, taking place on 11<sup>th</sup> - 12<sup>th</sup> December 2025 in  GOA (Hotel/ University), India, will offer researchers — both experienced and emerging — the opportunity to present their findings to esteemed members of the global scientific community. Regardless of their specific focus within Management, Education, or Social Sciences, ICEMSS will provide them with the exposure needed to gain recognition for their research. Moreover, the event will open doors for new collaborations and further research opportunities.
                   </p>
                 </CardContent>
             </Card>
@@ -233,7 +233,7 @@ export default function ConferenceAboutSection() {
                   Join us in shaping the future of engineering, management, and social sciences.
                 </CardDescription>
                 <p className="text-muted-foreground">
-                  December 12th-13th • Bangkok, Thailand
+                  11th - 12th December 2025 • GOA (Hotel/ University), India
                 </p>
               </CardContent>
             </Card>

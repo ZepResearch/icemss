@@ -127,17 +127,20 @@ const tickets = [
     categories: [
       {
         name: "Academicians", 
-        earlyBird: "149 USD",
-        regular: "169 USD",
-        scopusQ3Q4: "669 USD",
+ earlyBird: "199 USD", 
+        regular: "219 USD",
+        scopusQ3Q4: "719 USD",
         scopusQ1Q2: "1199 USD"
+
+       
       },
       {
         name: "Students",
-        earlyBird: "199 USD", 
-        regular: "219 USD",
-        scopusQ3Q4: "719 USD",
+        earlyBird: "149 USD",
+        regular: "169 USD",
+        scopusQ3Q4: "669 USD",
         scopusQ1Q2: "1099 USD"
+
       },
       {
         name: "Listeners",

@@ -36,8 +36,8 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: December 12th-13th" },
-    { icon: MapPin, text: "Bangkok, Thailand" },
+    { icon: CalendarDays, text: "2-day event: 11th - 12th December, 2025" },
+    { icon: MapPin, text: "GOA (Hotel/ University), India" },
     { icon: Users, text: "300+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@icemss.in" },
@@ -118,7 +118,7 @@ export default function AboutCompany() {
                 Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
               <p className="text-muted-foreground">
-               December 12th-13th • Bangkok, Thailand
+              11th - 12th December, 2025 • GOA (Hotel/ University), India
               </p>
             </CardContent>
           </Card>
