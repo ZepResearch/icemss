@@ -40,11 +40,11 @@ export default function Testimonial() {
               className="relative overflow-hidden border-blue-100 p-6"
             >
               <div className="absolute -right-4 -top-4 h-16 w-16 rotate-12 animate-pulse bg-primary" />
-              <blockquote className="relative space-y-4">
-                <div className="text-lg font-medium leading-relaxed text-gray-700">
+              <blockquote className="relative space-y-4 flex flex-col justify-between h-full">
+                <div className="text-lg font-medium leading-relaxed text-gray-700 h-full">
                   &quot;{testimonial.quote}&quot;
                 </div>
-                <footer className="flex items-center gap-4">
+                <footer className="flex items-center gap-4 h-full">
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.name}
@@ -73,22 +73,22 @@ export default function Testimonial() {
 const testimonials = [
   {
     quote:
-      "Attending ICEMSS 2024 was a transformative experience. The interdisciplinary approach and quality of discussions were outstanding. I left with new ideas and valuable professional connections",
-    name: "Dr. Michael ",
+      "I had wonderful experience with Zep Research during the recent conference in Kuala Lumpur, Malaysia. The staff is soo cooperative and helpful. I had an amazing time and great learning      experience with them.	",
+    name: "Dr. Aishwarya Singh",
     title: "Professor of Engineering, Stanford University",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     quote:
-      "The 2024 ICEMSS conference was incredibly well-organized, featuring diverse presentations from experts across disciplines. The keynote sessions were especially inspiring and provided insights into emerging trends",
-    name: "Prof.  Rodriguez",
+      "A well-organised and insightful conference that delivered valuable takeaways in every session.	",
+    name: " fujie ibrahim",
     title: "Head of Management Studies, MIT",
     avatar: "https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     quote:
-      "Presenting my research at ICEMSS 2024 was a major milestone in my academic journey. The feedback I received was constructive, and the networking opportunities were excellent.",
-    name: "Thompson",
+      "The World Conference on Climate Change and Environmental Sustainability in Kuala Lumpur was a wonderful experience for me, and I benefited greatly from it.",
+    name: "Nourdeen82 SN",
     title: "Research Director, Social Innovation Institute",
     avatar: "https://plus.unsplash.com/premium_photo-1693258698597-1b2b1bf943cc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
