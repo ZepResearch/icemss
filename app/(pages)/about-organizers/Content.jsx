@@ -71,8 +71,7 @@ export default function AboutCompany() {
                Zep Research is a global leader in advancing academic excellence and fostering innovation. Specializing in organizing impactful conferences, research initiatives, and collaboration opportunities, Zep Research creates dynamic environments where researchers, academics, and industry professionals come together to share knowledge, exchange ideas, and collaborate on groundbreaking work across various industries.
               </p>
                 <p className="text-muted-foreground px-12">
-                  With a commitment to providing a platform for high-quality research dissemination, Zep Research enables individuals and institutions to engage in meaningful discussions about emerging trends, challenges, and solutions. The focus spans diverse fields such as tourism, hospitality, education, sustainability, and technology. By connecting experts, thought leaders, and innovators, Zep Research drives progress and fosters advancements that leave a lasting impact on both academia and industry.
-
+With a commitment to providing a platform for high-quality research dissemination, Zep Research enables individuals and institutions to engage in meaningful discussions about emerging trends, challenges, and solutions. Zep Research encompasses a wide range of disciplines, including tourism, hospitality, education, sustainability, and technology. By connecting experts, thought leaders, and innovators, Zep Research drives progress and fosters advancements that leave a lasting impact on both academia and industry.
                 </p>
             </CardContent>
           </Card>
@@ -118,7 +117,7 @@ export default function AboutCompany() {
                 Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
               <p className="text-muted-foreground">
-              11th - 12th December, 2025 • GOA (Hotel/ University), India
+               12th - 13th December, 2025 • GOA (Hotel/ University), India
               </p>
             </CardContent>
           </Card>

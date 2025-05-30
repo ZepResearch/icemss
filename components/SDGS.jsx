@@ -1,12 +1,11 @@
 'use client'
 
+import Image from "next/image"
 import { useRef, useState, useEffect } from "react"
 
 export default function SDGSection() {
   const scrollRef = useRef(null)
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [scrollLeft, setScrollLeft] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const sdgCards = [
     {
@@ -41,78 +40,107 @@ export default function SDGSection() {
     },
   ]
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true)
-    setStartX(e.pageX - scrollRef.current.offsetLeft)
-    setScrollLeft(scrollRef.current.scrollLeft)
-  }
+  const maxIndex = Math.max(0, sdgCards.length - 2)
 
-  const handleMouseUp = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return
-    e.preventDefault()
-    const x = e.pageX - scrollRef.current.offsetLeft
-    const walk = (x - startX) * 2
-    scrollRef.current.scrollLeft = scrollLeft - walk
-  }
-
-  useEffect(() => {
-    const handleMouseLeave = () => setIsDragging(false)
-    document.addEventListener('mouseup', handleMouseUp)
-    document.addEventListener('mouseleave', handleMouseLeave)
-    return () => {
-      document.removeEventListener('mouseup', handleMouseUp)
-      document.removeEventListener('mouseleave', handleMouseLeave)
+  const scrollToIndex = (index) => {
+    if (scrollRef.current) {
+      const cardWidth = 280 + 24 // card width + gap
+      scrollRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      })
     }
-  }, [])
+  }
+
+  const handlePrevious = () => {
+    const newIndex = Math.max(0, currentIndex - 1)
+    setCurrentIndex(newIndex)
+    scrollToIndex(newIndex)
+  }
+
+  const handleNext = () => {
+    const newIndex = Math.min(maxIndex, currentIndex + 1)
+    setCurrentIndex(newIndex)
+    scrollToIndex(newIndex)
+  }
 
   return (
-    <section className="w-full 16 px-4">
+    <section className="w-full py-1 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-center text-3xl md:text-5xl font-bold mb-12">
+        {/* Title */}
+        <h2 className="text-center text-3xl md:text-5xl font-bold mb-2">
           3<sup>rd</sup> <span className="text-primary">ICEMSS 2025</span> IS DEDICATED TO ADVANCING THE
            NATIONS SUSTAINABLE DEVELOPMENT GOALS (SDGS)
         </h2>
         
-        {/* <div 
-          ref={scrollRef}
-          className="flex overflow-x-auto gap-6 pb-6 cursor-grab active:cursor-grabbing"
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-        >
-          {sdgCards.map((card, index) => (
-            <div 
-              key={index}
-              className={`flex-none w-[280px] ${card.bgColor} text-white rounded-lg shadow-lg transition-transform hover:scale-105`}
-            >
-              <div className="p-6 flex flex-col items-center justify-center min-h-[280px] text-center">
-                <div className="text-4xl font-bold mb-2">{card.number}</div>
-                <svg className="w-16 h-16 mb-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d={card.icon} />
-                </svg>
-                <div className="text-sm font-semibold">{card.title}</div>
+        {/* Main Content Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left Side - Image */}
+          <div className="flex justify-center lg:justify-start">
+            <Image 
+              src={'/SDG-logo.png'} 
+              alt="SDG Logo" 
+              width={900} 
+              height={300}
+              className="max-w-full h-auto"
+            />
+          </div>
+          
+          {/* Right Side - Carousel */}
+          <div className="space-y-6 bg-slate-100 p-8">
+            {/* Cards Container */}
+            <div className="relative">
+              <div 
+                ref={scrollRef}
+                className="flex overflow-hidden gap-6"
+                style={{ width: '100%' }}
+              >
+                {sdgCards.map((card, index) => (
+                  <div 
+                    key={index}
+                    className={`flex-none w-[280px] ${card.bgColor} text-white rounded-lg shadow-lg transition-transform hover:scale-105`}
+                    style={{ 
+                      transform: `translateX(-${currentIndex * (280 + 24)}px)`,
+                      transition: 'transform 0.3s ease-in-out'
+                    }}
+                  >
+                    <div className="p-6 flex flex-col items-center justify-center min-h-[280px] text-center">
+                      <div className="text-4xl font-bold mb-2">{card.number}</div>
+                      <svg className="w-16 h-16 mb-4" viewBox="0 0 24 24" fill="currentColor">
+                        <path d={card.icon} />
+                      </svg>
+                      <div className="text-sm font-semibold">{card.title}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div> */}
+            
+            {/* Navigation Arrows */}
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={handlePrevious}
+                disabled={currentIndex === 0}
+                className="flex items-center justify-center w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button
+                onClick={handleNext}
+                disabled={currentIndex >= maxIndex}
+                className="flex items-center justify-center w-12 h-12 bg-gray-800 text-white rounded-full hover:bg-gray-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <style jsx>{`
-        .overflow-x-auto {
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-        .overflow-x-auto::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </section>
   )
 }
-
-    

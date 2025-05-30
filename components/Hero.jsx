@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Calendar, Headphones, MapPin, Users } from "lucide-react"
+import { Calendar, Headphones, MapPin, Quote, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
@@ -119,15 +119,18 @@ export default function Hero() {
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
               3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
             </h1>
-            <p className="max-w-[600px] text-white/80 md:text-xl">
-              &apos; Bridging disciplines, fostering innovation, and addressing global challenges through
-              interdisciplinary research and collaboration &apos;
+            <p className="max-w-[600px] text-white/80 md:text-xl inline-flex">
+            <Quote className="mr-2"/>
+            <span>
+              interdisciplinary research and collaboration 
+              Bridging disciplines, fostering innovation, and addressing global challenges through
+              </span> <Quote className="mt-6 mr"/>
             </p>
-            <p className="max-w-[600px] text-white/80 md:text-xl">
+            {/* <p className="max-w-[600px] text-white/80 md:text-xl">
               Co-organized by [declared soon]
-              {/* by- Indraprastha College For Women–Delhi University (IPCW–DU) and Swami Vivekanand Subharti */}
-              {/* University */}
-            </p>
+              by- Indraprastha College For Women–Delhi University (IPCW–DU) and Swami Vivekanand Subharti
+              University
+            </p> */}
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>
             {/* images */}
