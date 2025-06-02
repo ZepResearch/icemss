@@ -70,58 +70,81 @@ export default function ThemeAndTopics() {
   }
 
   const topics = [
-    {
-      title: "Engineering",
-      content: [
-        "Mechanical and Industrial Engineering",
-        "Electrical and Electronics Engineering",
-        "Civil and Structural Engineering",
-        "Computer Science and IT",
-        "Environmental Engineering",
-        "Materials Science and Engineering",
-        "Life Science and Marine Engineering",
-        "Internet and World Wide Web",
-        "Biomedical Engineering",
-        "Aeronautical Engineering",
-        "Software Engineering",
-        "Mining Engineering"
-      ]
-    },
-    {
-      title: "Management",
-      content: [
-        "Strategic Management",
-        "Human Resource Management",
-        "Marketing Management",
-        "Operations Management",
-        "Financial Management",
-        "Project Management",
-        "Tourism Management",
-        "Risk Management",
-        "Supply Chain Management",
-        "Information Technology Management",
-        "Change Management",
-        "Business Management"
-      ]
-    },
-    {
-      title: "Social Sciences",
-      content: [
-        "Economics and Development Studies",
-        "Psychology and Behavioral Sciences",
-        "Education and Learning Sciences",
-        "Sociology and Social Work",
-        "Communication Studies",
-        "Political Science and Public Policy",
-        "Urban and Rural Sociology",
-        "Labor Market",
-        "Education and Technology Integration",
-        "Public Health System",
-        "Poverty and Prevailing Economic Inequality"
-      ]
-    }
-  ]
-
+  {
+    title: "Track 1: Emerging Technologies in Engineering",
+    content: [
+      "Artificial Intelligence & Machine Learning Applications",
+      "Internet of Things (IoT) and Smart Systems",
+      "Robotics and Automation",
+      "Cyber Security and Block Chain Technology",
+      "Digital Twins and Industry 4.0",
+      "Smart Materials and Structural Engineering",
+      "Advanced Manufacturing and CAD/CAM",
+      "Thermal Systems and Fluid Mechanics",
+      "Power Electronics and Smart Grids",
+      "Embedded Systems and Microelectronics"
+    ]
+  },
+  {
+    title: "Track 2: Sustainable and Green Engineering",
+    content: [
+      "Renewable Energy Systems",
+      "Green Building Technologies",
+      "Waste Management and Circular Economy",
+      "Climate-Responsive Engineering",
+      "Sustainable Transport and Urban Infrastructure",
+      "Tourism Management and Climate Change"
+    ]
+  },
+  {
+    title: "Track 3: Strategic and Operations Management",
+    content: [
+      "Innovation & Change Management",
+      "Supply Chain and Logistics Management",
+      "Quality Management Systems",
+      "Risk Analysis and Crisis Management",
+      "Business Process Reengineering"
+    ]
+  },
+  {
+    title: "Track 4: Marketing, Finance, and HR Trends",
+    content: [
+      "Digital Marketing and Consumer Behavior",
+      "FinTech, Crypto currency, and Financial Analytics",
+      "Behavioral Economics and Investment Strategies",
+      "Talent Management and Remote Work Models",
+      "Organizational Culture and Leadership",
+      "Business Sustainability and CSR",
+      "E-commerce and Business Analytics",
+      "International Business and Globalization"
+    ]
+  },
+  {
+    title: "Track 5: Society, Culture, and Governance",
+    content: [
+      "Public Policy and Administration",
+      "Gender Studies and Social Inclusion",
+      "Ethics, Law, and Governance",
+      "Media, Communication, and Society",
+      "Globalization and Cultural Dynamics",
+      "Educational Technology and Pedagogical Innovation",
+      "Learning Analytics and Cognitive Development",
+      "Mental Health and Well-being",
+      "Inclusive and Special Needs Education",
+      "Lifelong Learning and Skill Development"
+    ]
+  },
+  {
+    title: "Track 6: Economics and Development",
+    content: [
+      "Sustainable Development Goals (SDGs)",
+      "Poverty, Inequality, and Social Justice",
+      "Urbanization and Migration",
+      "Environmental Economics",
+      "Innovation in Rural and Regional Development"
+    ]
+  }
+];
   return (
     <motion.section
       ref={ref}

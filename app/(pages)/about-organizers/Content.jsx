@@ -36,7 +36,7 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: 11th - 12th December, 2025" },
+    { icon: CalendarDays, text: "2-day event: 12th - 13th December, 2025" },
     { icon: MapPin, text: "GOA (Hotel/ University), India" },
     { icon: Users, text: "300+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },

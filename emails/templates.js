@@ -370,7 +370,7 @@ export const adminNotificationTemplate = (data) => `
             
             <div class="conference-info">
                 <p>International Conference on Engineering, Management and Social Sciences</p>
-                <p>Dates: 22nd-23rd DECEMBER, 2025</p>
+                <p>Dates: 12th-13th DECEMBER, 2025</p>
                 <p>Venue: GOA, India</p>
             </div>
             

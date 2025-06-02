@@ -95,12 +95,12 @@ const PaymentInitiatedEmail = (data) => {
   <body>
       <div class="container">
           <div class="header">
-              <h1>2nd International Conference on Engineering, Management and Social Sciences</h1>
+              <h1> International Conference on Engineering, Management and Social Sciences</h1>
           </div>
           <div class="content">
               <div class="message">
                   <p>Dear ${data.billing_name},</p>
-                  <p>Thank you for initiating your registration payment for the 2nd International Conference on Engineering, Management and Social Sciences. We have received your payment request for:</p>
+                  <p>Thank you for initiating your registration payment for the  International Conference on Engineering, Management and Social Sciences. We have received your payment request for:</p>
                   <ul>
                       <li><strong>Registration ID:</strong> ${data.order_id}</li>
                       <li><strong>Name:</strong> ${data.billing_name}</li>
