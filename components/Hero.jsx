@@ -122,8 +122,7 @@ export default function Hero() {
             <p className="max-w-[600px] text-white/80 md:text-xl inline-flex">
             <Quote className="mr-2"/>
             <span>
-              interdisciplinary research and collaboration 
-              Bridging disciplines, fostering innovation, and addressing global challenges through
+             Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration
               </span> <Quote className="mt-6 mr"/>
             </p>
             {/* <p className="max-w-[600px] text-white/80 md:text-xl">
