@@ -243,7 +243,7 @@ export default function PaperSubmissionForm() {
           {/* File Upload */}
           <div>
             <label htmlFor="file" className="block text-sm font-medium text-gray-700 mb-1">
-              Upload Paper (PDF, DOC, DOCX) *
+              Upload Paper ( DOC, DOCX) *
             </label>
             <input
               type="file"
@@ -251,7 +251,7 @@ export default function PaperSubmissionForm() {
               name="file"
               onChange={handleFileChange}
               required
-              accept=".pdf,.doc,.docx"
+              accept=".doc,.docx"
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
             />
             {selectedFile && <p className="mt-1 text-sm text-gray-500">Selected file: {selectedFile.name}</p>}
