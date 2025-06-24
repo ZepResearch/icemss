@@ -15,6 +15,8 @@ export default function Ticket() {
   const [isLoading, setIsLoading] = useState(null)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [selectedTicket, setSelectedTicket] = useState(null)
+  const [customAmount, setCustomAmount] = useState("")
+  const [paymentPurpose, setPaymentPurpose] = useState("")
 
   const tickets = {
     physical: {
@@ -126,10 +128,10 @@ export default function Ticket() {
       foreign: [
         {
           name: "Academician",
-         earlyBird: 199,
+          earlyBird: 199,
           regular: 219,
           scopusQ3Q4: 719,
-                    scopusQ1Q2: 1199,
+          scopusQ1Q2: 1199,
 
           currency: "USD",
           category: "academician",
@@ -145,12 +147,11 @@ export default function Ticket() {
         },
         {
           name: "Student",
-            earlyBird: 149,
+          earlyBird: 149,
           regular: 169,
           scopusQ3Q4: 669,
           scopusQ1Q2: 1099,
 
-         
           currency: "USD",
           category: "student",
           type: "presenter",
@@ -270,6 +271,37 @@ export default function Ticket() {
     }
   }
 
+  const handleCustomPayment = async () => {
+    if (!customAmount || Number.parseFloat(customAmount) <= 0) {
+      alert("Please enter a valid amount")
+      return
+    }
+
+    try {
+      setIsLoading("custom")
+      const amount = Number.parseFloat(customAmount)
+      const taxRate = 0.05
+      const taxAmount = amount * taxRate
+      const totalAmount = amount + taxAmount
+
+      // Create a custom ticket object for the payment popup
+      const customTicket = {
+        name: "Custom Payment",
+        selectedPrice: amount,
+        priceType: paymentPurpose || "Custom Amount",
+        currency: "USD",
+      }
+
+      setSelectedTicket(customTicket)
+      setIsPopupOpen(true)
+    } catch (error) {
+      console.error("Custom payment initiation failed:", error)
+      alert("Failed to initiate payment. Please try again.")
+    } finally {
+      setIsLoading(null)
+    }
+  }
+
   const renderTicketCard = (ticket, index) => (
     <div key={index} className="flex h-full">
       <Card className="relative w-full bg-blue-50 overflow-hidden border border-blue-200 shadow-md hover:shadow-lg transition-shadow flex flex-col h-full">
@@ -281,7 +313,7 @@ export default function Ticket() {
               {ticket.type === "listener" ? "ADMIT ONE" : "PRESENTER PASS"}
             </div>
           </div>
-          
+
           {/* Features Section */}
           <div className="flex-grow mb-4">
             <ul className="space-y-2 text-sm">
@@ -292,7 +324,7 @@ export default function Ticket() {
                 </li>
               ))}
             </ul>
-            
+
             {/* Add empty space for listeners to match presenter height */}
             {ticket.type === "listener" && (
               <div className="space-y-2 mt-4">
@@ -415,7 +447,7 @@ export default function Ticket() {
         {/* Physical Tickets */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Physical Presentation</h2>
-          
+
           <h3 className="text-2xl font-bold mb-6 text-center">Foreign Participants</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch">
             {tickets.physical.foreign.map((ticket, index) => renderTicketCard(ticket, index))}
@@ -433,6 +465,66 @@ export default function Ticket() {
           <h3 className="text-2xl font-bold mb-6 text-center">Foreign Participants</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
             {tickets.virtual.foreign.map((ticket, index) => renderTicketCard(ticket, index))}
+          </div>
+        </div>
+
+        {/* Custom Payment Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Custom Payment</h2>
+          <div className="max-w-md mx-auto">
+            <Card className="bg-blue-50 border-blue-200 shadow-md">
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">Pay Custom Amount</h3>
+                <p className="text-sm text-blue-700 mb-4 text-center">
+                  Enter any amount for donations, additional services, or custom payments
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="customAmount" className="block text-sm font-medium text-blue-800 mb-2">
+                      Amount
+                    </label>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-700 font-medium">
+                        $
+                      </span>
+                      <input
+                        type="number"
+                        id="customAmount"
+                        min="1"
+                        step="0.01"
+                        placeholder="0.00"
+                        className="w-full pl-8 pr-4 py-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                        value={customAmount}
+                        onChange={(e) => setCustomAmount(e.target.value)}
+                      />
+                    </div>
+                  </div>
+
+                  {/* <div>
+                    <label htmlFor="paymentPurpose" className="block text-sm font-medium text-blue-800 mb-2">
+                      Payment Purpose (Optional)
+                    </label>
+                    <input
+                      type="text"
+                      id="paymentPurpose"
+                      placeholder="e.g., Donation, Additional services, etc."
+                      className="w-full px-4 py-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                      value={paymentPurpose}
+                      onChange={(e) => setPaymentPurpose(e.target.value)}
+                    />
+                  </div> */}
+
+                  <Button
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold"
+                    onClick={() => handleCustomPayment()}
+                    disabled={!customAmount || Number.parseFloat(customAmount) <= 0 || isLoading === "custom"}
+                  >
+                    {isLoading === "custom" ? "Processing..." : `Pay $${customAmount || "0.00"}`}
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
 
