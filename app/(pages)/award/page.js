@@ -165,7 +165,7 @@ export default function AwardsPage() {
         </div>
 
         <div className="bg-blue-500 rounded-lg shadow-xl p-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Don't Miss Your Chance to Win!</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Don&apos;t Miss Your Chance to Win!</h2>
           <p className="text-xl text-blue-100 mb-6">
             Register now for the 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
             and showcase your research.
