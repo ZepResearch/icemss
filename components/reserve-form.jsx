@@ -72,7 +72,7 @@ export function ReserveForm({ isOpen, onClose, onSubmitSuccess }) {
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-xl font-semibold">Reserve Your Seat</DialogTitle>
+          <DialogTitle className="text-xl font-semibold">Pre-book your slot !</DialogTitle>
           <DialogDescription>International Conference on Engineering, Management and Social Sciences</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
