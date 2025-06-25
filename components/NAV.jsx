@@ -16,44 +16,45 @@ import {
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
-import { Menu, Info, FileText, Globe, Users, Award, PersonStanding, MessageSquare, GalleryHorizontal } from "lucide-react"
-import { ChatBubbleIcon } from "@radix-ui/react-icons"
+import { Menu, ChevronDown } from "lucide-react"
 
-const ListItem = React.forwardRef(({ className, title, children, ...props }, ref) => {
+const ListItem = React.forwardRef(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
           ref={ref}
+          href={href}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className,
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
-        </a>
+          <div className="text-xs font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">{children}</p>
+        </Link>
       </NavigationMenuLink>
     </li>
   )
 })
 ListItem.displayName = "ListItem"
 
-const MobileNavItem = ({ href, children, subItems, icon: Icon }) => (
-  <AccordionItem value={href}>
+const MobileNavItem = ({
+  href,
+  children,
+  subItems,
+}) => (
+  <AccordionItem value={href} className="border-none">
     {subItems ? (
       <>
-        <AccordionTrigger>
-          {Icon && <Icon className="mr-2 h-4 w-4 inline" />}
-          {children}
-        </AccordionTrigger>
+        <AccordionTrigger className="text-sm py-2 hover:no-underline">{children}</AccordionTrigger>
         <AccordionContent>
-          <ul className="ml-4 space-y-2">
+          <ul className="ml-2 space-y-1">
             {subItems.map((item, index) => (
               <li key={index}>
                 <SheetClose asChild>
-                  <Link href={item.href} className="block py-2">
+                  <Link href={item.href} className="block py-1 text-xs text-muted-foreground hover:text-foreground">
                     {item.title}
                   </Link>
                 </SheetClose>
@@ -64,8 +65,7 @@ const MobileNavItem = ({ href, children, subItems, icon: Icon }) => (
       </>
     ) : (
       <SheetClose asChild>
-        <Link href={href} className="block py-2">
-          {Icon && <Icon className="mr-2 h-4 w-4 inline" />}
+        <Link href={href} className="block py-2 text-sm hover:text-primary">
           {children}
         </Link>
       </SheetClose>
@@ -76,77 +76,68 @@ const MobileNavItem = ({ href, children, subItems, icon: Icon }) => (
 const MobileNav = () => (
   <Sheet>
     <SheetTrigger asChild>
-      <Button variant="outline" size="icon" className="md:hidden">
-        <Menu className="h-6 w-6" />
+      <Button variant="ghost" size="sm" className="md:hidden p-1">
+        <Menu className="h-4 w-4" />
         <span className="sr-only">Toggle menu</span>
       </Button>
     </SheetTrigger>
-    <SheetContent side="right">
+    <SheetContent side="right" className="w-72">
       <SheetHeader>
-        <SheetTitle>Navigation Menu</SheetTitle>
+        <SheetTitle className="text-sm">Menu</SheetTitle>
       </SheetHeader>
-      <nav className="mt-6">
+      <nav className="mt-4">
         <Accordion type="single" collapsible className="w-full">
-          {/* <MobileNavItem href="/">HOME</MobileNavItem> */}
           <MobileNavItem
             href="/about"
             subItems={[
               { href: "/about-conference", title: "About Conference" },
               { href: "/about-organizers", title: "About Organizers" },
-              // { href: "/about-speakers", title: "About Speakers" },
             ]}
-            icon={Info}
           >
-            ABOUT
+            About
           </MobileNavItem>
           <MobileNavItem
             href="/program"
             subItems={[
               { href: "/theme-and-topics", title: "Themes and Topics" },
-              // { href: "/papers-format", title: "Paper Formats" },
               { href: "/mode-of-presentation", title: "Mode of Presentation" },
-
-              // { href: "/awards", title: "Awards" },
               { href: "/schedule", title: "Conference Schedule" },
             ]}
-            icon={FileText}
           >
-            PROGRAM
+            Program
           </MobileNavItem>
-          <MobileNavItem href="/committee" icon={PersonStanding}>
-            COMMITTEE
-          </MobileNavItem>
-          <MobileNavItem href="/submission" icon={Globe}>
-            SUBMISSION
-          </MobileNavItem>
-          <MobileNavItem href="/venue" icon={Users}>
-            VENUE
-          </MobileNavItem>
-          <MobileNavItem href="/awards" icon={Award}>
-            AWARDS
-          </MobileNavItem>
-          <MobileNavItem href="/contact">CONTACT</MobileNavItem>
+          <MobileNavItem href="/committee">Committee</MobileNavItem>
+          <MobileNavItem href="/submission">Submission</MobileNavItem>
+          <MobileNavItem href="/venue">Venue</MobileNavItem>
+          <MobileNavItem href="/awards">Awards</MobileNavItem>
+          <MobileNavItem href="/gallery">Gallery</MobileNavItem>
+          <MobileNavItem href="/contact">Contact</MobileNavItem>
         </Accordion>
-        <div className="mt-6">
+        <div className="mt-4 space-y-2">
           <SheetClose asChild>
-            <Button asChild variant="outline" className="w-full mb-2 border-blue-400 text-blue-400">
+            <Button asChild variant="outline" size="sm" className="w-full text-xs">
               <Link href="/sponsorship">Exhibit & Sponsor</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild className="w-full">
-              <Link href="/registration">REGISTER NOW</Link>
+            <Button asChild size="sm" className="w-full text-xs">
+              <Link href="/registration">Register Now</Link>
             </Button>
           </SheetClose>
         </div>
-        <div className="mt-4 flex justify-center flex-col items-center">
-          <Button size="icon" className="rounded-full bg-green-500 hover:bg-green-600 h-12 w-12">
-            <Link href="https://wa.me/8260080050" target="_blank" rel="noopener noreferrer">
-              <img src="/whatsapp.png" className="h-10 w-10 text-white" />
+        <div className="mt-4 flex justify-center">
+          <Button size="sm" className="bg-green-500 hover:bg-green-600 text-xs">
+            <Link
+              href="https://wa.me/8260080050"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1"
+            >
+              <img src="/whatsapp.png" className="h-3 w-3" alt="WhatsApp" />
+              Chat
             </Link>
           </Button>
-              <span className="text-sm">chat with us</span>
-        </div>  
+        </div>
       </nav>
     </SheetContent>
   </Sheet>
@@ -154,168 +145,125 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b border-primaray dark:border-primaray  py-2  z-20 fixed left-0 right-0 top-0 bg-white">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 ">
+    <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 sticky top-0 z-50 py-1">
+      <div className="max-w-7xl mx-auto flex  items-center justify-between px-3">
         <div className="flex items-center">
-          <Link href="/" className="text-2xl font-bold">
-            <Image
-              src="/logo.png"
-              alt="Climate Conference Logo"
-              className="drop-shadow-2xl "
-              width={150}
-              height={150}
-            />
+          <Link href="/" className="flex items-center">
+            <Image src="/logo.png" alt="Climate Conference Logo" className=" w-auto" width={80} height={32} />
           </Link>
         </div>
-        <div className="hidden md:flex items-center space-x-4 relative z-20 ">
+
+        <div className="hidden lg:flex items-center space-x-1">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="space-x-1">
               <NavigationMenuItem>
-                {/* <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    HOME
-                  </NavigationMenuLink>
-                </Link> */}
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  <Info className="mr-2 h-4 w-4 inline" />
-                  ABOUT
+                <NavigationMenuTrigger className="text-xs h-8 px-2">
+                  About
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 border-none">
-                    <ListItem
-                      href="/about-conference"
-                      title="About Conference"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      Learn about our climate change and sustainability conference.
+                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1">
+                    <ListItem href="/about-conference" title="About Conference">
+                      Learn about our climate change conference.
                     </ListItem>
-                    <ListItem
-                      href="/about-organizers"
-                      title="About Organizers"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      Discover the organizations behind this important event.
-                    </ListItem>
-                    {/* <ListItem
-                      href="/about-speakers"
-                      title="About Speakers"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      Discover the organizations behind this important event.
-                    </ListItem> */}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  <FileText className="mr-2 h-4 w-4 inline" />
-                  PROGRAM
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 ">
-                    <ListItem
-                      href="/theme-and-topics"
-                      title="Themes and Topics"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      Explore our conference themes on climate action and sustainability.
-                    </ListItem>
-                    {/* <ListItem
-                      href="/papers-format"
-                      title="Paper Formats"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      Check out Formats and guidlines for Paper publication
-                    </ListItem> */}
-                    <ListItem
-                      href="/mode-of-presentation"
-                      title="Mode of Presentation"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      View the full program of events and sessions.
-                    </ListItem>
-                    {/* <ListItem
-                      href="/awards"
-                      title="Award"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      View the full programs Awards distributions and nominies .
-                    </ListItem> */}
-                    <ListItem
-                      href="/schedule"
-                      title="Conference Schedule"
-                      className="hover:bg-slate-50 hover:drop-shadow-md"
-                    >
-                      View the full program of events and sessions.
+                    <ListItem href="/about-organizers" title="About Organizers">
+                      Meet the organizations behind this event.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-xs h-8 px-2">
+                  Program
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1">
+                    <ListItem href="/theme-and-topics" title="Themes and Topics">
+                      Explore conference themes on climate action.
+                    </ListItem>
+                    <ListItem href="/mode-of-presentation" title="Mode of Presentation">
+                      View presentation formats and guidelines.
+                    </ListItem>
+                    <ListItem href="/schedule" title="Conference Schedule">
+                      View the full program of events.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
               <NavigationMenuItem>
                 <Link href="/committee" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <PersonStanding className="mr-2 h-4 w-4 inline" />
-                    COMMITTEE
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/submission" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <Globe className="mr-2 h-4 w-4 inline" />
-                    SUBMISSION
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/venue" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <Users className="mr-2 h-4 w-4 inline" />
-                    VENUE
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/gallery" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <GalleryHorizontal className="mr-2 h-4 w-4 inline" />
-                    Gallery
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                    Committee
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
 
+              <NavigationMenuItem>
+                <Link href="/submission" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                    Submission
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/venue" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                    Venue
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/award" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                    Awards
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>CONTACT</NavigationMenuLink>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                    Contact
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+        </div>
+
+        <div className="hidden md:flex items-center space-x-2">
           <Button
             asChild
             variant="outline"
-            className="w-full  border-blue-400 text-blue-400 hover:text-blue-600 font-medium"
+            size="sm"
+            className="text-xs h-8 px-3 border-blue-400 text-blue-400 hover:bg-blue-50"
           >
-            <Link href="/sponsorship">Exhibit & Sponsor</Link>
+            <Link href="/sponsorship">Sponsor</Link>
           </Button>
-          <Button asChild className="">
-            <Link href="/registration">REGISTER NOW</Link>
+          <Button asChild size="sm" className="text-xs h-8 px-3">
+            <Link href="/registration">Register</Link>
           </Button>
         </div>
+
         <MobileNav />
-        {/* WhatsApp Floating Button - Desktop */}
-        <div className="fixed right-4 top-2 z-50 hidden md:flex flex-col items-center">
-          <Button size="icon" className="rounded-full bg-green-500 hover:bg-green-600 h-12 w-12 shadow-lg">
-            <Link href="https://wa.me/8260080050" target="_blank" rel="noopener noreferrer">
-              <img src="/whatsapp.png" className="h-10 w-10 text-white" />
-              <span className="sr-only">Contact via WhatsApp</span>
-            </Link>
-          </Button>
-          <span className="text-xs font-medium mt-1 text-green-600">Chat with us</span>
-        </div>
+      </div>
+
+      {/* WhatsApp Floating Button - Desktop */}
+      <div className="fixed right-4 bottom-4 z-50 hidden md:block">
+        <Button size="sm" className="rounded-full bg-green-500 hover:bg-green-600 shadow-lg">
+          <Link
+            href="https://wa.me/8260080050"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1"
+          >
+            <img src="/whatsapp.png" className="h-4 w-4" alt="WhatsApp" />
+            <span className="text-xs">Chat</span>
+          </Link>
+        </Button>
       </div>
     </div>
   )
