@@ -75,8 +75,8 @@ export default function Ticket() {
       indian: [
         {
           name: "Academician Presenter",
-          earlyBird: 9500,
-          regular: 10000,
+          earlyBird: 7500,
+          regular: 8000,
           scopusQ3Q4: 40000,
           scopusQ1Q2: 100000,
           currency: "INR",
@@ -93,8 +93,8 @@ export default function Ticket() {
         },
         {
           name: "Student Presenter",
-          earlyBird: 8500,
-          regular: 9000,
+          earlyBird: 6500,
+          regular: 7000,
           scopusQ3Q4: 38000,
           scopusQ1Q2: 98000,
           currency: "INR",
