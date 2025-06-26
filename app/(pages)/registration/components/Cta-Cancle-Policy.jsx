@@ -19,9 +19,8 @@ export default function CTACancle() {
               designed to be fair and flexible:
             </p>
             <ul className="list-disc pl-5 mb-4 space-y-2">
-              <li>Full refund if cancelled 30+ days before the event</li>
-              <li>50% refund if cancelled 15-29 days before the event</li>
-              <li>No refund if cancelled 14 days or less before the event</li>
+              <li>Full refund if cancelled 60+ days before the event</li>
+              <li>No refund if cancelled 60 days or less before the event</li>
             </ul>
             <p className="mb-6">
               All cancellations must be made in writing. Transfer of tickets to
