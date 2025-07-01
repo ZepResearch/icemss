@@ -45,7 +45,7 @@ export default function CTASection() {
     },
     {
       title: "Venue Information",
-      description: "Grand Conference Center, New York - World-class facilities and accommodation",
+      description: "BloomSuites Goa, 403516 - World-class facilities and accommodation",
       icon: Building2,
       action: "View Location",
       link:'/venue'
@@ -111,7 +111,7 @@ export default function CTASection() {
                       </div>
                       <div className="flex items-center gap-2">
                                            <MapPin className="w-5 h-5 text-primary" />
-                         <span>GOA( Hotel/ University)
+                         <span>BloomSuites, Calangute, Anjuna Rd, opp. Yash Marketing, Calangute, Goa, 403516
       </span>
                       </div>
                     </div>

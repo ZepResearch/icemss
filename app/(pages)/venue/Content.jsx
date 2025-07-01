@@ -27,12 +27,12 @@ export default function VenuePage() {
         className="container mx-auto px-4 py-16"
       >
         <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 border rounded-2xl shadow-md">
             <Image
-              src="https://plus.unsplash.com/premium_photo-1697729600112-434ee1c7f670?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/assets/venue2.jpg"
               alt="Conference Venue"
               
-              width={500}
+              width={800}
               height={400}
               className="rounded-2xl bg-black "
             />
@@ -45,7 +45,7 @@ export default function VenuePage() {
               Welcome to the 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences. Our state-of-the-art venue in the heart of GOA provides an inspiring environment for interdisciplinary discussions and collaborations.
             </p>
             <div className="flex items-center text-blue-700 dark:text-blue-300 text-lg gap-2">
-            <span className="font-bold"><MapPin/></span> GOA( Hotel/ University), [detail Venue declared Soon]
+            <span className="font-bold"><MapPin/></span> BloomSuites, Calangute, Anjuna Rd, opp. Yash Marketing, Calangute, Goa, 403516
 
             </div>
             <div className="mt-4 text-blue-700 dark:text-blue-300 text-lg inline-flex gap-2">
@@ -108,8 +108,7 @@ export default function VenuePage() {
         </h2>
         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d492479.18763210607!2d74.0066944!3d15.349728450000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfba106336b741%3A0xeaf887ff62f34092!2sGoa!5e0!3m2!1sen!2sin!4v1744106887763!5m2!1sen!2sin"
-        width="100%"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.965478487438!2d73.75957954725199!3d15.539981246675305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc1e20bcec9e1%3A0x5294810ca676295a!2sBloomSuites%20%7C%20Calangute!5e0!3m2!1sen!2sin!4v1751358770573!5m2!1sen!2sin"        width="100%"
             height="450"
             style={{ border: 0 }}
             allowFullScreen
@@ -134,13 +133,13 @@ export default function VenuePage() {
       title: "Baga Beach",
       description:
         "Explore Thailand's most famous landmark, a complex of buildings that served as the official residence of Thai kings. Marvel at the intricate architecture, golden spires, and the sacred Emerald Buddha temple within its grounds.",
-      img: "https://images.unsplash.com/photo-1558655822-54f2380fadbb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1560179406-1c6c60e0dc76?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {      title: "Fort Aguada",
 
       description:
              "Visit this well-preserved 17th-century Portuguese fort that offers panoramic views of the Arabian Sea. Explore its historic lighthouse and stroll through the ramparts that once protected Goa from invasions.",
-      img: "https://images.unsplash.com/photo-1727786473130-61a6f9d685b3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://images.unsplash.com/photo-1605591514039-5f8cdda13287?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
     {
       title: "Basilica of Bom Jesus",
@@ -158,7 +157,7 @@ export default function VenuePage() {
       title: "Dudhsagar Waterfalls",
       description:
            "Marvel at one of India's tallest waterfalls, cascading down in a milky white torrent amidst lush greenery. Accessible via jeep safari through the Bhagwan Mahavir Wildlife Sanctuary, it's a must-visit for nature lovers.",
-      img: "https://images.unsplash.com/photo-1692889587543-f09684047399?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      img: "https://plus.unsplash.com/premium_photo-1689084893630-7ed3ed9b6d80?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
  },
     {
       title: "Chapora Fort",
@@ -183,9 +182,9 @@ export default function VenuePage() {
           <Image
             src={attraction.img}
             alt={attraction.title}
-            width={500}
+            width={400}
             height={500}
-            className="rounded-md drop-shadow-md py-2 mb-4 "
+            className="rounded-md drop-shadow-md py-2 mb-4  "
           />
           <CardDescription className="text-blue-800 dark:text-blue-200">
             {attraction.description}

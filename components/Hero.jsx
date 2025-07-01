@@ -216,8 +216,8 @@ export default function Hero() {
               <div>
                 <h3 className="font-bold text-2xl">Conference Venue</h3>
                 <p className="text-lg">
-                                 [detail location declared soon] <br />
-                  Goa	( Hotel/ University)
+                    BloomSuites,Goa, 403516,INDIA   <br />
+                  
 
                 </p>
               </div>

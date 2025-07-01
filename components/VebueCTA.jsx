@@ -30,7 +30,7 @@ export default function VenueCTA() {
             <div className="grid gap-4 md:grid-cols-1 max-w-md">
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
                 <MapPin className="text-blue-300" />
-                <span className="font-medium">GOA( Hotel/ University)
+                <span className="font-medium">BloomSuites, Calangute, Anjuna Rd, opp. Yash Marketing, Calangute, Goa, 403516
 
                 </span>
               </div>

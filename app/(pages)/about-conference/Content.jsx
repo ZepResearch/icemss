@@ -233,7 +233,7 @@ export default function ConferenceAboutSection() {
                   Join us in shaping the future of engineering, management, and social sciences.
                 </CardDescription>
                 <p className="text-muted-foreground">
-                  12th - 13th December 2025 • GOA (Hotel/ University), India
+                  12th - 13th December 2025 • GOA , India
                 </p>
               </CardContent>
             </Card>

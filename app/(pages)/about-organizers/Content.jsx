@@ -37,7 +37,7 @@ export default function AboutCompany() {
 
   const conferenceFeatures = [
     { icon: CalendarDays, text: "2-day event: 12th - 13th December, 2025" },
-    { icon: MapPin, text: "GOA (Hotel/ University), India" },
+    { icon: MapPin, text: "GOA, India" },
     { icon: Users, text: "300+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@icemss.in" },
@@ -117,7 +117,7 @@ With a commitment to providing a platform for high-quality research disseminatio
                 Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
               <p className="text-muted-foreground">
-               12th - 13th December, 2025 • GOA (Hotel/ University), India
+               12th - 13th December, 2025 • GOA , India
               </p>
             </CardContent>
           </Card>
