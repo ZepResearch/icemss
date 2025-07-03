@@ -151,20 +151,20 @@ const tickets = [
       }
     ]
   },
-  {
+ {
     type: "Indian Participants (Physical Presentation):",
     categories: [
       {
         name: "Academicians",
-        earlyBird: "9500 INR",
-        regular: "10000 INR",
+        earlyBird: "7500 INR",
+        regular: "8000 INR",
         scopusQ3Q4: "40000 INR", 
         scopusQ1Q2: "100000 INR"
       },
       {
         name: "Students", 
-        earlyBird: "8500 INR",
-        regular: "9000 INR",
+        earlyBird: "6500 INR",
+        regular: "7000 INR",
         scopusQ3Q4: "38000 INR",
         scopusQ1Q2: "98000 INR"
       },
