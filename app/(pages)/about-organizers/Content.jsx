@@ -41,7 +41,7 @@ export default function AboutCompany() {
     { icon: Users, text: "300+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@icemss.in" },
-    { icon: Phone, text: "+91 78488 54815" },
+    { icon: Phone, text: "+91 82606 84845" },
   ]
 
   return (

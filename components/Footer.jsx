@@ -9,7 +9,7 @@ const footerSections = [
       { name: "Conference", href: "/about-conference" },
       // { name: "Organizers", href: "/about-organizers" },
       { name: "Committee", href: "/committee" },
-      { name: "Sponsorship - 7848854815    ", href: "/sponsorship" },
+      { name: "Sponsorship (+918260684845)", href: "/sponsorship" },
     ],
   },
     {
@@ -101,10 +101,10 @@ export default function Footer() {
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 " />
                 <a
-                  href="tel:+917848854815"
+                  href="tel:+918260684845"
                   className="text-blue-200 hover:text-white transition-colors"
                 >
-               +91 78488 54815
+               +91 82606 84845
                 </a>
               </div>
               <div className="flex items-center space-x-2">
