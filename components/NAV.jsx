@@ -31,8 +31,8 @@ const ListItem = React.forwardRef(({ className, title, children, href, ...props 
           )}
           {...props}
         >
-          <div className="text-xs font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">{children}</p>
+          <div className="text-md font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-md leading-snug text-muted-foreground">{children}</p>
         </Link>
       </NavigationMenuLink>
     </li>
@@ -54,7 +54,7 @@ const MobileNavItem = ({
             {subItems.map((item, index) => (
               <li key={index}>
                 <SheetClose asChild>
-                  <Link href={item.href} className="block py-1 text-xs text-muted-foreground hover:text-foreground">
+                  <Link href={item.href} className="block py-1 text-md text-muted-foreground hover:text-foreground">
                     {item.title}
                   </Link>
                 </SheetClose>
@@ -115,18 +115,18 @@ const MobileNav = () => (
         </Accordion>
         <div className="mt-4 space-y-2">
           <SheetClose asChild>
-            <Button asChild variant="outline" size="sm" className="w-full text-xs">
+            <Button asChild variant="outline" size="sm" className="w-full text-md">
               <Link href="/sponsorship">Exhibit & Sponsor</Link>
             </Button>
           </SheetClose>
           <SheetClose asChild>
-            <Button asChild size="sm" className="w-full text-xs">
+            <Button asChild size="sm" className="w-full text-md">
               <Link href="/registration">Register Now</Link>
             </Button>
           </SheetClose>
         </div>
         <div className="mt-4 flex justify-center">
-          <Button size="sm" className="bg-green-500 hover:bg-green-600 text-xs">
+          <Button size="sm" className="bg-green-500 hover:bg-green-600 text-md">
             <Link
               href="https://wa.me/8260080050"
               target="_blank"
@@ -145,11 +145,11 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 sticky top-0 z-50 py-1">
+    <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 sticky top-0 z-50 py-4">
       <div className="max-w-7xl mx-auto flex  items-center justify-between px-3">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <Image src="/logo.png" alt="Climate Conference Logo" className=" w-auto" width={80} height={32} />
+            <Image src="/logo.png" alt="Climate Conference Logo" className=" w-auto" width={120} height={32} />
           </Link>
         </div>
 
@@ -157,7 +157,7 @@ export default function Navbar() {
           <NavigationMenu>
             <NavigationMenuList className="space-x-1">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-xs h-8 px-2">
+                <NavigationMenuTrigger className="text-md h-8 px-2">
                   About
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -173,7 +173,7 @@ export default function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-xs h-8 px-2">
+                <NavigationMenuTrigger className="text-md h-8 px-2">
                   Program
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -193,7 +193,7 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <Link href="/committee" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Committee
                   </NavigationMenuLink>
                 </Link>
@@ -201,7 +201,7 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <Link href="/submission" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Submission
                   </NavigationMenuLink>
                 </Link>
@@ -209,7 +209,7 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <Link href="/venue" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Venue
                   </NavigationMenuLink>
                 </Link>
@@ -217,7 +217,7 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <Link href="/award" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Awards
                   </NavigationMenuLink>
                 </Link>
@@ -225,7 +225,7 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-xs h-8 px-2")}>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Contact
                   </NavigationMenuLink>
                 </Link>
@@ -238,12 +238,11 @@ export default function Navbar() {
           <Button
             asChild
             variant="outline"
-            size="sm"
-            className="text-xs h-8 px-3 border-blue-400 text-blue-400 hover:bg-blue-50"
+            className="text-md h-8 px-3 border-blue-400 text-blue-400 hover:bg-blue-50"
           >
             <Link href="/sponsorship">Sponsor</Link>
           </Button>
-          <Button asChild size="sm" className="text-xs h-8 px-3">
+          <Button asChild className="text-md h-8 px-3">
             <Link href="/registration">Register</Link>
           </Button>
         </div>
@@ -261,7 +260,7 @@ export default function Navbar() {
             className="flex items-center gap-1"
           >
             <img src="/whatsapp.png" className="h-4 w-4" alt="WhatsApp" />
-            <span className="text-xs">Chat</span>
+            <span className="text-md">Chat</span>
           </Link>
         </Button>
       </div>

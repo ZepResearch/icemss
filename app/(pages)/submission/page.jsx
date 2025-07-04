@@ -2,6 +2,7 @@ import React from "react";
 import SubmitForm from "./components/Form";
 
 import FormatCards from "./components/PaperFormat";
+import AbstractSubmissionGuidelines from "./components/SubmitGuidline";
 
 export const metadata = {
   title: 'Paper Submission | ICEMSS 2025',
@@ -28,6 +29,7 @@ function page() {
       <h1></h1>
       <SubmitForm />
    <FormatCards/>
+   <AbstractSubmissionGuidelines/>
     </div>
   );
 }

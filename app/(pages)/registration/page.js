@@ -2,6 +2,7 @@ import React from 'react'
 import Ticket from './components/TIcket'
 import Process from './components/Proccse'
 import CTACancle from './components/Cta-Cancle-Policy'
+import Guidline from './components/guidline'
 
 export const metadata = {
   title: 'Registration | ICEMSS 2025',
@@ -26,6 +27,7 @@ function page() {
   return (
     <div>
         <Ticket/>
+        <Guidline/>
         <Process/>
         <CTACancle/>
     </div>
