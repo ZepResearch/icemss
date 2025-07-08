@@ -38,6 +38,7 @@ const footerSections = [
       { name: "Terms & Conditions", href: "/terms-&-condition" },
       { name: "Cancellation Policy", href: "/cancellation-policy" },
       { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Complaints  Policy", href: "/complaints-policy" },
     ],
   },
 ];
