@@ -141,7 +141,7 @@ export default function ContactUs() {
                 <a href="https://www.facebook.com/people/Zep-Research/61561809783777/" className="text-primary hover:text-primary/80">
                   <Facebook size={24} />
                 </a>
-                <a href="" className="text-primary hover:text-primary/80">
+                <a href="https://www.instagram.com/zepresearch/" className="text-primary hover:text-primary/80">
                   <Instagram size={24} />
                 </a>
                 <a href="https://x.com/i/flow/login?redirect_after_login=%2FZepresearch#" className="text-primary hover:text-primary/80">
