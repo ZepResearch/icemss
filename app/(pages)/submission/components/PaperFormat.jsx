@@ -29,7 +29,7 @@ export default function FormatCards() {
       description:
         "Posters should be designed in A0 size (841 x 1189 mm) using clear fonts (at least 24-point for body text, larger for headings). Include title, methods, results, conclusions, and key references. Present your research visually.",
       downloadText: "Download Poster Format Template",
-      downloadLink: "/paperformat/Fullpaper_Template.doc",
+      downloadLink: "/paperformat/posterFormat.jpg",
 
     },
   ]
