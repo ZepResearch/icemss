@@ -24,7 +24,7 @@ export default function SpeakersView() {
     const fetchSpeakers = async () => {
       try {
         const records = await pb.collection('speakers').getFullList({
-          sort: 'name',
+          sort: 'order',
           requestKey: null
         })
         setSpeakers(records)
