@@ -167,7 +167,7 @@ export default function Hero() {
                   Submit Your Paper
                 </Button>
               </Link>
-              <Link href={"/paperformat/ICEMSS_2025_Broucher.pdf"}>
+              {/* <Link href={"/paperformat/ICEMSS_2025_Broucher.pdf"}>
                 <Button
                   variant="outline"
                   size="lg"
@@ -175,7 +175,7 @@ export default function Hero() {
                 >
                   Download Brochure
                 </Button>
-              </Link>
+              </Link> */}
               <ReserveButton/>
             </div>
           </motion.div>

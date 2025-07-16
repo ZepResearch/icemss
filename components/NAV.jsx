@@ -125,19 +125,7 @@ const MobileNav = () => (
             </Button>
           </SheetClose>
         </div>
-        <div className="mt-4 flex justify-center">
-          <Button size="sm" className="bg-green-500 hover:bg-green-600 text-md">
-            <Link
-              href="https://wa.me/8260080050"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1"
-            >
-              <img src="/whatsapp.png" className="h-3 w-3" alt="WhatsApp" />
-              Chat
-            </Link>
-          </Button>
-        </div>
+      
       </nav>
     </SheetContent>
   </Sheet>
@@ -250,20 +238,6 @@ export default function Navbar() {
         <MobileNav />
       </div>
 
-      {/* WhatsApp Floating Button - Desktop */}
-      <div className="fixed right-4 bottom-4 z-50 hidden md:block">
-        <Button size="sm" className="rounded-full bg-green-500 hover:bg-green-600 shadow-lg">
-          <Link
-            href="https://wa.me/8260080050"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1"
-          >
-            <img src="/whatsapp.png" className="h-4 w-4" alt="WhatsApp" />
-            <span className="text-md">Chat</span>
-          </Link>
-        </Button>
-      </div>
     </div>
   )
 }

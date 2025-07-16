@@ -4,7 +4,7 @@ import Navbar from "@/components/NAV";
 import Footer from "@/components/Footer";
 import { ToastProvider } from "@/components/ui/ToastProvider";
 import TawkToChat from "@/components/TawkToChat";
-import { FloatingWhatsAppButton } from "@/components/whatsapp";
+import FloatingWhatsApp, { FloatingWhatsAppButton } from "@/components/whatsapp";
 import Script from 'next/script';
 // import DownloadPopup from "@/components/download-popup";
 import { LineMessengerButton } from "@/components/line-messenger-button";
@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
         <Footer/>
         <ToastProvider/>
         <TawkToChat/>
-        <LineMessengerButton/>
+        <FloatingWhatsApp/>       <LineMessengerButton/>
         {/* <FloatingWhatsAppButton phoneNumber="8260080050" message="How can we assist you?"/> */}
         <noscript>
           <img 
