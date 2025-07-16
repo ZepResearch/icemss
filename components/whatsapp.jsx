@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
   const [isHovered, setIsHovered] = useState(false)
 
   // Replace with your WhatsApp number (include country code without + sign)
-  const phoneNumber = "919237388328"
+  const phoneNumber = "918260684845"
   const message = ""
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
