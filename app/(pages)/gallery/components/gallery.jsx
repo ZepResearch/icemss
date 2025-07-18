@@ -32,6 +32,50 @@ const firstConferenceImages = [
     src: "/gallery/ICEMSS_07.png?height=600&width=800",
     alt: "2nd Conference - Award Ceremony",
   },
+   {
+    src: "/gallery/ICEMSS_08.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_09.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_10.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_11.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_12.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_13.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_14.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_15.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_16.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_17.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_18.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_19.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  }, {
+    src: "/gallery/ICEMSS_20.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  },
+  {
+    src: "/gallery/ICEMSS_21.jpg?height=600&width=800",
+    alt: "2nd Conference - Award Ceremony",
+  },
 ]
 
 const secondConferenceImages = [
