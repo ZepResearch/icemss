@@ -204,6 +204,15 @@ export default function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <Link href="/gallery" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
+                    Gallery
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+
+              <NavigationMenuItem>
                 <Link href="/award" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Awards
