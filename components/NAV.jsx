@@ -112,6 +112,20 @@ const MobileNav = () => (
           <MobileNavItem href="/awards">Awards</MobileNavItem>
           <MobileNavItem href="/gallery">Gallery</MobileNavItem>
           <MobileNavItem href="/contact">Contact</MobileNavItem>
+          <MobileNavItem
+            href="/policy"
+            subItems={[
+                    { title: "Terms & Conditions", href: "/terms-&-condition" },
+                    { title: "Cancellation Policy", href: "/cancellation-policy" },
+                    { title: "Privacy Policy", href: "/privacy-policy" },
+                    { title: "Complaints  Policy", href: "/complaints-policy" },
+                    { title:"Disability Discrimination Policy", href: "/disability-discrimination-policy" },
+                    {title:"Health and Safety Policy", href: "/health-and-safety-policy" },
+                    {title:"Equal Treatment Policy", href: "/equal-treatment-policy" },
+            ]}
+          >
+            Policy
+          </MobileNavItem>
         </Accordion>
         <div className="mt-4 space-y-2">
           <SheetClose asChild>
@@ -149,7 +163,7 @@ export default function Navbar() {
                   About
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1">
+                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1 text-sm">
                     <ListItem href="/about-conference" title="About Conference">
                       Learn about our climate change conference.
                     </ListItem>
@@ -165,7 +179,7 @@ export default function Navbar() {
                   Program
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1">
+                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1 text-sm">
                     <ListItem href="/theme-and-topics" title="Themes and Topics">
                       Explore conference themes on climate action.
                     </ListItem>
@@ -174,6 +188,37 @@ export default function Navbar() {
                     </ListItem>
                     <ListItem href="/schedule" title="Conference Schedule">
                       View the full program of events.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-md h-8 px-2">
+                  Policy
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1 text-sm">
+                    <ListItem href="/terms-&-condition" title="Terms & Conditions">
+                      Read our terms and conditions.
+                    </ListItem>
+                    <ListItem href="/cancellation-policy" title="Cancellation Policy">
+                      Learn about our cancellation policy.
+                    </ListItem>
+                    <ListItem href="/privacy-policy" title="Privacy Policy">
+                      Understand how we protect your privacy.
+                    </ListItem>
+                    <ListItem href="/complaints-policy" title="Complaints Policy">
+                      Information about our complaints process.
+                    </ListItem>
+                    <ListItem href="/disability-discrimination-policy" title="Disability Discrimination Policy">
+                      Our commitment to accessibility and inclusion.
+                    </ListItem>
+                    <ListItem href="/health-and-safety-policy" title="Health and Safety Policy">
+                      Safety guidelines and protocols.
+                    </ListItem>
+                    <ListItem href="/equal-treatment-policy" title="Equal Treatment Policy">
+                      Our commitment to equal treatment for all.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -211,7 +256,6 @@ export default function Navbar() {
                 </Link>
               </NavigationMenuItem>
 
-
               <NavigationMenuItem>
                 <Link href="/award" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
@@ -227,6 +271,8 @@ export default function Navbar() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
+
+
             </NavigationMenuList>
           </NavigationMenu>
         </div>

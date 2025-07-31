@@ -39,6 +39,9 @@ const footerSections = [
       { name: "Cancellation Policy", href: "/cancellation-policy" },
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Complaints  Policy", href: "/complaints-policy" },
+      { name:"Disability Discrimination Policy", href: "/disability-discrimination-policy" },
+      {name:"Health and Safety Policy", href: "/health-and-safety-policy" },
+      {name:"Equal Treatment Policy", href: "/equal-treatment-policy" },
     ],
   },
 ];

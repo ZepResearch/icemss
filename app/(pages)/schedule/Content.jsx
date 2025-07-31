@@ -11,47 +11,92 @@ const addDays = (date, days) => {
   result.setDate(result.getDate() + days)
   return result
 }
-import { Clock, Coffee, Users, Mic, BookOpen, Camera } from "lucide-react"
+import { Clock, Coffee, Users, Mic, BookOpen, Camera, Award, UserCheck } from "lucide-react"
 
 const scheduleData = [
   {
     date: "December 12 | Day 1",
     items: [
       { time: "09:00 - 09:20 AM", title: "Registration", type: "registration", icon: Users },
-      { time: "09:20 - 09:30 AM", title: "Introduction By Moderator", type: "intro", icon: Mic },
-      { time: "09:30 - 09:35 AM", title: "Felicitate the Guests", type: "ceremony", icon: Users },
+      { time: "09:20 - 09:30 AM", title: "Introduction by Moderator", type: "intro", icon: Mic },
+      { time: "09:30 - 09:35 AM", title: "Felicitate the Guests", type: "ceremony", icon: Award },
       { time: "09:35 - 09:40 AM", title: "Book Release", type: "ceremony", icon: BookOpen },
       { time: "09:40 - 09:50 AM", title: "Introduction to Speakers", type: "intro", icon: Mic },
-      { time: "09:50 - 10:10 AM", title: "Speech by Keynote Speaker Dr. Amrita Surana", type: "keynote", icon: Mic },
-      { time: "10:10 - 10:30 AM", title: "Speech by Keynote Speaker", type: "keynote", icon: Mic },
-      { time: "10:30 - 10:50 AM", title: "Coffee Break", type: "break", icon: Coffee },
-      { time: "10:50 - 11:05 AM", title: "Speech by Session Speaker Dr. Ashutosh Kumar Pandey", type: "session", icon: Mic },
-      { time: "11:05 - 12:30 PM", title: "Technical Session 1 (Engineering)", type: "technical", icon: BookOpen },
+      {
+        time: "09:50 - 10:05 AM",
+        title: "Speech by Keynote Speaker Prof. (Dr.) Ipseeta Nanda",
+        subtitle: "Topic: Engineering Intelligence Smart Solutions for Sustainable Progress",
+        type: "keynote",
+        icon: Mic,
+      },
+      {
+        time: "10:05 - 10:20 AM",
+        title: "Speech by Keynote Speaker Dr. Kausik Mukherjee",
+        type: "keynote",
+        icon: Mic,
+      },
+      {
+        time: "10:20 - 10:40 AM",
+        title: "Speech by Keynote Speaker Prof. S.S. Prasada Rao Ph.D",
+        subtitle: "Topic: Ethical Considerations in Research",
+        type: "keynote",
+        icon: Mic,
+      },
+      { time: "10:40 - 11:00 AM", title: "Coffee Break", type: "break", icon: Coffee },
+      { time: "11:00 - 11:10 AM", title: "Speech by Session Speaker Dr. Surbhi Saroha", type: "session", icon: Mic },
+      { time: "11:10 - 11:20 AM", title: "Speech by Session Speaker Dr. Amruta Surana", type: "session", icon: Mic },
+      { time: "11:20 - 12:30 PM", title: "Technical Session 1 (Engineering)", type: "technical", icon: BookOpen },
       { time: "12:30 - 01:30 PM", title: "Lunch Break", type: "break", icon: Coffee },
-      { time: "01:30 - 01:50 PM", title: "Speech by Keynote Speaker", type: "keynote", icon: Mic },
-      { time: "01:50 - 02:10 PM", title: "Speech by Keynote Speaker", type: "keynote", icon: Mic },
-      { time: "02:10 - 02:20 PM", title: "Speech by Session Speaker Dr. Lalita Bisea", type: "session", icon: Mic },
-      { time: "02:30 - 04:40 PM", title: "Speech by Session Speaker Dr. Pooja Sharma", type: "session", icon: Mic },
-      { time: "04:40 - 05:30 PM", title: "Technical Session 2 (Management)", type: "technical", icon: BookOpen },
-      { time: "Evening", title: "Valedictory Function (Photo Session)", type: "ceremony", icon: Camera },
-    ]
+      {
+        time: "01:30 - 01:40 PM",
+        title: "Speech by Session Speaker Dr. Ashutosh Kumar Pandey",
+        type: "session",
+        icon: Mic,
+      },
+      {
+        time: "01:40 - 01:50 PM",
+        title: "Speech by Conference Co-Chair Dr. Diya Guha Roy",
+        type: "session",
+        icon: UserCheck,
+      },
+      { time: "01:50 - 03:00 PM", title: "Technical Session 2 (Management)", type: "technical", icon: BookOpen },
+      { time: "Evening", title: "Photo Session", type: "ceremony", icon: Camera },
+    ],
   },
   {
-    date: "December 13 | Day 2", 
+    date: "December 13 | Day 2",
     items: [
       { time: "09:00 - 09:20 AM", title: "Registration", type: "registration", icon: Users },
-      { time: "09:20 - 09:30 AM", title: "Introduction By Moderator", type: "intro", icon: Mic },
-      { time: "09:30 - 09:50 AM", title: "Speech by Keynote Speaker", type: "keynote", icon: Mic },
-      { time: "09:50 - 10:10 AM", title: "Speech by Keynote Speaker", type: "keynote", icon: Mic },
-      { time: "10:10 - 10:20 AM", title: "Speech by Conference Chair Dr. Pranav Charkha", type: "session", icon: Mic },
+      { time: "09:20 - 09:30 AM", title: "Introduction by Moderator", type: "intro", icon: Mic },
+      {
+        time: "09:30 - 09:50 AM",
+        title: "Speech by Keynote Speaker Dr. Kamal Gulati",
+        subtitle: "Topic: The Role Of IoT in Driving Next-Gen Digital Ecosystems",
+        type: "keynote",
+        icon: Mic,
+      },
+      {
+        time: "09:50 - 10:10 AM",
+        title: "Speech by Keynote Speaker",
+        subtitle: "Topic: Human Centric Innovation in The Age of AI",
+        type: "keynote",
+        icon: Mic,
+      },
+      {
+        time: "10:00 - 10:20 AM",
+        title: "Speech by Conference Chair Dr. Pranav Charkha",
+        type: "session",
+        icon: UserCheck,
+      },
       { time: "10:20 - 10:40 AM", title: "Coffee Break", type: "break", icon: Coffee },
-      { time: "10:40 - 10:50 AM", title: "Speech by Session Speaker Dr. Surbhi Saroha", type: "session", icon: Mic },
-      { time: "10:50 - 12:30 PM", title: "Technical Session 3 (Social Sciences)", type: "technical", icon: BookOpen },
+      { time: "10:40 - 10:50 AM", title: "Speech by Session Speaker Dr. Lalita Bisen", type: "session", icon: Mic },
+      { time: "10:50 - 11:00 AM", title: "Speech by Session Speaker Dr. Pooja Sharma", type: "session", icon: Mic },
+      { time: "11:00 - 12:30 PM", title: "Technical Session 3 (Social Sciences)", type: "technical", icon: BookOpen },
       { time: "12:30 - 01:30 PM", title: "Lunch Break", type: "break", icon: Coffee },
       { time: "01:30 - 03:00 PM", title: "Panel Discussion", type: "panel", icon: Users },
-      { time: "03:00 - 05:00 PM", title: "Valedictory Function", type: "ceremony", icon: Camera },
-    ]
-  }
+      { time: "03:00 - 05:00 PM", title: "Valedictory Function", type: "ceremony", icon: Award },
+    ],
+  },
 ]
 
 const getTypeColor = (type) => {
