@@ -111,7 +111,7 @@ const DisabilityPolicy = () => {
                 </div>
                 <div className="flex items-start space-x-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700 text-sm">Complaints or concerns will be addressed promptly and confidentially by the conference's designated Accessibility & Inclusion Officer.</p>
+                  <p className="text-gray-700 text-sm">Complaints or concerns will be addressed promptly and confidentially by the conference&apos;s designated Accessibility & Inclusion Officer.</p>
                 </div>
               </div>
             </section>
