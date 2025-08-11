@@ -226,7 +226,7 @@ export const userConfirmationTemplate = (data) => `
             
             <div class="venue-details">
                 <h3>Conference Details</h3>
-                <p>Dates: 22nd-23rd DECEMBER, 2025</p>
+                <p>Dates: 12th - 13th DECEMBER, 2025</p>
                 <p>Venue: GOA, India</p>
             </div>
             
