@@ -21,7 +21,7 @@ export default function Home() {
     <main>
       {/* <Banner/> */}
       <Hero/>
-      {/* <CoOrganizationLogos/> */}
+      <CoOrganizationLogos/>
       <AboutSection/>
       <Buttons/>
       <ObjectivesSection/>
