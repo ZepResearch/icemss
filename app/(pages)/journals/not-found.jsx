@@ -25,7 +25,7 @@ export default function NotFound() {
       </div>
       <h1 className="text-4xl font-bold mb-4">Journal Not Found</h1>
       <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-        The journal you're looking for doesn't exist or has been removed from our collection.
+        The journal you&apos;re looking for doesn&apos;t exist or has been removed from our collection.
       </p>
       <Link href="/journals">
         <Button className="px-6">
