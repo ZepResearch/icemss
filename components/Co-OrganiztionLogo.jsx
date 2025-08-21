@@ -41,6 +41,11 @@ const logos = [
     name: "Company 10",
     src: "https://res.cloudinary.com/dwlhesiyi/image/upload/v1736747952/pather%20logo/kexja6pib4z7zgwyf2q3.png",
   },
+  {
+    name: "Company 11",
+    src: "/co-logo1.png",
+  },
+
   // {
   //   name: "Company 11",
   //   src: "https://res.cloudinary.com/dwlhesiyi/image/upload/v1736748799/pather%20logo/oc92ro5djxyvrts45dsl.png",

@@ -46,7 +46,7 @@ export function CoOrganizationLogosClient({ logos }) {
     variants={containerVariants}
     initial="hidden"
     animate={controls}
-    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 gap-8 items-center"
+    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-8 items-center"
   >
     {logos.slice(0, 8).map((logo, index) => (
       <motion.div
