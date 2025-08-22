@@ -71,6 +71,11 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+          <script
+          async
+          src="https://analytics.zepresearch.com/script.js"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+        ></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased mt-12`}
