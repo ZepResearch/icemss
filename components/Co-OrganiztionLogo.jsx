@@ -45,7 +45,10 @@ const logos = [
     name: "Company 11",
     src: "/co-logo1.png",
   },
-
+ {
+    name: "Company 12",
+    src: "/co-org2.png",
+  },
   // {
   //   name: "Company 11",
   //   src: "https://res.cloudinary.com/dwlhesiyi/image/upload/v1736748799/pather%20logo/oc92ro5djxyvrts45dsl.png",

@@ -46,7 +46,7 @@ export function CoOrganizationLogosClient({ logos }) {
     variants={containerVariants}
     initial="hidden"
     animate={controls}
-    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-8 items-center"
+    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8 items-center"
   >
     {logos.slice(0, 8).map((logo, index) => (
       <motion.div
@@ -54,7 +54,7 @@ export function CoOrganizationLogosClient({ logos }) {
         variants={itemVariants}
         className="flex items-center justify-center"
       >
-        <div className="relative w-32 h-32 overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div className="relative w-40 h-40 overflow-hidden rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
           <Image
             src={logo.src}
             alt={logo.name}
