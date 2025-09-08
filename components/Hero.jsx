@@ -108,13 +108,16 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6 pt-64 md:pt-24 min-h-full py-8 flex items-center">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 md:pt-4 pt-52   min-h-full py-8 flex items-center">
         <motion.div
           className="max-w-3xl space-y-8 text-white"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
+          <div className="w-full ">
+            <img src="/assets/cpd.png" alt="" className=" h-48 flex mx-auto justify-center items-center  bg-white w-fit rounded-lg" />
+          </div>
           <motion.div className="space-y-4" variants={itemVariants}>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
               3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
@@ -133,7 +136,7 @@ export default function Hero() {
           </motion.div>
           <motion.div className="space-y-4 w-full" variants={itemVariants}>
             {/* images */}
-            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4  backdrop-blur-sm bg-gray-50/30 py-4 rounded-3xl">
+            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4  backdrop-blur-sm bg-gray-50/70 py-4 rounded-3xl">
               <img
                 src="/assets/scopus.png"
                 alt=""
