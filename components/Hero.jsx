@@ -131,9 +131,9 @@ export default function Hero() {
               University
             </p> */}
           </motion.div>
-          <motion.div className="space-y-4" variants={itemVariants}>
+          <motion.div className="space-y-4 w-full" variants={itemVariants}>
             {/* images */}
-            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4 max-w-3xl  backdrop-blur-sm bg-gray-50/30 py-4 rounded-3xl">
+            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4  backdrop-blur-sm bg-gray-50/30 py-4 rounded-3xl">
               <img
                 src="/assets/scopus.png"
                 alt=""
@@ -145,11 +145,11 @@ export default function Hero() {
                 className="h-12 drop-shadow-lg"
               />
 
-              <img
-              src="assets/cpd.png"
+              {/* <img
+              src="assets/cpd2.png"
               alt=""
-              className="h-28 drop-shadow-lg"
-              />
+              className="h-32 drop-shadow-lg"
+              /> */}
               <img
                 src="assets/zepresearch.png"
                 alt=""
