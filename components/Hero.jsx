@@ -116,7 +116,7 @@ export default function Hero() {
           animate="visible"
         >
           <div className="w-full ">
-            <img src="/assets/cpd.png" alt="" className=" h-48 flex mx-auto justify-center items-center  bg-white w-fit rounded-lg" />
+            <img src="/assets/cpd2.svg" alt="" className=" h-48 flex mx-auto justify-center items-center  bg-white w-fit rounded-lg" />
           </div>
           <motion.div className="space-y-4" variants={itemVariants}>
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
