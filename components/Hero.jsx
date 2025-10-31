@@ -7,7 +7,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ReserveButton } from "./reserve-button"
-import { InfiniteTextMarquee } from "./ui/infinite-text-marquee"
 
 
 const backgroundImages = [
@@ -111,7 +110,7 @@ export default function Hero() {
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 md:pt-4 pt-52   min-h-full py-8 flex items-center">
         <motion.div
-          className="max-w-3xl space-y-8 text-white"
+          className="max-w-5xl space-y-8 text-white"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -120,7 +119,7 @@ export default function Hero() {
             <img src="/assets/cpd2.svg" alt="" className=" h-48 flex mx-auto justify-center items-center  bg-white w-fit rounded-lg" />
           </div>
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+            <h1 className="text-5xl font-bold tracking-tighter sm:text-5xl md:text-7xl">
               3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
             </h1>
             <p className="max-w-[600px] text-white/80 md:text-xl inline-flex">
@@ -158,6 +157,16 @@ export default function Hero() {
                 src="assets/zepresearch.png"
                 alt=""
                 className="h-12 drop-shadow-lg"
+              />
+              <img
+                src="assets/iee.png"
+                alt=""
+                className="h-24 drop-shadow-lg"
+              />
+              <img
+                src="assets/crc.png"
+                alt=""
+                className="h-16 drop-shadow-lg"
               />
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -247,18 +256,8 @@ export default function Hero() {
         
       </motion.div>
 
-    <div className="overflow-x-hidden border rounded-sm  mx-auto mt-10 max-w-screen-2xl ">
-            <InfiniteTextMarquee
-                text="Selected papers would be processed in CRC press or IEEE Conference proceeding (Scopus indexed). For publication it might charge extra fees."
-                link="/registration"
-                speed={20}
-                tooltipText="register now"
-                fontSize="2rem"
-                textColor="white"
-                hoverColor="white"
-                showTooltip={true}
-            />
-        </div>
+   
+  
     </section>
   )
 }
