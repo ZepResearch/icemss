@@ -7,6 +7,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ReserveButton } from "./reserve-button"
+import { InfiniteTextMarquee } from "./ui/infinite-text-marquee"
 
 
 const backgroundImages = [
@@ -241,8 +242,23 @@ export default function Hero() {
           </Link>
           </div> */}
           </div>
+          
         </div>
+        
       </motion.div>
+
+    <div className="overflow-x-hidden border rounded-sm  mx-auto mt-10 max-w-screen-2xl ">
+            <InfiniteTextMarquee
+                text="Selected papers would be processed in CRC press or IEEE Conference proceeding (Scopus indexed). For publication it might charge extra fees."
+                link="/registration"
+                speed={20}
+                tooltipText="register now"
+                fontSize="2rem"
+                textColor="white"
+                hoverColor="white"
+                showTooltip={true}
+            />
+        </div>
     </section>
   )
 }
