@@ -85,10 +85,10 @@ export default function DatesSection() {
                 className="relative"
               >
                 <div className="space-y-2 rounded-xl shadow-lg bg-primary/10 p-6 border border-primary/20">
-                  <span className={`block text-2xl font-extrabold text-primary ${index === -1 ? "line-through" : ""}`}>{item.date}</span>
+                  <span className={`block text-2xl font-extrabold text-primary ${index === 0 ? "line-through" : ""}`}>{item.date}</span>
                   <hr className="border-2 border-black/80"/>
-                  <h3 className={`font-extrabold text-xl text-blue-700 ${index === -1 ? "line-through" : ""}`}>{item.title}</h3>
-                  <p className={`text-base text-blue-500 leading-relaxed font-semibold ${index === -1 ? "line-through" : ""}`}>{item.description}</p>
+                  <h3 className={`font-extrabold text-xl text-blue-700 ${index === 0 ? "line-through" : ""}`}>{item.title}</h3>
+                  <p className={`text-base text-blue-500 leading-relaxed font-semibold ${index === 0 ? "line-through" : ""}`}>{item.description}</p>
                 </div>
                 {index < dates.length - 1 && (
                   <div className="hidden md:block absolute top-4 right-0 w-full h-[1px] bg-border -z-10 translate-x-1/2" />
