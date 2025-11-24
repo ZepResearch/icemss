@@ -339,7 +339,7 @@ export default function Ticket() {
           {/* Pricing Section */}
           <div className="space-y-3 mt-auto">
             {/* Early Bird Price */}
-            <div className="bg-blue-100 p-3 rounded-lg border border-blue-300">
+            {/* <div className="bg-blue-100 p-3 rounded-lg border border-blue-300">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-sm font-medium text-blue-800">Early Bird</span>
                 <Badge className="bg-blue-200 text-blue-800 text-xs">Save 10%</Badge>
@@ -358,7 +358,7 @@ export default function Ticket() {
                   {isLoading === ticket.name + "Early Bird" ? "Processing..." : "Book Now"}
                 </Button>
               </div>
-            </div>
+            </div> */}
 
             {/* Regular Price */}
             <div className="bg-blue-200 p-3 rounded-lg border border-blue-400">
