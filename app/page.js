@@ -1,8 +1,6 @@
 import AboutSection from "@/components/About";
-import Banner from "@/components/Banner";
 import Buttons from "@/components/buttons";
 import CoOrganizationLogos from "@/components/Co-OrganiztionLogo";
-import CPD from "@/components/CPD";
 import CTASection from "@/components/Cta-section";
 import DatesSection from "@/components/Dates";
 import FAQ from "@/components/FAQ";
@@ -22,7 +20,7 @@ export default function Home() {
     <main>
       {/* <Banner/> */}
       <Hero/>
-      <CPD/>
+   
       <CoOrganizationLogos/>
       <AboutSection/>
       <Buttons/>

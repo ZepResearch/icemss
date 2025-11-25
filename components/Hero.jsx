@@ -2,12 +2,11 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Calendar, Headphones, MapPin, Quote, Users } from "lucide-react"
+import { Calendar, Headphones, MapPin, Quote, Users, Award, BookOpen, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { ReserveButton } from "./reserve-button"
-
 
 const backgroundImages = [
   "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -54,10 +53,37 @@ export default function Hero() {
     },
   }
 
+  const floatAnimation = {
+    y: [0, -10, 0],
+    transition: {
+      duration: 3,
+      repeat: Number.POSITIVE_INFINITY,
+      ease: "easeInOut",
+    },
+  }
+
+  const pulseAnimation = {
+    scale: [1, 1.05, 1],
+    transition: {
+      duration: 2,
+      repeat: Number.POSITIVE_INFINITY,
+      ease: "easeInOut",
+    },
+  }
+
+  const shimmerAnimation = {
+    backgroundPosition: ["200% 0", "-200% 0"],
+    transition: {
+      duration: 3,
+      repeat: Number.POSITIVE_INFINITY,
+      ease: "linear",
+    },
+  }
+
   return (
     <section className="relative w-full min-h-full py-28 overflow-hidden">
       <motion.div
-        className="absolute top-24 sm:right-24 right-5 z-10 bg-white/90 backdrop-blur-sm text-black p-4 rounded-lg shadow-lg w-64"
+        className="absolute top-9 sm:right-24 right-5 z-10 bg-white/90 backdrop-blur-sm text-black p-4 rounded-lg shadow-lg w-64 hidden xl:block"
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -79,8 +105,7 @@ export default function Hero() {
           </span>
         </div>
       </motion.div>
-      
-      {/* <Banner /> */}
+
       <div className="absolute inset-0 bg-black" />
       <AnimatePresence mode="wait">
         <motion.div
@@ -108,157 +133,298 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6 md:pt-4 pt-52   min-h-full py-8 flex items-center">
-        <motion.div
-          className="max-w-5xl space-y-8 text-white"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <div className="w-full ">
-            <img src="/assets/cpd2.svg" alt="" className=" h-48 flex mx-auto justify-center items-center  bg-white w-fit rounded-lg" />
-          </div>
-          <motion.div className="space-y-4" variants={itemVariants}>
-            <h1 className="text-5xl font-bold tracking-tighter sm:text-5xl md:text-7xl">
-              3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
-            </h1>
-            <p className="max-w-[600px] text-white/80 md:text-xl inline-flex">
-            <Quote className="mr-2"/>
-            <span>
-             Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration
-              </span> <Quote className="mt-6 mr"/>
-            </p>
-            {/* <p className="max-w-[600px] text-white/80 md:text-xl">
-              Co-organized by [declared soon]
-              by- Indraprastha College For Women–Delhi University (IPCW–DU) and Swami Vivekanand Subharti
-              University
-            </p> */}
+      <div className="relative z-10 container mx-auto px-4 md:px-6 md:pt-4 pt-52 min-h-full py-8 flex items-center">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 w-full items-center">
+          {/* Left Content - Main Hero */}
+          <motion.div
+            className="xl:col-span-2 space-y-8 text-white"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.div className="space-y-4" variants={itemVariants}>
+              <h1 className="text-5xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+                3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
+              </h1>
+              <p className="max-w-[600px] text-white/80 md:text-xl inline-flex">
+                <Quote className="mr-2" />
+                <span>
+                  Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary
+                  research and collaboration
+                </span>
+                <Quote className="mt-6 mr" />
+              </p>
+            </motion.div>
+
+            <motion.div className="space-y-4 w-full" variants={itemVariants}>
+              <div className="grid md:grid-cols-3 grid-cols-1 items-start sm:items-center justify-center gap-3 px-4 backdrop-blur-sm bg-gray-50/70 py-4 rounded-3xl">
+                <img src="/assets/scopus.png" alt="" className="h-12 drop-shadow-lg" />
+                <img src="/assets/clarivate.png" alt="" className="h-12 drop-shadow-lg" />
+                <img src="assets/zepresearch.png" alt="" className="h-12 drop-shadow-lg" />
+                <img src="assets/iee.png" alt="" className="h-24 drop-shadow-lg" />
+                <img src="assets/crc.png" alt="" className="h-16 drop-shadow-lg" />
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Link href={"/registration"}>
+                  <Button size="lg" className="inline-flex gap-2 hover:text-primary hover:bg-white/90">
+                    <Users className="h-4 w-4" />
+                    Register Now
+                  </Button>
+                </Link>
+                <Link href={"/submission"}>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="inline-flex gap-2 text-white hover:text-white border-blue-400 bg-white/20 hover:bg-white/40 bg-transparent"
+                  >
+                    Submit Your Paper
+                  </Button>
+                </Link>
+                <ReserveButton />
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="p-6 bg-white/70 backdrop-blur-sm max-w-4xl mx-auto rounded-lg"
+              variants={itemVariants}
+            >
+              <div className="container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex items-center gap-4 p-4">
+                    <Calendar className="w-8 h-8 text-white shrink-0" />
+                    <div>
+                      <h2 className="font-bold text-2xl">Conference Date</h2>
+                      <p className="text-lg">
+                        <span className="text-lg">12</span>
+                        <sup>th</sup>
+                        <span className="text-lg">-13</span>
+                        <sup>th</sup> DECEMBER , 2025
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 p-4 bg-[#21BDCA]/30 rounded-lg">
+                    <MapPin className="w-8 h-8 text-white shrink-0" />
+                    <div>
+                      <h3 className="font-bold text-2xl">Conference Venue</h3>
+                      <p className="text-lg">
+                        BloomSuites,Goa, 403516,INDIA <br />
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
-          <motion.div className="space-y-4 w-full" variants={itemVariants}>
-            {/* images */}
-            <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4  backdrop-blur-sm bg-gray-50/70 py-4 rounded-3xl">
-              <img
-                src="/assets/scopus.png"
-                alt=""
-                className="h-12 drop-shadow-lg"
-              />
-              <img
-                src="/assets/clarivate.png"
-                alt=""
-                className="h-12 drop-shadow-lg"
-              />
 
-              {/* <img
-              src="assets/cpd2.png"
-              alt=""
-              className="h-32 drop-shadow-lg"
-              /> */}
-              <img
-                src="assets/zepresearch.png"
-                alt=""
-                className="h-12 drop-shadow-lg"
-              />
-              <img
-                src="assets/iee.png"
-                alt=""
-                className="h-24 drop-shadow-lg"
-              />
-              <img
-                src="assets/crc.png"
-                alt=""
-                className="h-16 drop-shadow-lg"
-              />
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link href={"/registration"}>
-                <Button size="lg" className="inline-flex gap-2 hover:text-primary   hover:bg-white/90">
-                  <Users className="h-4 w-4" />
-                  Register Now
-                </Button>
-              </Link>
-              <Link href={"/submission"}>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="inline-flex gap-2 text-black hover:text-white border-blue-400 hover:bg-white/20"
-                >
-                  Submit Your Paper
-                </Button>
-              </Link>
-              {/* <Link href={"/paperformat/ICEMSS_2025_Broucher.pdf"}>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="inline-flex gap-2 text-blue-400 hover:text--blue-400 border-blue-400 hover:bg-white/20 bg-transparent"
-                >
-                  Download Brochure
-                </Button>
-              </Link> */}
-              <ReserveButton/>
-            </div>
+          <motion.div
+            className="xl:col-span-1"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+          >
+            <motion.div className="relative" animate={floatAnimation}>
+              {/* Glowing background effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-2xl blur-lg opacity-75 animate-pulse" />
+
+              <div className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-2xl shadow-2xl overflow-hidden">
+                {/* Animated background pattern */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{
+                      backgroundImage: `radial-gradient(circle at 25px 25px, rgba(255,255,255,0.1) 2px, transparent 0)`,
+                      backgroundSize: "50px 50px",
+                    }}
+                    animate={{
+                      backgroundPosition: ["0px 0px", "50px 50px"],
+                    }}
+                    transition={{
+                      duration: 10,
+                      repeat: Number.POSITIVE_INFINITY,
+                      ease: "linear",
+                    }}
+                  />
+                </div>
+
+                {/* Shimmer overlay */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  style={{ backgroundSize: "200% 100%" }}
+                  animate={shimmerAnimation}
+                />
+
+                <div className="relative p-6 space-y-5">
+                  {/* CPD Badge with pulse */}
+                  <motion.div className="flex justify-center" animate={pulseAnimation}>
+                    <div className="bg-white rounded-xl p-4 shadow-lg relative overflow-hidden group">
+                      {/* Sparkle effects */}
+                      <motion.div
+                        className="absolute top-2 right-2 w-2 h-2 bg-yellow-400 rounded-full"
+                        animate={{
+                          scale: [0, 1, 0],
+                          opacity: [0, 1, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Number.POSITIVE_INFINITY,
+                          delay: 0,
+                        }}
+                      />
+                      <motion.div
+                        className="absolute bottom-3 left-3 w-1.5 h-1.5 bg-cyan-400 rounded-full"
+                        animate={{
+                          scale: [0, 1, 0],
+                          opacity: [0, 1, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Number.POSITIVE_INFINITY,
+                          delay: 0.7,
+                        }}
+                      />
+                      <motion.div
+                        className="absolute top-1/2 left-2 w-1 h-1 bg-blue-400 rounded-full"
+                        animate={{
+                          scale: [0, 1, 0],
+                          opacity: [0, 1, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Number.POSITIVE_INFINITY,
+                          delay: 1.4,
+                        }}
+                      />
+                      <img
+                        src="assets/cpd2.svg"
+                        alt="CPD Certified"
+                        className="h-28 w-auto mx-auto transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  </motion.div>
+
+                  {/* CPD Accredited Badge */}
+                  <motion.div
+                    className="flex items-center justify-center gap-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.2 }}
+                  >
+                    <motion.div
+                      animate={{
+                        rotate: [0, 10, -10, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Award className="w-5 h-5 text-yellow-300" />
+                    </motion.div>
+                    <span className="text-xs font-semibold text-yellow-300 uppercase tracking-wider">
+                      CPD Accredited Event
+                    </span>
+                    <motion.div
+                      animate={{
+                        rotate: [0, -10, 10, 0],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Award className="w-5 h-5 text-yellow-300" />
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Title */}
+                  <motion.h2
+                    className="text-xl font-bold text-white text-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1 }}
+                  >
+                    Continuing Professional Development
+                  </motion.h2>
+
+                  {/* Description */}
+                  <motion.p
+                    className="text-blue-100 text-sm text-center leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.1 }}
+                  >
+                    Earn CPD points while expanding your knowledge. This conference is accredited for professional
+                    development.
+                  </motion.p>
+
+                  {/* Feature list with stagger animation */}
+                  <motion.div
+                    className="space-y-2"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                      visible: {
+                        transition: {
+                          staggerChildren: 0.15,
+                          delayChildren: 1.3,
+                        },
+                      },
+                    }}
+                  >
+                    {["Certified CPD Hours", "International Recognition", "Career Advancement"].map(
+                      (feature, index) => (
+                        <motion.div
+                          key={index}
+                          className="flex items-center gap-2 text-white/90 text-sm"
+                          variants={{
+                            hidden: { opacity: 0, x: -20 },
+                            visible: { opacity: 1, x: 0 },
+                          }}
+                        >
+                          <motion.div
+                            className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center"
+                            whileHover={{ scale: 1.2, backgroundColor: "rgba(255,255,255,0.4)" }}
+                          >
+                            <BookOpen className="w-3 h-3 text-cyan-300" />
+                          </motion.div>
+                          <span>{feature}</span>
+                        </motion.div>
+                      ),
+                    )}
+                  </motion.div>
+
+                  {/* CTA Button with hover effect */}
+                  <motion.div
+                    className="pt-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.6 }}
+                  >
+                    <motion.a
+                      href="https://www.cpdstandards.com/become-accredited/events-conferences/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-center gap-2 w-full bg-white text-blue-700 px-5 py-3 rounded-lg font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:bg-blue-50"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span>Learn About CPD</span>
+                      <motion.div
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
+                      >
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      </motion.div>
+                    </motion.a>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
-          <motion.div className="space-y-4" variants={itemVariants}>
-            {/* <div className="flex flex-col gap-4 text-base text-white/80">
-              <div className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                <span>19th - 20th February 2025</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                <span>Delhi, India</span>
-              </div>
-            </div> */}
-          </motion.div>
-        </motion.div>
-      </div>
-      <motion.div className=" p-6 bg-white/70 backdrop-blur-sm max-w-4xl mx-auto rounded-lg" variants={itemVariants}>
-        <div className="container  mx-auto ">
-          <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
-            {/* Conference Date */}
-            <div className="flex items-center  gap-4 p-4 ">
-              <Calendar className="w-8 h-8 text-white shrink-0" />
-              <div>
-                <h2 className="font-bold text-2xl">Conference Date</h2>
-                <p className="text-lg">
-                  <span className="text-lg">12</span>
-                  <sup>th</sup>
-                  <span className="text-lg">-13</span>
-                  <sup>th</sup> DECEMBER , 2025
-                </p>
-              </div>
-            </div>
-
-            {/* Conference Venue */}
-            <div className="flex items-center gap-4 p-4 bg-[#21BDCA]/30 rounded-lg">
-              <MapPin className="w-8 h-8 text-white shrink-0" />
-              <div>
-                <h3 className="font-bold text-2xl">Conference Venue</h3>
-                <p className="text-lg">
-                    BloomSuites,Goa, 403516,INDIA   <br />
-                  
-
-                </p>
-              </div>
-            </div>
-
-            {/* Contact Information */}
-            {/* <div className="flex items-center gap-4 p-4 ">
-          <Link href={'/'}>
-            <div className="inline-flex justify-center items-center gap-3 border-2 p-2 rounded-lg" >
-            <DockIcon className="w-8 h-8 text-white shrink-0" />
-                        
-            </div>
-          </Link>
-          </div> */}
-          </div>
-          
         </div>
-        
-      </motion.div>
-
-   
-  
+      </div>
     </section>
   )
 }
-
