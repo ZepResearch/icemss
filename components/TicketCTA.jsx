@@ -28,7 +28,7 @@ export default function TicketCTA() {
                   <thead>
                     <tr className="bg-gray-100">
                       <th className="border border-gray-300 px-4 py-3 text-left font-semibold">Category</th>
-                      <th className="border border-gray-300 px-4 py-3 text-center font-semibold">Early Bird Fee</th>
+                      {/* <th className="border border-gray-300 px-4 py-3 text-center font-semibold">Early Bird Fee</th> */}
                       <th className="border border-gray-300 px-4 py-3 text-center font-semibold">
                         {ticketType.type.includes('Virtual') ? 'Presentation Fee' : 'Fee'}
                       </th>
@@ -44,9 +44,9 @@ export default function TicketCTA() {
                     {ticketType.categories.map((category, i) => (
                       <tr key={i} className="hover:bg-gray-50">
                         <td className="border border-gray-300 px-4 py-3 font-medium">{category.name}</td>
-                        <td className="border border-gray-300 px-4 py-3 text-center font-semibold text-blue-600">
+                        {/* <td className="border border-gray-300 px-4 py-3 text-center font-semibold text-blue-600">
                           {category.earlyBird}
-                        </td>
+                        </td> */}
                         <td className="border border-gray-300 px-4 py-3 text-center font-semibold text-blue-600">
                           {category.regular}
                         </td>
@@ -96,38 +96,38 @@ export default function TicketCTA() {
 }
 
 const tickets = [
+  // {
+  //   type: "Physical Presentation (Foreign participants):",
+  //   categories: [
+  //     {
+  //       name: "Academicians",
+  //       earlyBird: "319 USD",
+  //       regular: "359 USD", 
+  //       scopusQ3Q4: "859 USD",
+  //       scopusQ1Q2: "1399 USD"
+  //     },
+  //     {
+  //       name: "Students",
+  //       earlyBird: "219 USD",
+  //       regular: "259 USD",
+  //       scopusQ3Q4: "759 USD", 
+  //       scopusQ1Q2: "1299 USD"
+  //     },
+  //     {
+  //       name: "Listeners",
+  //       earlyBird: "169 USD",
+  //       regular: "199 USD",
+  //       scopusQ3Q4: "-",
+  //       scopusQ1Q2: "-"
+  //     }
+  //   ]
+  // },
   {
-    type: "Physical Presentation (Foreign participants):",
-    categories: [
-      {
-        name: "Academicians",
-        earlyBird: "319 USD",
-        regular: "359 USD", 
-        scopusQ3Q4: "859 USD",
-        scopusQ1Q2: "1399 USD"
-      },
-      {
-        name: "Students",
-        earlyBird: "219 USD",
-        regular: "259 USD",
-        scopusQ3Q4: "759 USD", 
-        scopusQ1Q2: "1299 USD"
-      },
-      {
-        name: "Listeners",
-        earlyBird: "169 USD",
-        regular: "199 USD",
-        scopusQ3Q4: "-",
-        scopusQ1Q2: "-"
-      }
-    ]
-  },
-  {
-    type: "Virtual presentation (Foreign participants):",
+    type: "Foreign participants  (Virtual presentation):",
     categories: [
       {
         name: "Academicians", 
- earlyBird: "199 USD", 
+        // earlyBird: "199 USD", 
         regular: "219 USD",
         scopusQ3Q4: "719 USD",
         scopusQ1Q2: "1199 USD"
@@ -136,7 +136,7 @@ const tickets = [
       },
       {
         name: "Students",
-        earlyBird: "149 USD",
+        // earlyBird: "149 USD",
         regular: "169 USD",
         scopusQ3Q4: "669 USD",
         scopusQ1Q2: "1099 USD"
@@ -144,7 +144,7 @@ const tickets = [
       },
       {
         name: "Listeners",
-        earlyBird: "99 USD",
+        // earlyBird: "99 USD",
         regular: "119 USD", 
         scopusQ3Q4: "-",
         scopusQ1Q2: "-"
@@ -152,26 +152,26 @@ const tickets = [
     ]
   },
  {
-    type: "Indian Participants (Physical Presentation):",
+    type: "Indian Participants (Virtual Presentation):",
     categories: [
       {
         name: "Academicians",
         earlyBird: "7500 INR",
-        regular: "8000 INR",
+        regular: "3500 INR",
         scopusQ3Q4: "40000 INR", 
         scopusQ1Q2: "100000 INR"
       },
       {
         name: "Students", 
         earlyBird: "6500 INR",
-        regular: "7000 INR",
+        regular: "3500 INR",
         scopusQ3Q4: "38000 INR",
         scopusQ1Q2: "98000 INR"
       },
       {
         name: "Listeners",
         earlyBird: "3000 INR",
-        regular: "4000 INR",
+        regular: "2500 INR",
         scopusQ3Q4: "-", 
         scopusQ1Q2: "-"
       }
