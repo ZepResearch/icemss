@@ -330,7 +330,7 @@ export default function Ticket() {
         {/* Virtual Only Notice */}
         <div className="p-6 bg-blue-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-blue-300">
           <h2 className="text-center text-blue-900 font-bold text-xl mb-2">
-            🌐 Virtual Conference Only
+            Virtual Conference Only
           </h2>
           <p className="text-center text-blue-800 text-lg">
             This conference will be conducted virtually. Join us from anywhere in the world!
