@@ -55,7 +55,7 @@ export default function ComplaintsPolicy() {
                   <strong>Complaints should be sent via email to:</strong> info@icemss.in
                 </p>
                 <p className="text-gray-700 mt-2">
-                  <strong>Subject line:</strong> Formal Complaint – ICEMSS 2025
+                  <strong>Subject line:</strong> Formal Complaint – ICEMSS 
                 </p>
               </div>
             </section>
@@ -119,7 +119,7 @@ export default function ComplaintsPolicy() {
                 </div>
                 <div className="flex items-center space-x-3 text-blue-700">
                   <Phone className="w-5 h-5" />
-                  <span>+91 82606 84845</span>
+                  <span>+91 82600 80050</span>
                 </div>
               </div>
             </section>

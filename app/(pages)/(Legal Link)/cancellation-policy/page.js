@@ -103,7 +103,7 @@ export default function CancellationPolicy() {
             </p>
             <p className="mt-2 text-blue-900">
               <strong>Email:</strong> info@icemss.in<br />
-              <strong>Phone:</strong> +91 82606 84845
+              <strong>Phone:</strong> +91 82600 80050
             </p>
           </CardContent>
         </Card>

@@ -69,7 +69,7 @@ export default function SDGSection() {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-center text-3xl md:text-5xl font-bold mb-2">
-          3<sup>rd</sup> <span className="text-primary">ICEMSS 2025</span> IS DEDICATED TO ADVANCING THE
+          4<sup>th</sup> <span className="text-primary">ICEMSS 2026</span> IS DEDICATED TO ADVANCING THE
            NATIONS SUSTAINABLE DEVELOPMENT GOALS (SDGS)
         </h2>
         

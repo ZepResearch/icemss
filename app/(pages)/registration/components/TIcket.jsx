@@ -16,86 +16,54 @@ export default function Ticket() {
   const [paymentPurpose, setPaymentPurpose] = useState("")
 
   const tickets = {
-    virtual: {
+    physical: {
       foreign: [
         {
-          name: "Academician",
-          earlyBird: 199,
-          regular: 219,
-          scopusQ3Q4: 719,
-          scopusQ1Q2: 1099,
-          currency: "USD",
-          category: "academician",
-          type: "presenter",
-          features: [
-            "Access to virtual conference platform",
-            "Digital conference materials",
-            "Premium online networking",
-            "Extended recordings access",
-            "Opportunity to present research",
-            "Certificate of presentation",
-          ],
-        },
-        {
-          name: "Student",
-          earlyBird: 149,
-          regular: 169,
-          scopusQ3Q4: 669,
-          scopusQ1Q2: 1199,
+          name: "Student Presenter",
+          earlyBird: 250,
+          standard: 300,
           currency: "USD",
           category: "student",
           type: "presenter",
           features: [
-            "Access to virtual conference platform",
-            "Digital conference materials",
-            "Online networking sessions",
-            "Session recordings access",
-            "Opportunity to present research",
+            "Access to all conference sessions",
+            "Conference materials and proceedings",
+            "Premium networking opportunities",
             "Certificate of presentation",
+            "Coffee breaks and refreshments",
+            "Lunch included",
+          ],
+        },
+        {
+          name: "Academician Presenter",
+          earlyBird: 300,
+          standard: 350,
+          currency: "USD",
+          category: "academician",
+          type: "presenter",
+          features: [
+            "Access to all conference sessions",
+            "Conference materials and proceedings",
+            "Premium networking opportunities",
+            "Certificate of presentation",
+            "Coffee breaks and refreshments",
+            "Lunch included",
           ],
         },
         {
           name: "Listener",
-          earlyBird: 99,
-          regular: 119,
+          earlyBird: 200,
+          standard: 250,
           currency: "USD",
           category: "listener",
           type: "listener",
           features: [
-            "Access to virtual conference platform",
-            "Digital conference materials",
-            "Online networking sessions",
-            "Session recordings access",
-          ],
-        },
-      ],
-      indian: [
-        {
-          name: "Presenter",
-          regular: 3500,
-          currency: "INR",
-          category: "presenter",
-          type: "presenter",
-          features: [
-            "Access to virtual conference platform",
-            "Digital conference materials",
-            "Premium online networking",
-            "Extended recordings access",
-            "Opportunity to present research",
-            "Certificate of presentation",
-          ],
-        },
-        {
-          name: "Listener",
-          regular: 2500,
-          currency: "INR",
-          category: "listener",
-          type: "listener",
-          features: [
-            "Access to virtual conference platform",
-            "Digital conference materials",
-            "Online networking sessions",
-            "Session recordings access",
+            "Access to all conference sessions",
+            "Conference materials and proceedings",
+            "Networking opportunities",
+            "Certificate of attendance",
+            "Coffee breaks and refreshments",
+            "Lunch included",
           ],
         },
       ],
@@ -221,7 +189,7 @@ export default function Ticket() {
           <div className="space-y-2 mb-4">
             <h3 className="text-xl font-bold tracking-wide text-blue-900">{ticket.name}</h3>
             <div className="text-xs uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-1 rounded-full inline-block">
-              {ticket.type === "listener" ? "ADMIT ONE" : "PRESENTER PASS"}
+              {ticket.type === "listener" ? "ATTENDANCE PASS" : "PRESENTER PASS"}
             </div>
           </div>
 
@@ -234,88 +202,47 @@ export default function Ticket() {
                 </li>
               ))}
             </ul>
-
-            {ticket.type === "listener" && (
-              <div className="space-y-2 mt-4">
-                <div className="h-4"></div>
-                <div className="h-4"></div>
-              </div>
-            )}
           </div>
 
           <div className="space-y-3 mt-auto">
             <div className="bg-blue-200 p-3 rounded-lg border border-blue-400">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-blue-800">Registration Fee</span>
+                <span className="text-sm font-medium text-blue-800">Early Bird</span>
+                <Badge className="bg-green-500 text-white text-xs">Save $50</Badge>
               </div>
               <div className="flex justify-between items-center">
                 <div className="text-lg font-bold text-blue-800">
-                  {ticket.currency === "INR" ? "₹" : "$"}
-                  {ticket.regular.toLocaleString()}
+                  ${ticket.earlyBird.toLocaleString()}
                 </div>
                 <Button
                   size="sm"
                   className="bg-blue-700 hover:bg-blue-800 text-white text-xs px-3 py-2"
-                  onClick={() => openPaymentPopup(ticket, "Regular", ticket.regular)}
-                  disabled={isLoading === ticket.name + "Regular"}
+                  onClick={() => openPaymentPopup(ticket, "Early Bird", ticket.earlyBird)}
+                  disabled={isLoading === ticket.name + "Early Bird"}
                 >
-                  {isLoading === ticket.name + "Regular" ? "Processing..." : "Book Now"}
+                  {isLoading === ticket.name + "Early Bird" ? "Processing..." : "Book Now"}
                 </Button>
               </div>
             </div>
 
-            {ticket.type === "presenter" && ticket.scopusQ3Q4 && (
-              <>
-                <div className="bg-blue-300 p-3 rounded-lg border border-blue-500">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-blue-900">With Scopus Q3/Q4</span>
-                    <Badge className="bg-blue-400 text-blue-900 text-xs">Publication</Badge>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <div className="text-lg font-bold text-blue-900">
-                      {ticket.currency === "INR" ? "₹" : "$"}
-                      {ticket.scopusQ3Q4.toLocaleString()}
-                    </div>
-                    <Button
-                      size="sm"
-                      className="bg-blue-800 hover:bg-blue-900 text-white text-xs px-3 py-2"
-                      onClick={() => openPaymentPopup(ticket, "Scopus Q3/Q4", ticket.scopusQ3Q4)}
-                      disabled={isLoading === ticket.name + "Scopus Q3/Q4"}
-                    >
-                      {isLoading === ticket.name + "Scopus Q3/Q4" ? "Processing..." : "Book Now"}
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="bg-blue-400 p-3 rounded-lg border border-blue-600">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-white">With Scopus Q1/Q2</span>
-                    <Badge className="bg-blue-500 text-white text-xs">Premium</Badge>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <div className="text-lg font-bold text-white">
-                      {ticket.currency === "INR" ? "₹" : "$"}
-                      {ticket.scopusQ1Q2.toLocaleString()}
-                    </div>
-                    <Button
-                      size="sm"
-                      className="bg-blue-900 hover:bg-gray-800 text-white text-xs px-3 py-2"
-                      onClick={() => openPaymentPopup(ticket, "Scopus Q1/Q2", ticket.scopusQ1Q2)}
-                      disabled={isLoading === ticket.name + "Scopus Q1/Q2"}
-                    >
-                      {isLoading === ticket.name + "Scopus Q1/Q2" ? "Processing..." : "Book Now"}
-                    </Button>
-                  </div>
-                </div>
-              </>
-            )}
-
-            {ticket.type === "listener" && (
-              <div className="space-y-3">
-                <div className="h-16"></div>
-                <div className="h-16"></div>
+            <div className="bg-blue-300 p-3 rounded-lg border border-blue-500">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-medium text-blue-900">Standard Price</span>
               </div>
-            )}
+              <div className="flex justify-between items-center">
+                <div className="text-lg font-bold text-blue-900">
+                  ${ticket.standard.toLocaleString()}
+                </div>
+                <Button
+                  size="sm"
+                  className="bg-blue-800 hover:bg-blue-900 text-white text-xs px-3 py-2"
+                  onClick={() => openPaymentPopup(ticket, "Standard", ticket.standard)}
+                  disabled={isLoading === ticket.name + "Standard"}
+                >
+                  {isLoading === ticket.name + "Standard" ? "Processing..." : "Book Now"}
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </Card>
@@ -327,28 +254,22 @@ export default function Ticket() {
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-4">Conference Registration</h1>
         
-        {/* Virtual Only Notice */}
+        {/* Physical Conference Notice */}
         <div className="p-6 bg-blue-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-blue-300">
           <h2 className="text-center text-blue-900 font-bold text-xl mb-2">
-            Virtual Conference Only
+            Physical Conference
           </h2>
           <p className="text-center text-blue-800 text-lg">
-            This conference will be conducted virtually. Join us from anywhere in the world!
+            Join us in person for an enriching conference experience!
           </p>
         </div>
 
-        {/* Virtual Tickets */}
+        {/* Tickets */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Virtual Presentation</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Conference Tickets</h2>
 
-          <h3 className="text-2xl font-bold mb-6 text-center">Foreign Participants</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch">
-            {tickets.virtual.foreign.map((ticket, index) => renderTicketCard(ticket, index))}
-          </div>
-
-          <h3 className="text-2xl font-bold mb-6 text-center">Indian Participants</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-stretch">
-            {tickets.virtual.indian.map((ticket, index) => renderTicketCard(ticket, index))}
+            {tickets.physical.foreign.map((ticket, index) => renderTicketCard(ticket, index))}
           </div>
         </div>
 
@@ -398,12 +319,21 @@ export default function Ticket() {
           </div>
         </div>
 
-        {/* Info Notice */}
-        <div className="p-4 bg-blue-100 max-w-4xl mx-auto mt-8 rounded-lg flex justify-center items-center border border-blue-300">
-          <h1 className="text-center text-blue-800 font-semibold inline-flex gap-2 text-lg">
-            <Info className="w-5 h-5 mt-0.5" />
-            Note: Publication fees are included in Scopus packages for foreign participants.
-          </h1>
+        {/* Info Notices */}
+        <div className="space-y-4 max-w-4xl mx-auto mt-8">
+          <div className="p-4 bg-blue-100 rounded-lg flex justify-center items-center border border-blue-300">
+            <h1 className="text-center text-blue-800 font-semibold inline-flex gap-2 text-lg">
+              <Info className="w-5 h-5 mt-0.5" />
+              Early Bird pricing: Save $50 USD on all ticket types!
+            </h1>
+          </div>
+          
+          <div className="p-4 bg-green-100 rounded-lg flex justify-center items-center border border-green-300">
+            <h1 className="text-center text-green-800 font-semibold inline-flex gap-2 text-lg">
+              <Info className="w-5 h-5 mt-0.5" />
+              Virtual attendance options may be added in the future. Stay tuned for updates!
+            </h1>
+          </div>
         </div>
       </div>
 

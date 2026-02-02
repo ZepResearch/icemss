@@ -73,7 +73,7 @@ export default function SponsorshipContact() {
               <h2 className="text-2xl font-semibold text-blue-700">Contact Our Sponsorship Team</h2>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 flex-shrink-0 text-blue-600" />
-                <span>+91 82606 84845</span>
+                <span>+91 82600 80050</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 flex-shrink-0 text-blue-600" />
@@ -81,7 +81,7 @@ export default function SponsorshipContact() {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-blue-600" />
-                <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
+                <span>Flat No: 202 Plot.no.2028/2044, Sai Aarti Enclave, Behind Tanishq Chandasekharpur, Bhubaneshwar, India</span>
               </div>
             </div>
           </div>

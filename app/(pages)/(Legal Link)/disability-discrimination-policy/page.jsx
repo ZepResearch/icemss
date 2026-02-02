@@ -21,7 +21,7 @@ const DisabilityPolicy = () => {
             {/* Introduction */}
             <div className="prose max-w-none">
               <p className="text-gray-700 leading-relaxed">
-                The 3rd International Conference on Engineering, Management, and Social Sciences (ICEMSS 2025) is committed to fostering an inclusive, accessible, and discrimination-free environment for all participants, regardless of physical, sensory, intellectual, or mental health conditions.
+                The  International Conference on Engineering, Management, and Social Sciences (ICEMSS ) is committed to fostering an inclusive, accessible, and discrimination-free environment for all participants, regardless of physical, sensory, intellectual, or mental health conditions.
               </p>
             </div>
 
@@ -32,7 +32,7 @@ const DisabilityPolicy = () => {
                 <h2 className="text-xl font-semibold text-gray-900">1. Policy Statement</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
-                ICEMSS 2025 strictly prohibits any form of discrimination, harassment, or exclusion based on disability. All conference organizers, staff, and participants are expected to support and uphold the principles of inclusivity and equal access to conference activities, both in physical and virtual formats.
+                ICEMSS  strictly prohibits any form of discrimination, harassment, or exclusion based on disability. All conference organizers, staff, and participants are expected to support and uphold the principles of inclusivity and equal access to conference activities, both in physical and virtual formats.
               </p>
             </section>
 
@@ -71,7 +71,7 @@ const DisabilityPolicy = () => {
                 <h2 className="text-xl font-semibold text-gray-900">3. Reasonable Accommodations</h2>
               </div>
               <p className="text-gray-700 mb-4">
-                ICEMSS 2025 will provide reasonable accommodations to ensure the full participation of individuals with disabilities, which may include:
+                ICEMSS  will provide reasonable accommodations to ensure the full participation of individuals with disabilities, which may include:
               </p>
               <div className="grid md:grid-cols-2 gap-3">
                 <div className="flex items-start space-x-2">

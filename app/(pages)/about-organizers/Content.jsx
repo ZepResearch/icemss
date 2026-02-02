@@ -52,12 +52,12 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: 12th - 13th December, 2025" },
-    { icon: MapPin, text: "GOA, India" },
+    { icon: CalendarDays, text: "2-day event: 4th - 5th November 2026" },
+    { icon: MapPin, text: "Tokyo, Japan" },
     { icon: Users, text: "300+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@icemss.in" },
-    { icon: Phone, text: "+91 82606 84845" },
+    { icon: Phone, text: "+91 82600 80050" },
   ]
 
   const coreServices = [
@@ -127,7 +127,7 @@ export default function AboutCompany() {
             About Zep Research
           </Badge>
           <h2 className="text-4xl font-bold text-primary mb-4">
-            3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
+            4<sup>th</sup> International Conference on Engineering, Management and Social Sciences
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A premier event bringing together industry professionals, researchers, and academics from around the world.
@@ -256,7 +256,7 @@ export default function AboutCompany() {
               <CardDescription className="text-lg font-medium text-primary mb-2">
                 Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
-              <p className="text-muted-foreground">12th - 13th December, 2025 • GOA, India</p>
+              <p className="text-muted-foreground"> 4th - 5th November, 2026 • Tokyo, Japan</p>
             </CardContent>
           </Card>
         </motion.div>

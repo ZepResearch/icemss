@@ -45,7 +45,7 @@ export default function CTASection() {
     },
     {
       title: "Venue Information",
-      description: "BloomSuites Goa, 403516 - World-class facilities and accommodation",
+      description: "Tokyo, Japan. World-class facilities and accommodation",
       icon: Building2,
       action: "View Location",
       link:'/venue'
@@ -107,11 +107,11 @@ export default function CTASection() {
                     <div className="space-y-4">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-5 h-5 text-primary" />
-                        <span>12th - 13th DECEMBER  2025</span>
+                        <span>4<sup>th</sup> - 5<sup>th</sup> NOVEMBER  2026</span>
                       </div>
                       <div className="flex items-center gap-2">
                                            <MapPin className="w-5 h-5 text-primary" />
-                         <span>BloomSuites, Calangute, Anjuna Rd, opp. Yash Marketing, Calangute, Goa, 403516
+                         <span>Tokyo, Japan
       </span>
                       </div>
                     </div>
@@ -129,7 +129,7 @@ export default function CTASection() {
                   </div>
                   <div className="relative aspect-square md:aspect-auto">
                     <Image
-                      src="https://images.unsplash.com/photo-1642922835816-e2ac68db5c42?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://plus.unsplash.com/premium_photo-1661914240950-b0124f20a5c1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Conference Hall"
                       fill
                       className="object-cover"

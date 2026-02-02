@@ -15,7 +15,7 @@ import { Clock, Coffee, Users, Mic, BookOpen, Camera, Award, UserCheck } from "l
 
 const scheduleData = [
   {
-    date: "December 12 | Day 1",
+    date: "November 4 | Day 1",
     items: [
       { time: "09:00 - 09:20 AM", title: "Registration", type: "registration", icon: Users },
       { time: "09:20 - 09:30 AM", title: "Introduction by Moderator", type: "intro", icon: Mic },
@@ -64,7 +64,7 @@ const scheduleData = [
     ],
   },
   {
-    date: "December 13 | Day 2",
+    date: "November 5 | Day 2",
     items: [
       { time: "09:00 - 09:20 AM", title: "Registration", type: "registration", icon: Users },
       { time: "09:20 - 09:30 AM", title: "Introduction by Moderator", type: "intro", icon: Mic },
@@ -128,7 +128,7 @@ const getTypeLabel = (type) => {
 }
 
 export default function ConferenceSchedule() {
-  const startDate = new Date(2025, 11, 12) // December 12, 2025
+  const startDate = new Date(2026, 10, 4) // November 4, 2026
   const [selectedDates, setSelectedDates] = useState([
     startDate,
     addDays(startDate, 1),
@@ -144,13 +144,13 @@ export default function ConferenceSchedule() {
               <BookOpen className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-tr from-blue-600 to-sky-600 bg-clip-text text-transparent sm:text-5xl md:text-5xl">
-              3rd International Conference     Engineering, Management and Social Sciences
+              4th International Conference     Engineering, Management and Social Sciences
             </h1>
             <h2 className="text-xl text-gray-600 max-w-3xl mx-auto">
           
             </h2>
             <p className="text-lg text-gray-500">
-              December 12th-13th, 2025 | Goa, India
+              November 4th - 5th, 2026 | Tokyo, Japan
             </p>
             <div className="flex justify-center gap-2 flex-wrap mt-6">
               <Badge variant="secondary" className="bg-blue-100 text-blue-800">Engineering</Badge>

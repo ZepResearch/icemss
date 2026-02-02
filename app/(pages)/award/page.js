@@ -56,7 +56,7 @@ export default function AwardsPage() {
             Scholarships & Awards
           </h1>
           <p className="text-xl max-w-2xl mx-auto">
-            Supporting young scholars and recognizing excellence in 3<sup>rd</sup> International Conference on
+            Supporting young scholars and recognizing excellence in 4<sup>th</sup> International Conference on
             Engineering, Management and Social Sciences
           </p>
         </div>
@@ -167,7 +167,7 @@ export default function AwardsPage() {
         <div className="bg-blue-500 rounded-lg shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Don&apos;t Miss Your Chance to Win!</h2>
           <p className="text-xl text-blue-100 mb-6">
-            Register now for the 3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
+            Register now for the 4<sup>th</sup> International Conference on Engineering, Management and Social Sciences
             and showcase your research.
           </p>
           <Link href={"/registration"}>

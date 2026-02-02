@@ -54,7 +54,7 @@ export default function ModeOfPresent() {
             Mode of Presentation
           </Badge>
           <h1 className="text-4xl font-bold text-primary mb-4">
-          3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
+          4<sup>th</sup> International Conference on Engineering, Management and Social Sciences
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Choose your preferred method of presenting at the International

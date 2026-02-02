@@ -144,7 +144,7 @@ export default function Hero() {
                 >
                 <motion.div className="space-y-4" variants={itemVariants}>
                   <h1 className="text-5xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                  3<sup>rd</sup> International Conference on Engineering, Management and Social Sciences
+                  4<sup>th</sup> International Conference on Engineering, Management and Social Sciences
                   </h1>
                   <p className="max-w-[600px] text-white/80 md:text-xl inline-flex">
                   <Quote className="mr-2" />
@@ -181,11 +181,11 @@ export default function Hero() {
                     Submit Your Paper
                     </Button>
                   </Link>
-                  <ReserveButton />
+                  {/* <ReserveButton /> */}
                   </div>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   className="relative max-w-xl"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ export default function Hero() {
                     </div>
                   </div>
                   </div>
-                </motion.div>
+                </motion.div> */}
 
 
                 <motion.div
@@ -220,10 +220,10 @@ export default function Hero() {
                     <div>
                       <h2 className="font-bold text-2xl">Conference Date</h2>
                       <p className="text-lg">
-                      <span className="text-lg">12</span>
+                      <span className="text-lg">4</span>
                       <sup>th</sup>
-                      <span className="text-lg">-13</span>
-                      <sup>th</sup> DECEMBER , 2025
+                      <span className="text-lg"> - 5</span>
+                      <sup>th</sup> November , 2026
                       </p>
                     </div>
                     </div>
@@ -232,7 +232,7 @@ export default function Hero() {
                     <div>
                       <h3 className="font-bold text-2xl">Conference Venue</h3>
                       <p className="text-lg">
-                      BloomSuites,Goa, 403516,INDIA <br />
+                     Tokyo, Japan <br />
                       </p>
                     </div>
                     </div>
