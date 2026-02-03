@@ -14,59 +14,424 @@ export default function Ticket() {
   const [selectedTicket, setSelectedTicket] = useState(null)
   const [customAmount, setCustomAmount] = useState("")
   const [paymentPurpose, setPaymentPurpose] = useState("")
+  const [activeTab, setActiveTab] = useState("without") // "without" | "with"
 
   const tickets = {
-    physical: {
-      foreign: [
-        {
-          name: "Student Presenter",
-          earlyBird: 250,
-          standard: 300,
-          currency: "USD",
-          category: "student",
-          type: "presenter",
-          features: [
-            "Access to all conference sessions",
-            "Conference materials and proceedings",
-            "Premium networking opportunities",
-            "Certificate of presentation",
-            "Coffee breaks and refreshments",
-            "Lunch included",
-          ],
-        },
-        {
-          name: "Academician Presenter",
-          earlyBird: 300,
-          standard: 350,
-          currency: "USD",
-          category: "academician",
-          type: "presenter",
-          features: [
-            "Access to all conference sessions",
-            "Conference materials and proceedings",
-            "Premium networking opportunities",
-            "Certificate of presentation",
-            "Coffee breaks and refreshments",
-            "Lunch included",
-          ],
-        },
-        {
-          name: "Listener",
-          earlyBird: 200,
-          standard: 250,
-          currency: "USD",
-          category: "listener",
-          type: "listener",
-          features: [
-            "Access to all conference sessions",
-            "Conference materials and proceedings",
-            "Networking opportunities",
-            "Certificate of attendance",
-            "Coffee breaks and refreshments",
-            "Lunch included",
-          ],
-        },
-      ],
+    withoutAccommodation: {
+      local: {
+        physical: [
+          {
+            name: "Academician",
+            price: 249,
+            currency: "USD",
+            category: "academician",
+            type: "presenter",
+            features: [
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Premium networking opportunities",
+              "Certificate of participation",
+              "Coffee breaks and refreshments",
+              "Lunch included",
+            ],
+          },
+          {
+            name: "Student",
+            price: 199,
+            currency: "USD",
+            category: "student",
+            type: "presenter",
+            features: [
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of participation",
+              "Coffee breaks and refreshments",
+              "Lunch included",
+            ],
+          },
+          {
+            name: "Delegates",
+            price: 169,
+            currency: "USD",
+            category: "delegate",
+            type: "listener",
+            features: [
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of attendance",
+              "Coffee breaks and refreshments",
+              "Lunch included",
+            ],
+          },
+        ],
+        virtual: [
+          {
+            name: "Academician",
+            price: 169,
+            currency: "USD",
+            category: "academician",
+            type: "presenter",
+            features: [
+              "Access to all virtual sessions",
+              "Digital conference materials",
+              "Online networking opportunities",
+              "Certificate of participation",
+              "Recorded session access",
+            ],
+          },
+          {
+            name: "Student",
+            price: 129,
+            currency: "USD",
+            category: "student",
+            type: "presenter",
+            features: [
+              "Access to all virtual sessions",
+              "Digital conference materials",
+              "Online networking opportunities",
+              "Certificate of participation",
+              "Recorded session access",
+            ],
+          },
+          {
+            name: "Delegates",
+            price: 79,
+            currency: "USD",
+            category: "delegate",
+            type: "listener",
+            features: [
+              "Access to all virtual sessions",
+              "Digital conference materials",
+              "Online networking opportunities",
+              "Certificate of attendance",
+              "Recorded session access",
+            ],
+          },
+        ],
+        scopus: [
+          {
+            name: "With Scopus Q1 & Q2",
+            price: 1749,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Conference registration included",
+              "Publication in Scopus Q1 or Q2 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "Global visibility and indexing",
+              "Certificate of publication",
+            ],
+          },
+          {
+            name: "With Scopus Q3 & Q4",
+            price: 1049,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Conference registration included",
+              "Publication in Scopus Q3 or Q4 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "Global visibility and indexing",
+              "Certificate of publication",
+            ],
+          },
+        ],
+      },
+      international: {
+        physical: [
+          {
+            name: "Academician",
+            price: 299,
+            currency: "USD",
+            category: "academician",
+            type: "presenter",
+            features: [
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Premium networking opportunities",
+              "Certificate of participation",
+              "Coffee breaks and refreshments",
+              "Lunch included",
+            ],
+          },
+          {
+            name: "Student",
+            price: 249,
+            currency: "USD",
+            category: "student",
+            type: "presenter",
+            features: [
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of participation",
+              "Coffee breaks and refreshments",
+              "Lunch included",
+            ],
+          },
+          {
+            name: "Delegates",
+            price: 199,
+            currency: "USD",
+            category: "delegate",
+            type: "listener",
+            features: [
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of attendance",
+              "Coffee breaks and refreshments",
+              "Lunch included",
+            ],
+          },
+        ],
+        virtual: [
+          {
+            name: "Academician",
+            price: 229,
+            currency: "USD",
+            category: "academician",
+            type: "presenter",
+            features: [
+              "Access to all virtual sessions",
+              "Digital conference materials",
+              "Online networking opportunities",
+              "Certificate of participation",
+              "Recorded session access",
+            ],
+          },
+          {
+            name: "Student",
+            price: 169,
+            currency: "USD",
+            category: "student",
+            type: "presenter",
+            features: [
+              "Access to all virtual sessions",
+              "Digital conference materials",
+              "Online networking opportunities",
+              "Certificate of participation",
+              "Recorded session access",
+            ],
+          },
+          {
+            name: "Delegates",
+            price: 129,
+            currency: "USD",
+            category: "delegate",
+            type: "listener",
+            features: [
+              "Access to all virtual sessions",
+              "Digital conference materials",
+              "Online networking opportunities",
+              "Certificate of attendance",
+              "Recorded session access",
+            ],
+          },
+        ],
+        scopus: [
+          {
+            name: "With Scopus Q1 & Q2",
+            price: 1799,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Conference registration included",
+              "Publication in Scopus Q1 or Q2 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "Global visibility and indexing",
+              "Certificate of publication",
+            ],
+          },
+          {
+            name: "With Scopus Q3 & Q4",
+            price: 1099,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Conference registration included",
+              "Publication in Scopus Q3 or Q4 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "Global visibility and indexing",
+              "Certificate of publication",
+            ],
+          },
+        ],
+      },
+    },
+    withAccommodation: {
+      local: {
+        physical: [
+          {
+            name: "Academician",
+            price: 399,
+            currency: "USD",
+            category: "academician",
+            type: "presenter",
+            features: [
+              "Accommodation included",
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Premium networking opportunities",
+              "Certificate of participation",
+              "All meals included",
+            ],
+          },
+          {
+            name: "Student",
+            price: 349,
+            currency: "USD",
+            category: "student",
+            type: "presenter",
+            features: [
+              "Accommodation included",
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of participation",
+              "All meals included",
+            ],
+          },
+          {
+            name: "Delegates",
+            price: 319,
+            currency: "USD",
+            category: "delegate",
+            type: "listener",
+            features: [
+              "Accommodation included",
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of attendance",
+              "All meals included",
+            ],
+          },
+        ],
+        scopus: [
+          {
+            name: "With Scopus Q1 & Q2",
+            price: 1899,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Accommodation included",
+              "Conference registration included",
+              "Publication in Scopus Q1 or Q2 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "All meals included",
+            ],
+          },
+          {
+            name: "With Scopus Q3 & Q4",
+            price: 1199,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Accommodation included",
+              "Conference registration included",
+              "Publication in Scopus Q3 or Q4 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "All meals included",
+            ],
+          },
+        ],
+      },
+      international: {
+        physical: [
+          {
+            name: "Academician",
+            price: 449,
+            currency: "USD",
+            category: "academician",
+            type: "presenter",
+            features: [
+              "Accommodation included",
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Premium networking opportunities",
+              "Certificate of participation",
+              "All meals included",
+            ],
+          },
+          {
+            name: "Student",
+            price: 399,
+            currency: "USD",
+            category: "student",
+            type: "presenter",
+            features: [
+              "Accommodation included",
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of participation",
+              "All meals included",
+            ],
+          },
+          {
+            name: "Delegates",
+            price: 349,
+            currency: "USD",
+            category: "delegate",
+            type: "listener",
+            features: [
+              "Accommodation included",
+              "Access to all conference sessions",
+              "Conference materials and proceedings",
+              "Networking opportunities",
+              "Certificate of attendance",
+              "All meals included",
+            ],
+          },
+        ],
+        scopus: [
+          {
+            name: "With Scopus Q1 & Q2",
+            price: 1949,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Accommodation included",
+              "Conference registration included",
+              "Publication in Scopus Q1 or Q2 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "All meals included",
+            ],
+          },
+          {
+            name: "With Scopus Q3 & Q4",
+            price: 1299,
+            currency: "USD",
+            category: "scopus",
+            type: "publication",
+            features: [
+              "Accommodation included",
+              "Conference registration included",
+              "Publication in Scopus Q3 or Q4 indexed journal",
+              "Fast-track peer review process",
+              "Digital Object Identifier (DOI)",
+              "All meals included",
+            ],
+          },
+        ],
+      },
     },
   }
 
@@ -74,8 +439,8 @@ export default function Ticket() {
     return `ORD${Date.now()}${Math.floor(Math.random() * 1000)}`
   }
 
-  const openPaymentPopup = (ticket, priceType, price) => {
-    setSelectedTicket({ ...ticket, selectedPrice: price, priceType })
+  const openPaymentPopup = (ticket, mode) => {
+    setSelectedTicket({ ...ticket, selectedPrice: ticket.price, mode })
     setIsPopupOpen(true)
   }
 
@@ -86,7 +451,7 @@ export default function Ticket() {
 
   const handlePaymentSubmit = async (formData) => {
     try {
-      setIsLoading(selectedTicket.name + selectedTicket.priceType)
+      setIsLoading(selectedTicket.name + selectedTicket.mode)
       const taxRate = 0.05
       const baseAmount = selectedTicket.selectedPrice
       const taxAmount = baseAmount * taxRate
@@ -95,7 +460,7 @@ export default function Ticket() {
       const paymentData = {
         merchant_id: process.env.NEXT_PUBLIC_CCAVENUE_MERCHANT_ID,
         order_id: generateOrderId(),
-        name: `${selectedTicket.name} - ${selectedTicket.priceType}`,
+        name: `${selectedTicket.name} - ${selectedTicket.mode}`,
         amount: totalAmount.toString(),
         currency: selectedTicket.currency,
         redirect_url: `${host}/api/ccavenue/handle`,
@@ -168,8 +533,8 @@ export default function Ticket() {
       const customTicket = {
         name: "Custom Payment",
         selectedPrice: amount,
-        priceType: paymentPurpose || "Custom Amount",
         currency: "USD",
+        mode: "Custom",
       }
 
       setSelectedTicket(customTicket)
@@ -182,98 +547,161 @@ export default function Ticket() {
     }
   }
 
-  const renderTicketCard = (ticket, index) => (
-    <div key={index} className="flex h-full">
-      <Card className="relative w-full bg-blue-50 overflow-hidden border border-blue-200 shadow-md hover:shadow-lg transition-shadow flex flex-col h-full">
-        <div className="p-6 flex flex-col h-full">
-          <div className="space-y-2 mb-4">
-            <h3 className="text-xl font-bold tracking-wide text-blue-900">{ticket.name}</h3>
-            <div className="text-xs uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-1 rounded-full inline-block">
-              {ticket.type === "listener" ? "ATTENDANCE PASS" : "PRESENTER PASS"}
-            </div>
-          </div>
+  const renderTicketCard = (ticket, index, mode) => {
+    const isPublicationTicket = ticket.type === "publication"
 
-          <div className="flex-grow mb-4">
-            <ul className="space-y-2 text-sm">
-              {ticket.features.map((feature, featureIndex) => (
-                <li key={featureIndex} className="flex items-start gap-2">
-                  <Check className="w-4 h-4 flex-shrink-0 text-blue-500 mt-0.5" />
-                  <span className="text-gray-700 leading-relaxed">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-3 mt-auto">
-            <div className="bg-blue-200 p-3 rounded-lg border border-blue-400">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-blue-800">Early Bird</span>
-                <Badge className="bg-green-500 text-white text-xs">Save $50</Badge>
+    return (
+      <div key={index} className="flex h-full">
+        <Card className="relative w-full bg-blue-50 overflow-hidden border border-blue-200 shadow-md hover:shadow-lg transition-shadow flex flex-col h-full">
+          <div className="p-6 flex flex-col h-full">
+            <div className="space-y-2 mb-4">
+              <h3 className="text-xl font-bold tracking-wide text-blue-900">{ticket.name}</h3>
+              <div className="text-xs uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-1 rounded-full inline-block">
+                {isPublicationTicket
+                  ? "PUBLICATION PACKAGE"
+                  : ticket.type === "listener"
+                    ? "DELEGATE PASS"
+                    : "PARTICIPANT PASS"}
               </div>
-              <div className="flex justify-between items-center">
-                <div className="text-lg font-bold text-blue-800">
-                  ${ticket.earlyBird.toLocaleString()}
+            </div>
+
+            <div className="flex-grow mb-4">
+              <ul className="space-y-2 text-sm">
+                {ticket.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start gap-2">
+                    <Check className="w-4 h-4 flex-shrink-0 text-blue-500 mt-0.5" />
+                    <span className="text-gray-700 leading-relaxed">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-3 mt-auto">
+              <div className={`p-3 rounded-lg border ${isPublicationTicket ? "bg-blue-300 border-blue-500" : "bg-blue-200 border-blue-400"}`}>
+                <div className="flex justify-between items-center">
+                  <div className="text-2xl font-bold text-blue-900">${ticket.price.toLocaleString()}</div>
+                  <Button
+                    size="sm"
+                    className={`${isPublicationTicket ? "bg-blue-800 hover:bg-blue-900" : "bg-blue-700 hover:bg-blue-800"} text-white text-xs px-4 py-2`}
+                    onClick={() => openPaymentPopup(ticket, mode)}
+                    disabled={isLoading === ticket.name + mode}
+                  >
+                    {isLoading === ticket.name + mode ? "Processing..." : "Register Now"}
+                  </Button>
                 </div>
-                <Button
-                  size="sm"
-                  className="bg-blue-700 hover:bg-blue-800 text-white text-xs px-3 py-2"
-                  onClick={() => openPaymentPopup(ticket, "Early Bird", ticket.earlyBird)}
-                  disabled={isLoading === ticket.name + "Early Bird"}
-                >
-                  {isLoading === ticket.name + "Early Bird" ? "Processing..." : "Book Now"}
-                </Button>
-              </div>
-            </div>
-
-            <div className="bg-blue-300 p-3 rounded-lg border border-blue-500">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-blue-900">Standard Price</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <div className="text-lg font-bold text-blue-900">
-                  ${ticket.standard.toLocaleString()}
-                </div>
-                <Button
-                  size="sm"
-                  className="bg-blue-800 hover:bg-blue-900 text-white text-xs px-3 py-2"
-                  onClick={() => openPaymentPopup(ticket, "Standard", ticket.standard)}
-                  disabled={isLoading === ticket.name + "Standard"}
-                >
-                  {isLoading === ticket.name + "Standard" ? "Processing..." : "Book Now"}
-                </Button>
               </div>
             </div>
           </div>
-        </div>
-      </Card>
-    </div>
-  )
+        </Card>
+      </div>
+    )
+  }
+
+  // ─── Shared sub-renderers ────────────────────────────────────────────
+  const renderParticipantGroup = (participantType, data, accSuffix) => {
+    const label = participantType === "local" ? "Local Participants" : "International Participants"
+
+    return (
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">{label}</h2>
+
+        {/* Physical */}
+        {data.physical && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-6 text-center text-blue-700">Physical Attendance</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 items-stretch">
+              {data.physical.map((ticket, index) =>
+                renderTicketCard(ticket, index, `${participantType === "local" ? "Local" : "International"}-Physical-${accSuffix}`)
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Virtual (only exists on withoutAccommodation) */}
+        {data.virtual && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-6 text-center text-blue-700">Virtual Attendance</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 items-stretch">
+              {data.virtual.map((ticket, index) =>
+                renderTicketCard(ticket, index, `${participantType === "local" ? "Local" : "International"}-Virtual-${accSuffix}`)
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Scopus */}
+        {data.scopus && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-semibold mb-6 text-center text-blue-700">Scopus Publication Packages</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto items-stretch">
+              {data.scopus.map((ticket, index) =>
+                renderTicketCard(ticket, index, `${participantType === "local" ? "Local" : "International"}-Scopus-${accSuffix}`)
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-full bg-background text-foreground py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-4">Conference Registration</h1>
-        
-        {/* Physical Conference Notice */}
-        <div className="p-6 bg-blue-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-blue-300">
-          <h2 className="text-center text-blue-900 font-bold text-xl mb-2">
-            Physical Conference
-          </h2>
-          <p className="text-center text-blue-800 text-lg">
-            Join us in person for an enriching conference experience!
-          </p>
-        </div>
+        <h1 className="text-4xl font-bold text-center mb-8">Conference Registration</h1>
 
-        {/* Tickets */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Conference Tickets</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch">
-            {tickets.physical.foreign.map((ticket, index) => renderTicketCard(ticket, index))}
+        {/* ── Tab Bar ──────────────────────────────────────────────── */}
+        <div className="flex justify-center mb-10">
+          <div className="flex bg-gray-100 rounded-xl p-1.5 gap-1.5 shadow-inner border border-gray-200">
+            <button
+              onClick={() => setActiveTab("without")}
+              className={`relative px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 focus:outline-none
+                ${activeTab === "without"
+                  ? "bg-white text-blue-800 shadow-md border border-blue-200"
+                  : "text-gray-500 hover:text-blue-600 hover:bg-gray-50"
+                }`}
+            >
+              <span className="relative z-10">Without Accommodation</span>
+            </button>
+            <button
+              onClick={() => setActiveTab("with")}
+              className={`relative px-6 py-3 rounded-lg text-base font-semibold transition-all duration-300 focus:outline-none
+                ${activeTab === "with"
+                  ? "bg-white text-green-800 shadow-md border border-green-200"
+                  : "text-gray-500 hover:text-green-600 hover:bg-gray-50"
+                }`}
+            >
+              <span className="relative z-10">With Accommodation</span>
+            </button>
           </div>
         </div>
 
-        {/* Custom Payment Section */}
+        {/* ── WITHOUT ACCOMMODATION TAB ─────────────────────────── */}
+        {activeTab === "without" && (
+          <div className="mb-16">
+            <div className="p-6 bg-blue-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-blue-300">
+              <h2 className="text-center text-blue-900 font-bold text-2xl mb-2">Conference Fees</h2>
+              <p className="text-center text-blue-800 text-lg">Without Accommodation</p>
+            </div>
+
+            {renderParticipantGroup("local", tickets.withoutAccommodation.local, "No-Acc")}
+            {renderParticipantGroup("international", tickets.withoutAccommodation.international, "No-Acc")}
+          </div>
+        )}
+
+        {/* ── WITH ACCOMMODATION TAB ────────────────────────────── */}
+        {activeTab === "with" && (
+          <div className="mb-16">
+            <div className="p-6 bg-green-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-green-300">
+              <h2 className="text-center text-green-900 font-bold text-2xl mb-2">Conference Fees</h2>
+              <p className="text-center text-green-800 text-lg">With Accommodation</p>
+            </div>
+
+            {renderParticipantGroup("local", tickets.withAccommodation.local, "With-Acc")}
+            {renderParticipantGroup("international", tickets.withAccommodation.international, "With-Acc")}
+          </div>
+        )}
+
+        {/* ── Custom Payment Section ────────────────────────────── */}
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Custom Payment</h2>
           <div className="max-w-md mx-auto">
@@ -290,9 +718,7 @@ export default function Ticket() {
                       Amount
                     </label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-700 font-medium">
-                        $
-                      </span>
+                      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-700 font-medium">$</span>
                       <input
                         type="number"
                         id="customAmount"
@@ -319,19 +745,19 @@ export default function Ticket() {
           </div>
         </div>
 
-        {/* Info Notices */}
+        {/* ── Info Notices ───────────────────────────────────────── */}
         <div className="space-y-4 max-w-4xl mx-auto mt-8">
           <div className="p-4 bg-blue-100 rounded-lg flex justify-center items-center border border-blue-300">
             <h1 className="text-center text-blue-800 font-semibold inline-flex gap-2 text-lg">
               <Info className="w-5 h-5 mt-0.5" />
-              Early Bird pricing: Save $50 USD on all ticket types!
+              All prices are in USD and include conference materials
             </h1>
           </div>
-          
-          <div className="p-4 bg-green-100 rounded-lg flex justify-center items-center border border-green-300">
-            <h1 className="text-center text-green-800 font-semibold inline-flex gap-2 text-lg">
+
+          <div className="p-4 bg-amber-100 rounded-lg flex justify-center items-center border border-amber-300">
+            <h1 className="text-center text-amber-800 font-semibold inline-flex gap-2 text-lg">
               <Info className="w-5 h-5 mt-0.5" />
-              Virtual attendance options may be added in the future. Stay tuned for updates!
+              N.B: For Group Discounts Kindly connect with the Coordinator (Also avail existing offers as an outstanding contributor).
             </h1>
           </div>
         </div>
@@ -341,7 +767,7 @@ export default function Ticket() {
         <CCavenuePaymentForm
           isOpen={isPopupOpen}
           onClose={closePaymentPopup}
-          ticketName={`${selectedTicket.name} - ${selectedTicket.priceType}`}
+          ticketName={`${selectedTicket.name} - ${selectedTicket.mode}`}
           amount={selectedTicket.selectedPrice}
           currency={selectedTicket.currency}
           onSubmit={handlePaymentSubmit}
