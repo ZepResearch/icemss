@@ -60,7 +60,7 @@ export default function VenuePage() {
 
                   <div className="space-y-6 text-gray-700">
                     <p>
-                      Join us at our premium venue in the Philippines for the 4<sup>th</sup> ICEMSS 2026. The venue offers modern facilities, comfortable accommodations, and is conveniently located to provide easy access to the city's attractions and amenities.
+                      Join us at our premium venue in the Tokyo, Japan for the 4<sup>th</sup> ICEMSS 2026. The venue offers modern facilities, comfortable accommodations, and is conveniently located to provide easy access to the city's attractions and amenities.
                     </p>
 
                     <div className="space-y-4">
