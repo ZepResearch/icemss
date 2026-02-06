@@ -1,10 +1,11 @@
 "use client"
 
 import { useState } from "react"
-import { Check, Info } from "lucide-react"
+import { Check, Info, Home, Presentation } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CCavenuePaymentForm } from "@/components/ui/CCavenuePaymentForm"
 
 export default function Ticket() {
@@ -14,56 +15,323 @@ export default function Ticket() {
   const [selectedTicket, setSelectedTicket] = useState(null)
   const [customAmount, setCustomAmount] = useState("")
   const [paymentPurpose, setPaymentPurpose] = useState("")
+  const [activeTab, setActiveTab] = useState("without-accommodation")
 
   const tickets = {
-    physical: {
-      foreign: [
+    withoutAccommodation: {
+      local: [
         {
-          name: "Student Presenter",
-          earlyBird: 250,
-          standard: 300,
-          currency: "USD",
-          category: "student",
-          type: "presenter",
-          features: [
-            "Access to all conference sessions",
-            "Conference materials and proceedings",
-            "Premium networking opportunities",
-            "Certificate of presentation",
-            "Coffee breaks and refreshments",
-            "Lunch included",
-          ],
-        },
-        {
-          name: "Academician Presenter",
-          earlyBird: 300,
-          standard: 350,
+          name: "Academician",
+          physical: 349,
+          virtual: 269,
           currency: "USD",
           category: "academician",
-          type: "presenter",
+          type: "local",
           features: [
-            "Access to all conference sessions",
-            "Conference materials and proceedings",
-            "Premium networking opportunities",
-            "Certificate of presentation",
-            "Coffee breaks and refreshments",
-            "Lunch included",
+            "Full conference access",
+            "Networking opportunities",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+            "Access to presentation materials",
           ],
         },
         {
-          name: "Listener",
-          earlyBird: 200,
-          standard: 250,
+          name: "Student",
+          physical: 299,
+          virtual: 229,
           currency: "USD",
-          category: "listener",
-          type: "listener",
+          category: "student",
+          type: "local",
           features: [
-            "Access to all conference sessions",
-            "Conference materials and proceedings",
+            "Conference access",
             "Networking opportunities",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+            "Student discount applied",
+          ],
+        },
+        {
+          name: "Delegate",
+          physical: 269,
+          virtual: 179,
+          currency: "USD",
+          category: "delegate",
+          type: "local",
+          features: [
+            "Conference access",
+            "Networking opportunities",
+            "Lunch and refreshments",
             "Certificate of attendance",
-            "Coffee breaks and refreshments",
-            "Lunch included",
+            "Access to presentation materials",
+          ],
+        },
+        {
+          name: "With Scopus Q3 & Q4",
+          physical: 1149,
+          virtual: 1049,
+          currency: "USD",
+          category: "scopus-q3-q4",
+          type: "local",
+          features: [
+            "Full conference access",
+            "Scopus Q3 & Q4 publication",
+            "Premium networking opportunities",
+            "Workshop materials",
+            "Certificate of participation",
+            "Priority presentation slot",
+          ],
+        },
+        {
+          name: "With Scopus Q1 & Q2",
+          physical: 1849,
+          virtual: 1749,
+          currency: "USD",
+          category: "scopus-q1-q2",
+          type: "local",
+          features: [
+            "Full conference access",
+            "Scopus Q1 & Q2 publication",
+            "Premium networking opportunities",
+            "Workshop materials",
+            "Certificate of participation",
+            "Priority presentation slot",
+          ],
+        },
+      ],
+      international: [
+        {
+          name: "Academician",
+          physical: 399,
+          virtual: 329,
+          currency: "USD",
+          category: "academician",
+          type: "international",
+          features: [
+            "Full conference access",
+            "International networking",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+            "Access to presentation materials",
+          ],
+        },
+        {
+          name: "Student",
+          physical: 349,
+          virtual: 269,
+          currency: "USD",
+          category: "student",
+          type: "international",
+          features: [
+            "Conference access",
+            "International networking",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+            "Student discount applied",
+          ],
+        },
+        {
+          name: "Delegate",
+          physical: 299,
+          virtual: 229,
+          currency: "USD",
+          category: "delegate",
+          type: "international",
+          features: [
+            "Conference access",
+            "International networking",
+            "Lunch and refreshments",
+            "Certificate of attendance",
+            "Access to presentation materials",
+          ],
+        },
+        {
+          name: "With Scopus Q3 & Q4",
+          physical: 1199,
+          virtual: 1099,
+          currency: "USD",
+          category: "scopus-q3-q4",
+          type: "international",
+          features: [
+            "Full conference access",
+            "Scopus Q3 & Q4 publication",
+            "Premium international networking",
+            "Workshop materials",
+            "Certificate of participation",
+            "Priority presentation slot",
+          ],
+        },
+        {
+          name: "With Scopus Q1 & Q2",
+          physical: 1899,
+          virtual: 1799,
+          currency: "USD",
+          category: "scopus-q1-q2",
+          type: "international",
+          features: [
+            "Full conference access",
+            "Scopus Q1 & Q2 publication",
+            "Premium international networking",
+            "Workshop materials",
+            "Certificate of participation",
+            "Priority presentation slot",
+          ],
+        },
+      ],
+    },
+    withAccommodation: {
+      local: [
+        {
+          name: "Academician",
+          physical: 499,
+          currency: "USD",
+          category: "academician",
+          type: "local",
+          features: [
+            "Full conference access",
+            "Accommodation included",
+            "Networking opportunities",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+          ],
+        },
+        {
+          name: "Student",
+          physical: 449,
+          currency: "USD",
+          category: "student",
+          type: "local",
+          features: [
+            "Conference access",
+            "Accommodation included",
+            "Networking opportunities",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+          ],
+        },
+        {
+          name: "Delegate",
+          physical: 419,
+          currency: "USD",
+          category: "delegate",
+          type: "local",
+          features: [
+            "Conference access",
+            "Accommodation included",
+            "Networking opportunities",
+            "Lunch and refreshments",
+            "Certificate of attendance",
+          ],
+        },
+        {
+          name: "With Scopus Q3 & Q4",
+          physical: 1299,
+          currency: "USD",
+          category: "scopus-q3-q4",
+          type: "local",
+          features: [
+            "Full conference access",
+            "Accommodation included",
+            "Scopus Q3 & Q4 publication",
+            "Premium networking opportunities",
+            "Workshop materials",
+            "Priority presentation slot",
+          ],
+        },
+        {
+          name: "With Scopus Q1 & Q2",
+          physical: 1999,
+          currency: "USD",
+          category: "scopus-q1-q2",
+          type: "local",
+          features: [
+            "Full conference access",
+            "Accommodation included",
+            "Scopus Q1 & Q2 publication",
+            "Premium networking opportunities",
+            "Workshop materials",
+            "Priority presentation slot",
+          ],
+        },
+      ],
+      international: [
+        {
+          name: "Academician",
+          physical: 549,
+          currency: "USD",
+          category: "academician",
+          type: "international",
+          features: [
+            "Full conference access",
+            "Accommodation included",
+            "International networking",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+          ],
+        },
+        {
+          name: "Student",
+          physical: 499,
+          currency: "USD",
+          category: "student",
+          type: "international",
+          features: [
+            "Conference access",
+            "Accommodation included",
+            "International networking",
+            "Workshop materials",
+            "Lunch and refreshments",
+            "Certificate of participation",
+          ],
+        },
+        {
+          name: "Delegate",
+          physical: 449,
+          currency: "USD",
+          category: "delegate",
+          type: "international",
+          features: [
+            "Conference access",
+            "Accommodation included",
+            "International networking",
+            "Lunch and refreshments",
+            "Certificate of attendance",
+          ],
+        },
+        {
+          name: "With Scopus Q3 & Q4",
+          physical: 1399,
+          currency: "USD",
+          category: "scopus-q3-q4",
+          type: "international",
+          features: [
+            "Full conference access",
+            "Accommodation included",
+            "Scopus Q3 & Q4 publication",
+            "Premium international networking",
+            "Workshop materials",
+            "Priority presentation slot",
+          ],
+        },
+        {
+          name: "With Scopus Q1 & Q2",
+          physical: 2049,
+          currency: "USD",
+          category: "scopus-q1-q2",
+          type: "international",
+          features: [
+            "Full conference access",
+            "Accommodation included",
+            "Scopus Q1 & Q2 publication",
+            "Premium international networking",
+            "Workshop materials",
+            "Priority presentation slot",
           ],
         },
       ],
@@ -87,7 +355,7 @@ export default function Ticket() {
   const handlePaymentSubmit = async (formData) => {
     try {
       setIsLoading(selectedTicket.name + selectedTicket.priceType)
-      const taxRate = 0.05
+      const taxRate = 0.06
       const baseAmount = selectedTicket.selectedPrice
       const taxAmount = baseAmount * taxRate
       const totalAmount = baseAmount + taxAmount
@@ -182,14 +450,19 @@ export default function Ticket() {
     }
   }
 
-  const renderTicketCard = (ticket, index) => (
+  const renderTicketCard = (ticket, index, hasVirtual = false) => (
     <div key={index} className="flex h-full">
       <Card className="relative w-full bg-blue-50 overflow-hidden border border-blue-200 shadow-md hover:shadow-lg transition-shadow flex flex-col h-full">
         <div className="p-6 flex flex-col h-full">
           <div className="space-y-2 mb-4">
             <h3 className="text-xl font-bold tracking-wide text-blue-900">{ticket.name}</h3>
-            <div className="text-xs uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-1 rounded-full inline-block">
-              {ticket.type === "listener" ? "ATTENDANCE PASS" : "PRESENTER PASS"}
+            <div className="flex gap-2 flex-wrap">
+              <div className="text-xs uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-1 rounded-full inline-block">
+                {ticket.type === "local" ? "LOCAL" : "INTERNATIONAL"}
+              </div>
+              <div className="text-xs uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-1 rounded-full inline-block">
+                {ticket.category}
+              </div>
             </div>
           </div>
 
@@ -207,42 +480,43 @@ export default function Ticket() {
           <div className="space-y-3 mt-auto">
             <div className="bg-blue-200 p-3 rounded-lg border border-blue-400">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-blue-800">Early Bird</span>
-                <Badge className="bg-green-500 text-white text-xs">Save $50</Badge>
+                <span className="text-sm font-medium text-blue-800">Physical Attendance</span>
               </div>
               <div className="flex justify-between items-center">
                 <div className="text-lg font-bold text-blue-800">
-                  ${ticket.earlyBird.toLocaleString()}
+                  ${ticket.physical.toLocaleString()}
                 </div>
                 <Button
                   size="sm"
                   className="bg-blue-700 hover:bg-blue-800 text-white text-xs px-3 py-2"
-                  onClick={() => openPaymentPopup(ticket, "Early Bird", ticket.earlyBird)}
-                  disabled={isLoading === ticket.name + "Early Bird"}
+                  onClick={() => openPaymentPopup(ticket, "Physical", ticket.physical)}
+                  disabled={isLoading === ticket.name + "Physical"}
                 >
-                  {isLoading === ticket.name + "Early Bird" ? "Processing..." : "Book Now"}
+                  {isLoading === ticket.name + "Physical" ? "Processing..." : "Book Now"}
                 </Button>
               </div>
             </div>
 
-            <div className="bg-blue-300 p-3 rounded-lg border border-blue-500">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-blue-900">Standard Price</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <div className="text-lg font-bold text-blue-900">
-                  ${ticket.standard.toLocaleString()}
+            {hasVirtual && ticket.virtual && (
+              <div className="bg-blue-300 p-3 rounded-lg border border-blue-500">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-sm font-medium text-blue-900">Virtual Attendance</span>
                 </div>
-                <Button
-                  size="sm"
-                  className="bg-blue-800 hover:bg-blue-900 text-white text-xs px-3 py-2"
-                  onClick={() => openPaymentPopup(ticket, "Standard", ticket.standard)}
-                  disabled={isLoading === ticket.name + "Standard"}
-                >
-                  {isLoading === ticket.name + "Standard" ? "Processing..." : "Book Now"}
-                </Button>
+                <div className="flex justify-between items-center">
+                  <div className="text-lg font-bold text-blue-900">
+                    ${ticket.virtual.toLocaleString()}
+                  </div>
+                  <Button
+                    size="sm"
+                    className="bg-blue-800 hover:bg-blue-900 text-white text-xs px-3 py-2"
+                    onClick={() => openPaymentPopup(ticket, "Virtual", ticket.virtual)}
+                    disabled={isLoading === ticket.name + "Virtual"}
+                  >
+                    {isLoading === ticket.name + "Virtual" ? "Processing..." : "Book Now"}
+                  </Button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </Card>
@@ -252,29 +526,105 @@ export default function Ticket() {
   return (
     <div className="min-h-full bg-background text-foreground py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-4">Conference Registration</h1>
+        <h1 className="text-4xl font-bold text-center mb-8">Conference Registration</h1>
         
-        {/* Physical Conference Notice */}
-        <div className="p-6 bg-blue-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-blue-300">
-          <h2 className="text-center text-blue-900 font-bold text-xl mb-2">
-            Physical Conference
-          </h2>
-          <p className="text-center text-blue-800 text-lg">
-            Join us in person for an enriching conference experience!
-          </p>
-        </div>
-
-        {/* Tickets */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Conference Tickets</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch">
-            {tickets.physical.foreign.map((ticket, index) => renderTicketCard(ticket, index))}
+        <Tabs defaultValue="without-accommodation" className="w-full" onValueChange={setActiveTab}>
+          <div className="flex justify-center mb-10">
+            <TabsList className="bg-blue-100 p-1 rounded-full">
+              <TabsTrigger
+                value="without-accommodation"
+                className="rounded-full data-[state=active]:bg-blue-600 data-[state=active]:text-white px-6 py-2"
+              >
+                <Presentation className="mr-2 h-4 w-4" />
+                Without Accommodation
+              </TabsTrigger>
+              <TabsTrigger
+                value="with-accommodation"
+                className="rounded-full data-[state=active]:bg-blue-600 data-[state=active]:text-white px-6 py-2"
+              >
+                <Home className="mr-2 h-4 w-4" />
+                With Accommodation
+              </TabsTrigger>
+            </TabsList>
           </div>
-        </div>
+
+          {/* Without Accommodation Tab */}
+          <TabsContent value="without-accommodation" className="mt-0">
+            <div className="p-6 bg-blue-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-blue-300">
+              <h2 className="text-center text-blue-900 font-bold text-xl mb-2">
+                Conference Fees (Without Accommodation)
+              </h2>
+              <p className="text-center text-blue-800 text-lg">
+                Choose between physical or virtual participation options
+              </p>
+            </div>
+
+            {/* Local Participants */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-600">Local Participants</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                {tickets.withoutAccommodation.local.map((ticket, index) => 
+                  renderTicketCard(ticket, index, true)
+                )}
+              </div>
+            </div>
+
+            {/* International Participants */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-600">International Participants</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                {tickets.withoutAccommodation.international.map((ticket, index) => 
+                  renderTicketCard(ticket, index, true)
+                )}
+              </div>
+            </div>
+          </TabsContent>
+
+          {/* With Accommodation Tab */}
+          <TabsContent value="with-accommodation" className="mt-0">
+            <div className="p-6 bg-blue-100 max-w-3xl mx-auto mb-8 rounded-lg border-2 border-blue-300">
+              <h2 className="text-center text-blue-900 font-bold text-xl mb-2">
+                Conference Fees (With Accommodation)
+              </h2>
+              <p className="text-center text-blue-800 text-lg">
+                Physical participation with accommodation included
+              </p>
+            </div>
+
+            {/* Local Participants */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-600">Local Participants</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                {tickets.withAccommodation.local.map((ticket, index) => 
+                  renderTicketCard(ticket, index, false)
+                )}
+              </div>
+            </div>
+
+            {/* International Participants */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-600">International Participants</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                {tickets.withAccommodation.international.map((ticket, index) => 
+                  renderTicketCard(ticket, index, false)
+                )}
+              </div>
+            </div>
+
+            {/* Important Note */}
+            <div className="max-w-3xl mx-auto">
+              <div className="p-4 bg-blue-100 rounded-lg flex justify-center items-center border border-blue-300">
+                <h1 className="text-center text-blue-800 font-semibold inline-flex gap-2 text-lg">
+                  <Info className="w-5 h-5 mt-0.5" />
+                  N.B.: For group discounts, kindly connect with the coordinator. (Exciting offers are also available for outstanding contributors.)
+                </h1>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
 
         {/* Custom Payment Section */}
-        <div className="mb-12">
+        <div className="mb-12 mt-16">
           <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">Custom Payment</h2>
           <div className="max-w-md mx-auto">
             <Card className="bg-blue-50 border-blue-200 shadow-md">
@@ -316,23 +666,6 @@ export default function Ticket() {
                 </div>
               </div>
             </Card>
-          </div>
-        </div>
-
-        {/* Info Notices */}
-        <div className="space-y-4 max-w-4xl mx-auto mt-8">
-          <div className="p-4 bg-blue-100 rounded-lg flex justify-center items-center border border-blue-300">
-            <h1 className="text-center text-blue-800 font-semibold inline-flex gap-2 text-lg">
-              <Info className="w-5 h-5 mt-0.5" />
-              Early Bird pricing: Save $50 USD on all ticket types!
-            </h1>
-          </div>
-          
-          <div className="p-4 bg-green-100 rounded-lg flex justify-center items-center border border-green-300">
-            <h1 className="text-center text-green-800 font-semibold inline-flex gap-2 text-lg">
-              <Info className="w-5 h-5 mt-0.5" />
-              Virtual attendance options may be added in the future. Stay tuned for updates!
-            </h1>
           </div>
         </div>
       </div>
