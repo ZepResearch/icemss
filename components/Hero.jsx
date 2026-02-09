@@ -162,8 +162,8 @@ export default function Hero() {
                   <img src="/assets/scopus.png" alt="" className="h-12 drop-shadow-lg" />
                   <img src="/assets/clarivate.png" alt="" className="h-12 drop-shadow-lg" />
                   <img src="assets/zepresearch.png" alt="" className="h-12 drop-shadow-lg" />
-                  <img src="assets/iee.png" alt="" className="h-24 drop-shadow-lg" />
-                  <img src="assets/crc.png" alt="" className="h-16 drop-shadow-lg" />
+                  {/* <img src="assets/iee.png" alt="" className="h-24 drop-shadow-lg" /> */}
+                  {/* <img src="assets/crc.png" alt="" className="h-16 drop-shadow-lg" /> */}
                   </div>
                   <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href={"/registration"}>
