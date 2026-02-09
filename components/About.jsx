@@ -101,7 +101,7 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
             className="relative lg:mt-0"
           >
-            <Image src={'https://images.unsplash.com/photo-1560439514-e960a3ef5019?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
+            <Image src={'/gallery/ICEMSS_10.jpg'}
                     width={700}
                     height={700}
                     className="rounded-xl"

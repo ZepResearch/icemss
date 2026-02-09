@@ -49,7 +49,7 @@ const footerSections = [
 const socialLinks = [
   { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61561809783777", icon: Facebook },
   { name: "Instagram", href: "https://www.instagram.com/zepresearch/", icon: Instagram },
-  { name: "Twitter", href: "https://x.com/Zepresearch", icon: Twitter },
+  // { name: "Twitter", href: "https://x.com/Zepresearch", icon: Twitter },
   { name: "LinkedIn", href: "https://www.linkedin.com/company/zep-research/", icon: Linkedin },
   { name: "Youtube", href: "https://youtube.com/@zepresearch", icon: Youtube },
 ];

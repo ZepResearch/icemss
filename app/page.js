@@ -4,7 +4,7 @@ import CoOrganizationLogos from "@/components/Co-OrganiztionLogo";
 import CTASection from "@/components/Cta-section";
 import DatesSection from "@/components/Dates";
 import FAQ from "@/components/FAQ";
-import Hero from "@/components/Hero";
+import { Hero } from "@/components/Hero";
 import ObjectivesSection from "@/components/Objectives-section";
 import SDGSection from "@/components/SDGS";
 import SpeakerSection from "@/components/Speakers";
