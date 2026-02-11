@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Trophy, Star, Users, ArrowRight, GraduationCap, DollarSign, FileCheck } from "lucide-react"
+import { Trophy, Star, Users, ArrowRight, GraduationCap, DollarSign, FileCheck, Award } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
@@ -46,6 +46,11 @@ export default function AwardsPage() {
       description: "Celebrating exceptional presentations by student researchers",
       icon: <Users className="h-8 w-8 text-blue-500" />,
     },
+     {
+    title: "OUTSTANDING CONTRIBUTOR AWARD",
+    description: "Recognizing individuals for their significant contributions to the conference and research community",
+    icon: <Award className="h-8 w-8 text-blue-500" />,
+  },
   ]
 
   return (
@@ -143,26 +148,41 @@ export default function AwardsPage() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
-          {awards.map((award, index) => (
-            <Card
-              key={index}
-              className="bg-white border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <CardHeader className="flex flex-col items-center pb-2">
-                <div className="rounded-full bg-blue-100 p-3 mb-4">{award.icon}</div>
-                <CardTitle className="text-xl font-bold text-blue-500 text-center drop-shadow-sm uppercase">
-                  {award.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-center">{award.description}</CardDescription>
-              </CardContent>
-              <div className="px-6 pb-4 flex justify-center">
-                <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">Prestigious Award</Badge>
-              </div>
-            </Card>
-          ))}
+  {awards.map((award, index) => {
+    const isLastSingle =
+      awards.length % 3 === 1 && index === awards.length - 1
+
+    return (
+      <Card
+        key={index}
+        className={`bg-white border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1
+          ${isLastSingle ? "lg:col-span-3 lg:justify-self-center lg:max-w-md" : ""}
+        `}
+      >
+        <CardHeader className="flex flex-col items-center pb-2">
+          <div className="rounded-full bg-blue-100 p-3 mb-4">
+            {award.icon}
+          </div>
+          <CardTitle className="text-xl font-bold text-blue-500 text-center drop-shadow-sm uppercase">
+            {award.title}
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          <CardDescription className="text-center">
+            {award.description}
+          </CardDescription>
+        </CardContent>
+
+        <div className="px-6 pb-4 flex justify-center">
+          <Badge className="bg-blue-100 text-blue-800 hover:bg-blue-200">
+            Prestigious Award
+          </Badge>
         </div>
+      </Card>
+    )
+  })}
+</div>
 
         <div className="bg-blue-500 rounded-lg shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Don&apos;t Miss Your Chance to Win!</h2>

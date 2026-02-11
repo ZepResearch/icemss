@@ -175,7 +175,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d569604.2225943045!2d1
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Explore the Philippines</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Explore the Japan</h2>
             <div className="h-1 w-20 bg-[#0078d4] mx-auto mb-8 rounded-full"></div>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">Discover amazing attractions during your visit to 4<sup>th</sup> ICEMSS 2026</p>
           </div>
@@ -286,7 +286,7 @@ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d569604.2225943045!2d1
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/register">
+                  <Link href="/registration">
                     <Button className="bg-[#0078d4] hover:bg-[#005a9e] text-white rounded-full">Register Now</Button>
                   </Link>
                   <Link href="/contact">
