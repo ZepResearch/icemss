@@ -41,11 +41,11 @@ export default function AwardsPage() {
       description: "Honoring the most impactful presentation in each conference session",
       icon: <Star className="h-8 w-8 text-blue-500" />,
     },
-    {
-      title: "Best International student presentation Award",
-      description: "Celebrating exceptional presentations by student researchers",
-      icon: <Users className="h-8 w-8 text-blue-500" />,
-    },
+    // {
+    //   title: "Best International student presentation Award",
+    //   description: "Celebrating exceptional presentations by student researchers",
+    //   icon: <Users className="h-8 w-8 text-blue-500" />,
+    // },
      {
     title: "OUTSTANDING CONTRIBUTOR AWARD",
     description: "Recognizing individuals for their significant contributions to the conference and research community",
