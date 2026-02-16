@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Check, Info, Monitor, Users } from "lucide-react"
+import { Check, Info, Monitor, Users, MapPin, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -15,12 +15,13 @@ export default function Ticket() {
   const [customAmount, setCustomAmount] = useState("")
   const [activeTab, setActiveTab] = useState("physical")
 
-  // Simplified ticket structure
+  // Simplified ticket structure with Early Bird pricing
   const ticketCategories = [
     {
       name: "Academician",
       category: "academician",
       physical: { local: 349, international: 399, localWithAccom: 499, intlWithAccom: 549 },
+      earlyBird: { local: 329, international: 249, localWithAccom: 349, intlWithAccom: 399 },
       virtual: { local: 269, international: 329 },
       features: [
         "Full conference access",
@@ -35,6 +36,7 @@ export default function Ticket() {
       name: "Student",
       category: "student",
       physical: { local: 299, international: 349, localWithAccom: 449, intlWithAccom: 499 },
+      earlyBird: { local: 179, international: 219, localWithAccom: 299, intlWithAccom: 349 },
       virtual: { local: 229, international: 269 },
       features: [
         "Conference access",
@@ -49,6 +51,7 @@ export default function Ticket() {
       name: "Delegate",
       category: "delegate",
       physical: { local: 269, international: 299, localWithAccom: 419, intlWithAccom: 449 },
+      earlyBird: { local: 159, international: 169, localWithAccom: 279, intlWithAccom: 299 },
       virtual: { local: 179, international: 229 },
       features: [
         "Conference access",
@@ -62,6 +65,7 @@ export default function Ticket() {
       name: "With Scopus Q3 & Q4",
       category: "scopus-q3-q4",
       physical: { local: 1149, international: 1199, localWithAccom: 1299, intlWithAccom: 1399 },
+      earlyBird: { local: 999, international: 1049, localWithAccom: 1149, intlWithAccom: 1249 },
       virtual: { local: 1049, international: 1099 },
       features: [
         "Full conference access",
@@ -76,6 +80,7 @@ export default function Ticket() {
       name: "With Scopus Q1 & Q2",
       category: "scopus-q1-q2",
       physical: { local: 1849, international: 1899, localWithAccom: 1999, intlWithAccom: 2049 },
+      earlyBird: { local: 1699, international: 1749, localWithAccom: 1849, intlWithAccom: 1899 },
       virtual: { local: 1749, international: 1799 },
       features: [
         "Full conference access",
@@ -233,186 +238,416 @@ export default function Ticket() {
               </p>
             </div>
 
-            {/* Without Accommodation Table */}
+            {/* Nested tabs for Local/International - Without Accommodation */}
             <div className="mb-12">
-              <h3 className="text-2xl font-bold mb-4 text-center text-blue-700">Without Accommodation</h3>
-              <div className="overflow-x-auto">
-                <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
-                  <thead className="bg-blue-600 text-white">
-                    <tr>
-                      <th className="px-6 py-4 text-left font-semibold">Category</th>
-                      <th className="px-6 py-4 text-center font-semibold">Local (USD)</th>
-                      <th className="px-6 py-4 text-center font-semibold">International (USD)</th>
-                      <th className="px-6 py-4 text-center font-semibold">Features</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {ticketCategories.map((ticket, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
-                        <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
-                          {ticket.name}
-                        </td>
-                        <td className="px-6 py-4 text-center border-b border-blue-200">
-                          <div className="flex flex-col items-center gap-2">
-                            <span className="text-lg font-bold text-blue-800">
-                              ${ticket.physical.local}
-                            </span>
-                            <Button
-                              size="sm"
-                              className="bg-blue-600 hover:bg-blue-700 text-white"
-                              onClick={() =>
-                                openPaymentPopup(
-                                  ticket.name,
-                                  ticket.category,
-                                  ticket.physical.local,
-                                  "Physical",
-                                  "Local",
-                                  false
-                                )
-                              }
-                              disabled={isLoading}
-                            >
-                              Book Now
-                            </Button>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 text-center border-b border-blue-200">
-                          <div className="flex flex-col items-center gap-2">
-                            <span className="text-lg font-bold text-blue-800">
-                              ${ticket.physical.international}
-                            </span>
-                            <Button
-                              size="sm"
-                              className="bg-blue-600 hover:bg-blue-700 text-white"
-                              onClick={() =>
-                                openPaymentPopup(
-                                  ticket.name,
-                                  ticket.category,
-                                  ticket.physical.international,
-                                  "Physical",
-                                  "International",
-                                  false
-                                )
-                              }
-                              disabled={isLoading}
-                            >
-                              Book Now
-                            </Button>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 border-b border-blue-200">
-                          <ul className="text-sm text-left space-y-1">
-                            {ticket.features.slice(0, 3).map((feature, i) => (
-                              <li key={i} className="flex items-start gap-1">
-                                <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-700">{feature}</span>
-                              </li>
-                            ))}
-                            {ticket.features.length > 3 && (
-                              <li className="text-blue-600 text-xs">
-                                +{ticket.features.length - 3} more features
-                              </li>
-                            )}
-                          </ul>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-700">Without Accommodation</h3>
+              
+              <Tabs defaultValue="local-physical-no-accom" className="w-full">
+                <div className="flex justify-center mb-6">
+                  <TabsList className="bg-blue-100 p-1 rounded-full">
+                    <TabsTrigger
+                      value="local-physical-no-accom"
+                      className="rounded-full data-[state=active]:bg-blue-600 data-[state=active]:text-white px-6 py-2"
+                    >
+                      <MapPin className="mr-2 h-4 w-4" />
+                      Local Participants
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="international-physical-no-accom"
+                      className="rounded-full data-[state=active]:bg-blue-600 data-[state=active]:text-white px-6 py-2"
+                    >
+                      <Globe className="mr-2 h-4 w-4" />
+                      International Participants
+                    </TabsTrigger>
+                  </TabsList>
+                </div>
+
+                {/* Local - Without Accommodation */}
+                <TabsContent value="local-physical-no-accom" className="mt-0">
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
+                      <thead className="bg-blue-600 text-white">
+                        <tr>
+                          <th className="px-6 py-4 text-left font-semibold">Category</th>
+                          <th className="px-6 py-4 text-center font-semibold bg-yellow-500">🔥 Early Bird (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Regular Price (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Features</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ticketCategories.map((ticket, index) => (
+                          <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
+                            <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
+                              {ticket.name}
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200 bg-yellow-50">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-yellow-700">
+                                  ${ticket.earlyBird.local}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.earlyBird.local,
+                                      "Physical (Early Bird)",
+                                      "Local",
+                                      false
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Early Bird
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-blue-800">
+                                  ${ticket.physical.local}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.physical.local,
+                                      "Physical",
+                                      "Local",
+                                      false
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Now
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 border-b border-blue-200">
+                              <ul className="text-sm text-left space-y-1">
+                                {ticket.features.slice(0, 3).map((feature, i) => (
+                                  <li key={i} className="flex items-start gap-1">
+                                    <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                    <span className="text-gray-700">{feature}</span>
+                                  </li>
+                                ))}
+                                {ticket.features.length > 3 && (
+                                  <li className="text-blue-600 text-xs">
+                                    +{ticket.features.length - 3} more features
+                                  </li>
+                                )}
+                              </ul>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </TabsContent>
+
+                {/* International - Without Accommodation */}
+                <TabsContent value="international-physical-no-accom" className="mt-0">
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
+                      <thead className="bg-blue-600 text-white">
+                        <tr>
+                          <th className="px-6 py-4 text-left font-semibold">Category</th>
+                          <th className="px-6 py-4 text-center font-semibold bg-yellow-500">🔥 Early Bird (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Regular Price (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Features</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ticketCategories.map((ticket, index) => (
+                          <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
+                            <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
+                              {ticket.name}
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200 bg-yellow-50">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-yellow-700">
+                                  ${ticket.earlyBird.international}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.earlyBird.international,
+                                      "Physical (Early Bird)",
+                                      "International",
+                                      false
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Early Bird
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-blue-800">
+                                  ${ticket.physical.international}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.physical.international,
+                                      "Physical",
+                                      "International",
+                                      false
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Now
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 border-b border-blue-200">
+                              <ul className="text-sm text-left space-y-1">
+                                {ticket.features.slice(0, 3).map((feature, i) => (
+                                  <li key={i} className="flex items-start gap-1">
+                                    <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                    <span className="text-gray-700">{feature}</span>
+                                  </li>
+                                ))}
+                                {ticket.features.length > 3 && (
+                                  <li className="text-blue-600 text-xs">
+                                    +{ticket.features.length - 3} more features
+                                  </li>
+                                )}
+                              </ul>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
 
-            {/* With Accommodation Table */}
+            {/* Nested tabs for Local/International - With Accommodation */}
             <div className="mb-12">
-              <h3 className="text-2xl font-bold mb-4 text-center text-blue-700">With Accommodation</h3>
-              <div className="overflow-x-auto">
-                <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
-                  <thead className="bg-blue-700 text-white">
-                    <tr>
-                      <th className="px-6 py-4 text-left font-semibold">Category</th>
-                      <th className="px-6 py-4 text-center font-semibold">Local (USD)</th>
-                      <th className="px-6 py-4 text-center font-semibold">International (USD)</th>
-                      <th className="px-6 py-4 text-center font-semibold">Features</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {ticketCategories.map((ticket, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
-                        <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
-                          {ticket.name}
-                        </td>
-                        <td className="px-6 py-4 text-center border-b border-blue-200">
-                          <div className="flex flex-col items-center gap-2">
-                            <span className="text-lg font-bold text-blue-800">
-                              ${ticket.physical.localWithAccom}
-                            </span>
-                            <Button
-                              size="sm"
-                              className="bg-blue-700 hover:bg-blue-800 text-white"
-                              onClick={() =>
-                                openPaymentPopup(
-                                  ticket.name,
-                                  ticket.category,
-                                  ticket.physical.localWithAccom,
-                                  "Physical",
-                                  "Local",
-                                  true
-                                )
-                              }
-                              disabled={isLoading}
-                            >
-                              Book Now
-                            </Button>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 text-center border-b border-blue-200">
-                          <div className="flex flex-col items-center gap-2">
-                            <span className="text-lg font-bold text-blue-800">
-                              ${ticket.physical.intlWithAccom}
-                            </span>
-                            <Button
-                              size="sm"
-                              className="bg-blue-700 hover:bg-blue-800 text-white"
-                              onClick={() =>
-                                openPaymentPopup(
-                                  ticket.name,
-                                  ticket.category,
-                                  ticket.physical.intlWithAccom,
-                                  "Physical",
-                                  "International",
-                                  true
-                                )
-                              }
-                              disabled={isLoading}
-                            >
-                              Book Now
-                            </Button>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 border-b border-blue-200">
-                          <ul className="text-sm text-left space-y-1">
-                            <li className="flex items-start gap-1">
-                              <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700">Accommodation included</span>
-                            </li>
-                            {ticket.features.slice(0, 2).map((feature, i) => (
-                              <li key={i} className="flex items-start gap-1">
-                                <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-gray-700">{feature}</span>
-                              </li>
-                            ))}
-                            {ticket.features.length > 2 && (
-                              <li className="text-blue-600 text-xs">
-                                +{ticket.features.length - 2} more features
-                              </li>
-                            )}
-                          </ul>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <h3 className="text-2xl font-bold mb-6 text-center text-blue-700">With Accommodation</h3>
+              
+              <Tabs defaultValue="local-physical-with-accom" className="w-full">
+                <div className="flex justify-center mb-6">
+                  <TabsList className="bg-blue-100 p-1 rounded-full">
+                    <TabsTrigger
+                      value="local-physical-with-accom"
+                      className="rounded-full data-[state=active]:bg-blue-700 data-[state=active]:text-white px-6 py-2"
+                    >
+                      <MapPin className="mr-2 h-4 w-4" />
+                      Local Participants
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="international-physical-with-accom"
+                      className="rounded-full data-[state=active]:bg-blue-700 data-[state=active]:text-white px-6 py-2"
+                    >
+                      <Globe className="mr-2 h-4 w-4" />
+                      International Participants
+                    </TabsTrigger>
+                  </TabsList>
+                </div>
+
+                {/* Local - With Accommodation */}
+                <TabsContent value="local-physical-with-accom" className="mt-0">
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
+                      <thead className="bg-blue-700 text-white">
+                        <tr>
+                          <th className="px-6 py-4 text-left font-semibold">Category</th>
+                          <th className="px-6 py-4 text-center font-semibold bg-yellow-500">🔥 Early Bird (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Regular Price (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Features</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ticketCategories.map((ticket, index) => (
+                          <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
+                            <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
+                              {ticket.name}
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200 bg-yellow-50">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-yellow-700">
+                                  ${ticket.earlyBird.localWithAccom}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.earlyBird.localWithAccom,
+                                      "Physical (Early Bird)",
+                                      "Local",
+                                      true
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Early Bird
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-blue-800">
+                                  ${ticket.physical.localWithAccom}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-blue-700 hover:bg-blue-800 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.physical.localWithAccom,
+                                      "Physical",
+                                      "Local",
+                                      true
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Now
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 border-b border-blue-200">
+                              <ul className="text-sm text-left space-y-1">
+                                <li className="flex items-start gap-1">
+                                  <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                  <span className="text-gray-700">Accommodation included</span>
+                                </li>
+                                {ticket.features.slice(0, 2).map((feature, i) => (
+                                  <li key={i} className="flex items-start gap-1">
+                                    <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                    <span className="text-gray-700">{feature}</span>
+                                  </li>
+                                ))}
+                                {ticket.features.length > 2 && (
+                                  <li className="text-blue-600 text-xs">
+                                    +{ticket.features.length - 2} more features
+                                  </li>
+                                )}
+                              </ul>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </TabsContent>
+
+                {/* International - With Accommodation */}
+                <TabsContent value="international-physical-with-accom" className="mt-0">
+                  <div className="overflow-x-auto">
+                    <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
+                      <thead className="bg-blue-700 text-white">
+                        <tr>
+                          <th className="px-6 py-4 text-left font-semibold">Category</th>
+                          <th className="px-6 py-4 text-center font-semibold bg-yellow-500">🔥 Early Bird (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Regular Price (USD)</th>
+                          <th className="px-6 py-4 text-center font-semibold">Features</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ticketCategories.map((ticket, index) => (
+                          <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
+                            <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
+                              {ticket.name}
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200 bg-yellow-50">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-yellow-700">
+                                  ${ticket.earlyBird.intlWithAccom}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.earlyBird.intlWithAccom,
+                                      "Physical (Early Bird)",
+                                      "International",
+                                      true
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Early Bird
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-center border-b border-blue-200">
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-lg font-bold text-blue-800">
+                                  ${ticket.physical.intlWithAccom}
+                                </span>
+                                <Button
+                                  size="sm"
+                                  className="bg-blue-700 hover:bg-blue-800 text-white"
+                                  onClick={() =>
+                                    openPaymentPopup(
+                                      ticket.name,
+                                      ticket.category,
+                                      ticket.physical.intlWithAccom,
+                                      "Physical",
+                                      "International",
+                                      true
+                                    )
+                                  }
+                                  disabled={isLoading}
+                                >
+                                  Book Now
+                                </Button>
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 border-b border-blue-200">
+                              <ul className="text-sm text-left space-y-1">
+                                <li className="flex items-start gap-1">
+                                  <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                  <span className="text-gray-700">Accommodation included</span>
+                                </li>
+                                {ticket.features.slice(0, 2).map((feature, i) => (
+                                  <li key={i} className="flex items-start gap-1">
+                                    <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                    <span className="text-gray-700">{feature}</span>
+                                  </li>
+                                ))}
+                                {ticket.features.length > 2 && (
+                                  <li className="text-blue-600 text-xs">
+                                    +{ticket.features.length - 2} more features
+                                  </li>
+                                )}
+                              </ul>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </TabsContent>
+              </Tabs>
             </div>
 
             {/* Important Note */}
@@ -438,92 +673,161 @@ export default function Ticket() {
               </p>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
-                <thead className="bg-blue-600 text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold">Category</th>
-                    <th className="px-6 py-4 text-center font-semibold">Local (USD)</th>
-                    <th className="px-6 py-4 text-center font-semibold">International (USD)</th>
-                    <th className="px-6 py-4 text-center font-semibold">Features</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ticketCategories.map((ticket, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
-                      <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
-                        {ticket.name}
-                      </td>
-                      <td className="px-6 py-4 text-center border-b border-blue-200">
-                        <div className="flex flex-col items-center gap-2">
-                          <span className="text-lg font-bold text-blue-800">${ticket.virtual.local}</span>
-                          <Button
-                            size="sm"
-                            className="bg-blue-600 hover:bg-blue-700 text-white"
-                            onClick={() =>
-                              openPaymentPopup(
-                                ticket.name,
-                                ticket.category,
-                                ticket.virtual.local,
-                                "Virtual",
-                                "Local",
-                                false
-                              )
-                            }
-                            disabled={isLoading}
-                          >
-                            Book Now
-                          </Button>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 text-center border-b border-blue-200">
-                        <div className="flex flex-col items-center gap-2">
-                          <span className="text-lg font-bold text-blue-800">
-                            ${ticket.virtual.international}
-                          </span>
-                          <Button
-                            size="sm"
-                            className="bg-blue-600 hover:bg-blue-700 text-white"
-                            onClick={() =>
-                              openPaymentPopup(
-                                ticket.name,
-                                ticket.category,
-                                ticket.virtual.international,
-                                "Virtual",
-                                "International",
-                                false
-                              )
-                            }
-                            disabled={isLoading}
-                          >
-                            Book Now
-                          </Button>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 border-b border-blue-200">
-                        <ul className="text-sm text-left space-y-1">
-                          <li className="flex items-start gap-1">
-                            <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-700">Online conference access</span>
-                          </li>
-                          {ticket.features.slice(0, 2).map((feature, i) => (
-                            <li key={i} className="flex items-start gap-1">
-                              <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700">{feature}</span>
-                            </li>
-                          ))}
-                          {ticket.features.length > 2 && (
-                            <li className="text-blue-600 text-xs">
-                              +{ticket.features.length - 2} more features
-                            </li>
-                          )}
-                        </ul>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            {/* Nested tabs for Local/International */}
+            <Tabs defaultValue="local-virtual" className="w-full">
+              <div className="flex justify-center mb-6">
+                <TabsList className="bg-blue-100 p-1 rounded-full">
+                  <TabsTrigger
+                    value="local-virtual"
+                    className="rounded-full data-[state=active]:bg-blue-600 data-[state=active]:text-white px-6 py-2"
+                  >
+                    <MapPin className="mr-2 h-4 w-4" />
+                    Local Participants
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="international-virtual"
+                    className="rounded-full data-[state=active]:bg-blue-600 data-[state=active]:text-white px-6 py-2"
+                  >
+                    <Globe className="mr-2 h-4 w-4" />
+                    International Participants
+                  </TabsTrigger>
+                </TabsList>
+              </div>
+
+              {/* Local Virtual */}
+              <TabsContent value="local-virtual" className="mt-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
+                    <thead className="bg-blue-600 text-white">
+                      <tr>
+                        <th className="px-6 py-4 text-left font-semibold">Category</th>
+                        <th className="px-6 py-4 text-center font-semibold">Price (USD)</th>
+                        <th className="px-6 py-4 text-center font-semibold">Action</th>
+                        <th className="px-6 py-4 text-center font-semibold">Features</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ticketCategories.map((ticket, index) => (
+                        <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
+                          <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
+                            {ticket.name}
+                          </td>
+                          <td className="px-6 py-4 text-center border-b border-blue-200">
+                            <span className="text-lg font-bold text-blue-800">${ticket.virtual.local}</span>
+                          </td>
+                          <td className="px-6 py-4 text-center border-b border-blue-200">
+                            <Button
+                              size="sm"
+                              className="bg-blue-600 hover:bg-blue-700 text-white"
+                              onClick={() =>
+                                openPaymentPopup(
+                                  ticket.name,
+                                  ticket.category,
+                                  ticket.virtual.local,
+                                  "Virtual",
+                                  "Local",
+                                  false
+                                )
+                              }
+                              disabled={isLoading}
+                            >
+                              Book Now
+                            </Button>
+                          </td>
+                          <td className="px-6 py-4 border-b border-blue-200">
+                            <ul className="text-sm text-left space-y-1">
+                              <li className="flex items-start gap-1">
+                                <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                <span className="text-gray-700">Online conference access</span>
+                              </li>
+                              {ticket.features.slice(0, 2).map((feature, i) => (
+                                <li key={i} className="flex items-start gap-1">
+                                  <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                  <span className="text-gray-700">{feature}</span>
+                                </li>
+                              ))}
+                              {ticket.features.length > 2 && (
+                                <li className="text-blue-600 text-xs">
+                                  +{ticket.features.length - 2} more features
+                                </li>
+                              )}
+                            </ul>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </TabsContent>
+
+              {/* International Virtual */}
+              <TabsContent value="international-virtual" className="mt-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-white border-2 border-blue-200 rounded-lg overflow-hidden shadow-lg">
+                    <thead className="bg-blue-600 text-white">
+                      <tr>
+                        <th className="px-6 py-4 text-left font-semibold">Category</th>
+                        <th className="px-6 py-4 text-center font-semibold">Price (USD)</th>
+                        <th className="px-6 py-4 text-center font-semibold">Action</th>
+                        <th className="px-6 py-4 text-center font-semibold">Features</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ticketCategories.map((ticket, index) => (
+                        <tr key={index} className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}>
+                          <td className="px-6 py-4 font-semibold text-blue-900 border-b border-blue-200">
+                            {ticket.name}
+                          </td>
+                          <td className="px-6 py-4 text-center border-b border-blue-200">
+                            <span className="text-lg font-bold text-blue-800">
+                              ${ticket.virtual.international}
+                            </span>
+                          </td>
+                          <td className="px-6 py-4 text-center border-b border-blue-200">
+                            <Button
+                              size="sm"
+                              className="bg-blue-600 hover:bg-blue-700 text-white"
+                              onClick={() =>
+                                openPaymentPopup(
+                                  ticket.name,
+                                  ticket.category,
+                                  ticket.virtual.international,
+                                  "Virtual",
+                                  "International",
+                                  false
+                                )
+                              }
+                              disabled={isLoading}
+                            >
+                              Book Now
+                            </Button>
+                          </td>
+                          <td className="px-6 py-4 border-b border-blue-200">
+                            <ul className="text-sm text-left space-y-1">
+                              <li className="flex items-start gap-1">
+                                <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                <span className="text-gray-700">Online conference access</span>
+                              </li>
+                              {ticket.features.slice(0, 2).map((feature, i) => (
+                                <li key={i} className="flex items-start gap-1">
+                                  <Check className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                                  <span className="text-gray-700">{feature}</span>
+                                </li>
+                              ))}
+                              {ticket.features.length > 2 && (
+                                <li className="text-blue-600 text-xs">
+                                  +{ticket.features.length - 2} more features
+                                </li>
+                              )}
+                            </ul>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </TabsContent>
+            </Tabs>
           </TabsContent>
         </Tabs>
 
