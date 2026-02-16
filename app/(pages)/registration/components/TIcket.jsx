@@ -21,7 +21,7 @@ export default function Ticket() {
       name: "Academician",
       category: "academician",
       physical: { local: 349, international: 399, localWithAccom: 499, intlWithAccom: 549 },
-      earlyBird: { local: 329, international: 249, localWithAccom: 349, intlWithAccom: 399 },
+      earlyBird: { local: 229, international: 249, localWithAccom: 349, intlWithAccom: 399 },
       virtual: { local: 269, international: 329 },
       features: [
         "Full conference access",
