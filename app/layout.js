@@ -8,6 +8,7 @@ import FloatingWhatsApp, { FloatingWhatsAppButton } from "@/components/whatsapp"
 import Script from 'next/script';
 // import DownloadPopup from "@/components/download-popup";
 import { LineMessengerButton } from "@/components/line-messenger-button";
+import GoogleTranslate from "@/components/GoogleTranslate";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -81,7 +82,10 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased mt-12`}
       >
         {/* <DownloadPopup/> */}
+        <div className="sticky top-0 z-50 bg-white">
+        <GoogleTranslate/>
         <Navbar/>
+        </div>
         {children}
         <Footer/>
         <ToastProvider/>

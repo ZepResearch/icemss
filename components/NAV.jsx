@@ -149,7 +149,7 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90 sticky top-0 z-50 py-4">
+    <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90  py-4">
       <div className="max-w-7xl mx-auto flex  items-center justify-between px-3">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
