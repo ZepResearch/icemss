@@ -53,6 +53,8 @@ const scheduleData = [
       { time: "02:30 - 03:30 PM", title: "Technical Session 3 (Social Sciences)", type: "technical", icon: BookOpen },
       { time: "03:30 - 03:40 PM", title: "Tea Break", type: "break", icon: Coffee },
       { time: "03:40 - 04:30 PM", title: "Panel Discussion", type: "panel", icon: Users },
+            { time: "04:30 PM - 05:00 PM", title: "Valedictory Function", type: "ceremony", icon: Award },
+
     ],
   },
 ]
