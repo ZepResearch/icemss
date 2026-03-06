@@ -114,16 +114,17 @@ const MobileNav = () => (
           <MobileNavItem href="/gallery">Gallery</MobileNavItem>
           <MobileNavItem href="/journals">Journal</MobileNavItem>
           <MobileNavItem href="/contact">Contact</MobileNavItem>
+          <MobileNavItem href="/proceedings">Proceedings</MobileNavItem>
           <MobileNavItem
             href="/policy"
             subItems={[
-                    { title: "Terms & Conditions", href: "/terms-&-condition" },
-                    { title: "Cancellation Policy", href: "/cancellation-policy" },
-                    { title: "Privacy Policy", href: "/privacy-policy" },
-                    { title: "Complaints  Policy", href: "/complaints-policy" },
-                    { title:"Disability Discrimination Policy", href: "/disability-discrimination-policy" },
-                    {title:"Health and Safety Policy", href: "/health-and-safety-policy" },
-                    {title:"Equal Treatment Policy", href: "/equal-treatment-policy" },
+              { title: "Terms & Conditions", href: "/terms-&-condition" },
+              { title: "Cancellation Policy", href: "/cancellation-policy" },
+              { title: "Privacy Policy", href: "/privacy-policy" },
+              { title: "Complaints  Policy", href: "/complaints-policy" },
+              { title: "Disability Discrimination Policy", href: "/disability-discrimination-policy" },
+              { title: "Health and Safety Policy", href: "/health-and-safety-policy" },
+              { title: "Equal Treatment Policy", href: "/equal-treatment-policy" },
             ]}
           >
             Policy
@@ -141,7 +142,7 @@ const MobileNav = () => (
             </Button>
           </SheetClose>
         </div>
-      
+
       </nav>
     </SheetContent>
   </Sheet>
@@ -150,7 +151,7 @@ const MobileNav = () => (
 export default function Navbar() {
   return (
     <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90  py-4">
-      <div className="max-w-7xl mx-auto flex  items-center justify-between px-3">
+      <div className="max-w-screen-2xl mx-auto flex  items-center justify-between px-3">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image src="/logo.png" alt="Climate Conference Logo" className=" w-auto" width={120} height={32} />
@@ -197,7 +198,7 @@ export default function Navbar() {
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              
+
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-md h-8 px-2">
                   Policy
@@ -260,7 +261,7 @@ export default function Navbar() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-                <NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="/journals" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Journals
@@ -280,6 +281,13 @@ export default function Navbar() {
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
                     Contact
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/proceedings" legacyBehavior passHref>
+                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
+                    Proceedings
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
