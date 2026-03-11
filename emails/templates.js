@@ -223,12 +223,7 @@ export const userConfirmationTemplate = (data) => `
                     </li>
                 </ul>
             </div>
-            
-            <div class="venue-details">
-                <h3>Conference Details</h3>
-                <p>Dates: 12th - 13th DECEMBER, 2025</p>
-                <p>Venue: GOA, India</p>
-            </div>
+           
             
             <div class="highlight-box">
                 <h3>What's Next?</h3>
@@ -368,11 +363,7 @@ export const adminNotificationTemplate = (data) => `
         <div class="content">
             <div class="alert-badge">New Registration</div>
             
-            <div class="conference-info">
-                <p>International Conference on Engineering, Management and Social Sciences</p>
-                <p>Dates: 12th-13th DECEMBER, 2025</p>
-                <p>Venue: GOA, India</p>
-            </div>
+           
             
             <p>A new participant has registered for the conference:</p>
             

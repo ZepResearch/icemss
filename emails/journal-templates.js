@@ -193,10 +193,7 @@ export function getUserEmailTemplate(data) {
         <div class="header-content">
           <h1 class="conference-logo">ICEMSS</h1>
           <p class="conference-subtitle">International Conference on Engineering, Management and Social Sciences</p>
-          <div class="conference-details">
-            <strong>📅 Conference Date:</strong> 12th-13th December, 2025<br>
-            <strong>📍 Venue:</strong> BloomSuites, Goa, 403516, India
-          </div>
+          
         </div>
       </div>
       
@@ -214,14 +211,7 @@ export function getUserEmailTemplate(data) {
         <div class="conference-info-box">
           <div class="info-title">🏨 Conference Details</div>
           <ul class="info-list">
-            <li>
-              <span class="info-label">Conference Date</span>
-              <span class="info-value"><strong>12th-13th December, 2025</strong></span>
-            </li>
-            <li>
-              <span class="info-label">Venue</span>
-              <span class="info-value">BloomSuites, Goa, 403516, India</span>
-            </li>
+            
             <li>
               <span class="info-label">Conference Focus</span>
               <span class="info-value">Engineering, Management and Social Sciences</span>
@@ -523,10 +513,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
           <span class="alert-badge">🚨 NEW SUBMISSION</span>
           <h1 class="header-title">ICEMSS Conference Submission</h1>
           <p class="header-subtitle">Administrative Notification</p>
-          <div class="conference-details">
-            International Conference on Engineering, Management and Social Sciences<br>
-            📅 12th-13th December, 2025 | 📍 BloomSuites, Goa, India
-          </div>
+        
         </div>
       </div>
       
