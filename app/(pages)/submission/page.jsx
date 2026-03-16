@@ -5,23 +5,23 @@ import FormatCards from "./components/PaperFormat";
 import AbstractSubmissionGuidelines from "./components/SubmitGuidline";
 
 export const metadata = {
-  title: 'Paper Submission | ICEMSS 2025',
-  description: 'Submit your paper for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+  title: 'Paper Submission | ICEMSS ',
+  description: 'Submit your paper for the International Conference on Engineering, Management and Social Sciences (ICEMSS).',
    // Adding canonical URL
    alternates: {
     canonical: 'https://www.icemss.in/submission',
   },
   openGraph: {
-    title: 'Paper Submission | ICEMSS 2025',
-    description: 'Submit your paper for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+    title: 'Paper Submission | ICEMSS ',
+    description: 'Submit your paper for the International Conference on Engineering, Management and Social Sciences (ICEMSS).',
     url: 'https://www.icemss.in/submission',
-    siteName: 'ICEMSS 2025',
+    siteName: 'ICEMSS ',
   
     locale: 'en_US',
     type: 'website',
   },
  
-  keywords: ['ICEMSS', 'paper submission', 'engineering', 'management', 'social sciences', 'conference', 'New Delhi', 'India'],
+  keywords: ['ICEMSS', 'paper submission', 'engineering', 'management', 'social sciences', 'conference'],
 }
 function page() {
   return (

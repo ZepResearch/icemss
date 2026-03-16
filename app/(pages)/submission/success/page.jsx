@@ -1,9 +1,9 @@
 import Link from "next/link"
 
 export const metadata = {
-  title: "Submission Successful - 3rd International Conference on Engineering, Management and Social Sciences",
+  title: "Submission Successful -  International Conference on Engineering, Management and Social Sciences",
   description:
-    "Your paper has been successfully submitted to 3rd International Conference on Engineering, Management and Social Sciences",
+    "Your paper has been successfully submitted to  International Conference on Engineering, Management and Social Sciences",
 }
 
 export default function SuccessPage() {

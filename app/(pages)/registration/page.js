@@ -5,23 +5,23 @@ import CTACancle from './components/Cta-Cancle-Policy'
 import Guidline from './components/guidline'
 
 export const metadata = {
-  title: 'Registration | ICEMSS 2025',
-  description: 'Register for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+  title: 'Registration | ICEMSS ',
+  description: 'Register for the International Conference on Engineering, Management and Social Sciences (ICEMSS) .',
    // Adding canonical URL
    alternates: {
     canonical: 'https://www.icemss.in/registration',
   },
   openGraph: {
-    title: 'Registration | ICEMSS 2025',
-    description: 'Register for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+    title: 'Registration | ICEMSS ',
+    description: 'Register for the International Conference on Engineering, Management and Social Sciences (ICEMSS)  .',
     url: 'https://www.icemss.in/registration',
-    siteName: 'ICEMSS 2025',
+    siteName: 'ICEMSS ',
     
     locale: 'en_US',
     type: 'website',
   },
  
-  keywords: ['ICEMSS', 'registration', 'engineering', 'management', 'social sciences', 'conference', 'New Delhi', 'India'],
+  keywords: ['ICEMSS', 'registration', 'engineering', 'management', 'social sciences', 'conference'],
 }
 function page() {
   return (

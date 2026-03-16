@@ -2,17 +2,17 @@ import React from 'react'
 import ThemeAndTopics from './Content'
 
 export const metadata = {
-  title: 'Theme and Topics | ICEMSS 2025',
-  description: 'Explore the theme and topics for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+  title: 'Theme and Topics | ICEMSS ',
+  description: 'Explore the theme and topics for the International Conference on Engineering, Management and Social Sciences (ICEMSS) ',
    // Adding canonical URL
    alternates: {
     canonical: 'https://www.icemss.in/theme-and-topics',
   },
   openGraph: {
-    title: 'Theme and Topics | ICEMSS 2025',
-    description: 'Explore the theme and topics for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+    title: 'Theme and Topics | ICEMSS ',
+    description: 'Explore the theme and topics for the International Conference on Engineering, Management and Social Sciences (ICEMSS) ',
     url: 'https://www.icemss.in/theme-and-topics',
-    siteName: 'ICEMSS 2025',
+    siteName: 'ICEMSS ',
     
     locale: 'en_US',
     type: 'website',

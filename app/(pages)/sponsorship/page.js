@@ -5,23 +5,23 @@ import { Phone, Mail, MapPin, Users, Lightbulb, Award } from 'lucide-react'
 import { SponsorshipPackages } from "./components/SponsorshipPackages"
 import Link from "next/link"
 export const metadata = {
-  title: 'Sponsorship | ICEMSS 2025',
-  description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+  title: 'Sponsorship | ICEMSS ',
+  description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS)',
    // Adding canonical URL
    alternates: {
     canonical: 'https://www.icemss.in/sponsorship',
   },
   openGraph: {
-    title: 'Sponsorship | ICEMSS 2025',
-    description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+    title: 'Sponsorship | ICEMSS ',
+    description: 'Explore sponsorship opportunities for the International Conference on Engineering, Management and Social Sciences (ICEMSS) ',
     url: 'https://www.icemss.in/sponsorship',
-    siteName: 'ICEMSS 2025',
+    siteName: 'ICEMSS ',
    
     locale: 'en_US',
     type: 'website',
   },
  
-  keywords: ['ICEMSS', 'sponsorship', 'engineering', 'management', 'social sciences', 'conference', 'New Delhi', 'India'],
+  keywords: ['ICEMSS', 'sponsorship', 'engineering', 'management', 'social sciences', 'conference', ],
 }
 export default function SponsorshipContact() {
   return (

@@ -3,17 +3,17 @@ import ConferenceSchedule from './Content'
 
 
 export const metadata = {
-    title: 'Conference Schedule | ICEMSS 2025',
-    description: 'View the detailed schedule for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+    title: 'Conference Schedule | ICEMSS ',
+    description: 'View the detailed schedule for the International Conference on Engineering, Management and Social Sciences (ICEMSS) ',
      // Adding canonical URL
   alternates: {
     canonical: 'https://www.icemss.in/schedule',
   },
     openGraph: {
-      title: 'Conference Schedule | ICEMSS 2025',
-      description: 'View the detailed schedule for the International Conference on Engineering, Management and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+      title: 'Conference Schedule | ICEMSS ',
+      description: 'View the detailed schedule for the International Conference on Engineering, Management and Social Sciences (ICEMSS)',
       url: 'https://www.icemss.in/schedule',
-      siteName: 'ICEMSS 2025',
+      siteName: 'ICEMSS ',
      
       locale: 'en_US',
       type: 'website',
