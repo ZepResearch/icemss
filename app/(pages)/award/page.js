@@ -5,9 +5,9 @@ import { Trophy, Star, Users, ArrowRight, GraduationCap, DollarSign, FileCheck, 
 import Link from "next/link"
 
 export const metadata = {
-  title: "Conference Awards | International Conference on Tourism Management and Hospitality 2025",
+  title: "Conference Awards | International Conference on Tourism Management and Hospitality ",
   description:
-    "Prestigious awards recognizing excellence in tourism and hospitality research. Best Paper, Best Presentation, and Student Presentation awards available at ICTMH 2025.",
+    "Prestigious awards recognizing excellence in tourism and hospitality research. Best Paper, Best Presentation, and Student Presentation awards available at.",
   keywords: [
     "tourism conference awards",
     "hospitality research awards",
@@ -21,9 +21,9 @@ export const metadata = {
     canonical: "https://www.icemss.in/award",
   },
   openGraph: {
-    title: "Conference Awards - ICTMH 2025",
+    title: "Conference Awards - ",
     description:
-      "Win prestigious awards for excellence in tourism and hospitality research at ICTMH 2025. Best Paper and Presentation awards available.",
+      "Win prestigious awards for excellence in tourism and hospitality research at . Best Paper and Presentation awards available.",
 
     type: "website",
   },

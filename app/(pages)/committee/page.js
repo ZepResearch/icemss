@@ -3,21 +3,21 @@ import IACommitte from './components/IACommitte'
 import ScientificCommittee from './components/ScientificCommittee'
 import OrganizingCommittee from './components/OrganizingCommittee'
 export const metadata = {
-  title: 'Committee | ICEMSS 2025',
-  description: 'Meet the organizing committee of the International Conference on Engineering, Management, and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+  title: 'Committee | ICEMSS ',
+  description: 'Meet the organizing committee of the International Conference on Engineering, Management, and Social Sciences (ICEMSS)  ',
   alternates: {
     canonical: 'https://www.icemss.in/committee',
   },
   openGraph: {
-    title: 'Committee | ICEMSS 2025',
-    description: 'Meet the organizing committee of the International Conference on Engineering, Management, and Social Sciences (ICEMSS) 2025 in New Delhi, India.',
+    title: 'Committee | ICEMSS ',
+    description: 'Meet the organizing committee of the International Conference on Engineering, Management, and Social Sciences (ICEMSS) ',
     url: 'https://www.icemss.in/committee',
-    siteName: 'ICEMSS 2025',
+    siteName: 'ICEMSS ',
     locale: 'en_US',
     type: 'website',
   },
 
-  keywords: ['ICEMSS', 'committee', 'engineering', 'management', 'social sciences', 'conference', 'New Delhi', 'India'],
+  keywords: ['ICEMSS', 'committee', 'engineering', 'management', 'social sciences', 'conference', ],
 }
 function page() {
   return (
