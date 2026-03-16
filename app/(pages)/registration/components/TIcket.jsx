@@ -115,50 +115,50 @@ export default function Ticket() {
   }
 
   const handlePaymentSubmit = async (formData) => {
+    setIsLoading(true)
     try {
-      setIsLoading(true)
       const taxRate = 0.06
-      const baseAmount = selectedTicket.selectedPrice
+      const baseAmount = selectedTicket.price
       const taxAmount = baseAmount * taxRate
       const totalAmount = baseAmount + taxAmount
 
       const paymentData = {
         merchant_id: process.env.NEXT_PUBLIC_CCAVENUE_MERCHANT_ID,
-        order_id: generateOrderId(),
-        name: `${selectedTicket.name} - ${selectedTicket.priceType}`,
+        order_id: `ORD${Date.now()}${Math.floor(Math.random() * 1000)}`,
+        name: selectedTicket.name,
         amount: totalAmount.toString(),
         currency: selectedTicket.currency,
-        redirect_url: `${host}/api/ccavenue/handle`,
-        cancel_url: `${host}/api/ccavenue/handle`,
+        redirect_url: `${window.location.origin}/api/ccavenue/handle`,
+        cancel_url: `${window.location.origin}/api/ccavenue/handle`,
         ...formData,
         language: "EN",
       }
 
+      // Send notification email
       await fetch("/api/payment-notification", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(paymentData),
       })
 
-      const response = await fetch("/api/ccavenue/encrypt", {
+      // Get encrypted order data
+      const encResponse = await fetch("/api/ccavenue/encrypt", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(paymentData),
       })
 
-      if (!response.ok) {
+      if (!encResponse.ok) {
         throw new Error("Failed to encrypt order data")
       }
 
-      const { encRequest } = await response.json()
+      const { encRequest } = await encResponse.json()
 
+      // Create and submit form to CCAvenue — exactly like reference code
       const form = document.createElement("form")
       form.method = "POST"
-      form.action = "https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"
+      form.action =
+        "https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"
 
       const fields = {
         encRequest,
@@ -177,11 +177,9 @@ export default function Ticket() {
       document.body.appendChild(form)
       form.submit()
     } catch (error) {
-      console.error("Payment initiation failed:", error)
-      alert("Failed to initiate payment. Please try again.")
-    } finally {
+      console.error("Payment processing error:", error)
       setIsLoading(false)
-      closePaymentPopup()
+      alert("There was an error processing your payment. Please try again.")
     }
   }
 
@@ -241,7 +239,7 @@ export default function Ticket() {
             {/* Nested tabs for Local/International - Without Accommodation */}
             <div className="mb-12">
               <h3 className="text-2xl font-bold mb-6 text-center text-blue-700">Without Accommodation</h3>
-              
+
               <Tabs defaultValue="local-physical-no-accom" className="w-full">
                 <div className="flex justify-center mb-6">
                   <TabsList className="bg-blue-100 p-1 rounded-full">
@@ -443,7 +441,7 @@ export default function Ticket() {
             {/* Nested tabs for Local/International - With Accommodation */}
             <div className="mb-12">
               <h3 className="text-2xl font-bold mb-6 text-center text-blue-700">With Accommodation</h3>
-              
+
               <Tabs defaultValue="local-physical-with-accom" className="w-full">
                 <div className="flex justify-center mb-6">
                   <TabsList className="bg-blue-100 p-1 rounded-full">
