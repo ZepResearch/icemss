@@ -19,15 +19,15 @@ export default function ModeOfPresent() {
       content:
         "10 min. presentation. Submit your presentation at info@icemss.in.",
     },
-    {
-      title: "Poster Presentation",
-      description:
-        "Showcase your work visually with an academic poster. Poster presentations offer a unique opportunity to present your research in a concise, visually appealing format.",
-      icon: ImageIcon,
-      image: "https://images.unsplash.com/photo-1652422485236-886645c581a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      content:
-        "Poster presentation.",
-    },
+    // {
+    //   title: "Poster Presentation",
+    //   description:
+    //     "Showcase your work visually with an academic poster. Poster presentations offer a unique opportunity to present your research in a concise, visually appealing format.",
+    //   icon: ImageIcon,
+    //   image: "https://images.unsplash.com/photo-1652422485236-886645c581a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    //   content:
+    //     "Poster presentation.",
+    // },
     {
       title: "Virtual Presentation",
       description:

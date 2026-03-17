@@ -182,7 +182,7 @@ export default function ConferenceAboutSection() {
                 <div className="space-y-6">
                   {reasonsToAttend.map((reason, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                      {/* <CheckCircle2 className="h-6 w-6 text-primary mt-1 flex-shrink-0" /> */}
                       <div>
                         <h4 className="font-semibold text-primary text-lg mb-1">{(index + 1) + ". " + reason.title}</h4>
                         <p className="text-muted-foreground">{reason.description}</p>

@@ -9,7 +9,7 @@ import { Check, Star, Diamond, Award, Medal } from 'lucide-react'
 const packages = [
   {
     name: "Platinum",
-    price: 15000,
+    price: 6000,
     color: "bg-gradient-to-br from-blue-400 to-blue-600",
     icon: Star,
     benefits: [
@@ -26,7 +26,7 @@ const packages = [
   },
   {
     name: "Gold",
-    price: 12000 ,
+    price: 4000 ,
     color: "bg-gradient-to-br from-blue-300 to-blue-500",
     icon: Diamond,
     benefits: [
@@ -43,7 +43,7 @@ const packages = [
   },
   {
     name: "Silver",
-    price: 10000 ,
+    price: 2000 ,
     color: "bg-gradient-to-br from-blue-200 to-blue-400",
     icon: Award,
     benefits: [
@@ -58,7 +58,7 @@ const packages = [
   },
   {
     name: "Bronze",
-    price: 7500 ,
+    price: 1000 ,
     color: "bg-gradient-to-br from-blue-100 to-blue-300",
     icon: Medal,
     benefits: [
