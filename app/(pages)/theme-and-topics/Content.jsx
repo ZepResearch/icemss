@@ -158,8 +158,7 @@ export default function ThemeAndTopics() {
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-primary text-white">Conference Themes</Badge>
           <h2 className="text-4xl font-bold  mb-4">4<sup>th</sup> International Conference on Engineering, Management and Social Sciences (ICEMSS)</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Advancing Knowledge Through Interdisciplinary Research and Innovation
-          </p>
+Integrating Engineering, Management, and Social Sciences for a Sustainable Future          </p>
         </motion.div>
 
         <motion.div variants={itemVariants}>

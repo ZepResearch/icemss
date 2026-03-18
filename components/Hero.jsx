@@ -6,7 +6,7 @@ export function Hero() {
     <DicedHeroSection
       topText="Join Us"
       mainText="4th International Conference on Engineering, Management and Social Sciences"
-      subMainText="Bridging disciplines, fostering innovation, and addressing global challenges through interdisciplinary research and collaboration"
+      subMainText="Integrating Engineering, Management, and Social Sciences for a Sustainable Future  "
       buttonText="Register Now"
       slides={[
         {
@@ -44,7 +44,7 @@ export function Hero() {
       }}
       subMainTextStyle={{ 
         color: "#4a5568",
-        fontSize: "1.1rem",
+        fontSize: "1.6rem",
         lineHeight: "1.6",
         marginBottom: "2rem"
       }}
