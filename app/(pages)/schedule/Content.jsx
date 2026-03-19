@@ -12,7 +12,6 @@ const addDays = (date, days) => {
   return result
 }
 import { Clock, Coffee, Users, Mic, BookOpen, Camera, Award, UserCheck } from "lucide-react"
-
 const scheduleData = [
   {
     date: "Day 1",
@@ -40,21 +39,19 @@ const scheduleData = [
     items: [
       { time: "08:30 - 09:00 AM", title: "Registration", type: "registration", icon: Users },
       { time: "09:00 - 09:20 AM", title: "Introduction by Moderator", type: "intro", icon: Mic },
-      { time: "09:20 - 09:25 AM", title: "Book Release", type: "ceremony", icon: BookOpen },
-      { time: "09:25 - 09:35 AM", title: "Welcome Speech by Organizing Secretary", type: "session", icon: Mic },
-      { time: "09:35 - 09:45 AM", title: "Speech by Conference Co-Chair", type: "session", icon: UserCheck },
-      { time: "09:45 - 09:55 AM", title: "Speech by Conference Chair", type: "session", icon: UserCheck },
-      { time: "09:55 - 10:10 AM", title: "Keynote Speech by Dr. Elenita M. Tiamzon", type: "keynote", icon: Mic },
-      { time: "10:10 - 10:25 AM", title: "Keynote Speech by Dr. Chai Ching Tan", type: "keynote", icon: Mic },
-      { time: "10:25 - 10:35 AM", title: "Tea Break", type: "break", icon: Coffee },
-      { time: "10:35 AM - 12:00 PM", title: "Technical Session 1 (Engineering)", type: "technical", icon: BookOpen },
+      { time: "09:20 - 09:30 AM", title: "Welcome Speech by Organizing Secretary", type: "session", icon: Mic },
+      { time: "09:30 - 09:40 AM", title: "Speech by Conference Co-Chair", type: "session", icon: UserCheck },
+      { time: "09:40 - 09:50 AM", title: "Speech by Conference Chair", type: "session", icon: UserCheck },
+      { time: "09:50 - 10:05 AM", title: "Keynote Speech by Dr. Elenita M. Tiamzon", type: "keynote", icon: Mic },
+      { time: "10:05 - 10:20 AM", title: "Keynote Speech by Dr. Chai Ching Tan", type: "keynote", icon: Mic },
+      { time: "10:20 - 10:30 AM", title: "Tea Break", type: "break", icon: Coffee },
+      { time: "10:30 AM - 12:00 PM", title: "Technical Session 1 (Engineering)", type: "technical", icon: BookOpen },
       { time: "12:00 - 01:00 PM", title: "Lunch Break", type: "break", icon: Coffee },
       { time: "01:00 - 02:30 PM", title: "Technical Session 2 (Management)", type: "technical", icon: BookOpen },
       { time: "02:30 - 03:30 PM", title: "Technical Session 3 (Social Sciences)", type: "technical", icon: BookOpen },
       { time: "03:30 - 03:40 PM", title: "Tea Break", type: "break", icon: Coffee },
       { time: "03:40 - 04:30 PM", title: "Panel Discussion", type: "panel", icon: Users },
-            { time: "04:30 PM - 05:00 PM", title: "Valedictory Function", type: "ceremony", icon: Award },
-
+      { time: "04:30 - 05:00 PM", title: "Valedictory Function", type: "ceremony", icon: Award },
     ],
   },
 ]
