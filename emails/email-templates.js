@@ -284,7 +284,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
     </div>
 
     <div class="footer">
-      <p>© 2025 International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
+      <p>©  International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
     </div>
 
   </body>
