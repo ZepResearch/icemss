@@ -16,7 +16,7 @@ export function getUserEmailTemplate(data) {
       }
 
       .header {
-        background-color: #6a1b9a;
+        background-color: #1565c0;
         color: white;
         padding: 20px;
         text-align: center;
@@ -33,6 +33,7 @@ export function getUserEmailTemplate(data) {
         border: 1px solid #ddd;
         border-top: none;
         border-radius: 0 0 5px 5px;
+        background-color: #ffffff;
       }
 
       .footer {
@@ -48,7 +49,7 @@ export function getUserEmailTemplate(data) {
 
       .highlight {
         font-weight: bold;
-        color: #6a1b9a;
+        color: #1565c0;
       }
     </style>
   </head>
@@ -56,7 +57,7 @@ export function getUserEmailTemplate(data) {
   <body>
 
     <div class="header">
-      <h1>3rd International Conference on Engineering, Management and Social Sciences</h1>
+      <h1>International Conference on Engineering, Management and Social Sciences</h1>
     </div>
 
     <div class="content">
@@ -65,7 +66,7 @@ export function getUserEmailTemplate(data) {
       <p>
         Thank you for submitting your paper titled 
         <span class="highlight">"${data.paper_title}"</span> 
-        to the 3rd International Conference on Engineering, Management and Social Sciences.
+        to the International Conference on Engineering, Management and Social Sciences.
       </p>
 
       <p>
@@ -90,12 +91,12 @@ export function getUserEmailTemplate(data) {
       <p>
         Best regards,<br>
         Conference Organizing Committee<br>
-        3rd International Conference on Engineering, Management and Social Sciences
+        International Conference on Engineering, Management and Social Sciences
       </p>
     </div>
 
     <div class="footer">
-      <p>© 2025 3rd International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
+      <p>© 2025 International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
     </div>
 
   </body>
@@ -122,7 +123,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
       }
 
       .header {
-        background-color: #6a1b9a;
+        background-color: #1565c0;
         color: white;
         padding: 20px;
         text-align: center;
@@ -139,6 +140,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
         border: 1px solid #ddd;
         border-top: none;
         border-radius: 0 0 5px 5px;
+        background-color: #ffffff;
       }
 
       .footer {
@@ -168,11 +170,12 @@ export function getAdminEmailTemplate(data, fileUrl) {
       }
 
       th {
-        background-color: #f2f2f2;
+        background-color: #e3f2fd;
+        color: #1565c0;
       }
 
       .file-link {
-        color: #6a1b9a;
+        color: #1565c0;
         text-decoration: underline;
       }
     </style>
@@ -187,7 +190,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
 
     <div class="content">
 
-      <p>A new paper has been submitted to the 3rd International Conference on Engineering, Management and Social Sciences.</p>
+      <p>A new paper has been submitted to the International Conference on Engineering, Management and Social Sciences.</p>
 
       <h2>Submission Details</h2>
 
@@ -281,7 +284,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
     </div>
 
     <div class="footer">
-      <p>© 2025 3rd International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
+      <p>© 2025 International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
     </div>
 
   </body>
