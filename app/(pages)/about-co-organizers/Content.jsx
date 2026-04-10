@@ -89,47 +89,47 @@ const organizersData = [
   //     gradient: 'from-red-700 to-red-400'
   //   }
   // },
-  // {
-  //   id: 3,
-  //   name: "Asia Pacific Society of Educators, Researchers and Professionals",
-  //   logo: "/co-org/PCERP.jpeg",
-  //   image: "/co-org/asperp-event.jpg",
-  //   about: "The Asia Pacific Society of Educators, Researchers and Professionals is an academic organization that promotes collaboration among teachers, researchers, and professionals across the Asia-Pacific region. It organizes conferences, workshops, and research activities to support knowledge sharing, professional development, and innovation in education, science, technology, and other academic and professional fields.",
-  //   vision: "To be the leading network of educators and researchers dedicated to improving education and professional practices in the Asia-Pacific.",
-  //   mission: "To foster partnerships, organize knowledge-sharing events, and support research initiatives that elevate teaching and learning across the region.",
-  //   mandate: "APSERP is committed to strengthening education by creating platforms for collaboration, professional development, and research dissemination.",
-  //   coreValues: [
-  //     { letter: 'A', value: 'Academia', color: 'bg-emerald-600' },
-  //     { letter: 'P', value: 'Partnership', color: 'bg-blue-700' },
-  //     { letter: 'S', value: 'Service', color: 'bg-emerald-600' },
-  //     { letter: 'E', value: 'Excellence', color: 'bg-blue-700' },
-  //     { letter: 'R', value: 'Research', color: 'bg-emerald-600' }
-  //   ],
-  //   culture: [
-  //     "Collaborative Research",
-  //     "Professional Growth",
-  //     "Innovation in Education",
-  //     "Global Networking"
-  //   ],
-  //   competencies: [
-  //     "Conference and Workshop Organization",
-  //     "Research Collaboration",
-  //     "Professional Development",
-  //     "Cross-cultural Knowledge Exchange"
-  //   ],
-  //   accreditations: [
-  //     { name: "International Network", logo: "/images/world.png" }
-  //   ],
-  //   contact: {
-  //     website: "https://www.facebook.com/profile.php?id=61572166725005",
-  //     email: "apserp2025@gmail.com",
-  //     facebook: "www.facebook.com/profile.php?id=61572166725005"
-  //   },
-  //   theme: {
-  //     primary: 'emerald',
-  //     gradient: 'from-emerald-700 to-emerald-400'
-  //   }
-  // },
+  {
+    id: 3,
+    name: "Asia Pacific Society of Educators, Researchers and Professionals",
+    logo: "/co-org/PCERP.jpeg",
+    image: "/co-org/asperp-event.jpg",
+    about: "The Asia Pacific Society of Educators, Researchers and Professionals is an academic organization that promotes collaboration among teachers, researchers, and professionals across the Asia-Pacific region. It organizes conferences, workshops, and research activities to support knowledge sharing, professional development, and innovation in education, science, technology, and other academic and professional fields.",
+    vision: "To be the leading network of educators and researchers dedicated to improving education and professional practices in the Asia-Pacific.",
+    mission: "To foster partnerships, organize knowledge-sharing events, and support research initiatives that elevate teaching and learning across the region.",
+    mandate: "APSERP is committed to strengthening education by creating platforms for collaboration, professional development, and research dissemination.",
+    coreValues: [
+      { letter: 'A', value: 'Academia', color: 'bg-emerald-600' },
+      { letter: 'P', value: 'Partnership', color: 'bg-blue-700' },
+      { letter: 'S', value: 'Service', color: 'bg-emerald-600' },
+      { letter: 'E', value: 'Excellence', color: 'bg-blue-700' },
+      { letter: 'R', value: 'Research', color: 'bg-emerald-600' }
+    ],
+    culture: [
+      "Collaborative Research",
+      "Professional Growth",
+      "Innovation in Education",
+      "Global Networking"
+    ],
+    competencies: [
+      "Conference and Workshop Organization",
+      "Research Collaboration",
+      "Professional Development",
+      "Cross-cultural Knowledge Exchange"
+    ],
+    accreditations: [
+      { name: "International Network", logo: "/images/world.png" }
+    ],
+    contact: {
+      website: "https://www.facebook.com/profile.php?id=61572166725005",
+      email: "apserp2025@gmail.com",
+      facebook: "www.facebook.com/profile.php?id=61572166725005"
+    },
+    theme: {
+      primary: 'emerald',
+      gradient: 'from-emerald-700 to-emerald-400'
+    }
+  },
   // {
   //   id: 4,
   //   name: "FEATI University",

@@ -9,10 +9,10 @@ const logos = [
   //   name: "Company 2",
   //   src: "/co-org/FU.jpeg",
   // },
-  // {
-  //   name: "Company 3",
-  //   src: "/co-org/PCERP.jpeg",
-  // },
+  {
+    name: "Company 3",
+    src: "/co-org/PCERP.jpeg",
+  },
   // {
   //   name: "Company 4",
   //   src: "/co-org/PUTP.jpeg",
