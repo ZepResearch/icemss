@@ -93,7 +93,8 @@ export default function ThemeAndTopics() {
       "Waste Management and Circular Economy",
       "Climate-Responsive Engineering",
       "Sustainable Transport and Urban Infrastructure",
-      "Tourism Management and Climate Change"
+      "Tourism Management and Climate Change",
+      "Wellness, Sports & Fitness Management"
     ]
   },
   {
