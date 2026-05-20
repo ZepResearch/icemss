@@ -98,8 +98,8 @@ export default function Ticket() {
   const physicalAttendeeOptions = [
     { key: "local", label: "Local" },
     { key: "international", label: "International" },
-    { key: "localWithAccom", label: "Local + Accommodation" },
-    { key: "intlWithAccom", label: "Intl. + Accommodation" },
+    // { key: "localWithAccom", label: "Local + Accommodation" },
+    // { key: "intlWithAccom", label: "Intl. + Accommodation" },
   ]
 
   const virtualAttendeeOptions = [
