@@ -79,7 +79,7 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased mt-12`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         {/* <DownloadPopup/> */}
         <div className="sticky top-0 z-50 bg-white">

@@ -150,11 +150,11 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90  py-4">
+    <div className="border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90  py-2">
       <div className="max-w-screen-2xl mx-auto flex  items-center justify-between px-3">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <Image src="/logo.png" alt="Climate Conference Logo" className=" w-auto" width={120} height={32} />
+            <Image src="/logo.png" alt="Climate Conference Logo" className=" w-auto h-12" width={120} height={32} />
           </Link>
         </div>
 

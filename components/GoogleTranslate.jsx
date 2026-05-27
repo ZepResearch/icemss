@@ -41,7 +41,7 @@ export default function GoogleTranslate() {
       <style jsx global>{`
         /* Space above site (like selected language state) */
         .translate-top-spacer {
-          height: 15px;
+          height: 5px;
           width: 100%;
         }
 
@@ -56,7 +56,7 @@ export default function GoogleTranslate() {
         .translate-inner {
           max-width: 1280px;
           margin: 0 auto;
-          padding: 10px 16px;
+          padding: 3px 16px;
           display: flex;
           justify-content: flex-end;
           align-items: center;
