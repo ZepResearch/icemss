@@ -1,9 +1,9 @@
 import React from 'react'
 import AboutCompany from './Content'
 export const metadata = {
-  title: 'Zep Research - International Conference on Engineering, Management and Social Sciences 2025',
-  description: 'Join Zep Research\'s premier tourism and hospitality conference in Delhi. Connect with 500+ industry professionals, researchers, and international speakers.',
-  keywords: ['tourism conference', 'hospitality conference', 'Zep Research', 'tourism management', 'Delhi conference 2025'],
+  title: 'Zep Research - International Conference on Engineering, Management and Social Sciences ',
+  description: 'Join Zep Research premier tourism and hospitality conference. Connect with 500+ industry professionals, researchers, and international speakers.',
+  keywords: ['tourism conference', 'hospitality conference', 'Zep Research', 'tourism management', ' conference '],
   alternates: {
     canonical: 'https://www.icemss.in/about-organizers',
   },
@@ -15,7 +15,7 @@ export const metadata = {
         url: '/conference-og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Engineering, Management and Social Sciences 2025',
+        alt: 'Engineering, Management and Social Sciences ',
       },
     ],
     type: 'website',

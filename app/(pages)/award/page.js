@@ -15,7 +15,7 @@ export const metadata = {
     "student presentation award",
     "academic conference awards",
     "tourism research recognition",
-    "ICTMH 2025 awards",
+    "ICTMH  awards",
   ],
   alternates: {
     canonical: "https://www.icemss.in/award",
