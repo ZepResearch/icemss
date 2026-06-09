@@ -110,9 +110,14 @@ export default function CTASection() {
                         <span>4<sup>th</sup> - 5<sup>th</sup> NOVEMBER  2026</span>
                       </div>
                       <div className="flex items-center gap-2">
-                                           <MapPin className="w-5 h-5 text-primary" />
-                         <span>Tokyo, Japan
-      </span>
+                        <MapPin className="w-5 h-5 text-primary" />
+                         <span>Tokyo, Japan</span>
+                    
+                      </div>
+                     <div className="flex items-center gap-2">
+                        <Building2 className="w-5 h-5 text-primary" />
+                        <span>      SONIC CITY ソニックシティ
+〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5</span>
                       </div>
                     </div>
                     <div className="space-y-4">

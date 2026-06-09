@@ -34,6 +34,11 @@ export default function VenueCTA() {
                   Tokyo, Japan
                 </span>
               </div>
+              <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
+                <Home className="text-blue-300 w-10" />
+                <span className="font-medium ">SONIC CITY ソニックシティ
+〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5</span>
+              </div>
               
               
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">

@@ -112,13 +112,14 @@ export default function VenuePage() {
                         <h3 className="text-lg font-medium text-[#1a1a1a]">Address</h3>
                       </div>
                       <p className="text-gray-700">
-                       Tokyo , Japan
-                      </p>
+                SONIC CITY ソニックシティ
+                〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5              
+                        </p>
                     </div>
                   </div>
 
                   <div className="mt-8">
-                    <Link href="https://maps.app.goo.gl/cpvbkEnCfUu1xPWy7" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://maps.app.goo.gl/XnknC1bhPmqZYCHZ7" target="_blank" rel="noopener noreferrer">
                     <Button className="bg-[#0078d4] hover:bg-[#005a9e] text-white rounded-full">
                       <Navigation className="mr-2 h-5 w-5" />
                       Get Directions
@@ -154,10 +155,9 @@ export default function VenuePage() {
 
           <div className="relative bg-gray-50 rounded-3xl border border-gray-200 overflow-hidden p-4 shadow-lg">
             <div className="absolute -inset-px rounded-3xl bg-[#50b8e7]/10 opacity-50"></div>
-
             <div className="relative rounded-2xl overflow-hidden h-[500px] w-full bg-gray-100 flex items-center justify-center">
               <iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d569604.2225943045!2d139.4547457242815!3d35.47304027695781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2sTokyo%2C%20Japan!5e0!3m2!1sen!2sin!4v1770024180818!5m2!1sen!2sin"                height="100%" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.7039733539173!2d139.6197096!3d35.905265199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018c14334b5b89f%3A0x1f5fecd47f68d7f1!2sSONIC%20CITY!5e0!3m2!1sen!2sin!4v1780991510000!5m2!1sen!2sin"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
