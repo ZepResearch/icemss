@@ -34,7 +34,8 @@ export default function VenuePage() {
             </h1>
             <p className="text-xl text-[#0078d4] mb-4">4th International Conference on Engineering, Management and Social Sciences</p>
             <p className="text-lg text-gray-600">4th - 5th November 2026 | Tokyo,Japan</p>
-          </div>
+            <p className="text-lg text-gray-600">SONIC CITY ソニックシティ 〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5</p>
+           </div>
         </div>
       </section>
 
