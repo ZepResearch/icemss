@@ -29,11 +29,19 @@ export function SpeakerDrawer({ isOpen, onClose, speaker }) {
               className="w-full h-[270px] object-contain rounded-lg shadow-lg mb-4"
             />
           )}
-            <p className="text-blue-600 font-semibold text-base mb-3">{speaker.role}</p>
+            {speaker.role && (
+              <p className="text-blue-600 font-semibold text-base mb-3">{speaker.role}</p>
+            )}
             <hr />
-                                <p className="text-blue-600 font-medium text-sm mb-1 inline-flex items-center gap-3"><GraduationCap/>{speaker.college}</p>
-                                <p className="text-blue-600 font-medium text-sm mb-1 inline-flex items-center gap-3"><CopySlashIcon/>{speaker.field}</p>
-                                <p className="text-blue-600 font-medium text-sm mb-3 inline-flex items-center gap-3"><MapPin/>{speaker.country}</p>
+            {speaker.college && (
+              <p className="text-blue-600 font-medium text-sm mb-1 inline-flex items-center gap-3"><GraduationCap/>{speaker.college}</p>
+            )}
+            {speaker.field && (
+              <p className="text-blue-600 font-medium text-sm mb-1 inline-flex items-center gap-3"><CopySlashIcon/>{speaker.field}</p>
+            )}
+            {speaker.country && (
+              <p className="text-blue-600 font-medium text-sm mb-3 inline-flex items-center gap-3"><MapPin/>{speaker.country}</p>
+            )}
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
