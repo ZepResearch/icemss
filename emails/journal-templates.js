@@ -1,3 +1,5 @@
+import { CONFERENCE } from "@/constants/conference";
+
 export function getUserEmailTemplate(data) {
   return `
   <!DOCTYPE html>
@@ -191,8 +193,8 @@ export function getUserEmailTemplate(data) {
     <div class="email-container">
       <div class="header">
         <div class="header-content">
-          <h1 class="conference-logo">ICEMSS</h1>
-          <p class="conference-subtitle">International Conference on Engineering, Management and Social Sciences</p>
+          <h1 class="conference-logo">${CONFERENCE.shortForm}</h1>
+          <p class="conference-subtitle">${CONFERENCE.name}</p>
           
         </div>
       </div>
@@ -203,7 +205,7 @@ export function getUserEmailTemplate(data) {
         <div class="main-message">
           Thank you for submitting your research paper 
           <span class="paper-title">"${data.paper_title}"</span> 
-          to the International Conference on Engineering, Management and Social Sciences (ICEMSS).
+          to ${CONFERENCE.name} (${CONFERENCE.shortForm}).
         </div>
         
         <p>We are pleased to confirm that your submission has been received and is now under review by our distinguished panel of experts. You will be notified about the review outcome and conference acceptance status within the next 2-3 weeks.</p>
@@ -214,7 +216,7 @@ export function getUserEmailTemplate(data) {
             
             <li>
               <span class="info-label">Conference Focus</span>
-              <span class="info-value">Engineering, Management and Social Sciences</span>
+              <span class="info-value">${CONFERENCE.name.replace(/^\d+\s*(?:th|st|nd|rd)?\s+/i, '').replace(/International Conference on /i, '')}</span>
             </li>
           </ul>
         </div>
@@ -241,7 +243,7 @@ export function getUserEmailTemplate(data) {
             </li>
             <li>
               <span class="info-label">Submission ID</span>
-              <span class="info-value">ICEMSS-${new Date().getFullYear()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}</span>
+              <span class="info-value">${CONFERENCE.shortForm.replace(/\s+/g, '').toUpperCase()}-${new Date().getFullYear()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}</span>
             </li>
           </ul>
         </div>
@@ -256,13 +258,13 @@ export function getUserEmailTemplate(data) {
         <div class="signature">
           <div class="signature-title">Best regards,</div>
           Conference Organizing Committee<br>
-          ICEMSS - International Conference on Engineering, Management and Social Sciences<br>
+          ${CONFERENCE.shortForm} - ${CONFERENCE.name}<br>
           📧 info@icemss.in
         </div>
       </div>
       
       <div class="footer">
-        <p>© ${new Date().getFullYear()} ICEMSS Conference. All rights reserved.</p>
+        <p>© ${new Date().getFullYear()} ${CONFERENCE.shortForm} Conference. All rights reserved.</p>
         <div class="footer-links">
           <a href="#">Conference Website</a>
           <a href="#">Program Schedule</a>

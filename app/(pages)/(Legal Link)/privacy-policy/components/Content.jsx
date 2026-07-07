@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { CONFERENCE } from "@/constants/conference"
 
 
 export default function PrivacyPolicy() {
@@ -62,7 +63,7 @@ export default function PrivacyPolicy() {
           <Card className="bg-white border-2 border-blue-200">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-blue-700">
-                International Conference on Engineering, Management and Social Sciences
+                {CONFERENCE.name}
               </CardTitle>
             </CardHeader>
             <CardContent>

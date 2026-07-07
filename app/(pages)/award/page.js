@@ -3,9 +3,10 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Trophy, Star, Users, ArrowRight, GraduationCap, DollarSign, FileCheck, Award } from "lucide-react"
 import Link from "next/link"
+import { CONFERENCE } from "@/constants/conference"
 
 export const metadata = {
-  title: "Conference Awards | International Conference on Tourism Management and Hospitality ",
+  title: `Conference Awards | ${CONFERENCE.name}`,
   description:
     "Prestigious awards recognizing excellence in tourism and hospitality research. Best Paper, Best Presentation, and Student Presentation awards available at.",
   keywords: [
@@ -21,9 +22,9 @@ export const metadata = {
     canonical: "https://www.icemss.in/award",
   },
   openGraph: {
-    title: "Conference Awards - ",
+    title: `Conference Awards - ${CONFERENCE.name}`,
     description:
-      "Win prestigious awards for excellence in tourism and hospitality research at . Best Paper and Presentation awards available.",
+      `Win prestigious awards for excellence in tourism and hospitality research at ${CONFERENCE.NAME}. Best Paper and Presentation awards available.`,
 
     type: "website",
   },
@@ -61,8 +62,7 @@ export default function AwardsPage() {
             Scholarships & Awards
           </h1>
           <p className="text-xl max-w-2xl mx-auto">
-            Supporting young scholars and recognizing excellence in 4<sup>th</sup> International Conference on
-            Engineering, Management and Social Sciences
+            Supporting young scholars and recognizing excellence in {CONFERENCE.name}.
           </p>
         </div>
 
@@ -187,8 +187,7 @@ export default function AwardsPage() {
         <div className="bg-blue-500 rounded-lg shadow-xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Don&apos;t Miss Your Chance to Win!</h2>
           <p className="text-xl text-blue-100 mb-6">
-            Register now for the 4<sup>th</sup> International Conference on Engineering, Management and Social Sciences
-            and showcase your research.
+            Register now for the {CONFERENCE.name} and showcase your research.
           </p>
           <Link href={"/registration"}>
             <Button className="bg-white text-blue-600 hover:bg-blue-100 text-lg px-8 py-3 rounded-full font-semibold transition-colors duration-300">

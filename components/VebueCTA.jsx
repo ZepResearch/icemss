@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
+import { CONFERENCE } from "@/constants/conference";
 
 export default function VenueCTA() {
   return (
@@ -23,7 +24,7 @@ export default function VenueCTA() {
         <div className="relative z-20 text-white p-8 lg:p-12">
           <CardHeader className="p-0 mb-6">
             <CardTitle className="text-4xl font-bold mb-2">
-            4<sup>th</sup> ICEMSS Conference Venue
+            {CONFERENCE.shortForm} Conference Venue
             </CardTitle>
           </CardHeader>
           <CardContent className="p-0 space-y-6">
@@ -31,24 +32,23 @@ export default function VenueCTA() {
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
                 <MapPin className="text-blue-300" />
                 <span className="font-medium">
-                  Tokyo, Japan
+                  {CONFERENCE.venue.location}
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
                 <Home className="text-blue-300 w-10" />
-                <span className="font-medium ">SONIC CITY ソニックシティ
-〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5</span>
+                <span className="font-medium ">{CONFERENCE.venue.name}<br />{CONFERENCE.venue.address}</span>
               </div>
               
               
               <div className="flex items-center gap-2 bg-white bg-opacity-10 p-3 rounded-lg">
                 <Calendar className="text-blue-300" />
-                <span className="font-medium">November 4th - 5th, 2026</span>
+                <span className="font-medium">{CONFERENCE.date}</span>
               </div>
             </div>
             <p className="text-base leading-relaxed">
               Experience the future of sustainable conferences at our
-              state-of-the-art Eco Conference Center. Powered by 100%
+              state-of-the-art venue for {CONFERENCE.shortForm}. Powered by 100%
               renewable energy and featuring cutting-edge blue architecture.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-6">

@@ -1,3 +1,5 @@
+import { CONFERENCE } from "@/constants/conference";
+
 const ClientConfirmationEmail = (data) => {
     return `
   <!DOCTYPE html>
@@ -72,7 +74,7 @@ const ClientConfirmationEmail = (data) => {
           <div class="content">
               <div class="message">
                   <p>Dear ${data.authorName},</p>
-                  <p>Thank you for your submission to the International Conference on Engineering, Management and Social Sciences (ICEMSS). We have received your paper and our team will review it shortly.</p>
+                  <p>Thank you for your submission to ${CONFERENCE.name} (${CONFERENCE.shortForm}). We have received your paper and our team will review it shortly.</p>
                   <p>Here's a summary of the information you provided:</p>
                   <ul>
                       <li><strong>Author Name:</strong> ${data.authorName}</li>
@@ -86,11 +88,11 @@ const ClientConfirmationEmail = (data) => {
                       <li><strong>Presentation Type:</strong> ${data.presentationType}</li>
                   </ul>
                   <p>If you need to make any changes to your submission or have any questions, please don't hesitate to contact us.</p>
-                  <p>Best regards,<br>ICEMSS Organizing Committee</p>
+                  <p>Best regards,<br>${CONFERENCE.shortForm} Organizing Committee</p>
               </div>
           </div>
           <div class="footer">
-              This is an automated response to your paper submission for ICEMSS. Please do not reply to this email.
+              This is an automated response to your paper submission for ${CONFERENCE.shortForm}. Please do not reply to this email.
           </div>
       </div>
   </body>

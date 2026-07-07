@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Calendar, FileText, UserPlus, Zap, File, Lightbulb, Users, Globe, PanelBottom, Group, User2Icon } from 'lucide-react'
 import Link from 'next/link'
 import { pb } from '@/lib/pocketbase'
+import { CONFERENCE } from '@/constants/conference'
 
 export default function ThemeAndTopics() {
   const [dates, setDates] = useState([])
@@ -157,7 +158,7 @@ export default function ThemeAndTopics() {
       <div className="max-w-6xl mx-auto">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1 bg-primary text-white">Conference Themes</Badge>
-          <h2 className="text-4xl font-bold  mb-4">4<sup>th</sup> International Conference on Engineering, Management and Social Sciences (ICEMSS)</h2>
+          <h2 className="text-4xl font-bold  mb-4">{CONFERENCE.name}</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
 Integrating Engineering, Management, and Social Sciences for a Sustainable Future          </p>
         </motion.div>
@@ -169,7 +170,7 @@ Integrating Engineering, Management, and Social Sciences for a Sustainable Futur
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-gray-700">
-                The 4<sup>th</sup> International Conference on Engineering, Management and Social Sciences (ICEMSS) serves as a premier forum for researchers, practitioners, and academics to share their latest findings and innovations across these diverse yet interconnected fields. This conference aims to foster collaboration and knowledge exchange between different disciplines.
+                The {CONFERENCE.name} serves as a premier forum for researchers, practitioners, and academics to share their latest findings and innovations across these diverse yet interconnected fields. This conference aims to foster collaboration and knowledge exchange between different disciplines.
               </p>
               <p className="leading-relaxed text-lg text-gray-700 mt-4">
                 We welcome original research papers, case studies, and theoretical frameworks that demonstrate excellence in engineering, management practices, and social sciences, with particular emphasis on work that bridges multiple disciplines or addresses contemporary global challenges.
@@ -188,7 +189,7 @@ Integrating Engineering, Management, and Social Sciences for a Sustainable Futur
             </CardHeader>
             <CardContent className="p-6">
               <p className="mb-6 text-lg text-gray-800">
-                ICEMSS 2026 features the following main tracks, each encompassing various sub-themes. We encourage submissions that demonstrate innovation and cross-disciplinary approaches:
+                {CONFERENCE.shortForm} {CONFERENCE.year} features the following main tracks, each encompassing various sub-themes. We encourage submissions that demonstrate innovation and cross-disciplinary approaches:
               </p>
               <Accordion type="single" collapsible className="w-full">
                 {topics.map((topic, index) => (

@@ -6,6 +6,7 @@ import { CheckCircle2 } from 'lucide-react'
 import Image from "next/image"
 import { Button } from "./ui/button"
 import Link from "next/link"
+import { CONFERENCE } from "@/constants/conference"
 
 export default function AboutSection() {
   const containerVariants = {
@@ -69,7 +70,7 @@ export default function AboutSection() {
                 Experience the Premier Academic Conference
               </h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                Join us for an enriching experience that brings together the brightest minds in engineering, management, and social sciences for groundbreaking discussions and collaborations.
+                Join us for an enriching experience at {CONFERENCE.name}, where the brightest minds in engineering, management, and social sciences come together for groundbreaking discussions and collaborations.
               </p>
               <Link href={'/about-conference'}>
               <Button className='border-2 border-blue-200 mt-4' variant='outline'>Learn more</Button>

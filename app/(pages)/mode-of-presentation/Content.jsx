@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mic, Image as ImageIcon, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { CONFERENCE } from "@/constants/conference";
 
 export default function ModeOfPresent() {
   const [activeMode, setActiveMode] = useState(null);
@@ -47,18 +48,17 @@ export default function ModeOfPresent() {
     },
   };
   return (
-    <div className="min-h-screen">
+    <div className="min-h-full">
       <div className="container mx-auto px-4 py-16">
         <motion.div variants={itemVariants} className="text-center mb-12">
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1">
             Mode of Presentation
           </Badge>
           <h1 className="text-4xl font-bold text-primary mb-4">
-          4<sup>th</sup> International Conference on Engineering, Management and Social Sciences
+          {CONFERENCE.name}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose your preferred method of presenting at the International
-            Conference on  Engineering, Management and Social Sciences
+            Choose your preferred method of presenting at the {CONFERENCE.name}
           </p>
         </motion.div>
         {/* <motion.h1
@@ -119,12 +119,12 @@ export default function ModeOfPresent() {
                         Present your research live and engage with the audience. Receive immediate feedback and participate in Q&A sessions.
                       </>
                     )}
-                    {mode.title === "Poster Presentation" && (
+                    {/* {mode.title === "Poster Presentation" && (
                       <>
                         <strong>Poster presentation</strong><br />
                         Display your research visually and interact with attendees during the poster session. Posters will be showcased at the conference venue and available for download online.
                       </>
-                    )}
+                    )} */}
                     {mode.title === "Virtual Presentation" && (
                       <>
                         <strong>Virtual presentation (Via Zoom Platform)</strong><br />

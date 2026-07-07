@@ -1,3 +1,5 @@
+import { CONFERENCE } from "@/constants/conference";
+
 const PaymentInitiatedEmail = (data) => {
     return `
   <!DOCTYPE html>
@@ -95,12 +97,12 @@ const PaymentInitiatedEmail = (data) => {
   <body>
       <div class="container">
           <div class="header">
-              <h1> International Conference on Engineering, Management and Social Sciences</h1>
+              <h1>${CONFERENCE.name}</h1>
           </div>
           <div class="content">
               <div class="message">
                   <p>Dear ${data.billing_name},</p>
-                  <p>Thank you for initiating your registration payment for the  International Conference on Engineering, Management and Social Sciences. We have received your payment request for:</p>
+                  <p>Thank you for initiating your registration payment for ${CONFERENCE.name}. We have received your payment request for:</p>
                   <ul>
                       <li><strong>Registration ID:</strong> ${data.order_id}</li>
                       <li><strong>Name:</strong> ${data.billing_name}</li>
@@ -123,7 +125,7 @@ const PaymentInitiatedEmail = (data) => {
           </div>
           <div class="footer">
               <p>This is an automated message. Please do not reply to this email.</p>
-              <p>&copy; 2025 2nd International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
+              <p>&copy; ${new Date().getFullYear()} ${CONFERENCE.name}. All rights reserved.</p>
           </div>
       </div>
   </body>

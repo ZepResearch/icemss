@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, MapPin, Navigation, Building, Utensils, Landmark, Trees, ShoppingBag, Palette } from "lucide-react"
+import { CONFERENCE } from "@/constants/conference"
 
 export default function VenuePage() {
   return (
@@ -32,8 +33,8 @@ export default function VenuePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] mb-6">
               Conference Venue
             </h1>
-            <p className="text-xl text-[#0078d4] mb-4">4th International Conference on Engineering, Management and Social Sciences</p>
-            <p className="text-lg text-gray-600">4th - 5th November 2026 | Tokyo,Japan</p>
+            <p className="text-xl text-[#0078d4] mb-4">{CONFERENCE.name}</p>
+            <p className="text-lg text-gray-600">{CONFERENCE.date} | {CONFERENCE.venue.location}</p>
           </div>
         </div>
       </section>
@@ -60,7 +61,7 @@ export default function VenuePage() {
 
                   <div className="space-y-6 text-gray-700">
                     <p>
-                      Join us at our premium venue in the Tokyo, Japan for the 4<sup>th</sup> ICEMSS 2026. The venue offers modern facilities, comfortable accommodations, and is conveniently located to provide easy access to the city's attractions and amenities.
+                      Join us at our premium venue in {CONFERENCE.venue.location} for the {CONFERENCE.shortForm} {CONFERENCE.year}. The venue offers modern facilities, comfortable accommodations, and is conveniently located to provide easy access to the city's attractions and amenities.
                     </p>
 
                     <div className="space-y-4">
@@ -112,8 +113,8 @@ export default function VenuePage() {
                         <h3 className="text-lg font-medium text-[#1a1a1a]">Address</h3>
                       </div>
                       <p className="text-gray-700">
-                SONIC CITY ソニックシティ
-                〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5              
+                {CONFERENCE.venue.name}
+                {CONFERENCE.venue.address}
                         </p>
                     </div>
                   </div>
@@ -177,7 +178,7 @@ export default function VenuePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Explore the Japan</h2>
             <div className="h-1 w-20 bg-[#0078d4] mx-auto mb-8 rounded-full"></div>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto">Discover amazing attractions during your visit to 4<sup>th</sup> ICEMSS 2026</p>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">Discover amazing attractions during your visit to {CONFERENCE.shortForm} {CONFERENCE.year}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -282,7 +283,7 @@ export default function VenuePage() {
               <div className="relative">
                 <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">Ready to Join Us?</h3>
                 <p className="text-gray-700 mb-6">
-                  Register for 4<sup>th</sup> ICEMSS 2026 today and be part of this premier international conference in the Philippines.
+                  Register for {CONFERENCE.shortForm} {CONFERENCE.year} today and be part of this premier international conference in {CONFERENCE.venue.location}.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

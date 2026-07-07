@@ -186,13 +186,13 @@ export const userConfirmationTemplate = (data) => `
     <div class="container">
         <div class="header">
             <h1>Registration Confirmed!</h1>
-            <p>International Conference on Engineering, Management and Social Sciences</p>
+            <p>${CONFERENCE.name}</p>
         </div>
         <div class="content">
             <p class="greeting">Dear ${data.name},</p>
             <div class="success-badge">✓ Registration Successful</div>
             
-            <p>We're delighted to confirm your registration for the International Conference on Engineering, Management and Social Sciences. Your participation will contribute to valuable discussions and knowledge exchange across these diverse disciplines.</p>
+            <p>We're delighted to confirm your registration for ${CONFERENCE.name}. Your participation will contribute to valuable discussions and knowledge exchange across these diverse disciplines.</p>
             
             <div class="registration-details">
                 <h2>Your Registration Details</h2>
@@ -235,10 +235,10 @@ export const userConfirmationTemplate = (data) => `
             <p>We look forward to your valuable participation in this important conference!</p>
             
             <p>Warm regards,<br>
-            <strong>The ICEMSS Organizing Committee</strong></p>
+            <strong>The ${CONFERENCE.shortForm} Organizing Committee</strong></p>
         </div>
         <div class="footer">
-            <p>© ${new Date().getFullYear()} International Conference on Engineering, Management and Social Sciences</p>
+            <p>© ${new Date().getFullYear()} ${CONFERENCE.name}</p>
             <p>This is an automated confirmation. Please do not reply to this email.</p>
             <div class="social-links">
                 <a href="https://www.icemss.in/">Website</a> |

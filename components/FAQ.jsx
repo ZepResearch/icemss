@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CONFERENCE } from "@/constants/conference";
 
 const faqs = [
   {
@@ -13,16 +14,16 @@ const faqs = [
     answer: "The conference covers a wide range of topics, including advancements in engineering, strategic management practices, social impact research, interdisciplinary solutions, and sustainable development strategies.",
   },
   {
-    question: "How can I register for ICEMSS?",
+    question: `How can I register for ${CONFERENCE.shortForm}?`,
     answer: "You can register via the official conference website. Early-bird discounts are available for registrations made before the deadline, and group registrations receive special rates.",
   },
   {
     question: "Will there be virtual participation options?",
-    answer: "Yes, ICEMSS offers a hybrid format. You can attend in person or participate virtually through live-streamed sessions and interactive online platforms.",
+    answer: `Yes, ${CONFERENCE.shortForm} offers a hybrid format. You can attend in person or participate virtually through live-streamed sessions and interactive online platforms.`,
   },
   {
     question: "Are there awards for outstanding presentations or research papers?",
-    answer: "Yes, ICEMSS recognizes outstanding contributions through categories like Best Paper Award, Best Presenter Award, and Young Researcher Award to celebrate excellence in research.",
+    answer: `Yes, ${CONFERENCE.shortForm} recognizes outstanding contributions through categories like Best Paper Award, Best Presenter Award, and Young Researcher Award to celebrate excellence in research.`,
   },
   {
     question: "What types of sessions and events can I expect?",
@@ -121,8 +122,7 @@ export default function FAQ() {
                 </div>
                 <div className="flex items-end ">
                   <MapPin className="mr-2  text-blue-700" />
-                  <span>Tokyo, Japan
-                  </span>
+                  <span>{CONFERENCE.venue.location}</span>
                 </div>
               </div>
               <Link href={'/contact'}>

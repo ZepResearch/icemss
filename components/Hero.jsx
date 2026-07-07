@@ -1,13 +1,14 @@
 'use client';
+import { CONFERENCE } from "@/constants/conference";
 import { DicedHeroSection } from "./dice-hero0section";
 
 export function Hero() {
   return (
     <DicedHeroSection
       topText="Join Us"
-      mainText="4th International Conference on Engineering, Management and Social Sciences"
-      subMainText="Integrating Engineering, Management, and Social Sciences for a Sustainable Future  "
-      buttonText="Register Now"
+      mainText={CONFERENCE.name}
+      subMainText="Integrating Engineering, Management, and Social Sciences for a Sustainable Future"
+      buttonText={`Register for ${CONFERENCE.shortForm}`}
       slides={[
         {
           title: "Organizer 1",
@@ -58,8 +59,8 @@ export function Hero() {
       }}
       backgroundColor="#ffffff"
       separatorColor="#005baa"
-      conferenceDate="4th - 5th November, 2026"
-      conferenceVenue="Tokyo, Japan"
+      conferenceDate={CONFERENCE.date}
+      conferenceVenue={CONFERENCE.venue.location}
       mobileBreakpoint={1000}
       fontFamily="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
     />

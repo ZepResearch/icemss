@@ -90,7 +90,7 @@ export const userConfirmationTemplate = (data) => `
         </div>
         <div class="content">
             <p class="greeting">Dear ${data.authorName},</p>
-            <p>Thank you for submitting your paper to the International Conference on Engineering, Management and Social Sciences (ICEMSS). We are pleased to confirm that we have received your submission titled:</p>
+            <p>Thank you for submitting your paper to ${CONFERENCE.name} (${CONFERENCE.shortForm}). We are pleased to confirm that we have received your submission titled:</p>
             <p style="font-weight: 500; font-style: italic; color: #333;">"${data.paperTitle}"</p>
             
             <div class="submission-details">
@@ -112,9 +112,9 @@ export const userConfirmationTemplate = (data) => `
             
             <p>If you have any questions or need to make changes to your submission, please contact us at info@icemss.in</p>
             
-            <p>We appreciate your contribution to ICEMSS and look forward to potentially featuring your work at the conference.</p>
+            <p>We appreciate your contribution to ${CONFERENCE.shortForm} and look forward to potentially featuring your work at the conference.</p>
             
-            <p>Best regards,<br>ICEMSS Organizing Committee</p>
+            <p>Best regards,<br>${CONFERENCE.shortForm} Organizing Committee</p>
         </div>
         <div class="footer">
             <p>This is an automated message. Please do not reply to this email. For any inquiries, contact info@icemss.in</p>

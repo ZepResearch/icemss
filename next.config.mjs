@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+ images: {
+    domains: ["res.cloudinary.com","icemss.pockethost.io","zep-research.pockethost.io","plus.unsplash.com","images.unsplash.com"],
+ },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: {
-    domains: ['res.cloudinary.com', 'illustrations.popsy.co', 'images.unsplash.com', 'plus.unsplash.com', 'illustrations.popsy.co', 'zep-research.pockethost.io', 'icemss.pockethost.io'],
-  },
+ 
   experimental: {
     serverActions: true,
   },

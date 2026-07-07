@@ -1,3 +1,5 @@
+import { CONFERENCE } from "@/constants/conference";
+
 export function getUserEmailTemplate(data) {
   return `
   <!DOCTYPE html>
@@ -57,7 +59,7 @@ export function getUserEmailTemplate(data) {
   <body>
 
     <div class="header">
-      <h1>International Conference on Engineering, Management and Social Sciences</h1>
+      <h1>${CONFERENCE.name}</h1>
     </div>
 
     <div class="content">
@@ -66,7 +68,7 @@ export function getUserEmailTemplate(data) {
       <p>
         Thank you for submitting your paper titled 
         <span class="highlight">"${data.paper_title}"</span> 
-        to the International Conference on Engineering, Management and Social Sciences.
+        to ${CONFERENCE.name}.
       </p>
 
       <p>
@@ -91,12 +93,12 @@ export function getUserEmailTemplate(data) {
       <p>
         Best regards,<br>
         Conference Organizing Committee<br>
-        International Conference on Engineering, Management and Social Sciences
+        ${CONFERENCE.name}
       </p>
     </div>
 
     <div class="footer">
-      <p>© 2025 International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
+      <p>© ${new Date().getFullYear()} ${CONFERENCE.name}. All rights reserved.</p>
     </div>
 
   </body>
@@ -190,7 +192,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
 
     <div class="content">
 
-      <p>A new paper has been submitted to the International Conference on Engineering, Management and Social Sciences.</p>
+      <p>A new paper has been submitted to ${CONFERENCE.name}.</p>
 
       <h2>Submission Details</h2>
 
@@ -284,7 +286,7 @@ export function getAdminEmailTemplate(data, fileUrl) {
     </div>
 
     <div class="footer">
-      <p>©  International Conference on Engineering, Management and Social Sciences. All rights reserved.</p>
+      <p>© ${CONFERENCE.name}. All rights reserved.</p>
     </div>
 
   </body>

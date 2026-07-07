@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
+import { CONFERENCE } from "@/constants/conference"
 // Helper function to add days to a date
 const addDays = (date, days) => {
   const result = new Date(date)
@@ -85,7 +86,7 @@ const getTypeLabel = (type) => {
 }
 
 export default function ConferenceSchedule() {
-  const startDate = new Date(2026, 10, 4) // November 4, 2026
+  const startDate = new Date(CONFERENCE.scheduleDates.year, CONFERENCE.scheduleDates.month, CONFERENCE.scheduleDates.days[0])
   const [selectedDates, setSelectedDates] = useState([
     startDate,
     addDays(startDate, 1),
@@ -101,13 +102,13 @@ export default function ConferenceSchedule() {
               <BookOpen className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-tr from-blue-600 to-sky-600 bg-clip-text text-transparent sm:text-5xl md:text-5xl">
-              4th International Conference     Engineering, Management and Social Sciences
+              {CONFERENCE.name}
             </h1>
             <h2 className="text-xl text-gray-600 max-w-3xl mx-auto">
           
             </h2>
             <p className="text-lg text-gray-500">
-              November 4th - 5th, 2026 | Tokyo, Japan
+              {CONFERENCE.date} | {CONFERENCE.venue.location}
             </p>
             <div className="flex justify-center gap-2 flex-wrap mt-6">
               <Badge variant="secondary" className="bg-blue-100 text-blue-800">Engineering</Badge>
@@ -122,7 +123,7 @@ export default function ConferenceSchedule() {
               <CardHeader className="bg-gradient-to-tr from-blue-600 to-sky-600 text-white rounded-t-lg">
                 <CardTitle className="flex items-center gap-2">
                   <Clock className="h-5 w-5" />
-                  December 2025
+                  {startDate.toLocaleString("default", { month: "long", year: "numeric" })}
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-6 ml-4">

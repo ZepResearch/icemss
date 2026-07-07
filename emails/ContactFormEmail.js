@@ -1,3 +1,5 @@
+import { CONFERENCE } from "@/constants/conference";
+
 const ContactFormEmail = (data) => {
     return `
   <!DOCTYPE html>
@@ -83,7 +85,7 @@ const ContactFormEmail = (data) => {
   <body>
       <div class="container">
           <div class="header">
-              <h1>New Contact Form Submission - ICEMSS</h1>
+              <h1>New Contact Form Submission - ${CONFERENCE.shortForm}</h1>
           </div>
           <div class="content">
               <div class="field">
@@ -112,7 +114,7 @@ const ContactFormEmail = (data) => {
               </div>
           </div>
           <div class="footer">
-              This email was sent from the ICEMSS website's contact form.
+              This email was sent from the ${CONFERENCE.shortForm} website's contact form.
           </div>
       </div>
   </body>

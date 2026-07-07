@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { CONFERENCE } from "@/constants/conference"
 import {
   CalendarDays,
   MapPin,
@@ -52,8 +53,8 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: 4th - 5th November 2026" },
-    { icon: MapPin, text: "Tokyo, Japan" },
+    { icon: CalendarDays, text: `2-day event: ${CONFERENCE.date}` },
+    { icon: MapPin, text: CONFERENCE.venue.location },
     { icon: Users, text: "300+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@icemss.in" },
@@ -127,7 +128,7 @@ export default function AboutCompany() {
             About Zep Research
           </Badge>
           <h2 className="text-4xl font-bold text-primary mb-4">
-            4<sup>th</sup> International Conference on Engineering, Management and Social Sciences
+            {CONFERENCE.name}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A premier event bringing together industry professionals, researchers, and academics from around the world.
@@ -256,7 +257,7 @@ export default function AboutCompany() {
               <CardDescription className="text-lg font-medium text-primary mb-2">
                 Join us in shaping the future Engineering, Management and Social Sciences
               </CardDescription>
-              <p className="text-muted-foreground"> 4th - 5th November, 2026 • Tokyo, Japan</p>
+              <p className="text-muted-foreground">{CONFERENCE.date} • {CONFERENCE.venue.location}</p>
             </CardContent>
           </Card>
         </motion.div>

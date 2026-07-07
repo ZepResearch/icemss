@@ -1,10 +1,12 @@
+import { CONFERENCE } from "@/constants/conference";
+
 export const adminNotificationTemplate = (data) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Paper Submission - International Conference on Engineering, Management and Social Sciences (ICEMSS)</title>
+    <title>New Paper Submission - ${CONFERENCE.name} (${CONFERENCE.shortForm})</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
@@ -90,7 +92,7 @@ export const adminNotificationTemplate = (data) => `
     <div class="container">
         <div class="header">
             <h1>New Paper Submission</h1>
-            <p>International Conference on Engineering, Management and Social Sciences (ICEMSS)</p>
+            <p>${CONFERENCE.name} (${CONFERENCE.shortForm})</p>
         </div>
         <div class="submission-details">
             <div class="field">
@@ -142,7 +144,7 @@ export const adminNotificationTemplate = (data) => `
         </div>
     </div>
     <div class="footer">
-        <p>Thank you for your submission to the International Conference on Engineering, Management and Social Sciences (ICEMSS)!</p>
+        <p>Thank you for your submission to ${CONFERENCE.name} (${CONFERENCE.shortForm})!</p>
     </div>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { useRef, useState, useEffect } from "react"
+import { CONFERENCE } from "@/constants/conference";
 
 export default function SDGSection() {
   const scrollRef = useRef(null)
@@ -69,7 +70,7 @@ export default function SDGSection() {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-center text-3xl md:text-5xl font-bold mb-2">
-          4<sup>th</sup> <span className="text-primary">ICEMSS 2026</span> IS DEDICATED TO ADVANCING THE
+         <span className="text-blue-500">{CONFERENCE.shortForm}</span> {CONFERENCE.year} IS DEDICATED TO ADVANCING THE
            NATIONS SUSTAINABLE DEVELOPMENT GOALS (SDGS)
         </h2>
         

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Award, Building2, Users, Trophy, ArrowRight, MapPin, Calendar } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
+import { CONFERENCE } from "@/constants/conference"
 
 export default function CTASection() {
   const containerVariants = {
@@ -45,7 +46,7 @@ export default function CTASection() {
     },
     {
       title: "Venue Information",
-      description: "Tokyo, Japan. World-class facilities and accommodation",
+      description: `${CONFERENCE.venue.location}. World-class facilities and accommodation`,
       icon: Building2,
       action: "View Location",
       link:'/venue'
@@ -101,23 +102,22 @@ export default function CTASection() {
                     <div className="space-y-2">
                       <h3 className="text-3xl font-bold tracking-tighter">Register Now</h3>
                       <p className="text-muted-foreground">
-                        Secure your spot at the premier academic conference on Engineering, Management, and Social Sciences.
+                        Secure your spot at the premier academic conference for {CONFERENCE.name}.
                       </p>
                     </div>
                     <div className="space-y-4">
                       <div className="flex items-center gap-2">
                         <Calendar className="w-5 h-5 text-primary" />
-                        <span>4<sup>th</sup> - 5<sup>th</sup> NOVEMBER  2026</span>
+                        <span>{CONFERENCE.date}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <MapPin className="w-5 h-5 text-primary" />
-                         <span>Tokyo, Japan</span>
+                         <span>{CONFERENCE.venue.location}</span>
                     
                       </div>
                      <div className="flex items-center gap-2">
                         <Building2 className="w-5 h-5 text-primary" />
-                        <span>      SONIC CITY ソニックシティ
-〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5</span>
+                        <span>{CONFERENCE.venue.name}<br />{CONFERENCE.venue.address}</span>
                       </div>
                     </div>
                     <div className="space-y-4">
