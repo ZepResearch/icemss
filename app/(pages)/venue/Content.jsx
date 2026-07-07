@@ -33,16 +33,9 @@ export default function VenuePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] mb-6">
               Conference Venue
             </h1>
-<<<<<<< HEAD
             <p className="text-xl text-[#0078d4] mb-4">{CONFERENCE.name}</p>
             <p className="text-lg text-gray-600">{CONFERENCE.date} | {CONFERENCE.venue.location}</p>
           </div>
-=======
-            <p className="text-xl text-[#0078d4] mb-4">4th International Conference on Engineering, Management and Social Sciences</p>
-            <p className="text-lg text-gray-600">4th - 5th November 2026 | Tokyo,Japan</p>
-            <p className="text-lg text-gray-600">SONIC CITY ソニックシティ 〒330-0854 Saitama, Omiya Ward, Sakuragicho, 1 Chome−７−5</p>
-           </div>
->>>>>>> 23281d674ad46c4b6b40d7043686f587b94ec344
         </div>
       </section>
 
