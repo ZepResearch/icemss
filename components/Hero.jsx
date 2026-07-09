@@ -37,12 +37,12 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center bg-slate-50 overflow-hidden py-16 lg:py-24">
+    <section className="relative w-full min-h-screen flex items-center justify-center bg-slate-50 overflow-hidden py-6 lg:py-12">
       {/* Decorative background glow blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[40rem] h-[40rem] rounded-full bg-blue-400/10 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[35rem] h-[35rem] rounded-full bg-cyan-400/10 blur-[100px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-6 z-10 max-w-7xl">
+      <div className=" mx-auto px-4 md:px-6 z-10 max-w-screen-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Title & Info */}
@@ -61,13 +61,13 @@ export function Hero() {
                 className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-100/80 border border-blue-200/50 backdrop-blur-sm shadow-sm"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-ping" />
-                Join Us • Kuala Lumpur & Hybrid
+                Join Us • {CONFERENCE.venue.location} & {CONFERENCE.type}
               </motion.span>
             </div>
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
                 {CONFERENCE.name.split(" ").slice(0, 2).join(" ")}{" "}
                 <span className="bg-gradient-to-r from-blue-700 via-indigo-600 to-blue-500 bg-clip-text text-transparent drop-shadow-sm">
                   {CONFERENCE.name.split(" ").slice(2).join(" ")}

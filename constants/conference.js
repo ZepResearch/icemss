@@ -1,6 +1,7 @@
 export const CONFERENCE = {
   name: "5th International Conference on Engineering, Management and Social Sciences",
   shortForm: "5th ICEMSS",
+  type:"Hybrid",
 
   scheduleDates: {
     month: 10,        // 0-indexed: 10 = November

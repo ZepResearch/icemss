@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Download, FileText, ArrowRight } from "lucide-react";
-import PocketBase from "pocketbase";
+import { pb } from "@/lib/pocketbase";
 
-const pb = new PocketBase("https://icemss.pockethost.io");
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -128,4 +128,4 @@ export default function Buttons() {
       </div>
     </section>
   );
-}
+}

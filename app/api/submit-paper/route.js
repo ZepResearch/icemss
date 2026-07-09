@@ -2,13 +2,14 @@ import {  NextResponse } from "next/server"
 import PocketBase from "pocketbase"
 import { resend } from "@/lib/resend"
 import { getUserEmailTemplate, getAdminEmailTemplate} from "@/emails/email-templates"
+import { pb } from "@/lib/pocketbase"
 
 export async function POST(request) {
   try {
     const formData = await request.formData()
 
     // Initialize PocketBase
-    const pb = new PocketBase("https://icemss.pockethost.io")
+
 
     // Extract file if present
     const file = formData.get("file") 

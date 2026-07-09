@@ -9,8 +9,9 @@ import { Button } from "@/components/ui/button";
 import { SpeakerSkeleton } from "./ui/speaker-skeleton";
 import { SpeakerDrawer } from "./ui/SpeakerDrawer";
 import { Award, GraduationCap, MapPin, SearchCode, Info } from "lucide-react";
+import { pb } from "@/lib/pocketbase";
 
-const pb = new PocketBase("https://icemss.pockethost.io");
+
 
 export default function SpeakersView() {
   const [speakers, setSpeakers] = useState([]);
@@ -221,4 +222,4 @@ export default function SpeakersView() {
       </div>
     </section>
   );
-}
+}
