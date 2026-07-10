@@ -29,7 +29,7 @@ export default function Home() {
       <SpeakerSection/>
       <SDGSection/>
       <CTASection/> 
-      <TicketCTA/>
+      {/* <TicketCTA/> */}
       <Testimonial/>
       <VenueCTA/>
       <FAQ/>
