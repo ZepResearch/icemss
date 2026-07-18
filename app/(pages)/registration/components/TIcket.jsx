@@ -251,14 +251,16 @@ export default function Ticket() {
               </div>
             </div>
 
-            <div className="flex-grow mb-4">
+          <div className="flex-grow mb-4">
               <ul className="space-y-2 text-sm">
-                {ticket.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 flex-shrink-0 text-blue-500 mt-0.5" />
-                    <span className="text-gray-700 leading-relaxed">{feature}</span>
-                  </li>
-                ))}
+                {ticket.features
+                  .filter((feature) => !(isVirtual && feature === "Lunch and refreshments"))
+                  .map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-2">
+                      <Check className="w-4 h-4 flex-shrink-0 text-blue-500 mt-0.5" />
+                      <span className="text-gray-700 leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
               </ul>
             </div>
 
