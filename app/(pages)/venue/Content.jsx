@@ -35,6 +35,7 @@ export default function VenuePage() {
             </h1>
             <p className="text-xl text-[#0078d4] mb-4">{CONFERENCE.name}</p>
             <p className="text-lg text-gray-600">{CONFERENCE.date} | {CONFERENCE.venue.location}</p>
+           < p className="text-lg text-gray-600 mt-2">{CONFERENCE.venue.address}</p>
           </div>
         </div>
       </section>
