@@ -4,41 +4,134 @@ import * as React from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
 import { Menu, ChevronDown } from "lucide-react"
 
-const ListItem = React.forwardRef(({ className, title, children, href, ...props }, ref) => {
+const ListItem = ({ href, title, children, className }) => (
+  <li>
+    <Link
+      href={href}
+      className={cn(
+        "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+        className,
+      )}
+    >
+      <div className="text-md font-medium leading-none">{title}</div>
+      <p className="line-clamp-2 text-md leading-snug text-muted-foreground">{children}</p>
+    </Link>
+  </li>
+)
+
+const desktopNavItems = [
+  {
+    title: "About",
+    dropdown: [
+      { href: "/about-conference", title: "About Conference", description: "Learn about our climate change conference." },
+      { href: "/about-organizers", title: "About Organizers", description: "Meet the organizations behind this event." },
+      { href: "/about-co-organizers", title: "About Co-Organizers", description: "Meet the co-organizing organizations." },
+    ],
+  },
+  {
+    title: "Program",
+    dropdown: [
+      { href: "/theme-and-topics", title: "Themes and Topics", description: "Explore conference themes on climate action." },
+      { href: "/mode-of-presentation", title: "Mode of Presentation", description: "View presentation formats and guidelines." },
+      { href: "/schedule", title: "Conference Schedule", description: "View the full program of events." },
+    ],
+  },
+  {
+    title: "Speaker",
+    dropdown: [
+      { href: "/key-speaker", title: "Keynote Speakers", description: "Meet the keynote and invited speakers." },
+      { href: "/distinct-speakers", title: "Distinguished  Speakers", description: "Browse featured session speakers." },
+    ],
+  },
+  {
+    title: "Policy",
+    dropdown: [
+      { href: "/terms-&-condition", title: "Terms & Conditions", description: "Read our terms and conditions." },
+      { href: "/cancellation-policy", title: "Cancellation Policy", description: "Learn about our cancellation policy." },
+      { href: "/privacy-policy", title: "Privacy Policy", description: "Understand how we protect your privacy." },
+      { href: "/complaints-policy", title: "Complaints Policy", description: "Information about our complaints process." },
+      { href: "/disability-discrimination-policy", title: "Disability Discrimination Policy", description: "Our commitment to accessibility and inclusion." },
+      { href: "/health-and-safety-policy", title: "Health and Safety Policy", description: "Safety guidelines and protocols." },
+      { href: "/equal-treatment-policy", title: "Equal Treatment Policy", description: "Our commitment to equal treatment for all." },
+    ],
+  },
+  { title: "Committee", href: "/committee" },
+  { title: "Submission", href: "/submission" },
+  { title: "Venue", href: "/venue" },
+  { title: "Gallery", href: "/gallery" },
+  { title: "Journals", href: "/journals" },
+  { title: "Awards", href: "/award" },
+  { title: "Contact", href: "/contact" },
+  { title: "Proceedings", href: "/proceedings" },
+]
+
+const DesktopNav = () => {
+  const [openMenu, setOpenMenu] = React.useState(null)
+  const closeTimeout = React.useRef(null)
+
+  const handleEnter = (title) => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current)
+    setOpenMenu(title)
+  }
+
+  const handleLeave = () => {
+    closeTimeout.current = setTimeout(() => setOpenMenu(null), 150)
+  }
+
   return (
-    <li>
-      <NavigationMenuLink asChild>
-        <Link
-          ref={ref}
-          href={href}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
-          )}
-          {...props}
-        >
-          <div className="text-md font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-md leading-snug text-muted-foreground">{children}</p>
-        </Link>
-      </NavigationMenuLink>
-    </li>
+    <div className="hidden lg:flex items-center space-x-1">
+      {desktopNavItems.map((item) =>
+        item.dropdown ? (
+          <div
+            key={item.title}
+            className="relative"
+            onMouseEnter={() => handleEnter(item.title)}
+            onMouseLeave={handleLeave}
+          >
+            <button
+              type="button"
+              className="inline-flex h-8 items-center gap-1 rounded-md px-2 text-md font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+              aria-expanded={openMenu === item.title}
+            >
+              {item.title}
+              <ChevronDown
+                className={cn(
+                  "h-3 w-3 transition-transform",
+                  openMenu === item.title && "rotate-180",
+                )}
+              />
+            </button>
+
+            {openMenu === item.title && (
+              <div className="absolute left-0 top-full z-50 mt-1.5 w-80 rounded-md border bg-popover p-3 text-popover-foreground shadow-md">
+                <ul className="grid gap-2 md:grid-cols-1">
+                  {item.dropdown.map((sub) => (
+                    <ListItem key={sub.href} href={sub.href} title={sub.title}>
+                      {sub.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : (
+          <Link
+            key={item.title}
+            href={item.href}
+            className="inline-flex h-8 items-center rounded-md px-2 text-md font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+          >
+            {item.title}
+          </Link>
+        )
+      )}
+    </div>
   )
-})
-ListItem.displayName = "ListItem"
+}
 
 const MobileNavItem = ({
   href,
@@ -107,6 +200,15 @@ const MobileNav = () => (
           >
             Program
           </MobileNavItem>
+          <MobileNavItem
+            href="/speaker"
+            subItems={[
+              { href: "/key-speaker", title: "Key Speakers" },
+              { href: "/Distinct-Speakers", title: "Distinct Speakers" },
+            ]}
+          >
+            Speaker
+          </MobileNavItem>
           <MobileNavItem href="/committee">Committee</MobileNavItem>
           <MobileNavItem href="/submission">Submission</MobileNavItem>
           <MobileNavItem href="/venue">Venue</MobileNavItem>
@@ -142,7 +244,6 @@ const MobileNav = () => (
             </Button>
           </SheetClose>
         </div>
-
       </nav>
     </SheetContent>
   </Sheet>
@@ -158,144 +259,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden lg:flex items-center space-x-1">
-          <NavigationMenu>
-            <NavigationMenuList className="space-x-1">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-md h-8 px-2">
-                  About
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1 text-sm">
-                    <ListItem href="/about-conference" title="About Conference">
-                      Learn about our climate change conference.
-                    </ListItem>
-                    <ListItem href="/about-organizers" title="About Organizers">
-                      Meet the organizations behind this event.
-                    </ListItem>
-                    <ListItem href="/about-co-organizers" title="About Co-Organizers">
-                      Meet the co-organizing organizations.
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-md h-8 px-2">
-                  Program
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1 text-sm">
-                    <ListItem href="/theme-and-topics" title="Themes and Topics">
-                      Explore conference themes on climate action.
-                    </ListItem>
-                    <ListItem href="/mode-of-presentation" title="Mode of Presentation">
-                      View presentation formats and guidelines.
-                    </ListItem>
-                    <ListItem href="/schedule" title="Conference Schedule">
-                      View the full program of events.
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-md h-8 px-2">
-                  Policy
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-80 gap-2 p-3 md:grid-cols-1 text-sm">
-                    <ListItem href="/terms-&-condition" title="Terms & Conditions">
-                      Read our terms and conditions.
-                    </ListItem>
-                    <ListItem href="/cancellation-policy" title="Cancellation Policy">
-                      Learn about our cancellation policy.
-                    </ListItem>
-                    <ListItem href="/privacy-policy" title="Privacy Policy">
-                      Understand how we protect your privacy.
-                    </ListItem>
-                    <ListItem href="/complaints-policy" title="Complaints Policy">
-                      Information about our complaints process.
-                    </ListItem>
-                    <ListItem href="/disability-discrimination-policy" title="Disability Discrimination Policy">
-                      Our commitment to accessibility and inclusion.
-                    </ListItem>
-                    <ListItem href="/health-and-safety-policy" title="Health and Safety Policy">
-                      Safety guidelines and protocols.
-                    </ListItem>
-                    <ListItem href="/equal-treatment-policy" title="Equal Treatment Policy">
-                      Our commitment to equal treatment for all.
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/committee" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Committee
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/submission" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Submission
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/venue" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Venue
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/gallery" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Gallery
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/journals" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Journals
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/award" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Awards
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Contact
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/proceedings" legacyBehavior passHref>
-                  <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "text-md h-8 px-2")}>
-                    Proceedings
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-
-
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+        <DesktopNav />
 
         <div className="hidden md:flex items-center space-x-2">
           <Button
@@ -312,7 +276,6 @@ export default function Navbar() {
 
         <MobileNav />
       </div>
-
     </div>
   )
 }

@@ -11,14 +11,19 @@ import { SpeakerDrawer } from './ui/SpeakerDrawer'
 
 const pb = new PocketBase('https://icemss.pockethost.io')
 
-export default function SpeakersView() {
+export default function SpeakersView({ mode = 'all', title = 'Conference Delegates' }) {
   const [speakers, setSpeakers] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  
-  const categories = [,"Organizing Secretary", "Conference Chair", "Conference Co-Chair","Keynote Speaker" , "Session Chair","Panel Speaker"]
+
+  const allCategories = ["Organizing Secretary", "Conference Chair", "Conference Co-Chair", "Keynote Speaker", "Session Chair", "Panel Speaker"]
+  const categories = mode === 'keynote'
+    ? ["Keynote Speaker"]
+    : mode === 'distinct'
+      ? allCategories.filter((category) => category !== 'Keynote Speaker')
+      : allCategories
   
   useEffect(() => {
     const fetchSpeakers = async () => {
@@ -73,10 +78,10 @@ export default function SpeakersView() {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold mb-12 text-center"
         >
-          Conference Delegates
+          {title}
         </motion.h1>
         
-        <Tabs defaultValue="Organizing Secretary" className="w-full">
+        <Tabs defaultValue={categories[0] || ''} className="w-full">
           <TabsList className="flex justify-center space-x-2 mb-12 py-8 md:overflow-hidden overflow-auto">
             {categories.map((category) => (
               <TabsTrigger
