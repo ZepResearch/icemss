@@ -1,21 +1,34 @@
-import {  NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 import PocketBase from "pocketbase"
 import { resend } from "@/lib/resend"
-import { getUserEmailTemplate, getAdminEmailTemplate} from "@/emails/journal-templates"
+import { getUserEmailTemplate, getAdminEmailTemplate } from "@/emails/journal-templates"
+
+function createPocketBaseFormData(data, file) {
+  const formData = new FormData()
+  Object.entries(data).forEach(([key, value]) => {
+    if (value !== undefined && value !== null) {
+      formData.append(key, String(value))
+    }
+  })
+  if (file && file.size > 0) {
+    formData.append("file", file)
+  }
+  return formData
+}
 
 export async function POST(request) {
   try {
     const formData = await request.formData()
+    const userId = formData.get("user")?.toString()?.trim()
 
-    // Initialize PocketBase"
-    const pb = new PocketBase("https://icemss.pockethost.io")
+    if (!userId) {
+      return NextResponse.json({ success: false, message: "Authentication required" }, { status: 401 })
+    }
 
-    // Extract file if present
-    const file = formData.get("file") 
-    let fileUrl = ""
+    const file = formData.get("file")
 
-    // Create data object for PocketBase
     const data = {
+      user: userId,
       author: formData.get("author"),
       phone_number: formData.get("phone_number"),
       email: formData.get("email"),
@@ -25,58 +38,47 @@ export async function POST(request) {
       department: formData.get("department"),
       organization: formData.get("organization"),
       message: formData.get("message"),
+      journal_id: formData.get("journal_id"),
       journal_name: formData.get("journal_name"),
+      status: "pending",
     }
 
-    // Create a new FormData for PocketBase (needed for file upload)
-    const pbFormData = new FormData()
+    const icemssPb = new PocketBase("https://icemss.pockethost.io")
+    const zepPb = new PocketBase("https://admin.zepresearch.com")
 
-    // Add all fields to PocketBase FormData
-    Object.entries(data).forEach(([key, value]) => {
-      pbFormData.append(key, value )
-    })
+    const icemssFormData = createPocketBaseFormData(data, file)
+    const zepFormData = createPocketBaseFormData(data, file)
 
-    // Add file if present
-    if (file && file.size > 0) {
-      pbFormData.append("file", file)
+    const [icemssResult, zepResult] = await Promise.all([
+      icemssPb.collection("ICEMSS_journal_form_submission").create(icemssFormData),
+      zepPb.collection("paper_form_submission").create(zepFormData),
+    ])
+
+    let fileUrl = ""
+    if (icemssResult?.file?.length > 0) {
+      fileUrl = icemssPb.files.getURL(icemssResult, icemssResult.file[0], { download: 1 })
+    } else if (zepResult?.file?.length > 0) {
+      fileUrl = zepPb.files.getURL(zepResult, zepResult.file[0], { download: 1 })
     }
 
-    // Submit to PocketBase
-    const record = await pb.collection("ICEMSS_journal_form_submission").create(pbFormData)
-
-    // Get file URL if a file was uploaded
-    if (record.file && record.file.length > 0) {
-        // Use the URL method as per latest documentation
-        fileUrl = pb.files.getURL(record, record.file),{'download': 1};
-        
-        // If you need to add download parameter
-        // fileUrl = pb.files.getURL(record, record.file[0], {'download': 1});
-      }
-
-    // Send confirmation email to user
     await resend.emails.send({
       from: "ICEMSS|Journal-Submission <info@icemss.in>",
       to: data.email,
-      subject:
-        "Journal Submission Confirmation - ICEMSS ",
+      subject: "Journal Submission Confirmation - ICEMSS",
       html: getUserEmailTemplate(data),
     })
 
-    // Send notification email to admin
     await resend.emails.send({
       from: "ICEMSS | Submission <info@icemss.in>",
-      to: "info@icemss.in", // Replace with actual admin email
+      to: "info@icemss.in",
       subject: "New Journal Submission - from ICEMSS",
       html: getAdminEmailTemplate(data, fileUrl),
     })
 
-    return NextResponse.json({
-      success: true,
-      message: "Paper submitted successfully",
-    })
+    return NextResponse.json({ success: true, message: "Paper submitted successfully" })
   } catch (error) {
     console.error("Error submitting paper:", error)
-    return NextResponse.json({ success: false, message: "Failed to submit paper" }, { status: 500 })
+    return NextResponse.json({ success: false, message: error?.message || "Failed to submit paper" }, { status: 500 })
   }
 }
 

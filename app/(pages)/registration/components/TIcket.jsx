@@ -1,17 +1,20 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Check, Info } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CCavenuePaymentForm } from "@/components/ui/CCavenuePaymentForm"
+import { useAuth } from "@/context/AuthContext"
 
 export default function Ticket() {
   const host = process.env.NEXT_PUBLIC_APP_URL
+  const { user, isOpen: isAuthModalOpen, openAuthModal } = useAuth()
   const [isLoading, setIsLoading] = useState(null)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [selectedTicket, setSelectedTicket] = useState(null)
+  const [pendingTicket, setPendingTicket] = useState(null)
   const [customAmount, setCustomAmount] = useState("")
   const [paymentPurpose, setPaymentPurpose] = useState("")
   const [activeTab, setActiveTab] = useState("physical") // "physical" | "virtual"
@@ -131,8 +134,56 @@ export default function Ticket() {
     return `ORD${Date.now()}${Math.floor(Math.random() * 1000)}`
   }
 
+  const getBaseUrl = () => {
+    if (host) return host
+    if (typeof window !== "undefined") return window.location.origin
+    return "http://localhost:3000"
+  }
+
+  const buildRedirectUrl = (formValues, orderId) => {
+    const url = new URL(`${getBaseUrl()}/api/ccavenue/handle`)
+
+    url.searchParams.set("conference", "qkx4mqss1mif7xk")
+    if (user?.id) url.searchParams.set("user", user.id)
+    url.searchParams.set("order_id", orderId)
+    url.searchParams.set("fullname", formValues.billing_name || "")
+    url.searchParams.set("email", formValues.billing_email || "")
+    url.searchParams.set("adress", formValues.billing_address || "")
+    url.searchParams.set("city", formValues.billing_city || "")
+    url.searchParams.set("state", formValues.billing_state || "")
+    url.searchParams.set("zip_code", formValues.billing_zip || "")
+    url.searchParams.set("country", formValues.billing_country || "")
+    url.searchParams.set("phone_no", formValues.billing_tel || "")
+    url.searchParams.set("ticket_type", selectedTicket?.priceType || "")
+    url.searchParams.set("ticket_category", selectedTicket?.category || "custom")
+    url.searchParams.set("ticket_name", selectedTicket?.name || "")
+
+    return url.toString()
+  }
+
+  useEffect(() => {
+    if (!pendingTicket) return
+
+    if (user?.id) {
+      setSelectedTicket(pendingTicket)
+      setIsPopupOpen(true)
+      setPendingTicket(null)
+    } else if (!isAuthModalOpen) {
+      // The user dismissed the login dialog without authenticating.
+      setPendingTicket(null)
+    }
+  }, [user, isAuthModalOpen, pendingTicket])
+
   const openPaymentPopup = (ticket, priceType, price) => {
-    setSelectedTicket({ ...ticket, selectedPrice: price, priceType })
+    const ticketSelection = { ...ticket, selectedPrice: price, priceType }
+
+    if (!user?.id) {
+      setPendingTicket(ticketSelection)
+      openAuthModal()
+      return
+    }
+
+    setSelectedTicket(ticketSelection)
     setIsPopupOpen(true)
   }
 
@@ -142,6 +193,13 @@ export default function Ticket() {
   }
 
   const handlePaymentSubmit = async (formData) => {
+    if (!user?.id) {
+      setPendingTicket(selectedTicket)
+      closePaymentPopup()
+      openAuthModal()
+      return
+    }
+
     try {
       setIsLoading(selectedTicket.name + selectedTicket.priceType)
       const taxRate = 0.05
@@ -149,14 +207,15 @@ export default function Ticket() {
       const taxAmount = baseAmount * taxRate
       const totalAmount = baseAmount + taxAmount
 
+      const paymentOrderId = generateOrderId()
       const paymentData = {
         merchant_id: process.env.NEXT_PUBLIC_CCAVENUE_MERCHANT_ID,
-        order_id: generateOrderId(),
+        order_id: paymentOrderId,
         name: `${selectedTicket.name} - ${selectedTicket.priceType}`,
         amount: totalAmount.toString(),
         currency: "USD",
-        redirect_url: `${host}/api/ccavenue/handle`,
-        cancel_url: `${host}/api/ccavenue/handle`,
+        redirect_url: buildRedirectUrl(formData, paymentOrderId),
+        cancel_url: buildRedirectUrl(formData, paymentOrderId),
         ...formData,
         language: "EN",
       }
@@ -219,9 +278,16 @@ export default function Ticket() {
 
       const customTicket = {
         name: "Custom Payment",
+        category: "custom",
         selectedPrice: amount,
         priceType: paymentPurpose || "Custom Amount",
         currency: "USD",
+      }
+
+      if (!user?.id) {
+        setPendingTicket(customTicket)
+        openAuthModal()
+        return
       }
 
       setSelectedTicket(customTicket)
@@ -473,7 +539,7 @@ export default function Ticket() {
         </div>
       </div>
 
-      {selectedTicket && (
+      {user?.id && selectedTicket && (
         <CCavenuePaymentForm
           isOpen={isPopupOpen}
           onClose={closePaymentPopup}

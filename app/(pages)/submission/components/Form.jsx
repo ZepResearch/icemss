@@ -5,9 +5,12 @@ import { useRouter } from "next/navigation"
 import { Toaster, toast } from "react-hot-toast"
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import { useAuth } from "@/context/AuthContext"
+import pb from "@/lib/zep-pocketbase"
 
 export default function PaperSubmissionForm() {
   const router = useRouter()
+  const { user, openAuthModal } = useAuth()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState(null)
   const [selectedFile, setSelectedFile] = useState(null)
@@ -19,7 +22,15 @@ export default function PaperSubmissionForm() {
     setError(null)
 
     try {
+      const authToken = pb.authStore.token
+      if (!user?.id || !authToken) {
+        throw new Error("Please log in first to submit a paper.")
+      }
+
       const formData = new FormData(e.currentTarget)
+
+      // Add the current authenticated user's PocketBase record ID
+      formData.set("user", user.id)
       
       // Add phone number to form data
       if (phoneNumber) {
@@ -33,6 +44,9 @@ export default function PaperSubmissionForm() {
 
       const response = await fetch("/api/submit-paper", {
         method: "POST",
+        headers: {
+          Authorization: authToken,
+        },
         body: formData,
       })
 
@@ -58,6 +72,25 @@ export default function PaperSubmissionForm() {
     if (e.target.files && e.target.files.length > 0) {
       setSelectedFile(e.target.files[0])
     }
+  }
+
+  if (!user) {
+    return (
+      <div className="mx-auto max-w-3xl rounded-lg bg-white p-8 py-24 shadow-md">
+        <Toaster position="top-right" />
+        <h1 className="mb-4 text-center text-3xl font-bold text-blue-600">Paper Submission</h1>
+        <div className="rounded-lg border border-blue-100 bg-blue-50 p-6 text-center text-gray-700">
+          <p className="mb-4">Please sign in to access the paper submission form.</p>
+          <button
+            type="button"
+            onClick={openAuthModal}
+            className="rounded-md bg-blue-600 px-5 py-2.5 font-medium text-white transition hover:bg-blue-500"
+          >
+            Login / Register
+          </button>
+        </div>
+      </div>
+    )
   }
 
   return (

@@ -9,6 +9,7 @@ import Script from 'next/script';
 // import DownloadPopup from "@/components/download-popup";
 import { LineMessengerButton } from "@/components/line-messenger-button";
 import GoogleTranslate from "@/components/GoogleTranslate";
+import { AuthProvider } from "@/context/AuthContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -82,24 +83,27 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         {/* <DownloadPopup/> */}
-        <div className="sticky top-0 z-50 bg-white">
-        <GoogleTranslate/>
-        <Navbar/>
-        </div>
-        {children}
-        <Footer/>
-        <ToastProvider/>
-        <TawkToChat/>
-        <FloatingWhatsApp/>       <LineMessengerButton/>
-        {/* <FloatingWhatsAppButton phoneNumber="8260080050" message="How can we assist you?"/> */}
-        <noscript>
-          <img 
-            height="1" 
-            width="1" 
-            style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=570370761168975&ev=PageView&noscript=1"
-          />
-        </noscript>
+        <AuthProvider>
+          <div className="sticky top-0 z-50 bg-white">
+            <GoogleTranslate/>
+            <Navbar/>
+          </div>
+          {children}
+          <Footer/>
+          <ToastProvider/>
+          <TawkToChat/>
+          <FloatingWhatsApp/>
+          <LineMessengerButton/>
+          {/* <FloatingWhatsAppButton phoneNumber="8260080050" message="How can we assist you?"/> */}
+          <noscript>
+            <img 
+              height="1" 
+              width="1" 
+              style={{ display: 'none' }}
+              src="https://www.facebook.com/tr?id=570370761168975&ev=PageView&noscript=1"
+            />
+          </noscript>
+        </AuthProvider>
       </body>
     </html>
   );

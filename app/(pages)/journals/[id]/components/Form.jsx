@@ -26,10 +26,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { useAuth } from "@/context/AuthContext"
 
 
 export default function PaperSubmissionForm({ journalId, journalTitle }) {
   const router = useRouter()
+  const { user, openAuthModal } = useAuth()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState(null)
   const [selectedFile, setSelectedFile] = useState(null)
@@ -41,11 +43,16 @@ export default function PaperSubmissionForm({ journalId, journalTitle }) {
     setError(null)
 
     try {
-      const formData = new FormData(e.currentTarget )
+      const formData = new FormData(e.currentTarget)
 
-      // Add journal ID and title to form data
+      if (!user?.id) {
+        throw new Error("You must be logged in to submit a paper.")
+      }
+
+      // Add journal ID, title, and user ID to form data
       formData.set("journal_id", journalId)
       formData.set("journal_name", journalTitle)
+      formData.set("user", user.id)
 
       // Add phone number to form data
       if (phoneNumber) {
@@ -68,14 +75,12 @@ export default function PaperSubmissionForm({ journalId, journalTitle }) {
         throw new Error(data.message || "Failed to submit paper")
       }
 
-      // Show success toast
       toast({
         title: "Success!",
         description: "Your paper has been submitted successfully.",
         variant: "default",
       })
 
-      // Redirect to success page
       router.push("/journals/success")
     } catch (err) {
       setError(err.message || "An error occurred while submitting your paper")
@@ -92,6 +97,32 @@ export default function PaperSubmissionForm({ journalId, journalTitle }) {
     if (e.target.files && e.target.files.length > 0) {
       setSelectedFile(e.target.files[0])
     }
+  }
+
+  if (!user) {
+    return (
+      <Card className="shadow-lg border-0 overflow-hidden bg-slate-50">
+        <div className="h-2 bg-gradient-to-r from-blue-400 to-blue-500"></div>
+
+        <CardHeader className="space-y-1 pb-6 pt-6">
+          <CardTitle className="text-2xl font-bold tracking-tight bg-gradient-to-r from-blue-800 to-blue-900 bg-clip-text text-transparent">
+            Submit Your Research
+          </CardTitle>
+          <CardDescription className="text-muted-foreground">
+            You must be signed in to submit a paper for this journal.
+          </CardDescription>
+        </CardHeader>
+
+        <CardContent className="space-y-4">
+          <p className="text-sm text-slate-600">
+            Please login or register to access the journal submission form.
+          </p>
+          <Button type="button" className="w-full" onClick={openAuthModal}>
+            Login to submit
+          </Button>
+        </CardContent>
+      </Card>
+    )
   }
 
   return (
