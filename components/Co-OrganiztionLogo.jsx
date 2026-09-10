@@ -20,7 +20,10 @@ const logos = [
 {
   name: "Company 5",
   src: "/co-org/ASUP.jpeg",
-}
+},
+{
+  name: "Company 6",
+  src: "/co-org/UCBC.png",}
 ];
 
 export default function CoOrganizationLogos() {

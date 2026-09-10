@@ -49,6 +49,31 @@ const organizersData = [
       gradient: 'from-blue-900 to-blue-600'
     }
   },
+  {
+  id: 6,
+  name: "Bukidnon State University (BukSU)",
+  logo: "/co-org/BSU.jpeg",
+  image: "",
+  about: "Bukidnon State University is located in the capital town of Malaybalay City, Bukidnon and is strategically positioned to serve Region 10, the CARAGA Region, and other cities and provinces of Mindanao. It is one of the leading educational institutions serving the people not only in Mindanao but also the country in general.",
+  vision: "A premier institution of innovative and ethical leaders for sustainable development.",
+  mission: " To develop competitive professionals who are committed to build a sustainable life for all through quality instruction, research, extension and production",
+  mandate: "",
+  coreValues: [],
+  culture: [],
+  competencies: [],
+  accreditations: [],
+  contact: {
+    website: "https://buksu.edu.ph",
+    email: "",
+    phone: "+63-88-813-5661 to 5663",
+    facebook: "https://www.facebook.com/officialbuksu",
+    address: "Fortich St., Malaybalay City, Bukidnon, Philippines"
+  },
+  theme: {
+    primary: "black",
+    gradient: " from-black to-gray-700"
+  }
+},
   // {
   //   id: 2,
   //   name: "Polytechnic University of the Philippines",
@@ -126,8 +151,8 @@ const organizersData = [
       facebook: "www.facebook.com/profile.php?id=61572166725005"
     },
     theme: {
-      primary: 'emerald',
-      gradient: 'from-emerald-700 to-emerald-400'
+      primary: 'yellow',
+      gradient: 'from-yellow-400 to-yellow-600'
     }
   },
     {
@@ -170,6 +195,47 @@ const organizersData = [
   theme: {
     primary: 'green',
     gradient: 'from-green-700 to-blue-600'
+  }
+},
+{
+  id: 5,
+  name: "University of the Cordilleras (UC)",
+  logo: "/co-org/UCBC.png",
+  image: "/co-org/UCBC.png",
+  about: "The University of the Cordilleras, formerly known as Baguio Colleges, pioneered tertiary education in the mountain highlands of the Cordillera region. Founded by Atty. Benjamin R. Salvosa on June 19, 1946, the institution initially offered teacher training and liberal arts programs. Over the years, it expanded its academic offerings and student population and has grown into a comprehensive university serving students from across the Cordillera Administrative Region, Regions I and II, neighboring provinces of Luzon, and international communities.",
+  vision: "",
+  mission: "",
+  mandate: "",
+  coreValues: [],
+  culture: [
+    "Academic Excellence",
+    "Community Engagement",
+    "Professional Excellence",
+    "Public Service"
+  ],
+  competencies: [
+    "Basic Education",
+    "Graduate Studies",
+    "Law",
+    "Arts and Sciences",
+    "Business and Accountancy",
+    "Nursing",
+    "Teacher Education",
+    "Information Technology and Computer Science",
+    "Hospitality and Tourism",
+    "Criminal Justice"
+  ],
+  accreditations: [],
+  contact: {
+    website: "https://www.uc-bcf.edu.ph",
+    email: "email@uc-bcf.edu.ph",
+    phone: "+63 74 442 3316",
+    facebook: "https://www.facebook.com/UCjaguars",
+    address: "Governor Pack Road, Baguio City 2600, Philippines"
+  },
+  theme: {
+   primary: 'green',
+    gradient: 'from-green-700 to-emerald-600'
   }
 },
   // {

@@ -18,11 +18,11 @@ export default function SpeakersView({ mode = 'all', title = 'Conference Delegat
   const [selectedSpeaker, setSelectedSpeaker] = useState(null)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
-  const allCategories = ["Organizing Secretary", "Conference Chair", "Conference Co-Chair", "Keynote Speaker", "Session Chair", "Panel Speaker"]
+  const allCategories = ["Guest Speaker", "Organizing Secretary", "Conference Chair", "Conference Co-Chair", "Keynote Speaker", "Session Chair", "Panel Speaker"]
   const categories = mode === 'keynote'
     ? ["Keynote Speaker"]
     : mode === 'distinct'
-      ? allCategories.filter((category) => category !== 'Keynote Speaker')
+      ? allCategories.filter((category) => category !== 'Guest Speaker')
       : allCategories
   
   useEffect(() => {
@@ -82,12 +82,12 @@ export default function SpeakersView({ mode = 'all', title = 'Conference Delegat
         </motion.h1>
         
         <Tabs defaultValue={categories[0] || ''} className="w-full">
-          <TabsList className="flex justify-center space-x-2 mb-12 py-8 md:overflow-hidden overflow-auto">
+          <TabsList className="flex justify-center space-x-2 mb-12 py-8 overflow-x-auto ">
             {categories.map((category) => (
               <TabsTrigger
                 key={category}
                 value={category}
-                className="px-6 text-lg capitalize text-blue-600 data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 transition-all duration-200 ease-in-out"
+                className="px-2 text-lg  capitalize text-blue-600 data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 transition-all duration-200 ease-in-out"
               >
                 {category}
               </TabsTrigger>
