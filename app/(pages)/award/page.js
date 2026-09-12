@@ -118,8 +118,7 @@ export default function AwardsPage() {
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-gray-700 text-center">
-                  <strong>50% fee refund</strong> will be provided to the best paper and best paper presenters.
-                  Scholarships cover full or partial conference registration fees based on fund availability.
+                 Upto 20% Discount on the next registration will be provided to the best paper and best paper presenters. Scholarships cover full or partial conference registration fees based on fund availability.
                 </CardDescription>
               </CardContent>
             </Card>
