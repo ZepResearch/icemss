@@ -266,7 +266,7 @@ export default function Ticket() {
 
             <div className="space-y-3 mt-auto">
               {/* Early Bird — physical only */}
-              {!isVirtual && earlyBirdPrice != null && (
+              {/* {!isVirtual && earlyBirdPrice != null && (
                 <div className="bg-blue-200 p-3 rounded-lg border border-blue-400">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-medium text-blue-800">Early Bird</span>
@@ -288,7 +288,7 @@ export default function Ticket() {
                     </Button>
                   </div>
                 </div>
-              )}
+              )} */}
 
               {/* Standard / Virtual price */}
               {standardPrice != null && (
