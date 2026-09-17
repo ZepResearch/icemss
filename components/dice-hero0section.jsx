@@ -222,7 +222,7 @@ export const DicedHeroSection = ({
         </motion.div>
 
         {/* ── Early Bird Banner ── */}
-        <motion.div
+        {/* <motion.div
           className="mt-4 relative max-w-xl overflow-hidden rounded-2xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 p-1 shadow-lg"
           variants={itemVariants}
           animate={{
@@ -261,7 +261,7 @@ export const DicedHeroSection = ({
               <span>Offer expires soon • Limited spots available</span>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* ── CPD Accredited Card ── */}
      
