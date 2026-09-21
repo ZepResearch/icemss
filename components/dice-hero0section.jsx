@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import Link from 'next/link';
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { Calendar, Download, MapPin, Users } from 'lucide-react';
 
 export const DicedHeroSection = ({
   topText,
@@ -147,53 +147,48 @@ export const DicedHeroSection = ({
           <img src="assets/zepresearch.png" alt="" className="h-12 drop-shadow-lg" />
         </div>
 
-        {/* ── Conference Date & Venue Card ── */}
-        <motion.div
+  
+
+
+   <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8 w-full rounded-xl overflow-hidden border border-[#185FA5]"
+          className="mt-8 w-full overflow-hidden rounded-xl border border-[#005baa]/30 bg-white shadow-lg shadow-[#005baa]/10"
         >
-          {/* Header bar */}
-          <div className="bg-[#185FA5] px-5 py-2.5 flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-[#B5D4F4]" />
-            <span className="text-[#E6F1FB] text-xs font-medium tracking-widest uppercase">
-              Event Details
-            </span>
+          <div className="bg-[#eef6fd] px-5 py-4 text-center">
+            <img src="/assets/cpd.png" alt="CPD Accredited Event" className="mx-auto mb-3 h-28 w-32 object-contain" />
+            <h3 className="m-0 text-lg font-bold tracking-wide text-[#005baa]">
+              CPD ACCREDITED EVENT
+            </h3>
           </div>
-
-          {/* Content grid */}
-          <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-[1fr_1px_1fr]'} px-5 py-6 bg-white`}>
-            {/* Date */}
-            <div className={`flex flex-col items-center text-center ${isMobile ? 'pb-6' : 'pr-6'}`}>
-              <div className="w-11 h-11 rounded-full bg-[#E6F1FB] flex items-center justify-center mb-3">
-                <Calendar className="w-5 h-5 text-[#185FA5]" />
-              </div>
-              <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">
-                Conference Date
-              </p>
-              <p className="text-lg font-semibold text-gray-900 leading-snug">
-                {conferenceDate || '4th – 5th November, 2026'}
-              </p>
+          <div className="space-y-4 p-5 text-center">
+            <p className="m-0 text-sm leading-relaxed text-gray-600">
+              This conference is CPD accredited, recognising your professional development and participation.
+            </p>
+            <div className="rounded-lg border border-[#005baa]/20 bg-[#eef6fd] px-4 py-3">
+              <span className="block text-3xl font-bold leading-none text-[#005baa]">14</span>
+              <span className="mt-1 block text-xs font-semibold uppercase tracking-widest text-[#185FA5]">
+                Credit Hours
+              </span>
             </div>
-
-            {/* Divider */}
-            {!isMobile && <div className="bg-gray-200" />}
-
-            {/* Venue */}
-            <div className={`flex flex-col items-center text-center ${isMobile ? '' : 'pl-6'}`}>
-              <div className="w-11 h-11 rounded-full bg-[#E6F1FB] flex items-center justify-center mb-3">
-                <MapPin className="w-5 h-5 text-[#185FA5]" />
-              </div>
-              <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">
-                Conference Venue
-              </p>
-              <p className="text-lg font-semibold text-gray-900 leading-snug">
-                {conferenceVenue || 'Tokyo, Japan'}
-              </p>
+            <div className="grid gap-2 min-[420px]:grid-cols-2">
+              <Link href="https://www.cpdstandards.com/become-accredited/events-conferences/" className="w-full">
+                <Button size="sm" className="w-full bg-[#005baa] text-white hover:bg-[#004a8c]">
+                  Learn More
+                </Button>
+              </Link>
+              <a href="/cpd.pdf" download="cpd-conference-certificate.pdf" className="w-full">
+                <Button size="sm" variant="outline" className="w-full border-[#005baa] text-[#005baa] hover:bg-[#eef6fd]">
+                  <Download />
+                  Download Certificate
+                </Button>
+              </a>
             </div>
           </div>
         </motion.div>
+
+
 
         {/* ── CTA Buttons ── */}
         <motion.div
@@ -293,26 +288,54 @@ export const DicedHeroSection = ({
           ))}
         </div>
 
-   <motion.div
+
+      {/* ── Conference Date & Venue Card ── */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-8 w-full  bg-white rounded-xl border-2 border-[#005baa] p-6"
+          className="mt-8 w-full rounded-xl overflow-hidden border border-[#185FA5]"
         >
-          <div className="flex flex-row items-center justify-center">
-            <img src="/assets/cpd.png" alt="CPD Logo" className="w-32 mb-2" />
-            <h3 className="text-[#005baa] text-xl font-bold m-0">
-              CPD ACCREDITED EVENT
-            </h3>
+          {/* Header bar */}
+          <div className="bg-[#185FA5] px-5 py-2.5 flex items-center gap-2">
+            <Calendar className="w-4 h-4 text-[#B5D4F4]" />
+            <span className="text-[#E6F1FB] text-xs font-medium tracking-widest uppercase">
+              Event Details
+            </span>
           </div>
-          <ul className="list-none p-0 my-4 text-[0.95rem] text-gray-900 leading-relaxed" />
-          <Link href="https://www.cpdstandards.com/become-accredited/events-conferences/" className="w-full">
-            <Button size="sm" className="w-full mt-4 bg-[#005baa] text-white hover:bg-[#004a8c]">
-              Learn More
-            </Button>
-          </Link>
-        </motion.div>
 
+          {/* Content grid */}
+          <div className={`grid ${isMobile ? 'grid-cols-1' : 'grid-cols-[1fr_1px_1fr]'} px-5 py-6 bg-white`}>
+            {/* Date */}
+            <div className={`flex flex-col items-center text-center ${isMobile ? 'pb-6' : 'pr-6'}`}>
+              <div className="w-11 h-11 rounded-full bg-[#E6F1FB] flex items-center justify-center mb-3">
+                <Calendar className="w-5 h-5 text-[#185FA5]" />
+              </div>
+              <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">
+                Conference Date
+              </p>
+              <p className="text-lg font-semibold text-gray-900 leading-snug">
+                {conferenceDate || '4th – 5th November, 2026'}
+              </p>
+            </div>
+
+            {/* Divider */}
+            {!isMobile && <div className="bg-gray-200" />}
+
+            {/* Venue */}
+            <div className={`flex flex-col items-center text-center ${isMobile ? '' : 'pl-6'}`}>
+              <div className="w-11 h-11 rounded-full bg-[#E6F1FB] flex items-center justify-center mb-3">
+                <MapPin className="w-5 h-5 text-[#185FA5]" />
+              </div>
+              <p className="text-xs text-gray-400 uppercase tracking-widest font-medium mb-1">
+                Conference Venue
+              </p>
+              <p className="text-lg font-semibold text-gray-900 leading-snug">
+                {conferenceVenue || 'Tokyo, Japan'}
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
       </div>
 
