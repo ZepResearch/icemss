@@ -1,10 +1,10 @@
 import { CoOrganizationLogosClient } from "./ui/co-org-logo";
 
 const logos = [
-  {
-    name: "Company 12",
-    src: "/co-org/sulu.png",
-  },
+  // {
+  //   name: "Company 12",
+  //   src: "/co-org/sulu.png",
+  // },
   // {
   //   name: "Company 2",
   //   src: "/co-org/FU.jpeg",

@@ -5,50 +5,50 @@ import Image from 'next/image';
 
 // Organizers data structure
 const organizersData = [
-  {
-    id: 1,
-    name: "Sulu State College",
-    logo: "/co-org/sulu.png",
-    image: "/co-org/sulubuilding.jpg",
-    about: "The Sulu State College as Center of Excellence in BARMM producing globally competitive graduates and as institutional stewards in the development of the region",
-    vision: "The Sulu State College as Center of Excellence in BARMM producing globally competitive graduates and as institutional stewards in the development of the region.",
-    mission: "SSC is committed to develop academic stalwart and globally competent professionals, producing cutting edge research, knowledge and technologies for sustainable development; engage in partnership and viable resource generation programs.",
-    mandate: "Sulu State College is mandated to provide higher technological, professional, and vocational instruction and training in science, agricultural, and industrial fields, as well as short-term technical or vocational courses. It shall promote research, advanced studies, and progressive leadership in its areas of specialization (Philippine Batas Pambansa Blg. 208 Section 2).To the latter ends, the college believes in a system of management devolution to affect an efficient and effective supervision of processes and resources for a sustained delivery of quality outputs, the generation of knowledge on a more global orientation, and the provision of its academic resources, to the extent feasible, to institutions, both local and international, that are involved in development activities. ",
-    coreValues: [
-      { letter: 'S', value: 'Solidarity', color: 'bg-yellow-400' },
-      { letter: 'P', value: 'Professionalism', color: 'bg-blue-900' },
-      { letter: 'I', value: 'Integrity', color: 'bg-yellow-400' },
-      { letter: 'C', value: 'Commitment', color: 'bg-blue-900' },
-      { letter: 'E', value: 'Excellence', color: 'bg-yellow-400' }
-    ],
-    culture: [
-      "Continuous Improvement",
-      "Administrative Accountability",
-      "Community Engagement",
-      "Commitment to Quality and Innovation"
-    ],
-    competencies: [
-      "Quality Excellence and Continuous Improvement",
-      "Building Partnerships with Stakeholders",
-      "Providing Accessible Services to Current and Potential Students",
-      "Continuous Learning and Development for Employees"
-    ],
-    accreditations: [
-      { name: "WURI Rankings", logo: "/images/wuri.png" },
-      { name: "ISO Certified", logo: "/images/iso.png" },
-      { name: "CHED Recognition", logo: "/images/ched.png" }
-    ],
-    contact: {
-      facebook: "facebook.com/sulustatecollege",
-      email: "sulustatecollege@gmail.com",
-    //   phone: "+63 XXX XXX XXXX",
-      website: "sulustatecollege.edu.ph"
-    },
-    theme: {
-      primary: 'blue',
-      gradient: 'from-blue-900 to-blue-600'
-    }
-  },
+  // {
+  //   id: 1,
+  //   name: "Sulu State College",
+  //   logo: "/co-org/sulu.png",
+  //   image: "/co-org/sulubuilding.jpg",
+  //   about: "The Sulu State College as Center of Excellence in BARMM producing globally competitive graduates and as institutional stewards in the development of the region",
+  //   vision: "The Sulu State College as Center of Excellence in BARMM producing globally competitive graduates and as institutional stewards in the development of the region.",
+  //   mission: "SSC is committed to develop academic stalwart and globally competent professionals, producing cutting edge research, knowledge and technologies for sustainable development; engage in partnership and viable resource generation programs.",
+  //   mandate: "Sulu State College is mandated to provide higher technological, professional, and vocational instruction and training in science, agricultural, and industrial fields, as well as short-term technical or vocational courses. It shall promote research, advanced studies, and progressive leadership in its areas of specialization (Philippine Batas Pambansa Blg. 208 Section 2).To the latter ends, the college believes in a system of management devolution to affect an efficient and effective supervision of processes and resources for a sustained delivery of quality outputs, the generation of knowledge on a more global orientation, and the provision of its academic resources, to the extent feasible, to institutions, both local and international, that are involved in development activities. ",
+  //   coreValues: [
+  //     { letter: 'S', value: 'Solidarity', color: 'bg-yellow-400' },
+  //     { letter: 'P', value: 'Professionalism', color: 'bg-blue-900' },
+  //     { letter: 'I', value: 'Integrity', color: 'bg-yellow-400' },
+  //     { letter: 'C', value: 'Commitment', color: 'bg-blue-900' },
+  //     { letter: 'E', value: 'Excellence', color: 'bg-yellow-400' }
+  //   ],
+  //   culture: [
+  //     "Continuous Improvement",
+  //     "Administrative Accountability",
+  //     "Community Engagement",
+  //     "Commitment to Quality and Innovation"
+  //   ],
+  //   competencies: [
+  //     "Quality Excellence and Continuous Improvement",
+  //     "Building Partnerships with Stakeholders",
+  //     "Providing Accessible Services to Current and Potential Students",
+  //     "Continuous Learning and Development for Employees"
+  //   ],
+  //   accreditations: [
+  //     { name: "WURI Rankings", logo: "/images/wuri.png" },
+  //     { name: "ISO Certified", logo: "/images/iso.png" },
+  //     { name: "CHED Recognition", logo: "/images/ched.png" }
+  //   ],
+  //   contact: {
+  //     facebook: "facebook.com/sulustatecollege",
+  //     email: "sulustatecollege@gmail.com",
+  //   //   phone: "+63 XXX XXX XXXX",
+  //     website: "sulustatecollege.edu.ph"
+  //   },
+  //   theme: {
+  //     primary: 'blue',
+  //     gradient: 'from-blue-900 to-blue-600'
+  //   }
+  // },
   {
   id: 6,
   name: "Bukidnon State University (BukSU)",
